@@ -1,0 +1,1 @@
+SELECT LEAD(a,2e0) OVER () FROM t;

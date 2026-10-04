@@ -1,0 +1,83 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (HexLiteral QuotedHexLiteral))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (HexLiteral QuotedHexLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral QuotedBinaryLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral QuotedBinaryLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            CharsetIntroducer
+                            (HexLiteral QuotedHexLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            CharsetIntroducer
+                            (BinaryLiteral QuotedBinaryLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (InsertStatement
+          INSERT
+          INTO
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (GroupInsertStatement1
+            (InsertFromConstructor
+              (InsertValues
+                VALUES
+                (ValueList
+                  OPEN_PAR
+                  (Values
+                    (Expression
+                      (Literal
+                        (HexLiteral QuotedHexLiteral)))
+                    ((COMMA (Expression | DEFAULT))*
+                      COMMA
+                      (Expression
+                        (Literal
+                          (BinaryLiteral QuotedBinaryLiteral)))
+                      COMMA
+                      (Expression
+                        (Literal
+                          (HexLiteral QuotedHexLiteral)))
+                      COMMA
+                      (Expression
+                        (Literal
+                          (HexLiteral QuotedHexLiteral)))
+                      COMMA
+                      (Expression
+                        (Literal
+                          (BinaryLiteral QuotedBinaryLiteral)))))
+                  CLOSE_PAR))))))
+      SEMICOLON)))

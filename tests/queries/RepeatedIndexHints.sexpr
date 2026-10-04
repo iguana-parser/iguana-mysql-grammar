@@ -1,0 +1,119 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (IndexHintList
+                              (IndexHint+
+                                (IndexHint
+                                  USE
+                                  (KeyOrIndex KW_INDEX)
+                                  OPEN_PAR
+                                  (IndexList
+                                    (IndexListElement
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  CLOSE_PAR)
+                                (IndexHint
+                                  (IndexHintType IGNORE)
+                                  (KeyOrIndex KEY)
+                                  (IndexHintClause
+                                    FOR
+                                    (GroupIndexHintClause1 ORDER BY))
+                                  OPEN_PAR
+                                  (IndexList
+                                    (IndexListElement
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier))))
+                                    ((COMMA IndexListElement)*
+                                      COMMA
+                                      (IndexListElement
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  CLOSE_PAR))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (IndexHintList
+                              (IndexHint+
+                                (IndexHint
+                                  (IndexHintType FORCE)
+                                  (KeyOrIndex KW_INDEX)
+                                  OPEN_PAR
+                                  (IndexList
+                                    (IndexListElement
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  CLOSE_PAR)
+                                (IndexHint
+                                  (IndexHintType IGNORE)
+                                  (KeyOrIndex KW_INDEX)
+                                  OPEN_PAR
+                                  (IndexList
+                                    (IndexListElement
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  CLOSE_PAR))))))
+                      ((COMMA TableReference)*
+                        COMMA
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (IndexHintList
+                                (IndexHint+
+                                  (IndexHint
+                                    USE
+                                    (KeyOrIndex KW_INDEX)
+                                    OPEN_PAR
+                                    (IndexList
+                                      (IndexListElement
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                                    CLOSE_PAR)))))))))))))))
+      SEMICOLON)))

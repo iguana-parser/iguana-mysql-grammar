@@ -1,0 +1,36 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (IdentifierKeyword
+                                (IdentifierKeywordsUnambiguous SQL_NO_CACHE))))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

@@ -1,0 +1,39 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          JSON_VALUE
+                          OPEN_PAR
+                          (SimpleExpression
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText))))))
+                          COMMA
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText)))
+                          (OnEmptyOrError
+                            (OnEmpty
+                              (JsonOnResponse NULL)
+                              ON
+                              EMPTY)
+                            (OnError
+                              (JsonOnResponse
+                                DEFAULT
+                                (TextStringLiteral SingleQuotedText))
+                              ON
+                              ERROR))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)))

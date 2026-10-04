@@ -1,0 +1,15 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              ((StartTransactionSnapshot COMMA)*
+                (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT)
+                COMMA)
+              READ
+              ONLY))))
+      SEMICOLON)))

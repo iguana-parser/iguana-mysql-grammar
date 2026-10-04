@@ -1,0 +1,1 @@
+SELECT intersect_symbol FROM t;

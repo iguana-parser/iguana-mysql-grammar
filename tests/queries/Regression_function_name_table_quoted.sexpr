@@ -1,0 +1,26 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier BacktickIdentifier))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1))))
+              CLOSE_PAR))))
+      SEMICOLON)))

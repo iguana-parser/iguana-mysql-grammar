@@ -1,0 +1,166 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            FOR
+            DATABASE
+            (TextOrIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))))
+                        (FromClause
+                          FROM
+                          (TableReferenceList
+                            (TableReference
+                              (TableFactor
+                                (SingleTable
+                                  (TableRef
+                                    (QualifiedIdentifier
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (JsonExplainFormat JsonFormatWord))
+            FOR
+            DATABASE
+            (TextOrIdentifier
+              (Identifier
+                (PureIdentifier BacktickIdentifier)))
+            (ExplainableStatement
+              (InsertStatement
+                INSERT
+                INTO
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (GroupInsertStatement1
+                  (InsertFromConstructor
+                    (InsertValues
+                      VALUES
+                      (ValueList
+                        OPEN_PAR
+                        (Values
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral)))))
+                        CLOSE_PAR)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            FOR
+            DATABASE
+            (TextOrIdentifier
+              (TextStringLiteral SingleQuotedText))
+            (ExplainableStatement
+              (UpdateStatement
+                UPDATE
+                (TableReferenceList
+                  (TableReference
+                    (TableFactor
+                      (SingleTable
+                        (TableRef
+                          (QualifiedIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                SET
+                (UpdateList
+                  (UpdateElement
+                    (ColumnRef
+                      (FieldIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    EQUAL
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            FOR
+            DATABASE
+            (TextOrIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (ExplainableStatement
+              (DeleteStatement
+                DELETE
+                (GroupDeleteStatement2
+                  FROM
+                  (GroupDeleteStatement1
+                    (TableRef
+                      (QualifiedIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            FOR
+            DATABASE
+            (TextOrIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (ExplainableStatement
+              (ReplaceStatement
+                REPLACE
+                INTO
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (GroupReplaceStatement1
+                  (InsertFromConstructor
+                    (InsertValues
+                      VALUES
+                      (ValueList
+                        OPEN_PAR
+                        (Values
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral)))))
+                        CLOSE_PAR)))))))))
+      SEMICOLON)))

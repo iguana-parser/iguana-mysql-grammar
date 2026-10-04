@@ -1,0 +1,117 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (UserVariable AtTextSuffix)
+              (Equal EQUAL)
+              (Expression
+                (Literal
+                  (NumLiteral
+                    (Int64Literal IntegerLiteral)))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionType SESSION)
+            (StartOptionValueListFollowingOptionType
+              (OptionValueFollowingOptionType
+                (LvalueVariable
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier))))
+                (Equal EQUAL)
+                (SetExprOrDefault
+                  (Expression
+                    (Literal
+                      (TextLiteral
+                        (TextLiteralHead
+                          (TextStringLiteral SingleQuotedText)))))))
+              OptionValueListContinued))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              NAMES
+              (GroupOptionValueNoOptionType1
+                (CharsetName
+                  (TextOrIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Collate
+                  COLLATE
+                  (CollationName
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+            OptionValueListContinued)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            TRANSACTION
+            (TransactionCharacteristics
+              (IsolationLevel
+                ISOLATION
+                LEVEL
+                (GroupIsolationLevel1 READ COMMITTED))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (RvalueSystemVariableType
+                            SESSION
+                            (SystemScopeDot DOT))
+                          (RvalueSystemVariable
+                            (ScopedRvalueName AdjacentScopedWord)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (UserVariable AtTextSuffix)
+                          ASSIGN
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))))))
+      SEMICOLON)))

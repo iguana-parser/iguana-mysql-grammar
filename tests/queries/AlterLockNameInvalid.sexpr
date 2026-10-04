@@ -1,0 +1,3 @@
+Parse error at line 1, column 20: Expected one of LockNameWord, QuotedLockName, DEFAULT
+ALTER TABLE t LOCK=arbitrary_name;
+                   ^^^^^^^^^^^^^^

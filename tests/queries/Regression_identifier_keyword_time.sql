@@ -1,0 +1,1 @@
+SELECT t.time FROM t;

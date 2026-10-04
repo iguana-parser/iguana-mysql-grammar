@@ -1,0 +1,114 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (SumExpr
+                          (GroupSumExpr4
+                            STD_CALL_OPEN
+                            (InSumExpr
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                            CLOSE_PAR))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              STD_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              STD_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              VARIANCE_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              VARIANCE_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              VAR_SAMP_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr1
+                              BIT_AND_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              CLOSE_PAR))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

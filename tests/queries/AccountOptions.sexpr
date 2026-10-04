@@ -1,0 +1,61 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedByPassword
+                      IDENTIFIED
+                      BY
+                      (TextStringLiteral SingleQuotedText))))))
+            (CreateUserTail
+              (RequireClause
+                REQUIRE
+                (GroupRequireClause1 SSL))
+              (ConnectOptions
+                WITH
+                (GroupConnectOptions1+
+                  (GroupConnectOptions1
+                    MAX_QUERIES_PER_HOUR
+                    (UlongNumber IntegerLiteral))))
+              (AccountLockPasswordExpireOptions*
+                (AccountLockPasswordExpireOptions
+                  PASSWORD
+                  (GroupAccountLockPasswordExpireOptions3
+                    EXPIRE
+                    (GroupAccountLockPasswordExpireOptions1
+                      INTERVAL
+                      (RealUlongNumber IntegerLiteral)
+                      DAY)))
+                (AccountLockPasswordExpireOptions ACCOUNT UNLOCK))
+              (UserAttributes
+                ATTRIBUTE
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))
+                  (GroupAlterUser4
+                    (DiscardOldPassword DISCARD OLD PASSWORD))))
+              CreateUserTail))))
+      SEMICOLON)))

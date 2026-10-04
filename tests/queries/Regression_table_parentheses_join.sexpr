@@ -1,0 +1,64 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (JoinedTableParens
+                            OPEN_PAR
+                            (JoinedTableParens
+                              OPEN_PAR
+                              (JoinedTableParens
+                                OPEN_PAR
+                                (TableReference
+                                  (TableReference
+                                    (TableFactor
+                                      (SingleTable
+                                        (TableRef
+                                          (QualifiedIdentifier
+                                            (Identifier
+                                              (PureIdentifier
+                                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                  (InnerJoinType JOIN)
+                                  (TableReference
+                                    (TableFactor
+                                      (SingleTable
+                                        (TableRef
+                                          (QualifiedIdentifier
+                                            (Identifier
+                                              (PureIdentifier
+                                                (UnquotedIdentifier BPrefixIdentifier))))))))
+                                  (JoinSpecification
+                                    ON
+                                    (Expression
+                                      (BooleanPrimary
+                                        (Expression
+                                          (ExpressionColumnRef
+                                            (QualifiedPair
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                                              (DotIdentifier DotWordIdentifier)))))
+                                      (CompOp EQUAL)
+                                      (Predicate
+                                        (Expression
+                                          (ExpressionColumnRef
+                                            (QualifiedPair
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier BPrefixIdentifier)))
+                                              (DotIdentifier DotWordIdentifier))))))))
+                                CLOSE_PAR)
+                              CLOSE_PAR)
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

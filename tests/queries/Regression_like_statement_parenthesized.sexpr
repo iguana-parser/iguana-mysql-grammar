@@ -1,0 +1,37 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (BitExpression
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        LIKE
+                        (SimpleExpression
+                          (Expression
+                            OPEN_PAR
+                            (Expression
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier BPrefixIdentifier)))))
+                              PLUS
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

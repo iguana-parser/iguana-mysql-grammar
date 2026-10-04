@@ -1,0 +1,91 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute UNIQUE KEY))))))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        (GroupFieldDefinition1
+                          (ColumnAttribute*
+                            (ColumnAttribute UNIQUE KEY))))))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        (GroupFieldDefinition1
+                          AS
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral))))
+                            CLOSE_PAR)
+                          STORED
+                          (ColumnAttribute*
+                            (ColumnAttribute UNIQUE KEY))))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      ADD
+                      (GroupAlterListItem1
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (FieldDefinition
+                          (DataType INT)
+                          (GroupFieldDefinition1
+                            (ColumnAttribute*
+                              (ColumnAttribute UNIQUE KEY)
+                              (ColumnAttribute KEY)))))))))))))
+      SEMICOLON)))

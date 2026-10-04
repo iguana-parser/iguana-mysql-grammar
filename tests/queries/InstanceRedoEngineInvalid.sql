@@ -1,0 +1,1 @@
+ALTER INSTANCE ENABLE other_engine REDO_LOG;

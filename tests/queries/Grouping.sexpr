@@ -1,0 +1,67 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              SUM_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier BPrefixIdentifier))))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (GroupingOperation
+                            GROUPING
+                            OPEN_PAR
+                            (ExprList
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                            CLOSE_PAR)))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (GroupByClause
+                    GROUP
+                    BY
+                    (OrderList
+                      (OrderExpression
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))))
+                    (OlapOption WITH ROLLUP))))))))
+      SEMICOLON)))

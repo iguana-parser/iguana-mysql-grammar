@@ -1,0 +1,1 @@
+SET @@global=2;

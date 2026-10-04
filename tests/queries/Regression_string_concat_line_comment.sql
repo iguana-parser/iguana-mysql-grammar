@@ -1,0 +1,2 @@
+SELECT 'a' -- gap
+'b';

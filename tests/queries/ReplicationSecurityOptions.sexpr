@@ -1,0 +1,152 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource REPLICATION SOURCE)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                (ChangeReplicationSourceBind SOURCE_BIND)
+                EQUAL
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              ((COMMA SourceDefinition)*
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceRetryCount SOURCE_RETRY_COUNT)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceDelay SOURCE_DELAY)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceHeartbeatPeriod SOURCE_HEARTBEAT_PERIOD)
+                  EQUAL
+                  (UlongNumber DecimalLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCApath SOURCE_SSL_CAPATH)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCipher SOURCE_SSL_CIPHER)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLVerifyServerCert SOURCE_SSL_VERIFY_SERVER_CERT)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCLR SOURCE_SSL_CRL)
+                  EQUAL
+                  (TextLiteral
+                    (TextLiteralHead
+                      (TextStringLiteral SingleQuotedText))))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCLRpath SOURCE_SSL_CRLPATH)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourcePublicKey SOURCE_PUBLIC_KEY_PATH)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceTLSCiphersuites SOURCE_TLS_CIPHERSUITES)
+                  EQUAL
+                  (SourceTlsCiphersuitesDef NULL))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceZstdCompressionLevel SOURCE_ZSTD_COMPRESSION_LEVEL)
+                  EQUAL
+                  (UlongNumber IntegerLiteral)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource REPLICATION SOURCE)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                PRIVILEGE_CHECKS_USER
+                EQUAL
+                (PrivilegeCheckDef
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))))
+              ((COMMA SourceDefinition)*
+                COMMA
+                (SourceDefinition
+                  REQUIRE_ROW_FORMAT
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  REQUIRE_TABLE_PRIMARY_KEY_CHECK
+                  EQUAL
+                  (TablePrimaryKeyCheckDef ON))
+                COMMA
+                (SourceDefinition
+                  ASSIGN_GTIDS_TO_ANONYMOUS_TRANSACTIONS
+                  EQUAL
+                  (AssignGtidsToAnonymousTransactionsDefinition LOCAL))
+                COMMA
+                (SourceDefinition
+                  IGNORE_SERVER_IDS
+                  EQUAL
+                  (ServerIdList
+                    OPEN_PAR
+                    (UlongNumber IntegerLiteral)
+                    ((COMMA UlongNumber)*
+                      COMMA
+                      (UlongNumber IntegerLiteral))
+                    CLOSE_PAR)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (StartReplicaStatement
+            START
+            (Replica REPLICA)
+            (UserOption
+              USER
+              EQUAL
+              (TextString
+                (TextStringLiteral SingleQuotedText)))
+            (PasswordOption
+              PASSWORD
+              EQUAL
+              (TextString
+                (TextStringLiteral SingleQuotedText)))
+            (DefaultAuthOption
+              DEFAULT_AUTH
+              EQUAL
+              (TextString
+                (TextStringLiteral SingleQuotedText)))
+            (PluginDirOption
+              PLUGIN_DIR
+              EQUAL
+              (TextString
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)))

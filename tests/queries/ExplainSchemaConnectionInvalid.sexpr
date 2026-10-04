@@ -1,0 +1,3 @@
+Parse error at line 1, column 13: Expected CONNECTION
+EXPLAIN FOR DATABASE app FOR CONNECTION 1;
+            ^^^^^^^^

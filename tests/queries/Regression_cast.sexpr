@@ -1,0 +1,52 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        CAST_CALL_OPEN
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        AS
+                        (CastType CHAR)
+                        CLOSE_PAR))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          CONVERT
+                          OPEN_PAR
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          USING
+                          (CharsetName
+                            (TextOrIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

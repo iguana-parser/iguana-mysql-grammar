@@ -1,0 +1,54 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (InnerJoinType JOIN)
+                        (TableReference
+                          OPEN_CURLY
+                          OJ
+                          (EscapedTableReference
+                            (TableReference
+                              (TableReference
+                                (TableFactor
+                                  (SingleTable
+                                    (TableRef
+                                      (QualifiedIdentifier
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier BPrefixIdentifier))))))))
+                              (InnerJoinType JOIN)
+                              (TableReference
+                                (TableFactor
+                                  (SingleTable
+                                    (TableRef
+                                      (QualifiedIdentifier
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                          CLOSE_CURLY)
+                        (JoinSpecification
+                          ON
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))))))
+      SEMICOLON)))

@@ -1,0 +1,13 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CloneStatement
+          CLONE
+          (GroupCloneStatement1
+            LOCAL
+            DATA
+            DIRECTORY
+            (Equal EQUAL)
+            (TextStringLiteral SingleQuotedText))))
+      SEMICOLON)))

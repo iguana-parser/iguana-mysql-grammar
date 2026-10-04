@@ -1,0 +1,15 @@
+(Expression
+  (BitExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier OrdinaryIdentifier))))))
+  (NotRule NOT)
+  REGEXP
+  (BitExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier)))))))

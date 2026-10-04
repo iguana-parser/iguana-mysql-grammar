@@ -1,0 +1,39 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (GroupCreateUser1
+                  (IdentifiedWithPlugin
+                    IDENTIFIED
+                    WITH
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (InitialAuth
+                    INITIAL
+                    AUTHENTICATION
+                    (IdentifiedWithPluginAsAuth
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      AS
+                      (TextStringHash
+                        (TextStringLiteral SingleQuotedText)))))))
+            CreateUserTail)))
+      SEMICOLON)))

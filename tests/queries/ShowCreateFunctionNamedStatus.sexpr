@@ -1,0 +1,14 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowCreateFunctionStatement
+          SHOW
+          CREATE
+          FUNCTION
+          (FunctionRef
+            (QualifiedIdentifier
+              (Identifier
+                (IdentifierKeyword
+                  (IdentifierKeywordsUnambiguous STATUS)))))))
+      SEMICOLON)))

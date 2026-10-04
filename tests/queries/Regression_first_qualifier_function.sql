@@ -1,0 +1,1 @@
+SELECT select.func(a) FROM t;

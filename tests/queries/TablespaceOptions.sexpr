@@ -1,0 +1,190 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTablespace
+            TABLESPACE
+            (TablespaceName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (TsDataFileName
+              ADD
+              (TsDataFile
+                DATAFILE
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText)))))
+            (TablespaceOptions
+              (TablespaceOption
+                (TsOptionInitialSize
+                  INITIAL_SIZE
+                  EQUAL
+                  (SizeNumber StorageSizeWord)))
+              ((COMMA? TablespaceOption)*
+                (TablespaceOption
+                  (TsOptionAutoextendSize
+                    AUTOEXTEND_SIZE
+                    EQUAL
+                    (SizeNumber StorageSizeWord)))
+                (TablespaceOption
+                  (TsOptionMaxSize
+                    MAX_SIZE
+                    EQUAL
+                    (SizeNumber StorageSizeWord)))
+                (TablespaceOption
+                  (TsOptionExtentSize
+                    EXTENT_SIZE
+                    EQUAL
+                    (SizeNumber StorageSizeWord)))
+                (TablespaceOption
+                  (TsOptionNodegroup
+                    NODEGROUP
+                    EQUAL
+                    (RealUlongNumber IntegerLiteral)))
+                (TablespaceOption
+                  (TsOptionEngine
+                    ENGINE
+                    EQUAL
+                    (EngineRef
+                      (TextOrIdentifier
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NDBCLUSTER)))))))
+                (TablespaceOption
+                  (TsOptionWait WAIT))
+                (TablespaceOption
+                  (TsOptionComment
+                    COMMENT
+                    EQUAL
+                    (TextLiteral
+                      (TextLiteralHead
+                        (TextStringLiteral SingleQuotedText)))))
+                (TablespaceOption
+                  (TsOptionFileblockSize
+                    FILE_BLOCK_SIZE
+                    EQUAL
+                    (SizeNumber StorageSizeWord)))
+                (TablespaceOption
+                  (TsOptionEncryption
+                    ENCRYPTION
+                    EQUAL
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTablespace
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (GroupAlterTablespace1
+                ADD
+                DATAFILE
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText)))
+                (AlterTablespaceOptions
+                  (AlterTablespaceOption
+                    INITIAL_SIZE
+                    EQUAL
+                    (SizeNumber StorageSizeWord))
+                  ((COMMA? AlterTablespaceOption)*
+                    COMMA
+                    (AlterTablespaceOption
+                      (TsOptionMaxSize
+                        MAX_SIZE
+                        EQUAL
+                        (SizeNumber StorageSizeWord)))
+                    COMMA
+                    (AlterTablespaceOption
+                      (TsOptionEngine
+                        ENGINE
+                        EQUAL
+                        (EngineRef
+                          (TextOrIdentifier
+                            (Identifier
+                              (IdentifierKeyword
+                                (IdentifierKeywordsUnambiguous NDBCLUSTER)))))))
+                    COMMA
+                    (AlterTablespaceOption
+                      (TsOptionWait NO_WAIT)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTablespace
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (GroupAlterTablespace1
+                (AlterTablespaceOptions
+                  (AlterTablespaceOption
+                    (TsOptionAutoextendSize
+                      AUTOEXTEND_SIZE
+                      EQUAL
+                      (SizeNumber StorageSizeWord)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateUndoTablespace
+            UNDO
+            TABLESPACE
+            (TablespaceName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            ADD
+            (TsDataFile
+              DATAFILE
+              (TextLiteral
+                (TextLiteralHead
+                  (TextStringLiteral SingleQuotedText))))
+            (UndoTableSpaceOptions
+              (UndoTableSpaceOption
+                (TsOptionEngine
+                  ENGINE
+                  EQUAL
+                  (EngineRef
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterUndoTablespace
+              UNDO
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              SET
+              INACTIVE
+              (UndoTableSpaceOptions
+                (UndoTableSpaceOption
+                  (TsOptionEngine
+                    ENGINE
+                    EQUAL
+                    (EngineRef
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+      SEMICOLON)))

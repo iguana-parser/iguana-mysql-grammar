@@ -1,0 +1,1 @@
+SELECT OJ FROM OJ AS oj_alias;

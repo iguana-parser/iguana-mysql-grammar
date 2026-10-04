@@ -1,0 +1,22 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateSpatialReference
+            SPATIAL
+            REFERENCE
+            SYSTEM
+            (RealUlonglongNumber IntegerLiteral))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropSpatialReference
+            SPATIAL
+            REFERENCE
+            SYSTEM
+            (RealUlonglongNumber IntegerLiteral))))
+      SEMICOLON)))

@@ -1,0 +1,17 @@
+# name extension start repository pinned-ref
+# This initial corpus uses the pre-existing selected-file caches.
+# See README.md: these are not complete repository checkouts.
+test-db sql Queries https://github.com/datacharmer/test_db e324b56193ca506ab7cc1ab143a9153d8c4535d7
+mysql-sys sql Queries https://github.com/mysql/mysql-sys a1374ea7cf341b71fd1060136533ce01fe0bd57b
+sqlfluff-mysql sql Queries https://github.com/sqlfluff/sqlfluff 0facc196e90c1a74f372d2a0547f8e9c298e9b8b
+vitess sql Queries https://github.com/vitessio/vitess fb653f2727a2afabe18e2b81999ba4ae69213b37
+mysql-workbench sql Queries https://github.com/mysql/mysql-workbench dc3590dbfbee29c87e201d4ef53607e5deb0e4f9
+sqlc sql Queries https://github.com/sqlc-dev/sqlc bdbe55db3ee08745827090d4aad1781bea2ee4ee
+prestashop sql Queries https://github.com/PrestaShop/PrestaShop dec15c65a3f3a0c27cfd1dc221a7b89bff036fa2
+phpmyadmin-sql-parser in Queries https://github.com/phpmyadmin/sql-parser 9a7d9b1776f0153630258aeff4d88f3c91b2c43b
+mediawiki sql Queries https://github.com/wikimedia/mediawiki b2c5bab1c4f4592682fa30d378df04fa0cdb818b
+dolibarr sql Queries https://github.com/Dolibarr/dolibarr b9253d147f5f8a41cb9d3bd7b5721fe7f4554389
+tidb sql Queries https://github.com/pingcap/tidb 93a01d31f6da205ae4bf376825293903a6899fdb
+mysql-server-8.2 sql Queries https://github.com/mysql/mysql-server 87307d4ddd88405117e3f1e51323836d57ab1f57
+chinook sql Queries https://github.com/lerocha/chinook-database 7f67772503d71ba90f19283c38e93923addb43fa
+openemr sql Queries https://github.com/openemr/openemr bbc6881936a074bc3d94e0c0da73a6b063908d1e

@@ -1,0 +1,21 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (LvalueVariable
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (TextLiteral
+                      (TextLiteralHead
+                        (TextStringLiteral SingleQuotedText)))))))
+            OptionValueListContinued)))
+      SEMICOLON)))

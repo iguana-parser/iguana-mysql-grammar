@@ -1,0 +1,1 @@
+SELECT COUNT(a), SUM(a), COALESCE(a, 0), f(a) FROM t;

@@ -1,0 +1,1 @@
+SELECT * FROM a LEFT JOIN b JOIN c ON b.x=c.x;

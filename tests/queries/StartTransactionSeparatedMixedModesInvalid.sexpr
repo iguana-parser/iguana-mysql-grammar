@@ -1,0 +1,3 @@
+Parse error at line 1, column 88: Expected WRITE
+START TRANSACTION WITH CONSISTENT SNAPSHOT, READ WRITE, WITH CONSISTENT SNAPSHOT, READ ONLY;
+                                                                                       ^^^^

@@ -1,0 +1,173 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType
+                        CHAR
+                        (FieldLength
+                          OPEN_PAR
+                          (RealUlonglongNumber IntegerLiteral)
+                          CLOSE_PAR)
+                        (CharsetWithOptBinary
+                          (Ascii ASCII BINARY)))
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType2 VARCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR)
+                          (CharsetWithOptBinary
+                            (Charset CHAR SET)
+                            (CharsetName
+                              (TextOrIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            BINARY))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          CHAR
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR)
+                          (CharsetWithOptBinary
+                            (Unicode BINARY UNICODE)))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType3 NATIONAL VARCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (Nchar NCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          LONG
+                          (GroupDataType4 VARCHAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType LONG VARBINARY)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType1 DOUBLE PRECISION))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          INT
+                          (FieldOptions
+                            (((SIGNED | UNSIGNED | ZEROFILL))+ UNSIGNED ZEROFILL)))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType2 VARCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        (GroupFieldDefinition1
+                          (ColumnAttribute*
+                            (ColumnAttribute
+                              COLUMN_FORMAT
+                              (ColumnFormat DYNAMIC))
+                            (ColumnAttribute
+                              STORAGE
+                              (StorageMedia MEMORY)))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

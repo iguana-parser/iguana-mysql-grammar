@@ -1,0 +1,1 @@
+CREATE TABLE t (x YEAR(2));

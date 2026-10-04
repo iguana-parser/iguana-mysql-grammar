@@ -1,0 +1,1 @@
+SELECT VALUES(select.col) FROM t;

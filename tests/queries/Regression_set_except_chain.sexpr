@@ -1,0 +1,41 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryExpressionBody
+                (QueryExpressionBody
+                  (QueryPrimary
+                    (QuerySpecification
+                      SELECT
+                      (SelectItemList
+                        (SelectItem
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral)))))))))
+                EXCEPT
+                (QueryExpressionBody
+                  (QueryPrimary
+                    (QuerySpecification
+                      SELECT
+                      (SelectItemList
+                        (SelectItem
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))
+              EXCEPT
+              (QueryExpressionBody
+                (QueryPrimary
+                  (QuerySpecification
+                    SELECT
+                    (SelectItemList
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))))))))))
+      SEMICOLON)))

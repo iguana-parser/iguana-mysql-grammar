@@ -1,0 +1,85 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          (ResetOption
+            (MasterOrBinaryLogsAndGtids MASTER))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          (ResetOption
+            (MasterOrBinaryLogsAndGtids MASTER)
+            (SourceResetOptions
+              TO
+              (RealUlonglongNumber IntegerLiteral)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowMasterStatusStatement SHOW MASTER STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowBinaryLogsStatement SHOW MASTER LOGS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          PURGE
+          (PurgeOptions
+            MASTER
+            LOGS
+            (GroupPurgeOptions1
+              TO
+              (TextLiteral
+                (TextLiteralHead
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource MASTER)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                (ChangeReplicationSourceHost MASTER_HOST)
+                EQUAL
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              ((COMMA SourceDefinition)*
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourcePort MASTER_PORT)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceUser MASTER_USER)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourcePassword MASTER_PASSWORD)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              ROTATE
+              (RotationEngine
+                (InnodbName InnodbNameWord))
+              MASTER
+              KEY))))
+      SEMICOLON)))

@@ -1,0 +1,3 @@
+Parse error at line 1, column 38: Expected one of SingleQuotedText, DoubleQuotedText
+ALTER TABLESPACE ts ENGINE_ATTRIBUTE=InnoDB;
+                                     ^^^^^^

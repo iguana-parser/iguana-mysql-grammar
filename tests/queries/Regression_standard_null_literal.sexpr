@@ -1,0 +1,27 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (NullLiteral NULL))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NullLiteral NULL))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NullLiteral NULL))))))))))))
+      SEMICOLON)))

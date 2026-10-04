@@ -1,0 +1,19 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead NationalText)
+                            (TextStringLiteral*
+                              (TextStringLiteral SingleQuotedText)))))))))))))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+SELECT _binary X'41';

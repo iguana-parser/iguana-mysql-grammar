@@ -1,0 +1,56 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement INSTANCE RELOAD TLS))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              RELOAD
+              TLS
+              (GroupAlterInstanceStatement1 NO ROLLBACK ON ERROR)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              RELOAD
+              TLS
+              (GroupAlterInstanceStatement1
+                FOR
+                CHANNEL
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              RELOAD
+              TLS
+              (GroupAlterInstanceStatement1
+                FOR
+                CHANNEL
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))
+                NO
+                ROLLBACK
+                ON
+                ERROR)))))
+      SEMICOLON)))

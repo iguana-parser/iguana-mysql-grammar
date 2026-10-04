@@ -1,0 +1,137 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource REPLICATION SOURCE)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                (ChangeReplicationSourceUser SOURCE_USER)
+                EQUAL
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              ((COMMA SourceDefinition)*
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourcePassword SOURCE_PASSWORD)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (SourceFileDef
+                    (SourceLogFile SOURCE_LOG_FILE)
+                    EQUAL
+                    (TextStringNoLinebreak
+                      (TextStringLiteral SingleQuotedText))))
+                COMMA
+                (SourceDefinition
+                  (SourceFileDef
+                    (SourceLogPos SOURCE_LOG_POS)
+                    EQUAL
+                    (UlonglongNumber IntegerLiteral)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceAutoPosition SOURCE_AUTO_POSITION)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceConnectRetry SOURCE_CONNECT_RETRY)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSL SOURCE_SSL)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCA SOURCE_SSL_CA)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLCert SOURCE_SSL_CERT)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceTLSVersion SOURCE_TLS_VERSION)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText)))))
+            (Channel
+              FOR
+              CHANNEL
+              (TextStringNoLinebreak
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (StartReplicaStatement
+            START
+            (Replica REPLICA)
+            UNTIL
+            (ReplicaUntil
+              (GroupReplicaUntil1
+                (SourceFileDef
+                  (SourceLogFile SOURCE_LOG_FILE)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText))))
+              ((COMMA SourceFileDef)*
+                COMMA
+                (SourceFileDef
+                  (SourceLogPos SOURCE_LOG_POS)
+                  EQUAL
+                  (UlonglongNumber IntegerLiteral))))
+            (Channel
+              FOR
+              CHANNEL
+              (TextStringNoLinebreak
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeReplication
+            CHANGE
+            REPLICATION
+            FILTER
+            (FilterDefinition
+              REPLICATE_REWRITE_DB
+              EQUAL
+              OPEN_PAR
+              (FilterDbPairList
+                (SchemaIdentifierPair
+                  OPEN_PAR
+                  (SchemaRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))
+                  COMMA
+                  (SchemaRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier BPrefixIdentifier))))
+                  CLOSE_PAR))
+              CLOSE_PAR)
+            ((COMMA FilterDefinition)*
+              COMMA
+              (FilterDefinition
+                REPLICATE_WILD_DO_TABLE
+                EQUAL
+                OPEN_PAR
+                (FilterStringList
+                  (FilterWildDbTableString
+                    (TextStringNoLinebreak
+                      (TextStringLiteral SingleQuotedText))))
+                CLOSE_PAR)))))
+      SEMICOLON)))

@@ -1,0 +1,337 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    ADD
+                    PARTITION
+                    (GroupAlterPartition1
+                      PARTITIONS
+                      (RealUlongNumber IntegerLiteral)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    REBUILD
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        ((COMMA Identifier)*
+                          COMMA
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    OPTIMIZE
+                    PARTITION
+                    (AllOrPartitionNameList ALL))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    ANALYZE
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    CHECK
+                    PARTITION
+                    (AllOrPartitionNameList ALL)
+                    (CheckOption*
+                      (CheckOption QUICK)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    REPAIR
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (RepairType*
+                      (RepairType QUICK)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    COALESCE
+                    PARTITION
+                    (RealUlongNumber IntegerLiteral))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    TRUNCATE
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    EXCHANGE
+                    PARTITION
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    WITH
+                    TABLE
+                    (TableRef
+                      (QualifiedIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (WithValidation WITHOUT VALIDATION))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    DISCARD
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    TABLESPACE)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (StandaloneAlterCommands
+                  (AlterPartition
+                    IMPORT
+                    PARTITION
+                    (AllOrPartitionNameList
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    TABLESPACE)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (RemovePartitioning REMOVE PARTITIONING))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          CACHE
+          KW_INDEX
+          (KeyCacheListOrParts
+            (AssignToKeycachePartition
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              PARTITION
+              OPEN_PAR
+              (AllOrPartitionNameList
+                (IdentifierList
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              CLOSE_PAR
+              (CacheKeyList
+                (KeyOrIndex KEY)
+                OPEN_PAR
+                (KeyUsageList
+                  (KeyUsageElement PRIMARY)
+                  ((COMMA KeyUsageElement)*
+                    COMMA
+                    (KeyUsageElement
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                CLOSE_PAR)))
+          IN
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          LOAD
+          KW_INDEX
+          INTO
+          CACHE
+          (PreloadTail
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (AdminPartition
+              PARTITION
+              OPEN_PAR
+              (AllOrPartitionNameList ALL)
+              CLOSE_PAR)
+            (CacheKeyList
+              (KeyOrIndex KEY)
+              OPEN_PAR
+              (KeyUsageList
+                (KeyUsageElement PRIMARY))
+              CLOSE_PAR)
+            IGNORE
+            LEAVES)))
+      SEMICOLON)))

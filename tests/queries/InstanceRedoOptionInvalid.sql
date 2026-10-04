@@ -1,0 +1,1 @@
+ALTER INSTANCE DISABLE INNODB other_option;

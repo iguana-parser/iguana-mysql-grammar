@@ -1,0 +1,1 @@
+SET @@session.v2=2;

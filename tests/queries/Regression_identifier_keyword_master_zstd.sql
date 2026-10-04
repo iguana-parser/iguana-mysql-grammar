@@ -1,0 +1,1 @@
+SELECT t.master_zstd_compression_level FROM t;

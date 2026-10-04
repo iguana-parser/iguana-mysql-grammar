@@ -1,0 +1,3 @@
+--
+INVALID;
+SELECT 1;

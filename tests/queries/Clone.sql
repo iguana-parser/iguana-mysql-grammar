@@ -1,0 +1,1 @@
+CLONE LOCAL DATA DIRECTORY='/tmp/clone';

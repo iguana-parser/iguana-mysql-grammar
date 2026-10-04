@@ -1,0 +1,84 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateLogfileGroup
+            LOGFILE
+            GROUP
+            (LogfileGroupName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            ADD
+            UNDOFILE
+            (TextLiteral
+              (TextLiteralHead
+                (TextStringLiteral SingleQuotedText)))
+            (LogfileGroupOptions
+              (LogfileGroupOption
+                (TsOptionUndoRedoBufferSize
+                  UNDO_BUFFER_SIZE
+                  EQUAL
+                  (SizeNumber StorageSizeWord)))
+              ((COMMA? LogfileGroupOption)*
+                (LogfileGroupOption
+                  (TsOptionEngine
+                    ENGINE
+                    EQUAL
+                    (EngineRef
+                      (TextOrIdentifier
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterLogfileGroup
+              LOGFILE
+              GROUP
+              (LogfileGroupRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              ADD
+              UNDOFILE
+              (TextLiteral
+                (TextLiteralHead
+                  (TextStringLiteral SingleQuotedText)))
+              (AlterLogfileGroupOptions
+                (AlterLogfileGroupOption
+                  (TsOptionEngine
+                    ENGINE
+                    EQUAL
+                    (EngineRef
+                      (TextOrIdentifier
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropLogfileGroup
+            LOGFILE
+            GROUP
+            (LogfileGroupRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (DropLogfileGroupOption
+              (TsOptionEngine
+                ENGINE
+                EQUAL
+                (EngineRef
+                  (TextOrIdentifier
+                    (Identifier
+                      (IdentifierKeyword
+                        (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))
+      SEMICOLON)))

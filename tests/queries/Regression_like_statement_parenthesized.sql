@@ -1,0 +1,1 @@
+SELECT a LIKE (b + c);

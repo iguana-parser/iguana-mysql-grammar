@@ -1,0 +1,1 @@
+REPLACE INTO t () SELECT 1;

@@ -1,0 +1,42 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateSpatialReference
+            SPATIAL
+            REFERENCE
+            SYSTEM
+            (RealUlonglongNumber IntegerLiteral)
+            (SrsAttribute*
+              (SrsAttribute
+                NAME
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              (SrsAttribute
+                DEFINITION
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              (SrsAttribute
+                ORGANIZATION
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText))
+                IDENTIFIED
+                BY
+                (RealUlonglongNumber IntegerLiteral))
+              (SrsAttribute
+                DESCRIPTION
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropSpatialReference
+            SPATIAL
+            REFERENCE
+            SYSTEM
+            (RealUlonglongNumber IntegerLiteral))))
+      SEMICOLON)))

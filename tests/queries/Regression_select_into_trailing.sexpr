@@ -1,0 +1,48 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (SelectStatementWithInto
+            (QueryExpression
+              (QueryExpressionBody
+                (QueryPrimary
+                  (QuerySpecification
+                    SELECT
+                    (SelectItemList
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))))
+                    (FromClause
+                      FROM
+                      (TableReferenceList
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+              (OrderClause
+                ORDER
+                BY
+                (OrderList
+                  (OrderExpression
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (LimitClause
+                LIMIT
+                (LimitOptions
+                  (LimitOption IntegerLiteral))))
+            (IntoClause
+              INTO
+              (GroupIntoClause1
+                (UserVariable AtTextSuffix))))))
+      SEMICOLON)))

@@ -1,0 +1,301 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        GroupFieldDefinition1)))))
+              CLOSE_PAR
+              (CreateTableOptionsEtc
+                (CreatePartitioningEtc
+                  (PartitionClause
+                    PARTITION
+                    BY
+                    (PartitionTypeDef
+                      LIST
+                      (GroupPartitionTypeDef1
+                        COLUMNS
+                        OPEN_PAR
+                        (IdentifierList
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))
+                        CLOSE_PAR))
+                    (PartitionDefinitions
+                      OPEN_PAR
+                      (PartitionDefinition
+                        PARTITION
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (GroupPartitionDefinition1
+                          VALUES
+                          IN
+                          (PartitionValuesIn
+                            (PartitionValueItemListParen
+                              OPEN_PAR
+                              (PartitionValueItem
+                                (BitExpression
+                                  (Expression
+                                    (Literal
+                                      (NumLiteral
+                                        (Int64Literal IntegerLiteral))))))
+                              ((COMMA PartitionValueItem)*
+                                COMMA
+                                (PartitionValueItem
+                                  (BitExpression
+                                    (Expression
+                                      (Literal
+                                        (NumLiteral
+                                          (Int64Literal IntegerLiteral)))))))
+                              CLOSE_PAR)))
+                        (PartitionOption*
+                          (PartitionOption
+                            COMMENT
+                            EQUAL
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText))))))
+                      ((COMMA PartitionDefinition)*
+                        COMMA
+                        (PartitionDefinition
+                          PARTITION
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (GroupPartitionDefinition1
+                            VALUES
+                            IN
+                            (PartitionValuesIn
+                              (PartitionValueItemListParen
+                                OPEN_PAR
+                                (PartitionValueItem
+                                  (BitExpression
+                                    (Expression
+                                      (Literal
+                                        (NumLiteral
+                                          (Int64Literal IntegerLiteral))))))
+                                ((COMMA PartitionValueItem)*
+                                  COMMA
+                                  (PartitionValueItem
+                                    (BitExpression
+                                      (Expression
+                                        (Literal
+                                          (NumLiteral
+                                            (Int64Literal IntegerLiteral)))))))
+                                CLOSE_PAR)))
+                          (PartitionOption*
+                            (PartitionOption
+                              ENGINE
+                              EQUAL
+                              (EngineRef
+                                (TextOrIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                      CLOSE_PAR))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute PRIMARY KEY)))))))
+              CLOSE_PAR
+              (CreateTableOptionsEtc
+                (CreatePartitioningEtc
+                  (PartitionClause
+                    PARTITION
+                    BY
+                    (PartitionTypeDef
+                      LINEAR
+                      KEY
+                      (PartitionKeyAlgorithm
+                        ALGORITHM
+                        EQUAL
+                        (RealUlongNumber IntegerLiteral))
+                      OPEN_PAR
+                      (IdentifierList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      CLOSE_PAR)
+                    PARTITIONS
+                    (RealUlongNumber IntegerLiteral))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        GroupFieldDefinition1)))))
+              CLOSE_PAR
+              (CreateTableOptionsEtc
+                (CreatePartitioningEtc
+                  (PartitionClause
+                    PARTITION
+                    BY
+                    (PartitionTypeDef
+                      RANGE
+                      (GroupPartitionTypeDef1
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        CLOSE_PAR))
+                    (SubPartitions
+                      SUBPARTITION
+                      BY
+                      (GroupSubPartitions1
+                        HASH
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        CLOSE_PAR)
+                      SUBPARTITIONS
+                      (RealUlongNumber IntegerLiteral))
+                    (PartitionDefinitions
+                      OPEN_PAR
+                      (PartitionDefinition
+                        PARTITION
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (GroupPartitionDefinition1
+                          VALUES
+                          LESS
+                          THAN
+                          (PartitionValueItemListParen
+                            OPEN_PAR
+                            (PartitionValueItem
+                              (BitExpression
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral))))))
+                            CLOSE_PAR))
+                        OPEN_PAR
+                        (SubpartitionDefinition
+                          SUBPARTITION
+                          (TextOrIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        ((COMMA SubpartitionDefinition)*
+                          COMMA
+                          (SubpartitionDefinition
+                            SUBPARTITION
+                            (TextOrIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        CLOSE_PAR)
+                      ((COMMA PartitionDefinition)*
+                        COMMA
+                        (PartitionDefinition
+                          PARTITION
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (GroupPartitionDefinition1 VALUES LESS THAN MAXVALUE)
+                          OPEN_PAR
+                          (SubpartitionDefinition
+                            SUBPARTITION
+                            (TextOrIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          ((COMMA SubpartitionDefinition)*
+                            COMMA
+                            (SubpartitionDefinition
+                              SUBPARTITION
+                              (TextOrIdentifier
+                                (Identifier
+                                  (IdentifierKeyword
+                                    (IdentifierKeywordsUnambiguous S3))))))
+                          CLOSE_PAR))
+                      CLOSE_PAR))))))))
+      SEMICOLON)))

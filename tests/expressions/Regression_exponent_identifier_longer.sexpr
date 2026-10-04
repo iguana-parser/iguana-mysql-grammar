@@ -1,0 +1,11 @@
+(Expression
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier)))))
+  MINUS
+  (Expression
+    (Literal
+      (NumLiteral
+        (Int64Literal IntegerLiteral)))))

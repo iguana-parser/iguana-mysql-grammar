@@ -1,0 +1,1 @@
+SELECT * FROM a JOIN {OJ b JOIN c} ON 1;

@@ -1,0 +1,1 @@
+SELECT f(_utf8mb4_extra 'x');

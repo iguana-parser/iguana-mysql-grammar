@@ -1,0 +1,1 @@
+SET @@global.ordinary.v2=2;

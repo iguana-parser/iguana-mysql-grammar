@@ -1,0 +1,3 @@
+Parse error at line 1, column 21: Expected one of FROM, TO, EOF
+REVOKE SELECT ON a.b.c FROM 'u';
+                    ^^

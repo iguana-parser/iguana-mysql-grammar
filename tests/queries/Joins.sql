@@ -1,0 +1,5 @@
+SELECT * FROM a JOIN b JOIN c ON b.id=c.id ON a.id=b.id;
+SELECT * FROM a LEFT JOIN b USING(id) RIGHT JOIN c ON b.id=c.id;
+SELECT * FROM a NATURAL JOIN b NATURAL LEFT JOIN c;
+SELECT * FROM (a,b) JOIN (c CROSS JOIN d) ON a.id=c.id;
+SELECT * FROM {OJ a LEFT OUTER JOIN b ON a.id=b.id};

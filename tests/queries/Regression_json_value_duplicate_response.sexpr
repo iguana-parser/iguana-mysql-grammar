@@ -1,0 +1,3 @@
+Parse error at line 1, column 52: Expected ERROR
+SELECT JSON_VALUE('{}', '$' NULL ON EMPTY ERROR ON EMPTY);
+                                                   ^^^^^

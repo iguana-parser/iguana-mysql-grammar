@@ -1,0 +1,40 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType TIMESTAMP)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute
+                            DEFAULT
+                            (NowOrSignedLiteral
+                              (Now
+                                (GroupNow1 NOW_CALL_OPEN CLOSE_PAR))))
+                          (ColumnAttribute
+                            (GroupColumnAttribute1
+                              ON
+                              UPDATE
+                              NOW_CALL_OPEN
+                              (FractionalPrecision IntegerLiteral)
+                              CLOSE_PAR))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

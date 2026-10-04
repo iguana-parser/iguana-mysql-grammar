@@ -1,0 +1,73 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Subquery
+                          OPEN_PAR
+                          (QueryExpressionWithOptLockingClauses
+                            (QueryExpression
+                              (QueryExpressionBody
+                                (QueryPrimary
+                                  (QuerySpecification
+                                    SELECT
+                                    (SelectItemList
+                                      (SelectItem
+                                        (Expression
+                                          (ExpressionColumnRef
+                                            (Identifier
+                                              (PureIdentifier
+                                                (UnquotedIdentifier XPrefixIdentifier)))))))
+                                    (FromClause
+                                      FROM
+                                      (TableReferenceList
+                                        (TableReference
+                                          (TableFactor
+                                            (SingleTable
+                                              (TableRef
+                                                (QualifiedIdentifier
+                                                  (Identifier
+                                                    (PureIdentifier
+                                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                          CLOSE_PAR)))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          EXISTS
+                          (Subquery
+                            OPEN_PAR
+                            (QueryExpressionWithOptLockingClauses
+                              (QueryExpression
+                                (QueryExpressionBody
+                                  (QueryPrimary
+                                    (QuerySpecification
+                                      SELECT
+                                      (SelectItemList
+                                        (SelectItem
+                                          (Expression
+                                            (ExpressionColumnRef
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                      (FromClause
+                                        FROM
+                                        (TableReferenceList
+                                          (TableReference
+                                            (TableFactor
+                                              (SingleTable
+                                                (TableRef
+                                                  (QualifiedIdentifier
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

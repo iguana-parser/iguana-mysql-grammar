@@ -1,0 +1,3 @@
+Parse error at line 1, column 37: Match excluded by ZeroIntegerValue
+SELECT WEIGHT_STRING('abc' AS CHAR(0));
+                                    ^

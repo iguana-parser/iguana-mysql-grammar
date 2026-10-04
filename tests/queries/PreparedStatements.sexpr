@@ -1,0 +1,35 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (PreparedStatement
+          PREPARE
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))
+          FROM
+          (TextLiteral
+            (TextLiteralHead
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (PreparedStatement
+          (ExecuteStatement
+            EXECUTE
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            USING
+            (ExecuteVarList
+              (UserVariable AtTextSuffix)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (PreparedStatement
+          DEALLOCATE
+          PREPARE
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))
+      SEMICOLON)))

@@ -1,0 +1,45 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (HandlerStatement
+          HANDLER
+          (GroupHandlerStatement2
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN
+            (TableAlias
+              AS
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (HandlerStatement
+          HANDLER
+          (GroupHandlerStatement2
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            (GroupHandlerStatement1
+              READ
+              (HandlerReadOrScan FIRST)
+              (LimitClause
+                LIMIT
+                (LimitOptions
+                  (LimitOption IntegerLiteral)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (HandlerStatement
+          HANDLER
+          (GroupHandlerStatement2
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            (GroupHandlerStatement1 CLOSE))))
+      SEMICOLON)))

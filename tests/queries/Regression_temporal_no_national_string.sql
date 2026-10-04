@@ -1,0 +1,1 @@
+SELECT TIME N'12:34:56';

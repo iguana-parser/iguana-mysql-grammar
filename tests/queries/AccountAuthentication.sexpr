@@ -1,0 +1,196 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (GroupAlterUser4
+                    (IdentifiedWithPlugin
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))))
+              CreateUserTail))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (GroupAlterUser4
+                    ADD
+                    (Factor
+                      (NumLiteral
+                        (Int64Literal IntegerLiteral))
+                      FACTOR)
+                    (Identification
+                      (IdentifiedWithPluginByPassword
+                        IDENTIFIED
+                        WITH
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))
+                        BY
+                        (TextStringLiteral SingleQuotedText))))))
+              CreateUserTail))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (User
+                (UserIdentifierOrText
+                  (TextOrIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))
+              (GroupAlterUserStatement2
+                (UserRegistration
+                  (Factor
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))
+                    FACTOR)
+                  INITIATE
+                  REGISTRATION))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (UserFunction
+                (GroupUserFunction1
+                  USER
+                  (Parentheses OPEN_PAR CLOSE_PAR)))
+              (GroupAlterUserStatement1
+                (UserRegistration
+                  (Factor
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))
+                    FACTOR)
+                  FINISH
+                  REGISTRATION
+                  SET
+                  CHALLENGE_RESPONSE
+                  AS
+                  (TextStringHash
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedByPassword
+                      IDENTIFIED
+                      BY
+                      (TextStringLiteral SingleQuotedText)))
+                  (CreateUserWithMfa
+                    AND
+                    (Identification
+                      (IdentifiedWithPlugin
+                        IDENTIFIED
+                        WITH
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))))))
+            CreateUserTail)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (GroupCreateUser1
+                  (IdentifiedWithPlugin
+                    IDENTIFIED
+                    WITH
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (InitialAuth
+                    INITIAL
+                    AUTHENTICATION
+                    (IdentifiedByPassword
+                      IDENTIFIED
+                      BY
+                      (TextStringLiteral SingleQuotedText))))))
+            CreateUserTail)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (GroupCreateUser1
+                  (IdentifiedWithPlugin
+                    IDENTIFIED
+                    WITH
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (InitialAuth
+                    INITIAL
+                    AUTHENTICATION
+                    (IdentifiedByRandomPassword IDENTIFIED BY RANDOM PASSWORD)))))
+            CreateUserTail)))
+      SEMICOLON)))

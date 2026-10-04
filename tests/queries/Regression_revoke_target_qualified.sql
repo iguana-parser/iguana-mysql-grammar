@@ -1,0 +1,1 @@
+REVOKE SELECT ON db.t FROM 'u';

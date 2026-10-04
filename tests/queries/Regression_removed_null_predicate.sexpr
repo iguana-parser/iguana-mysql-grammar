@@ -1,0 +1,3 @@
+Parse error at line 1, column 17: Expected one of FALSE, NULL, TRUE, UNKNOWN
+SELECT a IS NOT \N FROM t;
+                ^

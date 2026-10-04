@@ -1,0 +1,51 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UpdateStatement
+          UPDATE
+          (TableReferenceList
+            (TableReference
+              (TableFactor
+                (SingleTable
+                  (TableRef
+                    (QualifiedIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))))
+          SET
+          (UpdateList
+            (UpdateElement
+              (ColumnRef
+                (FieldIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              EQUAL
+              (Expression
+                (Expression
+                  (ExpressionColumnRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                PLUS
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral)))))))
+          (WhereClause
+            WHERE
+            (Expression
+              (BooleanPrimary
+                (Expression
+                  (ExpressionColumnRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))
+              (CompOp EQUAL)
+              (Predicate
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral)))))))))
+      SEMICOLON)))

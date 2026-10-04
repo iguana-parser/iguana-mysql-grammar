@@ -1,0 +1,1 @@
+SELECT VALUES(a+1) FROM t;

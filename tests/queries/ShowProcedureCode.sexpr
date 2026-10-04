@@ -1,0 +1,14 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowProcedureCodeStatement
+          SHOW
+          PROCEDURE
+          CODE
+          (ProcedureRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)))

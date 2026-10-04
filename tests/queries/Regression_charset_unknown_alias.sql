@@ -1,0 +1,1 @@
+SELECT f(_notacharset'x');

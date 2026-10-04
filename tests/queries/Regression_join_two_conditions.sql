@@ -1,0 +1,1 @@
+SELECT * FROM a JOIN b JOIN c ON b.x=c.x ON a.x=b.x;

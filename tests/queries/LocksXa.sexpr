@@ -1,0 +1,91 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (LockStatement
+            LOCK
+            TABLES
+            (LockItem
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (LockOption READ))
+            ((COMMA LockItem)*
+              COMMA
+              (LockItem
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (LockOption WRITE))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (LockStatement UNLOCK TABLES)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (LockStatement LOCK INSTANCE FOR BACKUP)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (LockStatement UNLOCK INSTANCE)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1
+              START
+              (Xid
+                (TextString
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1
+              END
+              (Xid
+                (TextString
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1
+              PREPARE
+              (Xid
+                (TextString
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1
+              COMMIT
+              (Xid
+                (TextString
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1 RECOVER))))
+      SEMICOLON)))

@@ -1,0 +1,26 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (GroupAlterUser4
+                    (IdentifiedByPassword
+                      IDENTIFIED
+                      BY
+                      (TextStringLiteral SingleQuotedText))
+                    (GroupAlterUser1
+                      (RetainCurrentPassword RETAIN CURRENT PASSWORD)))))
+              CreateUserTail))))
+      SEMICOLON)))

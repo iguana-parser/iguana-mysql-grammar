@@ -1,0 +1,228 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          WEIGHT_STRING
+                          OPEN_PAR
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText)))))
+                          GroupRuntimeFunctionCall6
+                          CLOSE_PAR)))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            WEIGHT_STRING
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            (GroupRuntimeFunctionCall6
+                              AS
+                              CHAR
+                              (WsNumCodepoints
+                                OPEN_PAR
+                                (RealUlongNumber IntegerLiteral)
+                                CLOSE_PAR))
+                            CLOSE_PAR)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            WEIGHT_STRING
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            (GroupRuntimeFunctionCall6
+                              AS
+                              BINARY
+                              (WsNumCodepoints
+                                OPEN_PAR
+                                (RealUlongNumber IntegerLiteral)
+                                CLOSE_PAR))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall UTC_TIME)))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            UTC_TIME
+                            (TimeFunctionParameters OPEN_PAR CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            UTC_TIME
+                            (TimeFunctionParameters
+                              OPEN_PAR
+                              (FractionalPrecision IntegerLiteral)
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            UTC_TIMESTAMP
+                            (TimeFunctionParameters
+                              OPEN_PAR
+                              (FractionalPrecision IntegerLiteral)
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            GET_FORMAT
+                            OPEN_PAR
+                            (DateTimeTtype DATE)
+                            COMMA
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (GeometryFunction
+                            POINT
+                            OPEN_PAR
+                            (Expression
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral))))
+                              PLUS
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            COMMA
+                            (Expression
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral))))
+                              MULT
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            CLOSE_PAR))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GeometryFunction
+                              LINESTRING
+                              (ExprListWithParentheses
+                                OPEN_PAR
+                                (ExprList
+                                  (Expression
+                                    (RuntimeFunctionCall
+                                      (GeometryFunction
+                                        POINT
+                                        OPEN_PAR
+                                        (Expression
+                                          (Literal
+                                            (NumLiteral
+                                              (Int64Literal IntegerLiteral))))
+                                        COMMA
+                                        (Expression
+                                          (Literal
+                                            (NumLiteral
+                                              (Int64Literal IntegerLiteral))))
+                                        CLOSE_PAR)))
+                                  ((COMMA Expression)*
+                                    COMMA
+                                    (Expression
+                                      (RuntimeFunctionCall
+                                        (GeometryFunction
+                                          POINT
+                                          OPEN_PAR
+                                          (Expression
+                                            (Literal
+                                              (NumLiteral
+                                                (Int64Literal IntegerLiteral))))
+                                          COMMA
+                                          (Expression
+                                            (Literal
+                                              (NumLiteral
+                                                (Int64Literal IntegerLiteral))))
+                                          CLOSE_PAR)))))
+                                CLOSE_PAR)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GeometryFunction GEOMETRYCOLLECTION OPEN_PAR CLOSE_PAR))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (UnscopedSystemVariable
+                            (SystemVariableIdentifier SystemVariableWord)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              SESSION
+                              (SystemScopeDot DOT))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName AdjacentScopedWord)))))))))))))
+      SEMICOLON)))

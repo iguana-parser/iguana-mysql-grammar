@@ -1,0 +1,87 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead
+                              CharsetIntroducer
+                              (TextStringLiteral SingleQuotedText))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                CharsetIntroducer
+                                (TextStringLiteral SingleQuotedText))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            CharsetIntroducer
+                            (HexLiteral QuotedHexLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead
+                              CharsetIntroducer
+                              (TextStringLiteral SingleQuotedText))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (SelectAlias
+                          (TextStringLiteral SingleQuotedText)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier BacktickIdentifier)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

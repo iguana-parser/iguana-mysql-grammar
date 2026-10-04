@@ -1,0 +1,3 @@
+Parse error at line 1, column 29: Expected one of OPEN_PAR, DELETE, FOR, INSERT, REPLACE, SELECT, TABLE, UPDATE, VALUES, WITH
+EXPLAIN ANALYZE FORMAT=JSON INTO @'' SELECT 1;
+                            ^^^^

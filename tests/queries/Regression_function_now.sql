@@ -1,0 +1,1 @@
+SELECT NOW(), NOW(3), now;

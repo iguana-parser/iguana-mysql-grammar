@@ -1,0 +1,1 @@
+SELECT db.COUNT(a) FROM t;

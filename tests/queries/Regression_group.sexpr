@@ -1,0 +1,76 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            COUNT_CALL_OPEN
+                            (GroupSumExpr2 MULT)
+                            CLOSE_PAR)))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (GroupByClause
+                    GROUP
+                    BY
+                    (OrderList
+                      (OrderExpression
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                  (HavingClause
+                    HAVING
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (SumExpr
+                            COUNT_CALL_OPEN
+                            (GroupSumExpr2 MULT)
+                            CLOSE_PAR)))
+                      (CompOp GREATER_THAN)
+                      (Predicate
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))))))
+            (OrderClause
+              ORDER
+              BY
+              (OrderList
+                (OrderExpression
+                  (Expression
+                    (ExpressionColumnRef
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+            (LimitClause
+              LIMIT
+              (LimitOptions
+                (LimitOption IntegerLiteral))))))
+      SEMICOLON)))

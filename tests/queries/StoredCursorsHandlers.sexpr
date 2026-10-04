@@ -1,0 +1,135 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateProcedure
+            PROCEDURE
+            (ProcedureName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            CLOSE_PAR
+            (StoredRoutineBody
+              (CompoundStatement
+                (UnlabeledBlock
+                  (BeginEndBlock
+                    BEGIN
+                    (SpDeclarations
+                      ((SpDeclaration SEMICOLON)+
+                        (SpDeclaration
+                          (VariableDeclaration
+                            DECLARE
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            (DataType INT)
+                            DEFAULT
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral))))))
+                        SEMICOLON
+                        (SpDeclaration
+                          (VariableDeclaration
+                            DECLARE
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier XPrefixIdentifier))))
+                            (DataType INT)))
+                        SEMICOLON
+                        (SpDeclaration
+                          (CursorDeclaration
+                            DECLARE
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            CURSOR
+                            FOR
+                            (SelectStatement
+                              (QueryExpression
+                                (QueryExpressionBody
+                                  (QueryPrimary
+                                    (QuerySpecification
+                                      SELECT
+                                      (SelectItemList
+                                        (SelectItem
+                                          (Expression
+                                            (ExpressionColumnRef
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                      (FromClause
+                                        FROM
+                                        (TableReferenceList
+                                          (TableReference
+                                            (TableFactor
+                                              (SingleTable
+                                                (TableRef
+                                                  (QualifiedIdentifier
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))
+                        SEMICOLON
+                        (SpDeclaration
+                          (HandlerDeclaration
+                            DECLARE
+                            CONTINUE
+                            HANDLER
+                            FOR
+                            (HandlerCondition
+                              (NotRule NOT)
+                              FOUND)
+                            (CompoundStatement
+                              (SimpleStatement
+                                (SetStatement
+                                  SET
+                                  (StartOptionValueList
+                                    (OptionValueNoOptionType
+                                      (LvalueVariable
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier))))
+                                      (Equal EQUAL)
+                                      (SetExprOrDefault
+                                        (Expression
+                                          (Literal
+                                            (NumLiteral
+                                              (Int64Literal IntegerLiteral))))))
+                                    OptionValueListContinued))))))
+                        SEMICOLON))
+                    (CompoundStatementList
+                      ((CompoundStatement SEMICOLON)+
+                        (CompoundStatement
+                          (CursorOpen
+                            OPEN
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        SEMICOLON
+                        (CompoundStatement
+                          (CursorFetch
+                            FETCH
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            INTO
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier XPrefixIdentifier))))))
+                        SEMICOLON
+                        (CompoundStatement
+                          (CursorClose
+                            CLOSE
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        SEMICOLON))
+                    END)))))))
+      SEMICOLON)))

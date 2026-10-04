@@ -1,0 +1,3 @@
+Parse error at line 1, column 27: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, SEMICOLON, EOF
+SHOW CREATE FUNCTION CODE p;
+                          ^

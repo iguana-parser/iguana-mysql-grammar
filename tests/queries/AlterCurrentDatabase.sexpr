@@ -1,0 +1,52 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterDatabase
+              DATABASE
+              (AlterDatabaseOption+
+                (AlterDatabaseOption
+                  READ
+                  ONLY
+                  (TernaryOption DEFAULT)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterDatabase
+              DATABASE
+              (AlterDatabaseOption+
+                (AlterDatabaseOption
+                  (CreateDatabaseOption
+                    (DefaultCharset
+                      DEFAULT
+                      (Charset CHAR SET)
+                      (CharsetName
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterDatabase
+              DATABASE
+              (AlterDatabaseOption+
+                (AlterDatabaseOption
+                  (CreateDatabaseOption
+                    (DefaultCollation
+                      COLLATE
+                      (CollationName
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)))

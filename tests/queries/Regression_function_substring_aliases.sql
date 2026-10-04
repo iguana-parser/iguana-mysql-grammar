@@ -1,0 +1,1 @@
+SELECT MID('abc', 1), SUBSTR('abc', 1), SUBSTRING('abc' FROM 1);

@@ -1,0 +1,281 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UpdateStatement
+          UPDATE
+          (TableReferenceList
+            (TableReference
+              (TableFactor
+                (SingleTable
+                  (TableRef
+                    (QualifiedIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))))
+          SET
+          (UpdateList
+            (UpdateElement
+              (ColumnRef
+                (FieldIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              EQUAL
+              (Expression
+                (Expression
+                  (ExpressionColumnRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                PLUS
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            ((COMMA UpdateElement)*
+              COMMA
+              (UpdateElement
+                (ColumnRef
+                  (FieldIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier BPrefixIdentifier)))))
+                EQUAL
+                DEFAULT)))
+          (WhereClause
+            WHERE
+            (Expression
+              (BooleanPrimary
+                (Expression
+                  (ExpressionColumnRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))
+              (CompOp EQUAL)
+              (Predicate
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral)))))))
+          (OrderClause
+            ORDER
+            BY
+            (OrderList
+              (OrderExpression
+                (Expression
+                  (ExpressionColumnRef
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+          (SimpleLimitClause
+            LIMIT
+            (LimitOption IntegerLiteral))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UpdateStatement
+          UPDATE
+          (TableReferenceList
+            (TableReference
+              (TableReference
+                (TableFactor
+                  (SingleTable
+                    (TableRef
+                      (QualifiedIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (InnerJoinType JOIN)
+              (TableReference
+                (TableFactor
+                  (SingleTable
+                    (TableRef
+                      (QualifiedIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (JoinSpecification
+                ON
+                (Expression
+                  (BooleanPrimary
+                    (Expression
+                      (ExpressionColumnRef
+                        (QualifiedPair
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (DotIdentifier DotWordIdentifier)))))
+                  (CompOp EQUAL)
+                  (Predicate
+                    (Expression
+                      (ExpressionColumnRef
+                        (QualifiedPair
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (DotIdentifier DotWordIdentifier)))))))))
+          SET
+          (UpdateList
+            (UpdateElement
+              (ColumnRef
+                (FieldIdentifier
+                  (QualifiedPair
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (DotIdentifier DotWordIdentifier))))
+              EQUAL
+              (Expression
+                (ExpressionColumnRef
+                  (QualifiedPair
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (DotIdentifier DotWordIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DeleteStatement
+          DELETE
+          (GroupDeleteStatement2
+            FROM
+            (GroupDeleteStatement1
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (WhereClause
+                WHERE
+                (Expression
+                  (BooleanPrimary
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (CompOp EQUAL)
+                  (Predicate
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))
+              (OrderClause
+                ORDER
+                BY
+                (OrderList
+                  (OrderExpression
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (SimpleLimitClause
+                LIMIT
+                (LimitOption IntegerLiteral))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DeleteStatement
+          DELETE
+          (GroupDeleteStatement2
+            (TableAliasRefList
+              (TableRefWithWildcard
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FROM
+            (TableReferenceList
+              (TableReference
+                (TableReference
+                  (TableFactor
+                    (SingleTable
+                      (TableRef
+                        (QualifiedIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (InnerJoinType JOIN)
+                (TableReference
+                  (TableFactor
+                    (SingleTable
+                      (TableRef
+                        (QualifiedIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (JoinSpecification
+                  ON
+                  (Expression
+                    (BooleanPrimary
+                      (Expression
+                        (ExpressionColumnRef
+                          (QualifiedPair
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (DotIdentifier DotWordIdentifier)))))
+                    (CompOp EQUAL)
+                    (Predicate
+                      (Expression
+                        (ExpressionColumnRef
+                          (QualifiedPair
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (DotIdentifier DotWordIdentifier))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DeleteStatement
+          DELETE
+          (GroupDeleteStatement2
+            FROM
+            (GroupDeleteStatement1
+              (TableAliasRefList
+                (TableRefWithWildcard
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              USING
+              (TableReferenceList
+                (TableReference
+                  (TableReference
+                    (TableFactor
+                      (SingleTable
+                        (TableRef
+                          (QualifiedIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                  (InnerJoinType JOIN)
+                  (TableReference
+                    (TableFactor
+                      (SingleTable
+                        (TableRef
+                          (QualifiedIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                  (JoinSpecification
+                    ON
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))
+                      (CompOp EQUAL)
+                      (Predicate
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))))))))))
+      SEMICOLON)))

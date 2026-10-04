@@ -1,0 +1,1 @@
+GRANT ALL ON `db`.`t` TO 'u';

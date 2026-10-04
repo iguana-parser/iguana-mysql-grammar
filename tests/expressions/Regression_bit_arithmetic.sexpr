@@ -1,0 +1,40 @@
+(Expression
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier)))))
+  BITWISE_OR
+  (Expression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier)))))
+    BITWISE_AND
+    (Expression
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))
+      PLUS
+      (Expression
+        (Expression
+          (ExpressionColumnRef
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))))
+        MULT
+        (Expression
+          (Expression
+            (ExpressionColumnRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          BITWISE_XOR
+          (Expression
+            (ExpressionColumnRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))))))))

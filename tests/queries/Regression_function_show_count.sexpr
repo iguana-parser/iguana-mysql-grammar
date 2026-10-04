@@ -1,0 +1,6 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowCountWarningsStatement SHOW COUNT_CALL_OPEN MULT CLOSE_PAR WARNINGS))
+      SEMICOLON)))

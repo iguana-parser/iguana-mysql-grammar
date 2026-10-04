@@ -1,0 +1,25 @@
+(Expression
+  (BitExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier OrdinaryIdentifier))))))
+  (NotRule NOT)
+  LIKE
+  (SimpleExpression
+    (Expression
+      OPEN_PAR
+      (Expression
+        (Expression
+          (ExpressionColumnRef
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier BPrefixIdentifier)))))
+        PLUS
+        (Expression
+          (ExpressionColumnRef
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier))))))
+      CLOSE_PAR)))

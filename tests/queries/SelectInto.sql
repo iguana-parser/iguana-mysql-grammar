@@ -1,0 +1,4 @@
+SELECT a INTO @x FROM t;
+SELECT a FROM t INTO @x;
+SELECT a FROM t INTO OUTFILE '/tmp/result.csv' FIELDS TERMINATED BY ',';
+SELECT a INTO DUMPFILE '/tmp/result.bin' FROM t;

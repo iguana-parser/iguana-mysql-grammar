@@ -1,0 +1,65 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (InsertStatement
+          INSERT
+          INTO
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (GroupInsertStatement1
+            (InsertFromConstructor
+              OPEN_PAR
+              (Fields
+                (InsertIdentifier
+                  (ColumnRef
+                    (FieldIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                ((COMMA InsertIdentifier)*
+                  COMMA
+                  (InsertIdentifier
+                    (ColumnRef
+                      (FieldIdentifier
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NAME))))))))
+              CLOSE_PAR
+              (InsertValues
+                VALUES
+                (ValueList
+                  OPEN_PAR
+                  (Values
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral))))
+                    ((COMMA (Expression | DEFAULT))*
+                      COMMA
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText)))))))
+                  CLOSE_PAR
+                  ((COMMA OPEN_PAR Values? CLOSE_PAR)*
+                    COMMA
+                    OPEN_PAR
+                    (Values
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))
+                      ((COMMA (Expression | DEFAULT))*
+                        COMMA
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText)))))))
+                    CLOSE_PAR)))))))
+      SEMICOLON)))

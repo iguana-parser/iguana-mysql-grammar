@@ -1,0 +1,3 @@
+Parse error at line 1, column 51: Expected one of SingleQuotedText, DoubleQuotedText
+CREATE SPATIAL REFERENCE SYSTEM 100000 DEFINITION TEXT 'test';
+                                                  ^^^^

@@ -1,0 +1,1 @@
+CREATE TABLE t (min INT, count INT);

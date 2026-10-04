@@ -1,0 +1,203 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier BacktickIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (IdentifierKeyword
+                                (IdentifierKeywordsUnambiguous URL))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef TemporalKeyword)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair KeywordQualifiedPair))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier))
+                            (DotIdentifier DotWordIdentifier))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier BacktickIdentifier))))
+                            (TableAlias
+                              AS
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (QualifiedPair
+                            (Identifier
+                              (IdentifierKeyword
+                                (IdentifierKeywordsUnambiguous SQL_NO_CACHE)))
+                            (DotIdentifier DotWordIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (IdentifierKeyword
+                                  (IdentifierKeywordsUnambiguous SQL_BUFFER_RESULT)))
+                              (DotIdentifier DotWordIdentifier)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair KeywordQualifiedPair))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair KeywordQualifiedPair))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier BacktickIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier ExponentIdentifier))))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (IdentifierKeyword
+                    (IdentifierKeywordsUnambiguous NAMES)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier BacktickIdentifier)))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous URL))))
+                      (FieldDefinition
+                        (DataType INT)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous TIME))))
+                      (FieldDefinition
+                        (DataType INT)
+                        GroupFieldDefinition1)))))
+              CLOSE_PAR))))
+      SEMICOLON)))

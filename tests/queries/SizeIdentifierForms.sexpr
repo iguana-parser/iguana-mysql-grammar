@@ -1,0 +1,57 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTablespace
+            TABLESPACE
+            (TablespaceName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (TsDataFileName
+              ADD
+              (TsDataFile
+                DATAFILE
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText)))))
+            (TablespaceOptions
+              (TablespaceOption
+                (TsOptionInitialSize
+                  INITIAL_SIZE
+                  EQUAL
+                  (SizeNumber StorageSizeWord)))
+              ((COMMA? TablespaceOption)*
+                (TablespaceOption
+                  (TsOptionMaxSize
+                    MAX_SIZE
+                    EQUAL
+                    (SizeNumber QuotedStorageSize)))
+                (TablespaceOption
+                  (TsOptionExtentSize
+                    EXTENT_SIZE
+                    EQUAL
+                    (SizeNumber QuotedStorageSize))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          LoadDataFileTail
+          (LoadMemory
+            MEMORY
+            EQUAL
+            (SizeNumber StorageSizeWord))))
+      SEMICOLON)))

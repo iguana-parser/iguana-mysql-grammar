@@ -1,0 +1,2 @@
+CREATE TABLE years (a YEAR, b YEAR(4), c YEAR(0004), d YEAR(4.5));
+SELECT YEAR(2), 0x4;

@@ -1,0 +1,29 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadFrom FROM)
+          (LoadSourceType URL)
+          (TextStringLiteral SingleQuotedText)
+          (SourceCount
+            (SourceCountName SourceCountWord)
+            IntegerLiteral)
+          (SourceOrder IN PRIMARY KEY ORDER)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          LoadDataFileTail
+          (LoadParallel PARALLEL EQUAL IntegerLiteral)
+          (LoadMemory
+            MEMORY
+            EQUAL
+            (SizeNumber StorageSizeWord))
+          (LoadAlgorithm ALGORITHM EQUAL BULK)))
+      SEMICOLON)))

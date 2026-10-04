@@ -1,0 +1,44 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (GroupGrantStatement1
+                (RoleOrPrivilegesList
+                  (RoleOrPrivilege SELECT)))
+              ON
+              (GrantIdentifier MULT DOT MULT)
+              TO
+              (GrantTargetList
+                (UserList
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (GrantAs
+                AS
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (WithRoles
+                  WITH
+                  ROLE
+                  (GroupWithRoles1
+                    ALL
+                    (ExceptRoleList
+                      EXCEPT
+                      (RoleList
+                        (Role
+                          (RoleIdentifierOrText
+                            (RoleIdentifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+      SEMICOLON)))

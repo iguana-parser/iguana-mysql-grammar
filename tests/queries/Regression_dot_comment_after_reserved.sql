@@ -1,0 +1,1 @@
+SELECT t./*gap*/SELECT FROM t;

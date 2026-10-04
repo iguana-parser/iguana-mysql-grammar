@@ -1,0 +1,3 @@
+Parse error at line 1, column 43: Expected CLOSE_PAR
+SELECT JSON_VALUE('{}', '$' NULL ON ERROR NULL ON EMPTY);
+                                          ^^^^

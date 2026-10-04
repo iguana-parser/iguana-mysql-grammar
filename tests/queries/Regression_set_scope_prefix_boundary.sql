@@ -1,0 +1,1 @@
+SET @@global_x.v2=2;

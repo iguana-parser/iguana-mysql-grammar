@@ -1,0 +1,55 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (DeleteStatement
+          DELETE
+          (DeleteStatementOption*
+            (DeleteStatementOption LOW_PRIORITY)
+            (DeleteStatementOption QUICK)
+            (DeleteStatementOption IGNORE))
+          (GroupDeleteStatement2
+            FROM
+            (GroupDeleteStatement1
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (PartitionDelete
+                PARTITION
+                OPEN_PAR
+                (IdentifierList
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier))))
+                CLOSE_PAR)
+              (WhereClause
+                WHERE
+                (Expression
+                  (BooleanPrimary
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (CompOp EQUAL)
+                  (Predicate
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))
+              (OrderClause
+                ORDER
+                BY
+                (OrderList
+                  (OrderExpression
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+              (SimpleLimitClause
+                LIMIT
+                (LimitOption IntegerLiteral))))))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+SELECT select.tbl.col FROM t;

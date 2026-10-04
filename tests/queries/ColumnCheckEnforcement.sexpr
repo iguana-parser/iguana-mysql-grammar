@@ -1,0 +1,179 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute
+                            (ConstraintName
+                              CONSTRAINT
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            (CheckConstraint
+                              CHECK
+                              (ExprWithParentheses
+                                OPEN_PAR
+                                (Expression
+                                  (BooleanPrimary
+                                    (Expression
+                                      (ExpressionColumnRef
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (CompOp GREATER_THAN)
+                                  (Predicate
+                                    (Expression
+                                      (Literal
+                                        (NumLiteral
+                                          (Int64Literal IntegerLiteral))))))
+                                CLOSE_PAR))
+                            (ConstraintEnforcement*
+                              (ConstraintEnforcement NOT ENFORCED)
+                              (ConstraintEnforcement ENFORCED)))
+                          (ColumnAttribute
+                            NOT
+                            (NullLiteral NULL))))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        (GroupFieldDefinition1
+                          AS
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              PLUS
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            CLOSE_PAR)
+                          STORED
+                          (ColumnAttribute*
+                            (ColumnAttribute
+                              (CheckConstraint
+                                CHECK
+                                (ExprWithParentheses
+                                  OPEN_PAR
+                                  (Expression
+                                    (BooleanPrimary
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier BPrefixIdentifier))))))
+                                    (CompOp GREATER_THAN)
+                                    (Predicate
+                                      (Expression
+                                        (Literal
+                                          (NumLiteral
+                                            (Int64Literal IntegerLiteral))))))
+                                  CLOSE_PAR))
+                              (ConstraintEnforcement*
+                                (ConstraintEnforcement NOT ENFORCED))))))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      ADD
+                      (GroupAlterListItem1
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier)))
+                        (FieldDefinition
+                          (DataType INT)
+                          (GroupFieldDefinition1
+                            (ColumnAttribute*
+                              (ColumnAttribute
+                                (CheckConstraint
+                                  CHECK
+                                  (ExprWithParentheses
+                                    OPEN_PAR
+                                    (Expression
+                                      (BooleanPrimary
+                                        (Expression
+                                          (ExpressionColumnRef
+                                            (Identifier
+                                              (PureIdentifier
+                                                (UnquotedIdentifier BPrefixIdentifier))))))
+                                      (CompOp GREATER_THAN)
+                                      (Predicate
+                                        (Expression
+                                          (Literal
+                                            (NumLiteral
+                                              (Int64Literal IntegerLiteral))))))
+                                    CLOSE_PAR))
+                                (ConstraintEnforcement*
+                                  (ConstraintEnforcement ENFORCED)))))))))))))))
+      SEMICOLON)))

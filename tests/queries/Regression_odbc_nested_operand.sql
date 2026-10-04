@@ -1,0 +1,1 @@
+SELECT * FROM {OJ {OJ a} JOIN b};

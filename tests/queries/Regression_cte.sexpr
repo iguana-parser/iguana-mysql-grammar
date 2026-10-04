@@ -1,0 +1,63 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (WithClause
+              WITH
+              (CommonTableExpression
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))
+                AS
+                (Subquery
+                  OPEN_PAR
+                  (QueryExpressionWithOptLockingClauses
+                    (QueryExpression
+                      (QueryExpressionBody
+                        (QueryPrimary
+                          (QuerySpecification
+                            SELECT
+                            (SelectItemList
+                              (SelectItem
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier)))))))
+                            (FromClause
+                              FROM
+                              (TableReferenceList
+                                (TableReference
+                                  (TableFactor
+                                    (SingleTable
+                                      (TableRef
+                                        (QualifiedIdentifier
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                  CLOSE_PAR)))
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

@@ -1,0 +1,78 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT)
+              ((COMMA StartTransactionSnapshot)*
+                COMMA
+                (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              READ
+              ONLY
+              ((COMMA StartTransactionOptionList !ReadWrite)*
+                COMMA
+                (StartTransactionOptionList READ ONLY))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              READ
+              WRITE
+              ((COMMA StartTransactionOptionList !ReadOnly)*
+                COMMA
+                (StartTransactionOptionList READ WRITE))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              ((StartTransactionSnapshot COMMA)*
+                (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT)
+                COMMA)
+              READ
+              ONLY
+              ((COMMA StartTransactionOptionList !ReadWrite)*
+                COMMA
+                (StartTransactionOptionList
+                  (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT))
+                COMMA
+                (StartTransactionOptionList READ ONLY))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions
+              ((StartTransactionSnapshot COMMA)*
+                (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT)
+                COMMA)
+              READ
+              WRITE
+              ((COMMA StartTransactionOptionList !ReadOnly)*
+                COMMA
+                (StartTransactionOptionList
+                  (StartTransactionSnapshot WITH CONSISTENT SNAPSHOT))
+                COMMA
+                (StartTransactionOptionList READ WRITE))))))
+      SEMICOLON)))

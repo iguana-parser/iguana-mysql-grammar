@@ -1,0 +1,3 @@
+Parse error at line 1, column 70: Expected one of COMMA, CROSS, INNER, JOIN, LEFT, NATURAL, RIGHT, STRAIGHT_JOIN
+SELECT * FROM (JSON_TABLE('[]', '$[*]' COLUMNS (x INT PATH '$')) AS j);
+                                                                     ^

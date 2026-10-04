@@ -1,0 +1,20 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTablespace
+            TABLESPACE
+            (TablespaceName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (TsDataFileName
+              ADD
+              (TsDataFile
+                DATAFILE
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)))

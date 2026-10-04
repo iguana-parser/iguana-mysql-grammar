@@ -1,0 +1,112 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement RESET PERSIST))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (IfExists IF EXISTS)
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (IdentifierKeyword
+                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (DotIdentifier DotWordIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (IfExists IF EXISTS)
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (IdentifierKeyword
+                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (DotIdentifier DotWordIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (QualifiedPair KeywordQualifiedPair))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (IfExists IF EXISTS)
+            (PersistedVariableIdentifier
+              DEFAULT
+              (DotIdentifier
+                DOT
+                (IdentifierAfterDot
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (IfExists IF EXISTS)
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier BacktickIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          PERSIST
+          (IfExistsIdentifier
+            (PersistedVariableIdentifier
+              (QualifiedIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (IdentifierKeyword
+                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (DotIdentifier DotWordIdentifier)))))))
+      SEMICOLON)))

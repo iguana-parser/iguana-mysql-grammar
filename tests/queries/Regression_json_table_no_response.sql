@@ -1,0 +1,1 @@
+SELECT * FROM JSON_TABLE('[]', '$[*]' COLUMNS (x INT PATH '$')) AS j;

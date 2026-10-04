@@ -1,0 +1,196 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (NullLiteral NULL))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BoolLiteral TRUE))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BoolLiteral FALSE))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal LongLiteral)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal UnsignedLongLiteral)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (NumLiteral DecimalLiteral))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral DecimalLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral DecimalLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral FloatLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          MINUS
+                          (Expression
+                            (Literal
+                              (NumLiteral FloatLiteral)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText))
+                            (TextStringLiteral*
+                              (TextStringLiteral SingleQuotedText))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead NationalText)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral DoubleQuotedText))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (HexLiteral QuotedHexLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (HexLiteral UnquotedHexLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral QuotedBinaryLiteral))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral UnquotedBinaryLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TemporalLiteral
+                            DATE
+                            (TextStringLiteral SingleQuotedText)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TemporalLiteral
+                              TIME
+                              (TextStringLiteral SingleQuotedText)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TemporalLiteral
+                              TIMESTAMP
+                              (TextStringLiteral SingleQuotedText)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText))))))))))))))
+      SEMICOLON)))

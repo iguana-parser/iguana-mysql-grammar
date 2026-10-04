@@ -1,0 +1,106 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTablespace
+            TABLESPACE
+            (TablespaceName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (TsDataFileName
+              ADD
+              (TsDataFile
+                DATAFILE
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText)))))
+            (TablespaceOptions
+              (TablespaceOption
+                (TsOptionEngine
+                  ENGINE
+                  EQUAL
+                  (EngineRef
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))
+              ((COMMA? TablespaceOption)*
+                (TablespaceOption
+                  (TsOptionEngineAttribute
+                    ENGINE_ATTRIBUTE
+                    EQUAL
+                    (JsonAttribute
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTablespace
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (GroupAlterTablespace1
+                (AlterTablespaceOptions
+                  (AlterTablespaceOption
+                    (TsOptionEngine
+                      ENGINE
+                      EQUAL
+                      (EngineRef
+                        (TextOrIdentifier
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTablespace
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (GroupAlterTablespace1
+                (AlterTablespaceOptions
+                  (AlterTablespaceOption
+                    (TsOptionEngineAttribute
+                      ENGINE_ATTRIBUTE
+                      EQUAL
+                      (JsonAttribute
+                        (TextStringLiteral SingleQuotedText))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTablespace
+              TABLESPACE
+              (TablespaceRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (GroupAlterTablespace1
+                (AlterTablespaceOptions
+                  (AlterTablespaceOption
+                    (TsOptionEngineAttribute
+                      ENGINE_ATTRIBUTE
+                      EQUAL
+                      (JsonAttribute
+                        (TextStringLiteral SingleQuotedText))))
+                  ((COMMA? AlterTablespaceOption)*
+                    COMMA
+                    (AlterTablespaceOption
+                      (TsOptionEngineAttribute
+                        ENGINE_ATTRIBUTE
+                        EQUAL
+                        (JsonAttribute
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)))

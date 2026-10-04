@@ -1,0 +1,3 @@
+FLUSH TABLES table1, `foo`.`bar`;
+FLUSH TABLES db.t WITH READ LOCK;
+FLUSH TABLE db.t FOR EXPORT;

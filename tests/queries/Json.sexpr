@@ -1,0 +1,226 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))
+                        (JsonOperator
+                          JSON_SEPARATOR
+                          (TextStringLiteral SingleQuotedText))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))
+                          (JsonOperator
+                            JSON_UNQUOTED_SEPARATOR
+                            (TextStringLiteral SingleQuotedText))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            JSON_VALUE
+                            OPEN_PAR
+                            (SimpleExpression
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                            COMMA
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText)))
+                            CLOSE_PAR)))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          JSON_VALUE
+                          OPEN_PAR
+                          (SimpleExpression
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                          COMMA
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText)))
+                          (ReturningType
+                            RETURNING
+                            (CastType SIGNED))
+                          (OnEmptyOrError
+                            (OnEmpty
+                              (JsonOnResponse NULL)
+                              ON
+                              EMPTY)
+                            (OnError
+                              (JsonOnResponse ERROR)
+                              ON
+                              ERROR))
+                          CLOSE_PAR))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (TableFunction
+                            JSON_TABLE
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            COMMA
+                            (TextStringLiteral SingleQuotedText)
+                            (ColumnsClause
+                              COLUMNS
+                              OPEN_PAR
+                              (JtColumn
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier NPrefixIdentifier)))
+                                FOR
+                                ORDINALITY)
+                              ((COMMA JtColumn)*
+                                COMMA
+                                (JtColumn
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))
+                                  (DataType INT)
+                                  PATH
+                                  (TextStringLiteral SingleQuotedText)
+                                  (OnEmptyOrErrorJsonTable
+                                    (OnEmptyOrError
+                                      (OnEmpty
+                                        (JsonOnResponse NULL)
+                                        ON
+                                        EMPTY)))))
+                              CLOSE_PAR)
+                            CLOSE_PAR
+                            (TableAlias
+                              AS
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType JSON)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        (GroupFieldDefinition1
+                          GENERATED
+                          ALWAYS
+                          AS
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (RuntimeFunctionCall
+                                JSON_VALUE
+                                OPEN_PAR
+                                (SimpleExpression
+                                  (Expression
+                                    (ExpressionColumnRef
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                                COMMA
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))
+                                (ReturningType
+                                  RETURNING
+                                  (CastType SIGNED))
+                                CLOSE_PAR))
+                            CLOSE_PAR)
+                          STORED))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

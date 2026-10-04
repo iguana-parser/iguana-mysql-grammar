@@ -1,0 +1,38 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (GroupAlterUser4
+                    (IdentifiedWithPlugin
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))))
+                ((COMMA AlterUser)*
+                  COMMA
+                  (AlterUser
+                    (User
+                      (UserIdentifierOrText
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                    (GroupAlterUser4
+                      (DiscardOldPassword DISCARD OLD PASSWORD)))))
+              CreateUserTail))))
+      SEMICOLON)))

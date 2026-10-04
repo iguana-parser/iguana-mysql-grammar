@@ -1,0 +1,3 @@
+Parse error at line 1, column 16: Expected one of SingleQuotedText, DoubleQuotedText, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral
+SELECT _utf8mb4.col FROM t;
+               ^^^^

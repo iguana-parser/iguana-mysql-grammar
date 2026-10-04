@@ -1,0 +1,19 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (UserFunction
+                (GroupUserFunction1
+                  USER
+                  (Parentheses OPEN_PAR CLOSE_PAR)))
+              (GroupAlterUserStatement1
+                (IdentifiedByPassword
+                  IDENTIFIED
+                  BY
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)))

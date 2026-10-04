@@ -1,0 +1,43 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            PLUGIN
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            SONAME
+            (TextStringLiteral SingleQuotedText))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UninstallStatement
+          UNINSTALL
+          (GroupUninstallStatement1
+            PLUGIN
+            (PluginRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            COMPONENT
+            (TextStringLiteralList
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UninstallStatement
+          UNINSTALL
+          (GroupUninstallStatement1
+            COMPONENT
+            (ComponentRef
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)))

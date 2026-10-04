@@ -1,0 +1,1 @@
+SELECT DISTINCT col FROM t;

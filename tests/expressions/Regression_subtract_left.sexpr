@@ -1,0 +1,19 @@
+(Expression
+  (Expression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier OrdinaryIdentifier)))))
+    MINUS
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier))))))
+  MINUS
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier))))))

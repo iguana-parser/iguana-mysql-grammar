@@ -1,0 +1,218 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (TableConstraintDef
+                      (GroupTableConstraintDef2
+                        (GroupTableConstraintDef1 PRIMARY KEY)
+                        (KeyListWithExpression
+                          OPEN_PAR
+                          (KeyPartOrExpression
+                            (KeyPart
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR))))
+                  COMMA
+                  (TableElement
+                    (TableConstraintDef
+                      (GroupTableConstraintDef2
+                        (GroupTableConstraintDef1
+                          UNIQUE
+                          (KeyOrIndex KEY))
+                        (IndexNameAndType
+                          (IndexName
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (KeyListWithExpression
+                          OPEN_PAR
+                          (KeyPartOrExpression
+                            (KeyPart
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR))))
+                  COMMA
+                  (TableElement
+                    (TableConstraintDef
+                      (ConstraintName
+                        CONSTRAINT
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (GroupTableConstraintDef2
+                        FOREIGN
+                        KEY
+                        (KeyList
+                          OPEN_PAR
+                          (KeyPart
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))
+                          CLOSE_PAR)
+                        (References
+                          REFERENCES
+                          (TableRef
+                            (QualifiedIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          (IdentifierListWithParentheses
+                            OPEN_PAR
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            CLOSE_PAR)
+                          (GroupReferences1
+                            ON
+                            DELETE
+                            (DeleteOption CASCADE))))))
+                  COMMA
+                  (TableElement
+                    (TableConstraintDef
+                      (ConstraintName
+                        CONSTRAINT
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (GroupTableConstraintDef2
+                        (CheckConstraint
+                          CHECK
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (BooleanPrimary
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              (CompOp GREATER_THAN)
+                              (Predicate
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral))))))
+                            CLOSE_PAR))
+                        (ConstraintEnforcement ENFORCED))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateIndex
+            (GroupCreateIndex1
+              KW_INDEX
+              (IndexName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (CreateIndexTarget
+                ON
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (KeyListWithExpression
+                  OPEN_PAR
+                  (KeyPartOrExpression
+                    (KeyPart
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Direction DESC)))
+                  CLOSE_PAR))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateIndex
+            (GroupCreateIndex1
+              KW_INDEX
+              (IndexName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (CreateIndexTarget
+                ON
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (KeyListWithExpression
+                  OPEN_PAR
+                  (KeyPartOrExpression
+                    (ExprWithParentheses
+                      OPEN_PAR
+                      (Expression
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        PLUS
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))
+                      CLOSE_PAR))
+                  CLOSE_PAR))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropIndex
+            KW_INDEX
+            (IndexRef
+              (FieldIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            ON
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)))

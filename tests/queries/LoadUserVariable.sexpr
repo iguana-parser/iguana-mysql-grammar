@@ -1,0 +1,32 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (ColumnRef
+                    (FieldIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable AtTextSuffix))))
+              CLOSE_PAR))))
+      SEMICOLON)))

@@ -1,0 +1,3 @@
+Parse error at line 1, column 48: Expected one of SEMICOLON, EOF
+ALTER INSTANCE RELOAD TLS NO ROLLBACK ON ERROR FOR CHANNEL mysql_main;
+                                               ^^^

@@ -1,0 +1,6 @@
+# Generated parser and local build output.
+/build/
+/target/
+
+# macOS metadata.
+.DS_Store

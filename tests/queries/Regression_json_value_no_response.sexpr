@@ -1,0 +1,28 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          JSON_VALUE
+                          OPEN_PAR
+                          (SimpleExpression
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText))))))
+                          COMMA
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText)))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)))

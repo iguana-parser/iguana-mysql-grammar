@@ -1,0 +1,21 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (GroupGrantStatement1
+                (RoleOrPrivilegesList
+                  (RoleOrPrivilege SELECT)))
+              ON
+              (GrantIdentifier MULT)
+              TO
+              (GrantTargetList
+                (UserList
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))))))))
+      SEMICOLON)))

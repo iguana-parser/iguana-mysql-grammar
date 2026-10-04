@@ -1,0 +1,11 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (XaStatement
+            XA
+            (GroupXaStatement1
+              RECOVER
+              (XaConvert CONVERT XID)))))
+      SEMICOLON)))

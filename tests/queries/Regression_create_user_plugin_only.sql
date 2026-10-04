@@ -1,0 +1,1 @@
+CREATE USER u IDENTIFIED WITH 'mysql_native_password';

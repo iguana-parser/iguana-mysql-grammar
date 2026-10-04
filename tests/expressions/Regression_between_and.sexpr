@@ -1,0 +1,28 @@
+(Expression
+  (Expression
+    (BitExpression
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier))))))
+    BETWEEN
+    (BitExpression
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier BPrefixIdentifier))))))
+    AND
+    (Predicate
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))))
+  AND
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier))))))

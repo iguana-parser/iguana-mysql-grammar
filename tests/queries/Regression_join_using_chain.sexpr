@@ -1,0 +1,61 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (InnerJoinType JOIN)
+                        (TableReference
+                          (TableReference
+                            (TableFactor
+                              (SingleTable
+                                (TableRef
+                                  (QualifiedIdentifier
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier BPrefixIdentifier))))))))
+                          (InnerJoinType JOIN)
+                          (TableReference
+                            (TableFactor
+                              (SingleTable
+                                (TableRef
+                                  (QualifiedIdentifier
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          (JoinSpecification
+                            USING
+                            (IdentifierListWithParentheses
+                              OPEN_PAR
+                              (IdentifierList
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier XPrefixIdentifier))))
+                              CLOSE_PAR)))
+                        (JoinSpecification
+                          USING
+                          (IdentifierListWithParentheses
+                            OPEN_PAR
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

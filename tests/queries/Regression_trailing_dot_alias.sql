@@ -1,0 +1,1 @@
+SELECT 1. AS x, 1.e2 y;

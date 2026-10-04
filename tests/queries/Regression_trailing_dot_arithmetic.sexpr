@@ -1,0 +1,26 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Expression
+                          (Literal
+                            (NumLiteral DecimalLiteral)))
+                        PLUS
+                        (Expression
+                          (Expression
+                            (Literal
+                              (NumLiteral DecimalLiteral)))
+                          MULT
+                          (Expression
+                            (Literal
+                              (NumLiteral DecimalLiteral)))))))))))))
+      SEMICOLON)))

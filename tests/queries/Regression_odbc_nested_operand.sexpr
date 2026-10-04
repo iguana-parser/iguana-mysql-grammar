@@ -1,0 +1,43 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        OPEN_CURLY
+                        OJ
+                        (EscapedTableReference
+                          (TableReference
+                            (TableReference
+                              OPEN_CURLY
+                              OJ
+                              (EscapedTableReference
+                                (TableReference
+                                  (TableFactor
+                                    (SingleTable
+                                      (TableRef
+                                        (QualifiedIdentifier
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                              CLOSE_CURLY)
+                            (InnerJoinType JOIN)
+                            (TableReference
+                              (TableFactor
+                                (SingleTable
+                                  (TableRef
+                                    (QualifiedIdentifier
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier BPrefixIdentifier))))))))))
+                        CLOSE_CURLY)))))))))
+      SEMICOLON)))

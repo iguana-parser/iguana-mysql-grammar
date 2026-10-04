@@ -1,0 +1,1 @@
+SET `SESSİON`.x=1;

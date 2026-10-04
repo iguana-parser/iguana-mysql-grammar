@@ -1,0 +1,1 @@
+GRANT SELECT ON db._utf8mb4 TO 'u';

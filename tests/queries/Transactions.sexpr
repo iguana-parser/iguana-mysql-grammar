@@ -1,0 +1,59 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            START
+            TRANSACTION
+            (StartTransactionOptions READ ONLY))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            SAVEPOINT
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            (GroupSavepointStatement1
+              TO
+              SAVEPOINT
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            RELEASE
+            SAVEPOINT
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND NO CHAIN)))))
+      SEMICOLON)
+    (Query
+      (BeginWork BEGIN WORK)
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            (GroupSavepointStatement1 TransactionCompletion))))
+      SEMICOLON)))

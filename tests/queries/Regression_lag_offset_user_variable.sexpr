@@ -1,0 +1,46 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (WindowFunctionCall
+                          LAG
+                          OPEN_PAR
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          (LeadLagInfo
+                            COMMA
+                            (StableInteger
+                              (ParamOrVar
+                                AT_SIGN
+                                (TextOrIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier NPrefixIdentifier)))))))
+                          CLOSE_PAR
+                          (WindowingClause
+                            OVER
+                            (WindowSpec OPEN_PAR WindowSpecDetails CLOSE_PAR))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

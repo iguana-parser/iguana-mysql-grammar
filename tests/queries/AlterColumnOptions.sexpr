@@ -1,0 +1,164 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterAlgorithmOption
+                        ALGORITHM
+                        EQUAL
+                        (AlterAlgorithmName AlgorithmNameWord)))
+                    ((COMMA AlterCommandsModifier)*
+                      COMMA
+                      (AlterCommandsModifier
+                        (AlterLockOption
+                          LOCK
+                          EQUAL
+                          (AlterLockName LockNameWord)))))
+                  COMMA
+                  (AlterList
+                    (AlterListItem
+                      ADD
+                      COLUMN
+                      (GroupAlterListItem1
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (FieldDefinition
+                          (DataType INT)
+                          GroupFieldDefinition1)
+                        (Place FIRST)))
+                    ((COMMA (AlterListItem | AlterCommandsModifier | CreateTableOptionsSpaceSeparated))*
+                      COMMA
+                      (AlterListItem
+                        MODIFY
+                        COLUMN
+                        (ColumnInternalRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier BPrefixIdentifier))))
+                        (FieldDefinition
+                          (DataType
+                            (GroupDataType2 VARCHAR)
+                            (FieldLength
+                              OPEN_PAR
+                              (RealUlonglongNumber IntegerLiteral)
+                              CLOSE_PAR))
+                          GroupFieldDefinition1)
+                        (Place
+                          AFTER
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      ALTER
+                      COLUMN
+                      (ColumnInternalRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))
+                      (GroupAlterListItem3
+                        SET
+                        DEFAULT
+                        (ExprWithParentheses
+                          OPEN_PAR
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText)))))
+                          CLOSE_PAR)))
+                    ((COMMA (AlterListItem | AlterCommandsModifier | CreateTableOptionsSpaceSeparated))*
+                      COMMA
+                      (AlterListItem
+                        ALTER
+                        COLUMN
+                        (ColumnInternalRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))
+                        (GroupAlterListItem3 DROP DEFAULT))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      ORDER
+                      BY
+                      (AlterOrderList
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Direction DESC)
+                        ((COMMA Identifier Direction?)*
+                          COMMA
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier BPrefixIdentifier)))
+                          (Direction ASC)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      DROP
+                      (GroupAlterListItem2
+                        COLUMN
+                        (ColumnInternalRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Restrict RESTRICT))))))))))
+      SEMICOLON)))

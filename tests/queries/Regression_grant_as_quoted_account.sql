@@ -1,0 +1,1 @@
+GRANT SELECT ON *.* TO u4 AS 'u1'@'localhost';

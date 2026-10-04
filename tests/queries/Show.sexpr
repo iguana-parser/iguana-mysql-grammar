@@ -1,0 +1,344 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowDatabasesStatement SHOW DATABASES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowTablesStatement
+          SHOW
+          (ShowCommandType FULL)
+          TABLES
+          (InDb
+            (FromOrIn FROM)
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier))))
+          (LikeOrWhere
+            (LikeClause
+              LIKE
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowTriggersStatement SHOW TRIGGERS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowEventsStatement SHOW EVENTS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowTableStatusStatement SHOW TABLE STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowOpenTablesStatement SHOW OPEN TABLES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowParseTreeStatement
+          SHOW
+          KW_PARSE_TREE
+          (SimpleStatement
+            (SelectStatement
+              (QueryExpression
+                (QueryExpressionBody
+                  (QueryPrimary
+                    (QuerySpecification
+                      SELECT
+                      (SelectItemList
+                        (SelectItem
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowPluginsStatement SHOW PLUGINS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowEngineLogsStatement
+          SHOW
+          ENGINE
+          (EngineOrAll
+            (EngineRef
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          LOGS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowEngineMutexStatement
+          SHOW
+          ENGINE
+          (EngineOrAll
+            (EngineRef
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          MUTEX))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowEngineStatusStatement
+          SHOW
+          ENGINE
+          (EngineOrAll
+            (EngineRef
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowColumnsStatement
+          SHOW
+          (ShowCommandType FULL)
+          COLUMNS
+          FROM
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowBinaryLogsStatement SHOW BINARY LOGS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowBinaryLogStatusStatement SHOW BINARY LOG STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowReplicasStatement
+          SHOW
+          (GroupShowReplicasStatement1 REPLICAS)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowBinlogEventsStatement
+          SHOW
+          BINLOG
+          EVENTS
+          IN
+          (TextString
+            (TextStringLiteral SingleQuotedText))
+          FROM
+          (UlonglongNumber IntegerLiteral)
+          (LimitClause
+            LIMIT
+            (LimitOptions
+              (LimitOption IntegerLiteral)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowRelaylogEventsStatement SHOW RELAYLOG EVENTS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowKeysStatement
+          SHOW
+          KW_INDEX
+          (FromOrIn FROM)
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowEnginesStatement SHOW ENGINES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCountWarningsStatement SHOW COUNT_CALL_OPEN MULT CLOSE_PAR WARNINGS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCountErrorsStatement SHOW COUNT_CALL_OPEN MULT CLOSE_PAR ERRORS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowWarningsStatement
+          SHOW
+          WARNINGS
+          (LimitClause
+            LIMIT
+            (LimitOptions
+              (LimitOption IntegerLiteral)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowErrorsStatement SHOW ERRORS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowProfilesStatement SHOW PROFILES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowProfileStatement
+          SHOW
+          PROFILE
+          (ProfileDefinitions
+            (ProfileDefinition CPU))
+          FOR
+          QUERY
+          IntegerLiteral))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowStatusStatement
+          SHOW
+          (OptionType GLOBAL)
+          STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowProcessListStatement SHOW FULL PROCESSLIST))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowVariablesStatement
+          SHOW
+          (OptionType SESSION)
+          VARIABLES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCharacterSetStatement
+          SHOW
+          (Charset CHAR SET)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCollationStatement SHOW COLLATION))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowPrivilegesStatement SHOW PRIVILEGES))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowGrantsStatement
+          SHOW
+          GRANTS
+          FOR
+          (User
+            (UserIdentifierOrText
+              (TextOrIdentifier
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateDatabaseStatement
+          SHOW
+          CREATE
+          DATABASE
+          (SchemaRef
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateTableStatement
+          SHOW
+          CREATE
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateViewStatement
+          SHOW
+          CREATE
+          VIEW
+          (ViewRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowReplicaStatusStatement
+          SHOW
+          (Replica REPLICA)
+          STATUS))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateProcedureStatement
+          SHOW
+          CREATE
+          PROCEDURE
+          (ProcedureRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateFunctionStatement
+          SHOW
+          CREATE
+          FUNCTION
+          (FunctionRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateTriggerStatement
+          SHOW
+          CREATE
+          TRIGGER
+          (TriggerRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateEventStatement
+          SHOW
+          CREATE
+          EVENT
+          (EventRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateUserStatement
+          SHOW
+          CREATE
+          USER
+          (User
+            (UserIdentifierOrText
+              (TextOrIdentifier
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)))

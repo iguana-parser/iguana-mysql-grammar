@@ -1,0 +1,53 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (WindowFunctionCall
+                          ROW_NUMBER
+                          (Parentheses OPEN_PAR CLOSE_PAR)
+                          (WindowingClause
+                            OVER
+                            (WindowSpec
+                              OPEN_PAR
+                              (WindowSpecDetails
+                                PARTITION
+                                BY
+                                (OrderList
+                                  (OrderExpression
+                                    (Expression
+                                      (ExpressionColumnRef
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                (OrderClause
+                                  ORDER
+                                  BY
+                                  (OrderList
+                                    (OrderExpression
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                              CLOSE_PAR))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

@@ -1,0 +1,48 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (HexLiteral QuotedHexLiteral)))
+                      (SelectAlias
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (HexLiteral QuotedHexLiteral)))
+                        (SelectAlias
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier BPrefixIdentifier)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral QuotedBinaryLiteral)))
+                        (SelectAlias
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (BinaryLiteral QuotedBinaryLiteral)))
+                        (SelectAlias
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)))

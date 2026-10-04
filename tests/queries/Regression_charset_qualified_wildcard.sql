@@ -1,0 +1,1 @@
+SELECT db._utf8mb4.* FROM db._utf8mb4;

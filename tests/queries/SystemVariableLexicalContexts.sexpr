@@ -1,0 +1,126 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (UnscopedSystemVariable
+                            (SystemVariableIdentifier SystemVariableWord)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (UnscopedSystemVariable
+                              (SystemVariableIdentifier SystemVariableWord)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (UnscopedSystemVariable
+                              (SystemVariableIdentifier SystemVariableWord)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (UnscopedSystemVariable
+                              (SystemVariableIdentifier SystemVariableWord)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (Expression
+                            (RvalueSystemOrUserVariable
+                              AT_AT_SIGN
+                              (UnscopedSystemVariable
+                                (SystemVariableIdentifier SystemVariableWord))))
+                          MINUS
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (UnscopedSystemVariable
+                            (SystemVariableIdentifier SystemVariableWord))))
+                      (SelectAlias
+                        (TextStringLiteral SingleQuotedText)))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (UnscopedSystemVariable
+                              (SystemVariableIdentifier SystemVariableWord))))
+                        (SelectAlias
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (UnscopedSetVariable
+                  (SystemVariableIdentifier SystemVariableWord)))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (UnscopedSetVariable
+                        (SystemVariableIdentifier SystemVariableWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))))
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (UnscopedSetVariable
+                        (SystemVariableIdentifier SystemVariableWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)))

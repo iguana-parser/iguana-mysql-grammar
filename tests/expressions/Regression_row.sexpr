@@ -1,0 +1,15 @@
+(Expression
+  OPEN_PAR
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier)))))
+  COMMA
+  (ExprList
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier))))))
+  CLOSE_PAR)

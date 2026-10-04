@@ -1,0 +1,168 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TEMPORARY
+            TABLE
+            (IfNotExists
+              IF
+              (NotRule NOT)
+              EXISTS)
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute AUTO_INCREMENT)
+                          (ColumnAttribute PRIMARY KEY))))))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NAME))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType2 VARCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        (GroupFieldDefinition1
+                          (ColumnAttribute*
+                            (ColumnAttribute
+                              NOT
+                              (NullLiteral NULL))
+                            (ColumnAttribute
+                              DEFAULT
+                              (NowOrSignedLiteral
+                                (SignedLiteralOrNull
+                                  (SignedLiteral
+                                    (Literal
+                                      (TextLiteral
+                                        (TextLiteralHead
+                                          (TextStringLiteral SingleQuotedText)))))))))))))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType INT)
+                        (GroupFieldDefinition1
+                          GENERATED
+                          ALWAYS
+                          AS
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              PLUS
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            CLOSE_PAR)
+                          VIRTUAL))))))
+              CLOSE_PAR
+              (CreateTableOptionsEtc
+                (CreateTableOptions
+                  (CreateTableOption
+                    ENGINE
+                    EQUAL
+                    (EngineRef
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  ((COMMA? CreateTableOption)*
+                    (CreateTableOption
+                      (DefaultCharset
+                        DEFAULT
+                        (Charset CHARSET)
+                        EQUAL
+                        (CharsetName
+                          (TextOrIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              LIKE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              (CreateTableOptionsEtc
+                (CreatePartitioningEtc
+                  (DuplicateAsQe
+                    (AsCreateQueryExpression
+                      AS
+                      (QueryExpressionWithOptLockingClauses
+                        (QueryExpression
+                          (QueryExpressionBody
+                            (QueryPrimary
+                              (QuerySpecification
+                                SELECT
+                                (SelectItemList MULT)
+                                (FromClause
+                                  FROM
+                                  (TableReferenceList
+                                    (TableReference
+                                      (TableFactor
+                                        (SingleTable
+                                          (TableRef
+                                            (QualifiedIdentifier
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))))))
+      SEMICOLON)))

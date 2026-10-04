@@ -1,0 +1,25 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedWithPlugin
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText)))))))
+            CreateUserTail)))
+      SEMICOLON)))

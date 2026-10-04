@@ -1,0 +1,74 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (QualifiedPair
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (DotIdentifier DotWordIdentifier))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (OuterJoinType LEFT JOIN)
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier BPrefixIdentifier))))))))
+                        (JoinSpecification
+                          ON
+                          (Expression
+                            (BooleanPrimary
+                              (Expression
+                                (ExpressionColumnRef
+                                  (QualifiedPair
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                    (DotIdentifier DotWordIdentifier)))))
+                            (CompOp EQUAL)
+                            (Predicate
+                              (Expression
+                                (ExpressionColumnRef
+                                  (QualifiedPair
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier BPrefixIdentifier)))
+                                    (DotIdentifier DotWordIdentifier))))))))))
+                  (WhereClause
+                    WHERE
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier BPrefixIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))
+                      IS
+                      NULL))))))))
+      SEMICOLON)))

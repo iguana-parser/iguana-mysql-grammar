@@ -1,0 +1,16 @@
+(Expression
+  (BitExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier OrdinaryIdentifier))))))
+  LIKE
+  (SimpleExpression
+    (Expression
+      MINUS
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier BPrefixIdentifier))))))))

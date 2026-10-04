@@ -1,0 +1,92 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowProcedureStatusStatement
+          SHOW
+          PROCEDURE
+          STATUS
+          (LikeOrWhere
+            (LikeClause
+              LIKE
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowFunctionStatusStatement
+          SHOW
+          FUNCTION
+          STATUS
+          (LikeOrWhere
+            (WhereClause
+              WHERE
+              (Expression
+                (BooleanPrimary
+                  (Expression
+                    (ExpressionColumnRef
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                (CompOp EQUAL)
+                (Predicate
+                  (Expression
+                    (Literal
+                      (TextLiteral
+                        (TextLiteralHead
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowProcedureCodeStatement
+          SHOW
+          PROCEDURE
+          CODE
+          (ProcedureRef
+            (QualifiedIdentifier
+              (QualifiedPair
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))
+                (DotIdentifier DotWordIdentifier))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowFunctionCodeStatement
+          SHOW
+          FUNCTION
+          CODE
+          (FunctionRef
+            (QualifiedIdentifier
+              (QualifiedPair
+                (Identifier
+                  (PureIdentifier BacktickIdentifier))
+                (DotIdentifier
+                  DOT
+                  (IdentifierAfterDot
+                    (Identifier
+                      (PureIdentifier BacktickIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateProcedureStatement
+          SHOW
+          CREATE
+          PROCEDURE
+          (ProcedureRef
+            (QualifiedIdentifier
+              (Identifier
+                (IdentifierKeyword
+                  (IdentifierKeywordsUnambiguous STATUS)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ShowCreateFunctionStatement
+          SHOW
+          CREATE
+          FUNCTION
+          (FunctionRef
+            (QualifiedIdentifier
+              (Identifier
+                (IdentifierKeyword
+                  (IdentifierKeywordsUnambiguous CODE)))))))
+      SEMICOLON)))

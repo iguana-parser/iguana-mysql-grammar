@@ -1,0 +1,17 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    CURRENT_USER
+                    (Parentheses OPEN_PAR CLOSE_PAR))
+                  GroupAlterUser4))
+              CreateUserTail))))
+      SEMICOLON)))

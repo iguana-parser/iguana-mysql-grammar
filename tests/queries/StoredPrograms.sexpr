@@ -1,0 +1,235 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateProcedure
+            PROCEDURE
+            (ProcedureName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            (ProcedureParameter
+              IN
+              (FunctionParameter
+                (ParameterName
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier XPrefixIdentifier))))
+                (TypeWithOptCollate
+                  (DataType INT))))
+            ((COMMA ProcedureParameter)*
+              COMMA
+              (ProcedureParameter
+                OUT
+                (FunctionParameter
+                  (ParameterName
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))
+                  (TypeWithOptCollate
+                    (DataType INT)))))
+            CLOSE_PAR
+            (StoredRoutineBody
+              (CompoundStatement
+                (UnlabeledBlock
+                  (BeginEndBlock
+                    BEGIN
+                    (SpDeclarations
+                      ((SpDeclaration SEMICOLON)+
+                        (SpDeclaration
+                          (VariableDeclaration
+                            DECLARE
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            (DataType INT)
+                            DEFAULT
+                            (Expression
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier XPrefixIdentifier)))))
+                              PLUS
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))))
+                        SEMICOLON))
+                    (CompoundStatementList
+                      ((CompoundStatement SEMICOLON)+
+                        (CompoundStatement
+                          (SimpleStatement
+                            (SetStatement
+                              SET
+                              (StartOptionValueList
+                                (OptionValueNoOptionType
+                                  (LvalueVariable
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))
+                                  (Equal EQUAL)
+                                  (SetExprOrDefault
+                                    (Expression
+                                      (ExpressionColumnRef
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                OptionValueListContinued))))
+                        SEMICOLON))
+                    END)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateFunction
+            FUNCTION
+            (FunctionName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            (FunctionParameter
+              (ParameterName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier XPrefixIdentifier))))
+              (TypeWithOptCollate
+                (DataType INT)))
+            CLOSE_PAR
+            RETURNS
+            (TypeWithOptCollate
+              (DataType INT))
+            (RoutineCreateOption*
+              (RoutineCreateOption DETERMINISTIC))
+            (StoredRoutineBody
+              (CompoundStatement
+                (ReturnStatement
+                  RETURN
+                  (Expression
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier XPrefixIdentifier)))))
+                    PLUS
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTrigger
+            TRIGGER
+            (TriggerName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            BEFORE
+            INSERT
+            ON
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FOR
+            EACH
+            ROW
+            (CompoundStatement
+              (SimpleStatement
+                (SetStatement
+                  SET
+                  (StartOptionValueList
+                    (OptionValueNoOptionType
+                      (LvalueVariable
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NEW)))
+                        (DotIdentifier DotWordIdentifier))
+                      (Equal EQUAL)
+                      (SetExprOrDefault
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    OptionValueListContinued)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateEvent
+            EVENT
+            (EventName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            ON
+            SCHEDULE
+            (Schedule
+              EVERY
+              (Expression
+                (Literal
+                  (NumLiteral
+                    (Int64Literal IntegerLiteral))))
+              (Interval
+                (IntervalTimeStamp DAY)))
+            DO
+            (CompoundStatement
+              (SimpleStatement
+                (InsertStatement
+                  INSERT
+                  INTO
+                  (TableRef
+                    (QualifiedIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (GroupInsertStatement1
+                    (InsertFromConstructor
+                      (InsertValues
+                        VALUES
+                        (ValueList
+                          OPEN_PAR
+                          (Values
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CallStatement
+          CALL
+          (ProcedureRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          OPEN_PAR
+          (ExprList
+            (Expression
+              (Literal
+                (NumLiteral
+                  (Int64Literal IntegerLiteral))))
+            ((COMMA Expression)*
+              COMMA
+              (Expression
+                (RvalueSystemOrUserVariable
+                  (UserVariable AtTextSuffix)))))
+          CLOSE_PAR))
+      SEMICOLON)))

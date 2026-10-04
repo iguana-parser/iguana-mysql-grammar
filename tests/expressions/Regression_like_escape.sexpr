@@ -1,0 +1,21 @@
+(Expression
+  (BitExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier OrdinaryIdentifier))))))
+  LIKE
+  (SimpleExpression
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier))))))
+  ESCAPE
+  (SimpleExpression
+    (Expression
+      (Literal
+        (TextLiteral
+          (TextLiteralHead
+            (TextStringLiteral SingleQuotedText)))))))

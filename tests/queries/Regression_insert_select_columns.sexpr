@@ -1,0 +1,36 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (InsertStatement
+          INSERT
+          INTO
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (GroupInsertStatement1
+            (InsertQueryExpression
+              OPEN_PAR
+              (Fields
+                (InsertIdentifier
+                  (ColumnRef
+                    (FieldIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))
+              CLOSE_PAR
+              (QueryExpressionWithOptLockingClauses
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)))

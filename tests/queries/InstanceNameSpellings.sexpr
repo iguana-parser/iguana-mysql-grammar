@@ -1,0 +1,63 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              ROTATE
+              (RotationEngine
+                (InnodbName InnodbNameWord))
+              MASTER
+              KEY))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              ROTATE
+              (RotationEngine
+                (BinlogName QuotedBinlogName))
+              MASTER
+              KEY))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              ROTATE
+              (RotationEngine
+                (TextStringLiteral SingleQuotedText))
+              MASTER
+              KEY))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              ENABLE
+              (InnodbName QuotedInnodbName)
+              (RedoLogName QuotedRedoLogName)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterInstanceStatement
+              INSTANCE
+              DISABLE
+              (InnodbName InnodbNameWord)
+              (RedoLogName RedoLogNameWord)))))
+      SEMICOLON)))

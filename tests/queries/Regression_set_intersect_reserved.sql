@@ -1,0 +1,1 @@
+SELECT intersect FROM t;

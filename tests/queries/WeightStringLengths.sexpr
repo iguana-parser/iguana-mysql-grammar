@@ -1,0 +1,105 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          WEIGHT_STRING
+                          OPEN_PAR
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText)))))
+                          (GroupRuntimeFunctionCall6
+                            AS
+                            CHAR
+                            (WsNumCodepoints
+                              OPEN_PAR
+                              (RealUlongNumber IntegerLiteral)
+                              CLOSE_PAR))
+                          CLOSE_PAR)))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            WEIGHT_STRING
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            (GroupRuntimeFunctionCall6
+                              AS
+                              BINARY
+                              (WsNumCodepoints
+                                OPEN_PAR
+                                (RealUlongNumber
+                                  (HexLiteral UnquotedHexLiteral))
+                                CLOSE_PAR))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          WEIGHT_STRING
+                          OPEN_PAR
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText)))))
+                          (GroupRuntimeFunctionCall6
+                            COMMA
+                            (UlongNumber IntegerLiteral)
+                            COMMA
+                            (UlongNumber IntegerLiteral)
+                            COMMA
+                            (UlongNumber IntegerLiteral))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        CAST_CALL_OPEN
+                        (Expression
+                          (Literal
+                            (TextLiteral
+                              (TextLiteralHead
+                                (TextStringLiteral SingleQuotedText)))))
+                        AS
+                        (CastType
+                          CHAR
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        CLOSE_PAR)))))))))
+      SEMICOLON)))

@@ -1,0 +1,40 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainableStatement
+              FOR
+              CONNECTION
+              (RealUlongNumber IntegerLiteral)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (JsonExplainFormat JsonFormatWord))
+            (ExplainableStatement
+              FOR
+              CONNECTION
+              (RealUlongNumber IntegerLiteral)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            DESC
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (OtherExplainFormat QuotedOtherFormat))
+            (ExplainableStatement
+              FOR
+              CONNECTION
+              (RealUlongNumber IntegerLiteral)))))
+      SEMICOLON)))

@@ -1,0 +1,3 @@
+Parse error at line 1, column 55: Expected IDENTIFIED
+CREATE USER u IDENTIFIED WITH p INITIAL AUTHENTICATION;
+                                                      ^

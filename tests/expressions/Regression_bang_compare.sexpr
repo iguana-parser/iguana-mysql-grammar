@@ -1,0 +1,16 @@
+(Expression
+  (BooleanPrimary
+    (Expression
+      LOGICAL_NOT
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))))
+  (CompOp EQUAL)
+  (Predicate
+    (Expression
+      (ExpressionColumnRef
+        (Identifier
+          (PureIdentifier
+            (UnquotedIdentifier BPrefixIdentifier)))))))

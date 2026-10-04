@@ -1,0 +1,1 @@
+SELECT TRIM(' a '), EXTRACT(DAY FROM d), POSITION('a' IN 'abc');

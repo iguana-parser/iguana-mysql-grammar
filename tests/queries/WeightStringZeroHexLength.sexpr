@@ -1,0 +1,3 @@
+Parse error at line 1, column 43: Match excluded by ZeroIntegerValue
+SELECT WEIGHT_STRING('abc' AS BINARY(X'00'));
+                                          ^

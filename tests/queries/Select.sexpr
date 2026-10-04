@@ -1,0 +1,215 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectOption*
+                    (SelectOption
+                      (QuerySpecOption DISTINCT)))
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (SelectAlias
+                        AS
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier XPrefixIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier BPrefixIdentifier)))))
+                        (SelectAlias
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (WhereClause
+                    WHERE
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (CompOp GREATER_THAN)
+                      (Predicate
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))))
+                  (GroupByClause
+                    GROUP
+                    BY
+                    (OrderList
+                      (OrderExpression
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                      ((COMMA OrderExpression)*
+                        COMMA
+                        (OrderExpression
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier BPrefixIdentifier)))))))))
+                  (HavingClause
+                    HAVING
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (SumExpr
+                            COUNT_CALL_OPEN
+                            (GroupSumExpr2 MULT)
+                            CLOSE_PAR)))
+                      (CompOp GREATER_THAN)
+                      (Predicate
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))))))
+            (OrderClause
+              ORDER
+              BY
+              (OrderList
+                (OrderExpression
+                  (Expression
+                    (ExpressionColumnRef
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Direction DESC))))
+            (LimitClause
+              LIMIT
+              (LimitOptions
+                (LimitOption IntegerLiteral)
+                OFFSET
+                (LimitOption IntegerLiteral))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectOption*
+                    (SelectOption SQL_NO_CACHE)
+                    (SelectOption
+                      (QuerySpecOption SQL_BUFFER_RESULT)))
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectOption*
+                    (SelectOption
+                      (QuerySpecOption ALL)))
+                  (SelectItemList
+                    (SelectItem
+                      (TableWild
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        DOT
+                        MULT)))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+          (LockingClauseList
+            (LockingClause+
+              (LockingClause
+                FOR
+                (LockStrengh UPDATE)
+                (LockedRowAction NOWAIT))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+          (LockingClauseList
+            (LockingClause+
+              (LockingClause
+                FOR
+                (LockStrengh SHARE)
+                (LockedRowAction SKIP LOCKED))))))
+      SEMICOLON)))

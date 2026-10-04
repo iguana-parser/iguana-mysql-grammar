@@ -1,0 +1,230 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (LvalueVariable KeywordQualifiedPair)
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (LvalueVariable PersistQualifiedPair)
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))))
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (LvalueVariable KeywordQualifiedPair)
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionType GLOBAL)
+            (StartOptionValueListFollowingOptionType
+              (OptionValueFollowingOptionType
+                (LvalueVariable KeywordQualifiedPair)
+                (Equal EQUAL)
+                (SetExprOrDefault
+                  (Expression
+                    (Literal
+                      (NumLiteral
+                        (Int64Literal IntegerLiteral))))))
+              OptionValueListContinued))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (SetVarIdentType
+                  GLOBAL
+                  (SystemScopeDot DOT))
+                (ScopedSetVariable
+                  (ScopedLvalueIdentifier AdjacentScopedWord)))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)
+                        (DotIdentifier DotWordIdentifier)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))))
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)
+                        (DotIdentifier DotWordIdentifier)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (SetVarIdentType
+                  GLOBAL
+                  (SystemScopeDot DOT))
+                (ScopedSetVariable KeywordQualifiedPair))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        PERSIST
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)
+                        (DotIdentifier DotWordIdentifier)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (SetVarIdentType
+                  GLOBAL
+                  (SystemScopeDot DOT))
+                (ScopedSetVariable
+                  (ScopedLvalueIdentifier AdjacentScopedWord)))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            COMPONENT
+            (TextStringLiteralList
+              (TextStringLiteral SingleQuotedText))
+            (InstallSetValueList
+              SET
+              (InstallSetValue
+                (InstallLvalueVariable
+                  (LvalueVariable KeywordQualifiedPair))
+                (Equal EQUAL)
+                (InstallSetRvalue
+                  (Expression
+                    (Literal
+                      (NumLiteral
+                        (Int64Literal IntegerLiteral))))))
+              ((COMMA InstallSetValue)*
+                COMMA
+                (InstallSetValue
+                  (InstallLvalueVariable
+                    (LvalueVariable PersistQualifiedPair))
+                  (Equal EQUAL)
+                  (InstallSetRvalue
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral))))))
+                COMMA
+                (InstallSetValue
+                  (InstallLvalueVariable
+                    (LvalueVariable
+                      (Identifier
+                        (PureIdentifier BacktickIdentifier))))
+                  (Equal EQUAL)
+                  (InstallSetRvalue
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))))))
+      SEMICOLON)))

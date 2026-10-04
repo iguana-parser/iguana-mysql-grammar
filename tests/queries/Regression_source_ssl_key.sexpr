@@ -1,0 +1,16 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource REPLICATION SOURCE)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                (ChangeReplicationSourceSSLKey SOURCE_SSL_KEY)
+                EQUAL
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)))

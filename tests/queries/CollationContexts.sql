@@ -1,0 +1,2 @@
+CREATE TABLE t (s VARCHAR(20) COLLATE binary);
+SELECT 'x' COLLATE 'binary';

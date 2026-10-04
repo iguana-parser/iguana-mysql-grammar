@@ -1,0 +1,1 @@
+UPDATE t SET .col=1;

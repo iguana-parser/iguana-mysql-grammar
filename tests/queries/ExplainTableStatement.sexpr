@@ -1,0 +1,33 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            DESC
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (ExplicitTable
+                        TABLE
+                        (TableRef
+                          (QualifiedIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                  (OrderClause
+                    ORDER
+                    BY
+                    (OrderList
+                      (OrderExpression
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier))))
+                        (Direction ASC))))))))))
+      SEMICOLON)))

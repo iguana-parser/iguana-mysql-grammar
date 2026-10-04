@@ -1,0 +1,1 @@
+REVOKE SELECT ON a.b.c FROM 'u';

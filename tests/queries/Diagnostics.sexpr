@@ -1,0 +1,73 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (GetDiagnosticsStatement
+          GET
+          DIAGNOSTICS
+          (GroupGetDiagnosticsStatement1
+            (StatementInformationItem
+              (UserVariable AtTextSuffix)
+              EQUAL
+              NUMBER)
+            ((COMMA StatementInformationItem)*
+              COMMA
+              (StatementInformationItem
+                (UserVariable AtTextSuffix)
+                EQUAL
+                ROW_COUNT)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (GetDiagnosticsStatement
+          GET
+          DIAGNOSTICS
+          (GroupGetDiagnosticsStatement1
+            CONDITION
+            (SignalAllowedExpr
+              (Literal
+                (NumLiteral
+                  (Int64Literal IntegerLiteral))))
+            (ConditionInformationItem
+              (UserVariable AtTextSuffix)
+              EQUAL
+              (SignalInformationItemName MESSAGE_TEXT)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SignalStatement
+          SIGNAL
+          (Sqlstate
+            SQLSTATE
+            (TextLiteral
+              (TextLiteralHead
+                (TextStringLiteral SingleQuotedText))))
+          SET
+          (SignalInformationItem
+            (SignalInformationItemName MESSAGE_TEXT)
+            EQUAL
+            (SignalAllowedExpr
+              (Literal
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ResignalStatement
+          RESIGNAL
+          (Sqlstate
+            SQLSTATE
+            (TextLiteral
+              (TextLiteralHead
+                (TextStringLiteral SingleQuotedText))))
+          SET
+          (SignalInformationItem
+            (SignalInformationItemName MESSAGE_TEXT)
+            EQUAL
+            (SignalAllowedExpr
+              (Literal
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)))

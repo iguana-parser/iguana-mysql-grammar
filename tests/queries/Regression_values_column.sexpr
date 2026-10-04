@@ -1,0 +1,46 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (InsertStatement
+          INSERT
+          INTO
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (GroupInsertStatement1
+            (InsertFromConstructor
+              (InsertValues
+                VALUES
+                (ValueList
+                  OPEN_PAR
+                  (Values
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))
+                  CLOSE_PAR))))
+          (InsertUpdateList
+            ON
+            DUPLICATE
+            KEY
+            UPDATE
+            (UpdateList
+              (UpdateElement
+                (ColumnRef
+                  (FieldIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                EQUAL
+                (Expression
+                  VALUES
+                  OPEN_PAR
+                  (SimpleIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))
+                  CLOSE_PAR))))))
+      SEMICOLON)))

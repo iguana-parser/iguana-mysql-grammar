@@ -1,0 +1,1 @@
+1 NOT IN ((SELECT 1), (SELECT 2))

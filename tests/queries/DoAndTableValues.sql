@@ -1,0 +1,3 @@
+DO 1+2, f(3);
+TABLE t;
+VALUES ROW(1,2), ROW(3,4);

@@ -1,0 +1,32 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (UserFunction
+                            (GroupUserFunction1
+                              USER
+                              (Parentheses OPEN_PAR CLOSE_PAR))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (UserFunction
+                              (GroupUserFunction1 USER_CALL_OPEN CLOSE_PAR)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (UserFunction
+                              (GroupUserFunction1 USER_CALL_OPEN CLOSE_PAR)))))))))))))
+      SEMICOLON)))

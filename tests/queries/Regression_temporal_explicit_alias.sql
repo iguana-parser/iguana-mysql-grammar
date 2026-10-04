@@ -1,0 +1,1 @@
+SELECT TIME AS 'label' FROM t;

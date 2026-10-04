@@ -1,0 +1,3 @@
+Parse error at line 1, column 32: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, SEMICOLON, CROSS, FOR, INNER, INTO, JOIN, LEFT, LOCK, NATURAL, RIGHT, STRAIGHT_JOIN, UNION, EXCEPT, INTERSECT, EOF
+SELECT * FROM a NATURAL JOIN b ON 1;
+                               ^^

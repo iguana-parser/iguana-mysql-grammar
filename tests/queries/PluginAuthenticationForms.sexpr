@@ -1,0 +1,107 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedWithPluginAsAuth
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      AS
+                      (TextStringHash
+                        (TextStringLiteral SingleQuotedText)))))))
+            CreateUserTail)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedWithPluginByRandomPassword
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      BY
+                      RANDOM
+                      PASSWORD)))))
+            CreateUserTail)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))
+                  (GroupAlterUser4
+                    (IdentifiedWithPluginAsAuth
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      AS
+                      (TextStringHash
+                        (TextStringLiteral SingleQuotedText)))
+                    (RetainCurrentPassword RETAIN CURRENT PASSWORD))))
+              CreateUserTail))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))
+                  (GroupAlterUser4
+                    (IdentifiedWithPluginByRandomPassword
+                      IDENTIFIED
+                      WITH
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      BY
+                      RANDOM
+                      PASSWORD))))
+              CreateUserTail))))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+SELECT * FROM a LEFT JOIN b JOIN c USING (x) ON a.x=b.x;

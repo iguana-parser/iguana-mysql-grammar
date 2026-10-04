@@ -1,0 +1,36 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (UserVariable AtTextSuffix)
+                        ASSIGN
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            (UserVariable AtTextSuffix))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              SESSION
+                              (SystemScopeDot DOT))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName AdjacentScopedWord)))))))))))))
+      SEMICOLON)))

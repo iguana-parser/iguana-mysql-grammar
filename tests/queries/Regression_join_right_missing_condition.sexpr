@@ -1,0 +1,3 @@
+Parse error at line 1, column 46: Expected one of CROSS, INNER, JOIN, LEFT, NATURAL, ON, RIGHT, STRAIGHT_JOIN, USING
+SELECT * FROM a RIGHT JOIN b JOIN c USING (x);
+                                             ^

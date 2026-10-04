@@ -1,0 +1,154 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (UserVariable AtTextSuffix))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable AtTextSuffix))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable AtTextSuffix))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable AtTextSuffix))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (UserVariable
+                    AT_SIGN
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (TextStringLiteral DoubleQuotedText))))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier BacktickIdentifier)))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (UserVariable
+                    AT_SIGN
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (ColumnRef
+                      (FieldIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (Identifier
+                          (PureIdentifier BacktickIdentifier)))))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml XML)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (UserVariable AtTextSuffix))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (ColumnRef
+                      (FieldIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  COMMA
+                  (FieldOrVariable
+                    (UserVariable AtTextSuffix))))
+              CLOSE_PAR))))
+      SEMICOLON)))

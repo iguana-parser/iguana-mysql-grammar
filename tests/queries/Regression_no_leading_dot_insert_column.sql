@@ -1,0 +1,1 @@
+INSERT INTO t (.col) VALUES (1);

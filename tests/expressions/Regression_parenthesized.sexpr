@@ -1,0 +1,22 @@
+(Expression
+  (Expression
+    OPEN_PAR
+    (Expression
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier OrdinaryIdentifier)))))
+      PLUS
+      (Expression
+        (ExpressionColumnRef
+          (Identifier
+            (PureIdentifier
+              (UnquotedIdentifier BPrefixIdentifier))))))
+    CLOSE_PAR)
+  MULT
+  (Expression
+    (ExpressionColumnRef
+      (Identifier
+        (PureIdentifier
+          (UnquotedIdentifier OrdinaryIdentifier))))))

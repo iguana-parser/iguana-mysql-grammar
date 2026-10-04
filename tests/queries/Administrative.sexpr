@@ -1,0 +1,78 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          BINLOG
+          (TextLiteral
+            (TextLiteralHead
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          CACHE
+          KW_INDEX
+          (KeyCacheListOrParts
+            (KeyCacheList
+              (AssignToKeycache
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+          IN
+          DEFAULT))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          LOAD
+          KW_INDEX
+          INTO
+          CACHE
+          (PreloadTail
+            (PreloadList
+              (PreloadKeys
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (GroupOtherAdministrativeStatement1
+            (FlushTables
+              TABLES
+              (GroupFlushTables1
+                (FlushTableList
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (FlushTablesOptions WITH READ LOCK))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (GroupOtherAdministrativeStatement1
+            (FlushOption PRIVILEGES))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          KILL
+          QUERY
+          (Expression
+            (Literal
+              (NumLiteral
+                (Int64Literal IntegerLiteral))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement SHUTDOWN))
+      SEMICOLON)))

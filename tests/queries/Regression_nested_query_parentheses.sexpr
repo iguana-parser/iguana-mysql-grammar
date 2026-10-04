@@ -1,0 +1,47 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryExpressionBody
+                (QueryPrimary
+                  (QuerySpecification
+                    SELECT
+                    (SelectItemList
+                      (SelectItem
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))))))
+              UNION
+              (QueryExpressionBody
+                (QueryExpressionParens
+                  OPEN_PAR
+                  (QueryExpressionWithOptLockingClauses
+                    (QueryExpression
+                      (QueryExpressionBody
+                        (QueryExpressionParens
+                          OPEN_PAR
+                          (QueryExpressionWithOptLockingClauses
+                            (QueryExpression
+                              (QueryExpressionBody
+                                (QueryExpressionParens
+                                  OPEN_PAR
+                                  (QueryExpressionWithOptLockingClauses
+                                    (QueryExpression
+                                      (QueryExpressionBody
+                                        (QueryPrimary
+                                          (QuerySpecification
+                                            SELECT
+                                            (SelectItemList
+                                              (SelectItem
+                                                (Expression
+                                                  (Literal
+                                                    (NumLiteral
+                                                      (Int64Literal IntegerLiteral)))))))))))
+                                  CLOSE_PAR))))
+                          CLOSE_PAR))))
+                  CLOSE_PAR))))))
+      SEMICOLON)))

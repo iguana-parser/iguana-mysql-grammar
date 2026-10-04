@@ -1,0 +1,101 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropTable
+            TABLE
+            (IfExists IF EXISTS)
+            (TableRefList
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              ((COMMA TableRef)*
+                COMMA
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropView
+            VIEW
+            (IfExists IF EXISTS)
+            (ViewRefList
+              (ViewRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropDatabase
+            DATABASE
+            (IfExists IF EXISTS)
+            (SchemaRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropProcedure
+            PROCEDURE
+            (IfExists IF EXISTS)
+            (ProcedureRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropFunction
+            FUNCTION
+            (IfExists IF EXISTS)
+            (FunctionRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropTrigger
+            TRIGGER
+            (IfExists IF EXISTS)
+            (TriggerRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropEvent
+            EVENT
+            (IfExists IF EXISTS)
+            (EventRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)))

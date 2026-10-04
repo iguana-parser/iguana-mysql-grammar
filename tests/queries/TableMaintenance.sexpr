@@ -1,0 +1,89 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          ANALYZE
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          ANALYZE
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          (Histogram
+            UPDATE
+            HISTOGRAM
+            ON
+            (IdentifierList
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (HistogramUpdateParam
+              (HistogramNumBuckets WITH IntegerLiteral BUCKETS)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          CHECK
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          (CheckOption*
+            (CheckOption QUICK))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          CHECKSUM
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          EXTENDED))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          OPTIMIZE
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          REPAIR
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          (RepairType*
+            (RepairType QUICK))))
+      SEMICOLON)))

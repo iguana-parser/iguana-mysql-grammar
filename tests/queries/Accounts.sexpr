@@ -1,0 +1,131 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (CreateUserStatement
+            CREATE
+            USER
+            (CreateUserList
+              (CreateUser
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))
+                    (UserVariable
+                      AT_SIGN
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText)))))
+                (GroupCreateUser1
+                  (Identification
+                    (IdentifiedByPassword
+                      IDENTIFIED
+                      BY
+                      (TextStringLiteral SingleQuotedText))))))
+            CreateUserTail)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))
+                      (UserVariable
+                        AT_SIGN
+                        (TextOrIdentifier
+                          (TextStringLiteral SingleQuotedText)))))
+                  (GroupAlterUser4
+                    (IdentifiedByRandomPassword IDENTIFIED BY RANDOM PASSWORD)
+                    (GroupAlterUser2
+                      (RetainCurrentPassword RETAIN CURRENT PASSWORD)))))
+              CreateUserTail))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))
+                      (UserVariable
+                        AT_SIGN
+                        (TextOrIdentifier
+                          (TextStringLiteral SingleQuotedText)))))
+                  GroupAlterUser4))
+              (CreateUserTail
+                (AccountLockPasswordExpireOptions*
+                  (AccountLockPasswordExpireOptions ACCOUNT LOCK)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (RenameUserStatement
+            RENAME
+            USER
+            (User
+              (UserIdentifierOrText
+                (TextOrIdentifier
+                  (TextStringLiteral SingleQuotedText))
+                (UserVariable
+                  AT_SIGN
+                  (TextOrIdentifier
+                    (TextStringLiteral SingleQuotedText)))))
+            TO
+            (User
+              (UserIdentifierOrText
+                (TextOrIdentifier
+                  (TextStringLiteral SingleQuotedText))
+                (UserVariable
+                  AT_SIGN
+                  (TextOrIdentifier
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            PASSWORD
+            FOR
+            (User
+              (UserIdentifierOrText
+                (TextOrIdentifier
+                  (TextStringLiteral SingleQuotedText))
+                (UserVariable
+                  AT_SIGN
+                  (TextOrIdentifier
+                    (TextStringLiteral SingleQuotedText)))))
+            (Equal EQUAL)
+            (TextString
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (DropUserStatement
+            DROP
+            USER
+            (IfExists IF EXISTS)
+            (UserList
+              (User
+                (UserIdentifierOrText
+                  (TextOrIdentifier
+                    (TextStringLiteral SingleQuotedText))
+                  (UserVariable
+                    AT_SIGN
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+RESET PERSIST a.b.c;

@@ -1,0 +1,125 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (IndexHintList
+                              (IndexHint+
+                                (IndexHint
+                                  USE
+                                  (KeyOrIndex KW_INDEX)
+                                  OPEN_PAR
+                                  (IndexList
+                                    (IndexListElement
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  CLOSE_PAR))))))))
+                  (WhereClause
+                    WHERE
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (CompOp EQUAL)
+                      (Predicate
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (IndexHintList
+                                (IndexHint+
+                                  (IndexHint
+                                    (IndexHintType FORCE)
+                                    (KeyOrIndex KW_INDEX)
+                                    (IndexHintClause
+                                      FOR
+                                      (GroupIndexHintClause1 JOIN))
+                                    OPEN_PAR
+                                    (IndexList
+                                      (IndexListElement PRIMARY))
+                                    CLOSE_PAR))))))
+                        (InnerJoinType JOIN)
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (IndexHintList
+                                (IndexHint+
+                                  (IndexHint
+                                    (IndexHintType IGNORE)
+                                    (KeyOrIndex KW_INDEX)
+                                    OPEN_PAR
+                                    (IndexList
+                                      (IndexListElement
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                                    CLOSE_PAR))))))
+                        (JoinSpecification
+                          ON
+                          (Expression
+                            (BooleanPrimary
+                              (Expression
+                                (ExpressionColumnRef
+                                  (QualifiedPair
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                    (DotIdentifier DotWordIdentifier)))))
+                            (CompOp EQUAL)
+                            (Predicate
+                              (Expression
+                                (ExpressionColumnRef
+                                  (QualifiedPair
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                    (DotIdentifier DotWordIdentifier))))))))))))))))
+      SEMICOLON)))

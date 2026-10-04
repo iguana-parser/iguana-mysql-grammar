@@ -1,0 +1,18 @@
+(Expression
+  (BitExpression
+    (Expression
+      (Literal
+        (NumLiteral
+          (Int64Literal IntegerLiteral)))))
+  (NotRule NOT)
+  IN
+  OPEN_PAR
+  (InListExpressions
+    (Expression
+      OPEN_PAR
+      (Expression
+        (Literal
+          (NumLiteral
+            (Int64Literal IntegerLiteral))))
+      CLOSE_PAR))
+  CLOSE_PAR)

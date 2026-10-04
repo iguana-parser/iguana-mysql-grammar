@@ -1,0 +1,1 @@
+LOAD DATA FROM 'f' INTO TABLE t;

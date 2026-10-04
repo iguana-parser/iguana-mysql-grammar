@@ -1,0 +1,1 @@
+SELECT * FROM ({ OJ a LEFT JOIN b ON 1 });

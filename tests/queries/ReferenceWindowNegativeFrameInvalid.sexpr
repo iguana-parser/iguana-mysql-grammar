@@ -1,0 +1,3 @@
+Parse error at line 1, column 47: Expected one of IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PARAM_MARKER, BETWEEN, CURRENT, INTERVAL, UNBOUNDED
+SELECT sex, COUNT(id) OVER (ORDER BY id RANGE -1 PRECEDING) FROM t1;
+                                              ^^

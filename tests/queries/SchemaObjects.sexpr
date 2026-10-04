@@ -1,0 +1,172 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateDatabase
+            DATABASE
+            (IfNotExists
+              IF
+              (NotRule NOT)
+              EXISTS)
+            (SchemaName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (CreateDatabaseOption*
+              (CreateDatabaseOption
+                (DefaultCharset
+                  (Charset CHAR SET)
+                  (CharsetName
+                    (TextOrIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterDatabase
+              DATABASE
+              (SchemaRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (AlterDatabaseOption+
+                (AlterDatabaseOption
+                  (CreateDatabaseOption
+                    (DefaultCharset
+                      (Charset CHAR SET)
+                      (CharsetName
+                        (TextOrIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateView
+            (ViewReplaceOrAlgorithm OR REPLACE)
+            VIEW
+            (ViewName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (ViewTail
+              AS
+              (ViewQueryBlock
+                (QueryExpressionWithOptLockingClauses
+                  (QueryExpression
+                    (QueryExpressionBody
+                      (QueryPrimary
+                        (QuerySpecification
+                          SELECT
+                          (SelectItemList
+                            (SelectItem
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                          (FromClause
+                            FROM
+                            (TableReferenceList
+                              (TableReference
+                                (TableFactor
+                                  (SingleTable
+                                    (TableRef
+                                      (QualifiedIdentifier
+                                        (Identifier
+                                          (PureIdentifier
+                                            (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                (ViewCheckOption WITH LOCAL CHECK OPTION))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterView
+              VIEW
+              (ViewRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (ViewTail
+                AS
+                (ViewQueryBlock
+                  (QueryExpressionWithOptLockingClauses
+                    (QueryExpression
+                      (QueryExpressionBody
+                        (QueryPrimary
+                          (QuerySpecification
+                            SELECT
+                            (SelectItemList
+                              (SelectItem
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier BPrefixIdentifier)))))))
+                            (FromClause
+                              FROM
+                              (TableReferenceList
+                                (TableReference
+                                  (TableFactor
+                                    (SingleTable
+                                      (TableRef
+                                        (QualifiedIdentifier
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (RenameTableStatement
+          RENAME
+          TABLE
+          (RenamePair
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            TO
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          ((COMMA RenamePair)*
+            COMMA
+            (RenamePair
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              TO
+              (TableName
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TruncateTableStatement
+          TRUNCATE
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)))

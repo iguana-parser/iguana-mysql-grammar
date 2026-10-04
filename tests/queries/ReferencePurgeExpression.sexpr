@@ -1,0 +1,33 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          PURGE
+          (PurgeOptions
+            BINARY
+            LOGS
+            (GroupPurgeOptions1
+              BEFORE
+              (Expression
+                (RuntimeFunctionCall
+                  (GroupRuntimeFunctionCall3
+                    ADDDATE_CALL_OPEN
+                    (Expression
+                      (RuntimeFunctionCall
+                        (GroupRuntimeFunctionCall5
+                          NOW
+                          (TimeFunctionParameters OPEN_PAR CLOSE_PAR))))
+                    COMMA
+                    (GroupRuntimeFunctionCall1
+                      INTERVAL
+                      (Expression
+                        MINUS
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral)))))
+                      (Interval
+                        (IntervalTimeStamp DAY)))
+                    CLOSE_PAR)))))))
+      SEMICOLON)))

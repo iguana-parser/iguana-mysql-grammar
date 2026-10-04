@@ -1,0 +1,17 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateSpatialReference
+            SPATIAL
+            REFERENCE
+            SYSTEM
+            (RealUlonglongNumber IntegerLiteral)
+            (SrsAttribute*
+              (SrsAttribute
+                DESCRIPTION
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)))

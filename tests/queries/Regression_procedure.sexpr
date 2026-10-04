@@ -1,0 +1,54 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateProcedure
+            PROCEDURE
+            (ProcedureName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            CLOSE_PAR
+            (StoredRoutineBody
+              (CompoundStatement
+                (UnlabeledBlock
+                  (BeginEndBlock
+                    BEGIN
+                    (CompoundStatementList
+                      ((CompoundStatement SEMICOLON)+
+                        (CompoundStatement
+                          (SimpleStatement
+                            (SelectStatement
+                              (QueryExpression
+                                (QueryExpressionBody
+                                  (QueryPrimary
+                                    (QuerySpecification
+                                      SELECT
+                                      (SelectItemList
+                                        (SelectItem
+                                          (Expression
+                                            (Literal
+                                              (NumLiteral
+                                                (Int64Literal IntegerLiteral)))))))))))))
+                        SEMICOLON
+                        (CompoundStatement
+                          (SimpleStatement
+                            (SelectStatement
+                              (QueryExpression
+                                (QueryExpressionBody
+                                  (QueryPrimary
+                                    (QuerySpecification
+                                      SELECT
+                                      (SelectItemList
+                                        (SelectItem
+                                          (Expression
+                                            (Literal
+                                              (NumLiteral
+                                                (Int64Literal IntegerLiteral)))))))))))))
+                        SEMICOLON))
+                    END)))))))
+      SEMICOLON)))

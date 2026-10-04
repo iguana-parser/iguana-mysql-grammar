@@ -1,0 +1,15 @@
+(Queries
+  (FinalQuery
+    (SimpleStatement
+      (SelectStatement
+        (QueryExpression
+          (QueryExpressionBody
+            (QueryPrimary
+              (QuerySpecification
+                SELECT
+                (SelectItemList
+                  (SelectItem
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral))))))))))))))

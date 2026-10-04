@@ -1,0 +1,1 @@
+SELECT * FROM a JOIN b JOIN c USING (x) USING (y);

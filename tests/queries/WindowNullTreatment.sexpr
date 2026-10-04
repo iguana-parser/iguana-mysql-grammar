@@ -1,0 +1,140 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (WindowFunctionCall
+                          FIRST_VALUE
+                          (ExprWithParentheses
+                            OPEN_PAR
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            CLOSE_PAR)
+                          (NullTreatment RESPECT NULLS)
+                          (WindowingClause
+                            OVER
+                            (WindowSpec
+                              OPEN_PAR
+                              (WindowSpecDetails
+                                (OrderClause
+                                  ORDER
+                                  BY
+                                  (OrderList
+                                    (OrderExpression
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                              CLOSE_PAR)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (WindowFunctionCall
+                            LAST_VALUE
+                            (ExprWithParentheses
+                              OPEN_PAR
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              CLOSE_PAR)
+                            (NullTreatment RESPECT NULLS)
+                            (WindowingClause
+                              OVER
+                              (WindowSpec
+                                OPEN_PAR
+                                (WindowSpecDetails
+                                  (OrderClause
+                                    ORDER
+                                    BY
+                                    (OrderList
+                                      (OrderExpression
+                                        (Expression
+                                          (ExpressionColumnRef
+                                            (Identifier
+                                              (PureIdentifier
+                                                (UnquotedIdentifier BPrefixIdentifier)))))))))
+                                CLOSE_PAR)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (WindowFunctionCall
+                          NTH_VALUE
+                          OPEN_PAR
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          COMMA
+                          (SimpleExpression
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))
+                          CLOSE_PAR
+                          FROM
+                          FIRST
+                          (NullTreatment RESPECT NULLS)
+                          (WindowingClause
+                            OVER
+                            (WindowSpec
+                              OPEN_PAR
+                              (WindowSpecDetails
+                                (OrderClause
+                                  ORDER
+                                  BY
+                                  (OrderList
+                                    (OrderExpression
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                              CLOSE_PAR))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

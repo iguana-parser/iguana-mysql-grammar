@@ -1,0 +1,1 @@
+WITH c AS (SELECT id FROM t) SELECT id FROM c;

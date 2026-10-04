@@ -1,0 +1,1 @@
+SELECT db.SELECT.* FROM t;

@@ -1,0 +1,163 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateIndex
+            (GroupCreateIndex1
+              KW_INDEX
+              (IndexName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (IndexTypeClause
+                USING
+                (IndexType BTREE))
+              (CreateIndexTarget
+                ON
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (KeyListWithExpression
+                  OPEN_PAR
+                  (KeyPartOrExpression
+                    (KeyPart
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  CLOSE_PAR))
+              (IndexOption*
+                (IndexOption
+                  (CommonIndexOption
+                    KEY_BLOCK_SIZE
+                    EQUAL
+                    (UlongNumber IntegerLiteral)))
+                (IndexOption
+                  (CommonIndexOption
+                    COMMENT
+                    (TextLiteral
+                      (TextLiteralHead
+                        (TextStringLiteral SingleQuotedText)))))
+                (IndexOption
+                  (CommonIndexOption
+                    (Visibility INVISIBLE)))
+                (IndexOption
+                  (CommonIndexOption
+                    ENGINE_ATTRIBUTE
+                    EQUAL
+                    (JsonAttribute
+                      (TextStringLiteral SingleQuotedText))))
+                (IndexOption
+                  (CommonIndexOption
+                    SECONDARY_ENGINE_ATTRIBUTE
+                    EQUAL
+                    (JsonAttribute
+                      (TextStringLiteral SingleQuotedText))))))
+            (IndexLockAndAlgorithm
+              (AlterAlgorithmOption
+                ALGORITHM
+                EQUAL
+                (AlterAlgorithmName AlgorithmNameWord))
+              (AlterLockOption
+                LOCK
+                EQUAL
+                (AlterLockName LockNameWord))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateIndex
+            (GroupCreateIndex1
+              FULLTEXT
+              KW_INDEX
+              (IndexName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (CreateIndexTarget
+                ON
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (KeyListWithExpression
+                  OPEN_PAR
+                  (KeyPartOrExpression
+                    (KeyPart
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  CLOSE_PAR))
+              (FulltextIndexOption*
+                (FulltextIndexOption
+                  WITH
+                  PARSER
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateIndex
+            (GroupCreateIndex1
+              SPATIAL
+              KW_INDEX
+              (IndexName
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (CreateIndexTarget
+                ON
+                (TableRef
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                (KeyListWithExpression
+                  OPEN_PAR
+                  (KeyPartOrExpression
+                    (KeyPart
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  CLOSE_PAR))
+              (SpatialIndexOption*
+                (SpatialIndexOption
+                  (CommonIndexOption
+                    COMMENT
+                    (TextLiteral
+                      (TextLiteralHead
+                        (TextStringLiteral SingleQuotedText))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterList
+                    (AlterListItem
+                      ALTER
+                      KW_INDEX
+                      (IndexRef
+                        (FieldIdentifier
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Visibility VISIBLE)))))))))
+      SEMICOLON)))

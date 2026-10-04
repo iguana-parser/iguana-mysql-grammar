@@ -1,0 +1,1 @@
+SELECT selectivity FROM fromage;

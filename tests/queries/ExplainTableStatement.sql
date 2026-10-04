@@ -1,0 +1,1 @@
+DESC TABLE t ORDER BY t.id ASC;

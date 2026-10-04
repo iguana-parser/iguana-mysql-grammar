@@ -1,0 +1,1 @@
+SELECT _binary b'01';

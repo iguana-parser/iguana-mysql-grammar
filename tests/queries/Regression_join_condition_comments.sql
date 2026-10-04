@@ -1,0 +1,1 @@
+SELECT * FROM a JOIN b JOIN c /* gap */ ON 1 /* gap */ ON 2;

@@ -1,0 +1,51 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType INT)
+                      GroupFieldDefinition1)
+                    (CheckOrReferences
+                      (References
+                        REFERENCES
+                        (TableRef
+                          (QualifiedIdentifier
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (IdentifierListWithParentheses
+                          OPEN_PAR
+                          (IdentifierList
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))
+                          CLOSE_PAR)
+                        (GroupReferences1
+                          ON
+                          UPDATE
+                          (DeleteOption CASCADE)
+                          ON
+                          DELETE
+                          (DeleteOption
+                            SET
+                            (NullLiteral NULL))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

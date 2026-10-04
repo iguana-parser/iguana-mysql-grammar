@@ -1,0 +1,41 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadFrom FROM)
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          (SourceCount
+            (SourceCountName SourceCountWord)
+            IntegerLiteral)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          LoadDataFileTail))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml XML)
+          (LoadSourceType S3)
+          (TextStringLiteral SingleQuotedText)
+          (SourceCount
+            (SourceCountName QuotedSourceCountWord)
+            IntegerLiteral)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          LoadDataFileTail))
+      SEMICOLON)))

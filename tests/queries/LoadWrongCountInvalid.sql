@@ -1,0 +1,1 @@
+LOAD DATA INFILE 'f' arbitrary 3 INTO TABLE t;

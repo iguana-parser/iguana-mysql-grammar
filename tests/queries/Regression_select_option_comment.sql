@@ -1,0 +1,1 @@
+SELECT/*gap*/sql_no_cache/*gap*/+1;

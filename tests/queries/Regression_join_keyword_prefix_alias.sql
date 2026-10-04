@@ -1,0 +1,1 @@
+SELECT * FROM a JOIN b on_suffix JOIN c using_suffix;

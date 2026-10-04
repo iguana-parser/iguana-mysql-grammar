@@ -1,0 +1,139 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTrigger
+            TRIGGER
+            (TriggerName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            BEFORE
+            INSERT
+            ON
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FOR
+            EACH
+            ROW
+            (TriggerFollowsPrecedesClause
+              FOLLOWS
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (CompoundStatement
+              (SimpleStatement
+                (SetStatement
+                  SET
+                  (StartOptionValueList
+                    (OptionValueNoOptionType
+                      (LvalueVariable
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NEW)))
+                        (DotIdentifier DotWordIdentifier))
+                      (Equal EQUAL)
+                      (SetExprOrDefault
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    OptionValueListContinued)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTrigger
+            TRIGGER
+            (TriggerName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            BEFORE
+            INSERT
+            ON
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FOR
+            EACH
+            ROW
+            (TriggerFollowsPrecedesClause
+              PRECEDES
+              (TextOrIdentifier
+                (TextStringLiteral SingleQuotedText)))
+            (CompoundStatement
+              (SimpleStatement
+                (SetStatement
+                  SET
+                  (StartOptionValueList
+                    (OptionValueNoOptionType
+                      (LvalueVariable
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NEW)))
+                        (DotIdentifier DotWordIdentifier))
+                      (Equal EQUAL)
+                      (SetExprOrDefault
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    OptionValueListContinued)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTrigger
+            TRIGGER
+            (TriggerName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            BEFORE
+            INSERT
+            ON
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FOR
+            EACH
+            ROW
+            (TriggerFollowsPrecedesClause
+              FOLLOWS
+              (TextOrIdentifier
+                (TextStringLiteral DoubleQuotedText)))
+            (CompoundStatement
+              (SimpleStatement
+                (SetStatement
+                  SET
+                  (StartOptionValueList
+                    (OptionValueNoOptionType
+                      (LvalueVariable
+                        (Identifier
+                          (IdentifierKeyword
+                            (IdentifierKeywordsUnambiguous NEW)))
+                        (DotIdentifier DotWordIdentifier))
+                      (Equal EQUAL)
+                      (SetExprOrDefault
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    OptionValueListContinued)))))))
+      SEMICOLON)))

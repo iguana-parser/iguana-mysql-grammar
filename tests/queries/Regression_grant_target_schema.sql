@@ -1,0 +1,1 @@
+GRANT SELECT ON db.* TO 'u';

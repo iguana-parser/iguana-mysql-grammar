@@ -1,0 +1,173 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        MATCH
+                        (IdentListArg
+                          OPEN_PAR
+                          (IdentList
+                            (SimpleIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            ((COMMA SimpleIdentifier)*
+                              COMMA
+                              (SimpleIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                          CLOSE_PAR)
+                        AGAINST
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText))))))
+                        CLOSE_PAR)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        MATCH
+                        (IdentListArg
+                          OPEN_PAR
+                          (IdentList
+                            (SimpleIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR)
+                        AGAINST
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText))))))
+                        (FulltextOptions IN BOOLEAN MODE)
+                        CLOSE_PAR)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        MATCH
+                        (IdentListArg
+                          OPEN_PAR
+                          (IdentList
+                            (SimpleIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR)
+                        AGAINST
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText))))))
+                        (FulltextOptions IN NATURAL LANGUAGE MODE)
+                        CLOSE_PAR)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        MATCH
+                        (IdentListArg
+                          OPEN_PAR
+                          (IdentList
+                            (SimpleIdentifier
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                          CLOSE_PAR)
+                        AGAINST
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText))))))
+                        (FulltextOptions IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)
+                        CLOSE_PAR)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        MATCH
+                        (IdentListArg
+                          (IdentList
+                            (SimpleIdentifier
+                              (QualifiedPair
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))
+                                (DotIdentifier DotWordIdentifier)))))
+                        AGAINST
+                        OPEN_PAR
+                        (BitExpression
+                          (Expression
+                            (Literal
+                              (TextLiteral
+                                (TextLiteralHead
+                                  (TextStringLiteral SingleQuotedText))))))
+                        (FulltextOptions WITH QUERY EXPANSION)
+                        CLOSE_PAR)))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+      SEMICOLON)))

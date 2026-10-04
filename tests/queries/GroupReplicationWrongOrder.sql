@@ -1,0 +1,1 @@
+START USER='replication-user' GROUP_REPLICATION;

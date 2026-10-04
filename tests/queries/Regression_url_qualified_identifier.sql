@@ -1,0 +1,1 @@
+SELECT B.URL FROM t AS B;

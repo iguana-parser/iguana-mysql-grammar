@@ -1,0 +1,61 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (GroupOtherAdministrativeStatement1
+            (FlushTables
+              TABLES
+              (GroupFlushTables1
+                (FlushTableList
+                  (QualifiedIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))
+                  ((COMMA QualifiedIdentifier)*
+                    COMMA
+                    (QualifiedIdentifier
+                      (QualifiedPair
+                        (Identifier
+                          (PureIdentifier BacktickIdentifier))
+                        (DotIdentifier
+                          DOT
+                          (IdentifierAfterDot
+                            (Identifier
+                              (PureIdentifier BacktickIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (GroupOtherAdministrativeStatement1
+            (FlushTables
+              TABLES
+              (GroupFlushTables1
+                (FlushTableList
+                  (QualifiedIdentifier
+                    (QualifiedPair
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (DotIdentifier DotWordIdentifier))))
+                (FlushTablesOptions WITH READ LOCK))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (GroupOtherAdministrativeStatement1
+            (FlushTables
+              TABLE
+              (GroupFlushTables1
+                (FlushTableList
+                  (QualifiedIdentifier
+                    (QualifiedPair
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (DotIdentifier DotWordIdentifier))))
+                (FlushTablesOptions FOR EXPORT))))))
+      SEMICOLON)))

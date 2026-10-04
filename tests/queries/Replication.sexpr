@@ -1,0 +1,107 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeSource
+            CHANGE
+            (ChangeReplicationSource REPLICATION SOURCE)
+            TO
+            (SourceDefinitions
+              (SourceDefinition
+                (ChangeReplicationSourceHost SOURCE_HOST)
+                EQUAL
+                (TextStringNoLinebreak
+                  (TextStringLiteral SingleQuotedText)))
+              ((COMMA SourceDefinition)*
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourcePort SOURCE_PORT)
+                  EQUAL
+                  (UlongNumber IntegerLiteral))
+                COMMA
+                (SourceDefinition
+                  (ChangeReplicationSourceSSLKey SOURCE_SSL_KEY)
+                  EQUAL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (StartReplicaStatement
+            START
+            (Replica REPLICA)
+            (ReplicaThreadOptions
+              (ReplicaThreadOption SQL_THREAD)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (StopReplicaStatement
+            STOP
+            (Replica REPLICA))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (ChangeReplication
+            CHANGE
+            REPLICATION
+            FILTER
+            (FilterDefinition
+              REPLICATE_DO_DB
+              EQUAL
+              OPEN_PAR
+              (FilterDbList
+                (SchemaRef
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              CLOSE_PAR)
+            ((COMMA FilterDefinition)*
+              COMMA
+              (FilterDefinition
+                REPLICATE_DO_TABLE
+                EQUAL
+                OPEN_PAR
+                (FilterTableList
+                  (FilterTableRef
+                    (QualifiedPair
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (DotIdentifier DotWordIdentifier))))
+                CLOSE_PAR)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          PURGE
+          (PurgeOptions
+            BINARY
+            LOGS
+            (GroupPurgeOptions1
+              TO
+              (TextLiteral
+                (TextLiteralHead
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          RESET
+          (ResetOption
+            (Replica REPLICA)
+            ALL)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (GroupReplication START GROUP_REPLICATION)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ReplicationStatement
+          (GroupReplication STOP GROUP_REPLICATION)))
+      SEMICOLON)))

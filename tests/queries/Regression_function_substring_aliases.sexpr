@@ -1,0 +1,66 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (SubstringFunction
+                            SUBSTRING_CALL_OPEN
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            (GroupSubstringFunction1
+                              COMMA
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            CLOSE_PAR))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (SubstringFunction
+                              SUBSTRING_CALL_OPEN
+                              (Expression
+                                (Literal
+                                  (TextLiteral
+                                    (TextLiteralHead
+                                      (TextStringLiteral SingleQuotedText)))))
+                              (GroupSubstringFunction1
+                                COMMA
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral)))))
+                              CLOSE_PAR))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (SubstringFunction
+                              SUBSTRING_CALL_OPEN
+                              (Expression
+                                (Literal
+                                  (TextLiteral
+                                    (TextLiteralHead
+                                      (TextStringLiteral SingleQuotedText)))))
+                              (GroupSubstringFunction1
+                                FROM
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral)))))
+                              CLOSE_PAR))))))))))))
+      SEMICOLON)))

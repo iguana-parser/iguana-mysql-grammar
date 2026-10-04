@@ -1,0 +1,97 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateProcedure
+            PROCEDURE
+            (ProcedureName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            CLOSE_PAR
+            (StoredRoutineBody
+              (CompoundStatement
+                (LabeledBlock
+                  (Label
+                    (LabelIdentifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    COLON)
+                  (BeginEndBlock
+                    BEGIN
+                    (SpDeclarations
+                      ((SpDeclaration SEMICOLON)+
+                        (SpDeclaration
+                          (ConditionDeclaration
+                            DECLARE
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            CONDITION
+                            FOR
+                            (SpCondition
+                              (Sqlstate
+                                SQLSTATE
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))))
+                        SEMICOLON
+                        (SpDeclaration
+                          (HandlerDeclaration
+                            DECLARE
+                            EXIT
+                            HANDLER
+                            FOR
+                            (HandlerCondition
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                            (CompoundStatement
+                              (UnlabeledBlock
+                                (BeginEndBlock
+                                  BEGIN
+                                  (CompoundStatementList
+                                    ((CompoundStatement SEMICOLON)+
+                                      (CompoundStatement
+                                        (SimpleStatement
+                                          (GetDiagnosticsStatement
+                                            GET
+                                            STACKED
+                                            DIAGNOSTICS
+                                            (GroupGetDiagnosticsStatement1
+                                              CONDITION
+                                              (SignalAllowedExpr
+                                                (Literal
+                                                  (NumLiteral
+                                                    (Int64Literal IntegerLiteral))))
+                                              (ConditionInformationItem
+                                                (UserVariable AtTextSuffix)
+                                                EQUAL
+                                                (SignalInformationItemName MESSAGE_TEXT))))))
+                                      SEMICOLON
+                                      (CompoundStatement
+                                        (SimpleStatement
+                                          (ResignalStatement RESIGNAL)))
+                                      SEMICOLON))
+                                  END)))))
+                        SEMICOLON))
+                    (CompoundStatementList
+                      ((CompoundStatement SEMICOLON)+
+                        (CompoundStatement
+                          (SimpleStatement
+                            (SignalStatement
+                              SIGNAL
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        SEMICOLON))
+                    END)
+                  (LabelRef
+                    (LabelIdentifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+      SEMICOLON)))

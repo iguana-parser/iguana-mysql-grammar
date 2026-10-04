@@ -1,0 +1,166 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateRole
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (GroupGrantStatement1
+                (RoleOrPrivilegesList
+                  (RoleOrPrivilege
+                    SELECT
+                    (ColumnInternalRefList
+                      OPEN_PAR
+                      (ColumnInternalRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      CLOSE_PAR))
+                  ((COMMA RoleOrPrivilege)*
+                    COMMA
+                    (RoleOrPrivilege UPDATE))))
+              ON
+              (GrantIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (DotIdentifier DotWordIdentifier)))
+              TO
+              (GrantTargetList
+                (UserList
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))
+                      (UserVariable
+                        AT_SIGN
+                        (TextOrIdentifier
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (GroupGrantStatement1
+                (RoleOrPrivilegesList
+                  (RoleOrPrivilege SELECT)))
+              ON
+              (GrantIdentifier MULT DOT MULT)
+              TO
+              (GrantTargetList
+                (UserList
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))))))
+              (GrantAs
+                AS
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText))))
+                (WithRoles
+                  WITH
+                  ROLE
+                  (GroupWithRoles1
+                    (RoleList
+                      (Role
+                        (RoleIdentifierOrText
+                          (TextStringLiteral SingleQuotedText)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (RevokeStatement
+            REVOKE
+            (GroupRevokeStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege SELECT))
+              ON
+              (GrantIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (DotIdentifier DotWordIdentifier)))
+              FROM
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (TextStringLiteral SingleQuotedText)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            ALL
+            EXCEPT
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            DEFAULT
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (TextStringLiteral SingleQuotedText))))
+            TO
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropRole
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)))

@@ -1,0 +1,160 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (RvalueSystemVariableType
+                            GLOBAL
+                            (SystemScopeDot DOT))
+                          (RvalueSystemVariable
+                            (ScopedRvalueName AdjacentScopedWord)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              GLOBAL
+                              (SystemScopeDot DOT))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName AdjacentScopedWord)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              SESSION
+                              (SystemScopeDot DigitScopeDot))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName AdjacentScopedDigitWord)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (RvalueSystemVariableType
+                            GLOBAL
+                            (SystemScopeDot DOT))
+                          (RvalueSystemVariable KeywordQualifiedPair))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              GLOBAL
+                              (SystemScopeDot DOT))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName AdjacentScopedWord)
+                              (DotIdentifier DotWordIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RvalueSystemOrUserVariable
+                          AT_AT_SIGN
+                          (RvalueSystemVariableType
+                            GLOBAL
+                            (SystemScopeDot DOT))
+                          (RvalueSystemVariable
+                            (ScopedRvalueName
+                              (TextStringLiteral SingleQuotedText))
+                            (DotIdentifier DotWordIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RvalueSystemOrUserVariable
+                            AT_AT_SIGN
+                            (RvalueSystemVariableType
+                              GLOBAL
+                              (SystemScopeDot DOT))
+                            (RvalueSystemVariable
+                              (ScopedRvalueName
+                                (TextStringLiteral SingleQuotedText))
+                              (DotIdentifier DotWordIdentifier)))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (SetVarIdentType
+                  GLOBAL
+                  (SystemScopeDot DOT))
+                (ScopedSetVariable
+                  (ScopedLvalueIdentifier AdjacentScopedWord)))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            (OptionValueListContinued
+              ((COMMA OptionValue)*
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DOT))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))))
+                COMMA
+                (OptionValue
+                  (OptionValueNoOptionType
+                    (SetSystemVariable
+                      AT_AT_SIGN
+                      (SetVarIdentType
+                        GLOBAL
+                        (SystemScopeDot DigitScopeDot))
+                      (ScopedSetVariable
+                        (ScopedLvalueIdentifier AdjacentScopedDigitWord)))
+                    (Equal EQUAL)
+                    (SetExprOrDefault
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)))

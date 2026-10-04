@@ -1,0 +1,1 @@
+SELECT tImE /* gap */ "12:34:56";

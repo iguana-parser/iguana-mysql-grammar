@@ -1,0 +1,72 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (GroupRuntimeFunctionCall3
+                            ADDDATE_CALL_OPEN
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            COMMA
+                            (GroupRuntimeFunctionCall1
+                              (Expression
+                                (Literal
+                                  (NumLiteral
+                                    (Int64Literal IntegerLiteral)))))
+                            CLOSE_PAR))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (FunctionCall
+                            (UnqualifiedFunctionName ContextualFunctionName)
+                            OPEN_PAR
+                            (UdfExprList
+                              (UdfExpr
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                              ((COMMA UdfExpr)*
+                                COMMA
+                                (UdfExpr
+                                  (Expression
+                                    (Literal
+                                      (NumLiteral
+                                        (Int64Literal IntegerLiteral)))))))
+                            CLOSE_PAR)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GroupRuntimeFunctionCall3
+                              SUBDATE_CALL_OPEN
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              COMMA
+                              (GroupRuntimeFunctionCall2
+                                INTERVAL
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral))))
+                                (Interval
+                                  (IntervalTimeStamp DAY)))
+                              CLOSE_PAR))))))))))))
+      SEMICOLON)))

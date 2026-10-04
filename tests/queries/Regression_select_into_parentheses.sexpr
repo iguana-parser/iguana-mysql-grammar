@@ -1,0 +1,33 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryExpressionParens
+                OPEN_PAR
+                (QueryExpressionWithOptLockingClauses
+                  (QueryExpression
+                    (QueryExpressionBody
+                      (QueryExpressionParens
+                        OPEN_PAR
+                        (QueryExpressionWithOptLockingClauses
+                          (QueryExpression
+                            (QueryExpressionBody
+                              (QueryPrimary
+                                (QuerySpecification
+                                  SELECT
+                                  (SelectItemList
+                                    (SelectItem
+                                      (Expression
+                                        (Literal
+                                          (NumLiteral
+                                            (Int64Literal IntegerLiteral))))))
+                                  (IntoClause
+                                    INTO
+                                    (GroupIntoClause1
+                                      (UserVariable AtTextSuffix))))))))
+                        CLOSE_PAR))))
+                CLOSE_PAR)))))
+      SEMICOLON)))

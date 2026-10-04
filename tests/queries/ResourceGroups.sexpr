@@ -1,0 +1,69 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ResourceGroupManagement
+          (CreateResourceGroup
+            CREATE
+            RESOURCE
+            GROUP
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            TYPE
+            (Equal EQUAL)
+            USER
+            (ResourceGroupVcpuList
+              VCPU
+              (Equal EQUAL)
+              (VcpuNumOrRange IntegerLiteral MINUS IntegerLiteral))
+            (ResourceGroupPriority
+              THREAD_PRIORITY
+              (Equal EQUAL)
+              IntegerLiteral)
+            (ResourceGroupEnableDisable ENABLE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ResourceGroupManagement
+          (AlterResourceGroup
+            ALTER
+            RESOURCE
+            GROUP
+            (ResourceGroupRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (ResourceGroupEnableDisable DISABLE)
+            FORCE)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ResourceGroupManagement
+          (SetResourceGroup
+            SET
+            RESOURCE
+            GROUP
+            (Identifier
+              (PureIdentifier
+                (UnquotedIdentifier OrdinaryIdentifier)))
+            FOR
+            (ThreadIdList
+              (RealUlongNumber IntegerLiteral)
+              ((COMMA? RealUlongNumber)*
+                COMMA
+                (RealUlongNumber IntegerLiteral))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (ResourceGroupManagement
+          (DropResourceGroup
+            DROP
+            RESOURCE
+            GROUP
+            (ResourceGroupRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            FORCE)))
+      SEMICOLON)))

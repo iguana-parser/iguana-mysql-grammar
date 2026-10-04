@@ -1,0 +1,126 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (JsonExplainFormat JsonFormatWord)
+              (ExplainInto
+                INTO
+                AT_SIGN
+                (TextOrIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier))))))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (JsonExplainFormat QuotedJsonFormat)
+              (ExplainInto
+                INTO
+                AT_SIGN
+                (TextOrIdentifier
+                  (TextStringLiteral SingleQuotedText))))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              (EmptyExplainInto INTO AT_SIGN EmptyQuotedExplainTarget))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              (EmptyExplainInto INTO AT_SIGN EmptyQuotedExplainTarget))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (OtherExplainFormat OtherFormatWord)
+              (EmptyExplainInto INTO AT_SIGN EmptyQuotedExplainTarget))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)))

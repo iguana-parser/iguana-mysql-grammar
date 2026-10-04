@@ -1,0 +1,44 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (TableFunction
+                            JSON_TABLE
+                            OPEN_PAR
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            COMMA
+                            (TextStringLiteral SingleQuotedText)
+                            (ColumnsClause
+                              COLUMNS
+                              OPEN_PAR
+                              (JtColumn
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier XPrefixIdentifier)))
+                                (DataType INT)
+                                PATH
+                                (TextStringLiteral SingleQuotedText))
+                              CLOSE_PAR)
+                            CLOSE_PAR
+                            (TableAlias
+                              AS
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+      SEMICOLON)))

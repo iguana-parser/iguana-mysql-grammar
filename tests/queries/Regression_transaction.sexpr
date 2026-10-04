@@ -1,0 +1,12 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement START TRANSACTION)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement COMMIT TransactionCompletion)))
+      SEMICOLON)))

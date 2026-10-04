@@ -1,0 +1,1 @@
+SELECT @a := 1, @a, @@session.sql_mode;

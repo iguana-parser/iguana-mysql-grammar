@@ -1,0 +1,1 @@
+SET @@persist_only.v2=2;

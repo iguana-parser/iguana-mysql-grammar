@@ -1,0 +1,38 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (DeleteStatement
+          DELETE
+          (GroupDeleteStatement2
+            FROM
+            (GroupDeleteStatement1
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (WhereClause
+                WHERE
+                (Expression
+                  (BitExpression
+                    (Expression
+                      (ExpressionColumnRef
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                  IN
+                  OPEN_PAR
+                  (InListExpressions
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral))))
+                    COMMA
+                    (ExprList
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))
+                  CLOSE_PAR))))))
+      SEMICOLON)))

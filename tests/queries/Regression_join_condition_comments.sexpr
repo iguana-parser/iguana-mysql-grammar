@@ -1,0 +1,55 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableReference
+                          (TableFactor
+                            (SingleTable
+                              (TableRef
+                                (QualifiedIdentifier
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (InnerJoinType JOIN)
+                        (TableReference
+                          (TableReference
+                            (TableFactor
+                              (SingleTable
+                                (TableRef
+                                  (QualifiedIdentifier
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier BPrefixIdentifier))))))))
+                          (InnerJoinType JOIN)
+                          (TableReference
+                            (TableFactor
+                              (SingleTable
+                                (TableRef
+                                  (QualifiedIdentifier
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          (JoinSpecification
+                            ON
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral))))))
+                        (JoinSpecification
+                          ON
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))))))))))
+      SEMICOLON)))

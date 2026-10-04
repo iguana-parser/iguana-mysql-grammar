@@ -1,0 +1,3 @@
+Parse error at line 1, column 52: Expected one of StorageSizeWord, QuotedStorageSize, UnquotedHexLiteral, QuotedHexLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral
+CREATE TABLESPACE ts ADD DATAFILE 'f' INITIAL_SIZE=garbage;
+                                                   ^^^^^^^

@@ -1,0 +1,3 @@
+Parse error at line 1, column 47: Expected one of SingleQuotedText, DoubleQuotedText
+CHANGE REPLICATION SOURCE TO SOURCE_SSL_KEY = 1;
+                                              ^

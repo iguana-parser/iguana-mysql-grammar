@@ -1,0 +1,3 @@
+Parse error at line 1, column 34: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer
+CREATE TABLESPACE ts ADD DATAFILE;
+                                 ^

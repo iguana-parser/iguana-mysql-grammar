@@ -1,0 +1,1 @@
+sElEcT foo FROM bar wHeRe foo >= 2;

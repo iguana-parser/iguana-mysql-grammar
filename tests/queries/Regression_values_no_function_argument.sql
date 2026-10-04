@@ -1,0 +1,1 @@
+SELECT VALUES(f(a)) FROM t;

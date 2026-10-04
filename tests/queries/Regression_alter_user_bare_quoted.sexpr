@@ -1,0 +1,23 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (IfExists IF EXISTS)
+            (GroupAlterUserStatement3
+              (AlterUserList
+                (AlterUser
+                  (User
+                    (UserIdentifierOrText
+                      (TextOrIdentifier
+                        (TextStringLiteral SingleQuotedText))
+                      (UserVariable
+                        AT_SIGN
+                        (TextOrIdentifier
+                          (TextStringLiteral SingleQuotedText)))))
+                  GroupAlterUser4))
+              CreateUserTail))))
+      SEMICOLON)))

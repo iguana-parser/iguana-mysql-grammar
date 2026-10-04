@@ -1,0 +1,108 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement COMMIT TransactionCompletion)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement COMMIT WORK TransactionCompletion)))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion RELEASE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion NO RELEASE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND CHAIN)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND CHAIN)
+              NO
+              RELEASE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND NO CHAIN)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND NO CHAIN)
+              RELEASE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (TransactionStatement
+            COMMIT
+            (TransactionCompletion
+              (TransactionChain AND NO CHAIN)
+              NO
+              RELEASE))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            (GroupSavepointStatement1 TransactionCompletion))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            WORK
+            (GroupSavepointStatement1
+              (TransactionCompletion RELEASE)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            (GroupSavepointStatement1
+              (TransactionCompletion
+                (TransactionChain AND CHAIN)
+                NO
+                RELEASE)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TransactionOrLockingStatement
+          (SavepointStatement
+            ROLLBACK
+            (GroupSavepointStatement1
+              (TransactionCompletion
+                (TransactionChain AND NO CHAIN)
+                RELEASE)))))
+      SEMICOLON)))

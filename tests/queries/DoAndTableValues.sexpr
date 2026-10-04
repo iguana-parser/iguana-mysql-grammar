@@ -1,0 +1,90 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (DoStatement
+          DO
+          (SelectItemList
+            (SelectItem
+              (Expression
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))
+                PLUS
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            ((COMMA SelectItem)*
+              COMMA
+              (SelectItem
+                (Expression
+                  (FunctionCall
+                    (UnqualifiedFunctionName
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    OPEN_PAR
+                    (UdfExprList
+                      (UdfExpr
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    CLOSE_PAR)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (ExplicitTable
+                  TABLE
+                  (TableRef
+                    (QualifiedIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (TableValueConstructor
+                  VALUES
+                  (RowValueExplicit
+                    ROW
+                    OPEN_PAR
+                    (Values
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))
+                      ((COMMA (Expression | DEFAULT))*
+                        COMMA
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))))
+                    CLOSE_PAR)
+                  ((COMMA RowValueExplicit)*
+                    COMMA
+                    (RowValueExplicit
+                      ROW
+                      OPEN_PAR
+                      (Values
+                        (Expression
+                          (Literal
+                            (NumLiteral
+                              (Int64Literal IntegerLiteral))))
+                        ((COMMA (Expression | DEFAULT))*
+                          COMMA
+                          (Expression
+                            (Literal
+                              (NumLiteral
+                                (Int64Literal IntegerLiteral))))))
+                      CLOSE_PAR))))))))
+      SEMICOLON)))

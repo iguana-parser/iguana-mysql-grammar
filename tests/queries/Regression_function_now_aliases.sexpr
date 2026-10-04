@@ -1,0 +1,39 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (GroupRuntimeFunctionCall5 NOW))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GroupRuntimeFunctionCall5
+                              NOW
+                              (TimeFunctionParameters
+                                OPEN_PAR
+                                (FractionalPrecision IntegerLiteral)
+                                CLOSE_PAR)))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GroupRuntimeFunctionCall5 NOW))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            (GroupRuntimeFunctionCall5
+                              NOW
+                              (TimeFunctionParameters OPEN_PAR CLOSE_PAR)))))))))))))
+      SEMICOLON)))

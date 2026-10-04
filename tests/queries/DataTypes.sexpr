@@ -1,0 +1,228 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (IdentifierKeyword
+                    (IdentifierKeywordsUnambiguous TYPES)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType
+                        TINYINT
+                        (FieldOptions
+                          (((SIGNED | UNSIGNED | ZEROFILL))+ UNSIGNED)))
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier NPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType BIGINT)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          DECIMAL
+                          (FloatOptions
+                            (Precision OPEN_PAR IntegerLiteral COMMA IntegerLiteral CLOSE_PAR)))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType1 DOUBLE))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          CHAR
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType2 VARCHAR)
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          VARBINARY
+                          (FieldLength
+                            OPEN_PAR
+                            (RealUlonglongNumber IntegerLiteral)
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier XPrefixIdentifier))))
+                      (FieldDefinition
+                        (DataType BLOB)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType TEXT)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType DATE)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          TIME
+                          (TypeDatetimePrecision OPEN_PAR IntegerLiteral CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          TIMESTAMP
+                          (TypeDatetimePrecision OPEN_PAR IntegerLiteral CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType JSON)
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          ENUM
+                          (StringList
+                            OPEN_PAR
+                            (TextString
+                              (TextStringLiteral SingleQuotedText))
+                            ((COMMA TextString)*
+                              COMMA
+                              (TextString
+                                (TextStringLiteral SingleQuotedText)))
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          SET
+                          (StringList
+                            OPEN_PAR
+                            (TextString
+                              (TextStringLiteral SingleQuotedText))
+                            ((COMMA TextString)*
+                              COMMA
+                              (TextString
+                                (TextStringLiteral SingleQuotedText)))
+                            CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType POINT)
+                        (GroupFieldDefinition1
+                          (ColumnAttribute*
+                            (ColumnAttribute
+                              SRID
+                              (RealUlonglongNumber IntegerLiteral)))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

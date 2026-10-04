@@ -1,0 +1,1 @@
+ALTER INSTANCE ROTATE arbitrary_name MASTER KEY;

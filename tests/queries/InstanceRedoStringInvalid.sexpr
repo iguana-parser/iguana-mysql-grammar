@@ -1,0 +1,3 @@
+Parse error at line 1, column 23: Expected one of InnodbNameWord, QuotedInnodbName
+ALTER INSTANCE ENABLE 'innodb' REDO_LOG;
+                      ^^^^^^^^

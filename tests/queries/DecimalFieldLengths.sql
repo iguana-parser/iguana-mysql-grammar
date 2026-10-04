@@ -1,0 +1,1 @@
+CREATE TABLE t (x INT(4.5), y VARCHAR(0004.5), z BIT(.4));

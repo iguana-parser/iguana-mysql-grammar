@@ -1,0 +1,24 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (User
+                (UserIdentifierOrText
+                  (TextOrIdentifier
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier))))))
+              (GroupAlterUserStatement2
+                (UserRegistration
+                  (Factor
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))
+                    FACTOR)
+                  INITIATE
+                  REGISTRATION))))))
+      SEMICOLON)))

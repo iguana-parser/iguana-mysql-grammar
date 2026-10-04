@@ -1,0 +1,23 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionValueNoOptionType
+              (SetSystemVariable
+                AT_AT_SIGN
+                (SetVarIdentType
+                  GLOBAL
+                  (SystemScopeDot DOT))
+                (ScopedSetVariable
+                  (ScopedLvalueIdentifier AdjacentScopedWord)))
+              (Equal EQUAL)
+              (SetExprOrDefault
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))))
+            OptionValueListContinued)))
+      SEMICOLON)))

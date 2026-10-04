@@ -1,0 +1,1 @@
+SELECT t .123abc FROM t;

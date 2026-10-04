@@ -1,0 +1,3 @@
+Parse error at line 1, column 34: Expected one of AtTextSuffix, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, EQUAL, ASSIGN, COMMA, SEMICOLON, COLON, AT_SIGN, ACCOUNT, ADD, AND, AS, COMMENT, DEFAULT, DISCARD, DROP, EVENT, FOR, FROM, FUNCTION, IDENTIFIED, IGNORE, MODIFY, PASSWORD, PROCEDURE, REQUIRE, SQL, TO, TRIGGER, USING, VIEW, WITH, PASSWORD_LOCK_TIME, FAILED_LOGIN_ATTEMPTS, ATTRIBUTE, EOF
+GRANT SELECT ON *.* TO u4 AS USER();
+                                 ^

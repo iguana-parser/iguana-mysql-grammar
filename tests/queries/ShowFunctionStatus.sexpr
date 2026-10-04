@@ -1,0 +1,6 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ShowFunctionStatusStatement SHOW FUNCTION STATUS))
+      SEMICOLON)))

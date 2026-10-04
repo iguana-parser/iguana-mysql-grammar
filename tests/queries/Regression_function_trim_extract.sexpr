@@ -1,0 +1,57 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          (TrimFunction
+                            TRIM_CALL_OPEN
+                            (GroupTrimFunction1
+                              (Expression
+                                (Literal
+                                  (TextLiteral
+                                    (TextLiteralHead
+                                      (TextStringLiteral SingleQuotedText))))))
+                            CLOSE_PAR))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            EXTRACT_CALL_OPEN
+                            (Interval
+                              (IntervalTimeStamp DAY))
+                            FROM
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                            CLOSE_PAR)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (RuntimeFunctionCall
+                            POSITION_CALL_OPEN
+                            (BitExpression
+                              (Expression
+                                (Literal
+                                  (TextLiteral
+                                    (TextLiteralHead
+                                      (TextStringLiteral SingleQuotedText))))))
+                            IN
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText)))))
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

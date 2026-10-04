@@ -1,0 +1,62 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            PROCEDURE
+            (ProcedureRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (RoutineAlterOptions
+              (RoutineCreateOption+
+                (RoutineCreateOption
+                  (RoutineOption
+                    COMMENT
+                    (TextLiteral
+                      (TextLiteralHead
+                        (TextStringLiteral SingleQuotedText))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            FUNCTION
+            (FunctionRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (RoutineAlterOptions
+              (RoutineCreateOption+
+                (RoutineCreateOption
+                  (RoutineOption SQL SECURITY INVOKER)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterEvent
+              EVENT
+              (EventRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              ON
+              SCHEDULE
+              (Schedule
+                EVERY
+                (Expression
+                  (Literal
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))))
+                (Interval
+                  (IntervalTimeStamp DAY)))
+              (GroupAlterEvent1 DISABLE)))))
+      SEMICOLON)))

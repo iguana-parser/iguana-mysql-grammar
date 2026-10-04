@@ -1,0 +1,29 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (FunctionCall
+                          (UnqualifiedFunctionName
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          OPEN_PAR
+                          (UdfExprList
+                            (UdfExpr
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (SelectAlias
+                                (TextStringLiteral SingleQuotedText))))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)))

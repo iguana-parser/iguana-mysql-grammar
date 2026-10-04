@@ -1,0 +1,384 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateProcedure
+            PROCEDURE
+            (ProcedureName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            OPEN_PAR
+            CLOSE_PAR
+            (StoredRoutineBody
+              (CompoundStatement
+                (UnlabeledBlock
+                  (BeginEndBlock
+                    BEGIN
+                    (SpDeclarations
+                      ((SpDeclaration SEMICOLON)+
+                        (SpDeclaration
+                          (VariableDeclaration
+                            DECLARE
+                            (IdentifierList
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier XPrefixIdentifier))))
+                            (DataType INT)
+                            DEFAULT
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral))))))
+                        SEMICOLON))
+                    (CompoundStatementList
+                      ((CompoundStatement SEMICOLON)+
+                        (CompoundStatement
+                          (IfStatement
+                            IF
+                            (IfBody
+                              (Expression
+                                (BooleanPrimary
+                                  (Expression
+                                    (ExpressionColumnRef
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                (CompOp EQUAL)
+                                (Predicate
+                                  (Expression
+                                    (Literal
+                                      (NumLiteral
+                                        (Int64Literal IntegerLiteral))))))
+                              (ThenStatement
+                                THEN
+                                (CompoundStatementList
+                                  ((CompoundStatement SEMICOLON)+
+                                    (CompoundStatement
+                                      (SimpleStatement
+                                        (SetStatement
+                                          SET
+                                          (StartOptionValueList
+                                            (OptionValueNoOptionType
+                                              (LvalueVariable
+                                                (Identifier
+                                                  (PureIdentifier
+                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Equal EQUAL)
+                                              (SetExprOrDefault
+                                                (Expression
+                                                  (Literal
+                                                    (NumLiteral
+                                                      (Int64Literal IntegerLiteral))))))
+                                            OptionValueListContinued))))
+                                    SEMICOLON)))
+                              (GroupIfBody1
+                                ELSEIF
+                                (IfBody
+                                  (Expression
+                                    (BooleanPrimary
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier XPrefixIdentifier))))))
+                                    (CompOp EQUAL)
+                                    (Predicate
+                                      (Expression
+                                        (Literal
+                                          (NumLiteral
+                                            (Int64Literal IntegerLiteral))))))
+                                  (ThenStatement
+                                    THEN
+                                    (CompoundStatementList
+                                      ((CompoundStatement SEMICOLON)+
+                                        (CompoundStatement
+                                          (SimpleStatement
+                                            (SetStatement
+                                              SET
+                                              (StartOptionValueList
+                                                (OptionValueNoOptionType
+                                                  (LvalueVariable
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier XPrefixIdentifier))))
+                                                  (Equal EQUAL)
+                                                  (SetExprOrDefault
+                                                    (Expression
+                                                      (Literal
+                                                        (NumLiteral
+                                                          (Int64Literal IntegerLiteral))))))
+                                                OptionValueListContinued))))
+                                        SEMICOLON)))
+                                  (GroupIfBody1
+                                    ELSE
+                                    (CompoundStatementList
+                                      ((CompoundStatement SEMICOLON)+
+                                        (CompoundStatement
+                                          (SimpleStatement
+                                            (SetStatement
+                                              SET
+                                              (StartOptionValueList
+                                                (OptionValueNoOptionType
+                                                  (LvalueVariable
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier XPrefixIdentifier))))
+                                                  (Equal EQUAL)
+                                                  (SetExprOrDefault
+                                                    (Expression
+                                                      (Literal
+                                                        (NumLiteral
+                                                          (Int64Literal IntegerLiteral))))))
+                                                OptionValueListContinued))))
+                                        SEMICOLON))))))
+                            END
+                            IF))
+                        SEMICOLON
+                        (CompoundStatement
+                          (CaseStatement
+                            CASE
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier XPrefixIdentifier)))))
+                            ((WhenExpression ThenStatement)+
+                              (WhenExpression
+                                WHEN
+                                (Expression
+                                  (Literal
+                                    (NumLiteral
+                                      (Int64Literal IntegerLiteral)))))
+                              (ThenStatement
+                                THEN
+                                (CompoundStatementList
+                                  ((CompoundStatement SEMICOLON)+
+                                    (CompoundStatement
+                                      (SimpleStatement
+                                        (SetStatement
+                                          SET
+                                          (StartOptionValueList
+                                            (OptionValueNoOptionType
+                                              (LvalueVariable
+                                                (Identifier
+                                                  (PureIdentifier
+                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Equal EQUAL)
+                                              (SetExprOrDefault
+                                                (Expression
+                                                  (Literal
+                                                    (NumLiteral
+                                                      (Int64Literal IntegerLiteral))))))
+                                            OptionValueListContinued))))
+                                    SEMICOLON))))
+                            (ElseStatement
+                              ELSE
+                              (CompoundStatementList
+                                ((CompoundStatement SEMICOLON)+
+                                  (CompoundStatement
+                                    (SimpleStatement
+                                      (SetStatement
+                                        SET
+                                        (StartOptionValueList
+                                          (OptionValueNoOptionType
+                                            (LvalueVariable
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                            (Equal EQUAL)
+                                            (SetExprOrDefault
+                                              (Expression
+                                                (Literal
+                                                  (NumLiteral
+                                                    (Int64Literal IntegerLiteral))))))
+                                          OptionValueListContinued))))
+                                  SEMICOLON)))
+                            END
+                            CASE))
+                        SEMICOLON
+                        (CompoundStatement
+                          (UnlabeledControl
+                            (WhileDoBlock
+                              WHILE
+                              (Expression
+                                (BooleanPrimary
+                                  (Expression
+                                    (ExpressionColumnRef
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                (CompOp LESS_THAN)
+                                (Predicate
+                                  (Expression
+                                    (Literal
+                                      (NumLiteral
+                                        (Int64Literal IntegerLiteral))))))
+                              DO
+                              (CompoundStatementList
+                                ((CompoundStatement SEMICOLON)+
+                                  (CompoundStatement
+                                    (SimpleStatement
+                                      (SetStatement
+                                        SET
+                                        (StartOptionValueList
+                                          (OptionValueNoOptionType
+                                            (LvalueVariable
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                            (Equal EQUAL)
+                                            (SetExprOrDefault
+                                              (Expression
+                                                (Expression
+                                                  (ExpressionColumnRef
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                                PLUS
+                                                (Expression
+                                                  (Literal
+                                                    (NumLiteral
+                                                      (Int64Literal IntegerLiteral)))))))
+                                          OptionValueListContinued))))
+                                  SEMICOLON))
+                              END
+                              WHILE)))
+                        SEMICOLON
+                        (CompoundStatement
+                          (UnlabeledControl
+                            (RepeatUntilBlock
+                              REPEAT
+                              (CompoundStatementList
+                                ((CompoundStatement SEMICOLON)+
+                                  (CompoundStatement
+                                    (SimpleStatement
+                                      (SetStatement
+                                        SET
+                                        (StartOptionValueList
+                                          (OptionValueNoOptionType
+                                            (LvalueVariable
+                                              (Identifier
+                                                (PureIdentifier
+                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                            (Equal EQUAL)
+                                            (SetExprOrDefault
+                                              (Expression
+                                                (Expression
+                                                  (ExpressionColumnRef
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                                MINUS
+                                                (Expression
+                                                  (Literal
+                                                    (NumLiteral
+                                                      (Int64Literal IntegerLiteral)))))))
+                                          OptionValueListContinued))))
+                                  SEMICOLON))
+                              UNTIL
+                              (Expression
+                                (BooleanPrimary
+                                  (Expression
+                                    (ExpressionColumnRef
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                (CompOp EQUAL)
+                                (Predicate
+                                  (Expression
+                                    (Literal
+                                      (NumLiteral
+                                        (Int64Literal IntegerLiteral))))))
+                              END
+                              REPEAT)))
+                        SEMICOLON
+                        (CompoundStatement
+                          (LabeledControl
+                            (Label
+                              (LabelIdentifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              COLON)
+                            (UnlabeledControl
+                              (LoopBlock
+                                LOOP
+                                (CompoundStatementList
+                                  ((CompoundStatement SEMICOLON)+
+                                    (CompoundStatement
+                                      (SimpleStatement
+                                        (SetStatement
+                                          SET
+                                          (StartOptionValueList
+                                            (OptionValueNoOptionType
+                                              (LvalueVariable
+                                                (Identifier
+                                                  (PureIdentifier
+                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Equal EQUAL)
+                                              (SetExprOrDefault
+                                                (Expression
+                                                  (Expression
+                                                    (ExpressionColumnRef
+                                                      (Identifier
+                                                        (PureIdentifier
+                                                          (UnquotedIdentifier XPrefixIdentifier)))))
+                                                  PLUS
+                                                  (Expression
+                                                    (Literal
+                                                      (NumLiteral
+                                                        (Int64Literal IntegerLiteral)))))))
+                                            OptionValueListContinued))))
+                                    SEMICOLON
+                                    (CompoundStatement
+                                      (IfStatement
+                                        IF
+                                        (IfBody
+                                          (Expression
+                                            (BooleanPrimary
+                                              (Expression
+                                                (ExpressionColumnRef
+                                                  (Identifier
+                                                    (PureIdentifier
+                                                      (UnquotedIdentifier XPrefixIdentifier))))))
+                                            (CompOp LESS_THAN)
+                                            (Predicate
+                                              (Expression
+                                                (Literal
+                                                  (NumLiteral
+                                                    (Int64Literal IntegerLiteral))))))
+                                          (ThenStatement
+                                            THEN
+                                            (CompoundStatementList
+                                              ((CompoundStatement SEMICOLON)+
+                                                (CompoundStatement
+                                                  (IterateStatement
+                                                    ITERATE
+                                                    (LabelRef
+                                                      (LabelIdentifier
+                                                        (PureIdentifier
+                                                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                                                SEMICOLON))))
+                                        END
+                                        IF))
+                                    SEMICOLON
+                                    (CompoundStatement
+                                      (LeaveStatement
+                                        LEAVE
+                                        (LabelRef
+                                          (LabelIdentifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    SEMICOLON))
+                                END
+                                LOOP))
+                            (LabelRef
+                              (LabelIdentifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        SEMICOLON))
+                    END)))))))
+      SEMICOLON)))

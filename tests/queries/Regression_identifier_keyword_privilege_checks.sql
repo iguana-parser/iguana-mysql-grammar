@@ -1,0 +1,1 @@
+SELECT t.privilege_checks_user FROM t;

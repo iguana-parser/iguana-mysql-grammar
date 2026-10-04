@@ -1,0 +1,5 @@
+UPDATE t SET a=a+1,b=DEFAULT WHERE id=1 ORDER BY id LIMIT 1;
+UPDATE t JOIN u ON t.id=u.id SET t.a=u.a;
+DELETE FROM t WHERE id=1 ORDER BY id LIMIT 1;
+DELETE t FROM t JOIN u ON t.id=u.id;
+DELETE FROM t USING t JOIN u ON t.id=u.id;

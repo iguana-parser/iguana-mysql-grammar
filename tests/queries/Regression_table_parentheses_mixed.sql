@@ -1,0 +1,1 @@
+SELECT * FROM ((a,b) JOIN ((c,d)) ON a.x=c.x);

@@ -1,0 +1,1 @@
+SET global.v2=2;

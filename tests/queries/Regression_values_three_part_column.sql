@@ -1,0 +1,1 @@
+SELECT VALUES(db.t.a) FROM t;

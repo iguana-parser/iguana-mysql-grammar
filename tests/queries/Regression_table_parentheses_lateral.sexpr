@@ -1,0 +1,3 @@
+Parse error at line 1, column 39: Expected one of COMMA, CROSS, INNER, JOIN, LEFT, NATURAL, RIGHT, STRAIGHT_JOIN
+SELECT * FROM (LATERAL (SELECT 1) AS d);
+                                      ^

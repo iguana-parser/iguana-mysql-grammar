@@ -1,0 +1,37 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList MULT)
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTableParens
+                            OPEN_PAR
+                            (SingleTableParens
+                              OPEN_PAR
+                              (SingleTableParens
+                                OPEN_PAR
+                                (SingleTable
+                                  (TableRef
+                                    (QualifiedIdentifier
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (TableAlias
+                                    AS
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                CLOSE_PAR)
+                              CLOSE_PAR)
+                            CLOSE_PAR)))))))))))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+SELECT LAG(a,@n) OVER () FROM t;

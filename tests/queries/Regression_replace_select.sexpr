@@ -1,0 +1,27 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (ReplaceStatement
+          REPLACE
+          INTO
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (GroupReplaceStatement1
+            (InsertQueryExpression
+              (QueryExpressionWithOptLockingClauses
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList
+                          (SelectItem
+                            (Expression
+                              (Literal
+                                (NumLiteral
+                                  (Int64Literal IntegerLiteral)))))))))))))))
+      SEMICOLON)))

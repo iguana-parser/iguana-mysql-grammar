@@ -1,0 +1,51 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (OtherAdministrativeStatement
+          FLUSH
+          (NoWriteToBinLog NO_WRITE_TO_BINLOG)
+          (GroupOtherAdministrativeStatement1
+            (FlushOption
+              (LogType BINARY)
+              LOGS)
+            ((COMMA FlushOption)*
+              COMMA
+              (FlushOption
+                (LogType ENGINE)
+                LOGS)
+              COMMA
+              (FlushOption
+                (LogType ERROR)
+                LOGS)
+              COMMA
+              (FlushOption
+                (LogType GENERAL)
+                LOGS)
+              COMMA
+              (FlushOption
+                RELAY
+                LOGS
+                (Channel
+                  FOR
+                  CHANNEL
+                  (TextStringNoLinebreak
+                    (TextStringLiteral SingleQuotedText))))
+              COMMA
+              (FlushOption
+                (LogType SLOW)
+                LOGS)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (TableAdministrationStatement
+          ANALYZE
+          (NoWriteToBinLog NO_WRITE_TO_BINLOG)
+          TABLE
+          (TableRefList
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)))

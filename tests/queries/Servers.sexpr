@@ -1,0 +1,78 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateServer
+            SERVER
+            (ServerName
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            FOREIGN
+            DATA
+            WRAPPER
+            (TextOrIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (ServerOptions
+              OPTIONS
+              OPEN_PAR
+              (ServerOption
+                HOST
+                (TextLiteral
+                  (TextLiteralHead
+                    (TextStringLiteral SingleQuotedText))))
+              ((COMMA ServerOption)*
+                COMMA
+                (ServerOption
+                  DATABASE
+                  (TextLiteral
+                    (TextLiteralHead
+                      (TextStringLiteral SingleQuotedText))))
+                COMMA
+                (ServerOption
+                  USER
+                  (TextLiteral
+                    (TextLiteralHead
+                      (TextStringLiteral SingleQuotedText)))))
+              CLOSE_PAR))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterServer
+              SERVER
+              (ServerRef
+                (TextOrIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (ServerOptions
+                OPTIONS
+                OPEN_PAR
+                (ServerOption
+                  HOST
+                  (TextLiteral
+                    (TextLiteralHead
+                      (TextStringLiteral SingleQuotedText))))
+                CLOSE_PAR)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropServer
+            SERVER
+            (IfExists IF EXISTS)
+            (ServerRef
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)))

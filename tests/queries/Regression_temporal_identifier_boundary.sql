@@ -1,0 +1,1 @@
+SELECT TIMESTAMP_suffix 'label' FROM t;

@@ -1,0 +1,3 @@
+Parse error at line 1, column 22: Expected one of IGNORE, INTO, IN, REPLACE, EOF
+LOAD DATA INFILE 'f' COUNT3 INTO TABLE t;
+                     ^^^^^^

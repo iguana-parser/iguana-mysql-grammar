@@ -1,0 +1,43 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (RuntimeFunctionCall
+                          JSON_VALUE
+                          OPEN_PAR
+                          (SimpleExpression
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText))))))
+                          COMMA
+                          (TextLiteral
+                            (TextLiteralHead
+                              (TextStringLiteral SingleQuotedText)))
+                          (ReturningType
+                            RETURNING
+                            (CastType
+                              CHAR
+                              (FieldLength
+                                OPEN_PAR
+                                (RealUlonglongNumber IntegerLiteral)
+                                CLOSE_PAR)
+                              (CharsetWithOptBinary
+                                (Charset CHAR SET)
+                                (CharsetName
+                                  (TextOrIdentifier
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          CLOSE_PAR))))))))))
+      SEMICOLON)))

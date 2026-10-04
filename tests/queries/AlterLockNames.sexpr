@@ -1,0 +1,110 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterLockOption LOCK EQUAL DEFAULT)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterLockOption
+                        LOCK
+                        EQUAL
+                        (AlterLockName LockNameWord))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterLockOption
+                        LOCK
+                        (AlterLockName LockNameWord))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterLockOption
+                        LOCK
+                        EQUAL
+                        (AlterLockName QuotedLockName))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterTable
+              TABLE
+              (TableRef
+                (QualifiedIdentifier
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))))
+              (AlterTableActions
+                (AlterCommandList
+                  (AlterCommandsModifierList
+                    (AlterCommandsModifier
+                      (AlterAlgorithmOption
+                        ALGORITHM
+                        EQUAL
+                        (AlterAlgorithmName QuotedAlgorithmName)))
+                    ((COMMA AlterCommandsModifier)*
+                      COMMA
+                      (AlterCommandsModifier
+                        (AlterLockOption
+                          LOCK
+                          EQUAL
+                          (AlterLockName QuotedLockName)))))))))))
+      SEMICOLON)))

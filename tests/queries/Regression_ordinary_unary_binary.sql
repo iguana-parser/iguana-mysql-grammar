@@ -1,0 +1,1 @@
+SELECT BINARY col FROM t;

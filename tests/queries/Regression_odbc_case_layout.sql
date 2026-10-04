@@ -1,0 +1,1 @@
+SELECT * FROM {oj/*gap*/a JOIN b};

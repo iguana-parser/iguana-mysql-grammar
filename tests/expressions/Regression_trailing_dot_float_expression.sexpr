@@ -1,0 +1,8 @@
+(Expression
+  (Expression
+    (Literal
+      (NumLiteral FloatLiteral)))
+  PLUS
+  (Expression
+    (Literal
+      (NumLiteral DecimalLiteral))))

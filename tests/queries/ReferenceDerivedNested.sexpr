@@ -1,0 +1,181 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (QualifiedPair
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (DotIdentifier DotWordIdentifier)))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                      ((COMMA TableReference)*
+                        COMMA
+                        (TableReference
+                          (TableFactor
+                            (DerivedTable
+                              (Subquery
+                                OPEN_PAR
+                                (QueryExpressionWithOptLockingClauses
+                                  (QueryExpression
+                                    (QueryExpressionBody
+                                      (QueryPrimary
+                                        (QuerySpecification
+                                          SELECT
+                                          (SelectItemList
+                                            (SelectItem
+                                              (Expression
+                                                (ExpressionColumnRef
+                                                  (QualifiedPair
+                                                    (Identifier
+                                                      (PureIdentifier
+                                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                                    (DotIdentifier DotWordIdentifier))))
+                                              (SelectAlias
+                                                AS
+                                                (Identifier
+                                                  (PureIdentifier
+                                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                          (FromClause
+                                            FROM
+                                            (TableReferenceList
+                                              (TableReference
+                                                (TableFactor
+                                                  (SingleTable
+                                                    (TableRef
+                                                      (QualifiedIdentifier
+                                                        (Identifier
+                                                          (PureIdentifier
+                                                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                              ((COMMA TableReference)*
+                                                COMMA
+                                                (TableReference
+                                                  (TableFactor
+                                                    (DerivedTable
+                                                      (Subquery
+                                                        OPEN_PAR
+                                                        (QueryExpressionWithOptLockingClauses
+                                                          (QueryExpression
+                                                            (QueryExpressionBody
+                                                              (QueryPrimary
+                                                                (QuerySpecification
+                                                                  SELECT
+                                                                  (SelectItemList
+                                                                    (SelectItem
+                                                                      (Expression
+                                                                        (ExpressionColumnRef
+                                                                          (QualifiedPair
+                                                                            (Identifier
+                                                                              (PureIdentifier
+                                                                                (UnquotedIdentifier OrdinaryIdentifier)))
+                                                                            (DotIdentifier DotWordIdentifier))))))
+                                                                  (FromClause
+                                                                    FROM
+                                                                    (TableReferenceList
+                                                                      (TableReference
+                                                                        (TableFactor
+                                                                          (SingleTable
+                                                                            (TableRef
+                                                                              (QualifiedIdentifier
+                                                                                (Identifier
+                                                                                  (PureIdentifier
+                                                                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                                                  (WhereClause
+                                                                    WHERE
+                                                                    (Expression
+                                                                      (BooleanPrimary
+                                                                        (Expression
+                                                                          (ExpressionColumnRef
+                                                                            (QualifiedPair
+                                                                              (Identifier
+                                                                                (PureIdentifier
+                                                                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                                                                              (DotIdentifier DotWordIdentifier)))))
+                                                                      (CompOp GREATER_THAN)
+                                                                      (Predicate
+                                                                        (Expression
+                                                                          (Literal
+                                                                            (NumLiteral
+                                                                              (Int64Literal IntegerLiteral))))))))))))
+                                                        CLOSE_PAR)
+                                                      (TableAlias
+                                                        AS
+                                                        (Identifier
+                                                          (PureIdentifier
+                                                            (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                          (WhereClause
+                                            WHERE
+                                            (Expression
+                                              (BooleanPrimary
+                                                (Expression
+                                                  (ExpressionColumnRef
+                                                    (QualifiedPair
+                                                      (Identifier
+                                                        (PureIdentifier
+                                                          (UnquotedIdentifier OrdinaryIdentifier)))
+                                                      (DotIdentifier DotWordIdentifier)))))
+                                              (CompOp EQUAL)
+                                              (Predicate
+                                                (Expression
+                                                  (ExpressionColumnRef
+                                                    (QualifiedPair
+                                                      (Identifier
+                                                        (PureIdentifier
+                                                          (UnquotedIdentifier OrdinaryIdentifier)))
+                                                      (DotIdentifier DotWordIdentifier))))))))))))
+                                CLOSE_PAR)
+                              (TableAlias
+                                AS
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (WhereClause
+                    WHERE
+                    (Expression
+                      (BooleanPrimary
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))
+                      (CompOp EQUAL)
+                      (Predicate
+                        (Expression
+                          (ExpressionColumnRef
+                            (QualifiedPair
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (DotIdentifier DotWordIdentifier)))))))))))))
+      SEMICOLON)))

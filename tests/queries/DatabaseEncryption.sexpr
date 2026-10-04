@@ -1,0 +1,40 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateDatabase
+            DATABASE
+            (SchemaName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            (CreateDatabaseOption*
+              (CreateDatabaseOption
+                (DefaultEncryption
+                  DEFAULT
+                  ENCRYPTION
+                  EQUAL
+                  (TextStringLiteral SingleQuotedText)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AlterStatement
+          ALTER
+          (GroupAlterStatement1
+            (AlterDatabase
+              DATABASE
+              (SchemaRef
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              (AlterDatabaseOption+
+                (AlterDatabaseOption
+                  (CreateDatabaseOption
+                    (DefaultEncryption
+                      DEFAULT
+                      ENCRYPTION
+                      EQUAL
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)))

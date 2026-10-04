@@ -1,0 +1,61 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateUdf
+            FUNCTION
+            (UdfName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            RETURNS
+            STRING
+            SONAME
+            (TextLiteral
+              (TextLiteralHead
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateUdf
+            AGGREGATE
+            FUNCTION
+            (UdfName
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier))))
+            RETURNS
+            REAL
+            SONAME
+            (TextLiteral
+              (TextLiteralHead
+                (TextStringLiteral SingleQuotedText))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropFunction
+            FUNCTION
+            (FunctionRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (DropStatement
+          DROP
+          (DropFunction
+            FUNCTION
+            (FunctionRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)))

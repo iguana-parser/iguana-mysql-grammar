@@ -1,0 +1,63 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))
+                    (FieldDefinition
+                      (DataType TIMESTAMP)
+                      (GroupFieldDefinition1
+                        (ColumnAttribute*
+                          (ColumnAttribute
+                            DEFAULT
+                            (NowOrSignedLiteral
+                              (Now
+                                (GroupNow1 NOW FunctionDatetimePrecision)))))))))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          DATETIME
+                          (TypeDatetimePrecision OPEN_PAR IntegerLiteral CLOSE_PAR))
+                        (GroupFieldDefinition1
+                          (ColumnAttribute*
+                            (ColumnAttribute
+                              DEFAULT
+                              (NowOrSignedLiteral
+                                (Now
+                                  (GroupNow1
+                                    NOW
+                                    (FunctionDatetimePrecision OPEN_PAR IntegerLiteral CLOSE_PAR)))))
+                            (ColumnAttribute
+                              (GroupColumnAttribute1
+                                ON
+                                UPDATE
+                                NOW
+                                (TimeFunctionParameters
+                                  OPEN_PAR
+                                  (FractionalPrecision IntegerLiteral)
+                                  CLOSE_PAR))))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

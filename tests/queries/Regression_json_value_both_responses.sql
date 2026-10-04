@@ -1,0 +1,1 @@
+SELECT JSON_VALUE('{}', '$' NULL ON EMPTY DEFAULT 'fallback' ON ERROR);

@@ -1,0 +1,113 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            COMPONENT
+            (TextStringLiteralList
+              (TextStringLiteral SingleQuotedText))
+            (InstallSetValueList
+              SET
+              (InstallSetValue
+                (InstallLvalueVariable
+                  (LvalueVariable
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (DotIdentifier DotWordIdentifier)))
+                (Equal EQUAL)
+                (InstallSetRvalue
+                  (Expression
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral))))
+                    PLUS
+                    (Expression
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))
+                      MULT
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            COMPONENT
+            (TextStringLiteralList
+              (TextStringLiteral SingleQuotedText))
+            (InstallSetValueList
+              SET
+              (InstallSetValue
+                (InstallOptionType GLOBAL)
+                (InstallLvalueVariable
+                  (LvalueVariable
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (DotIdentifier DotWordIdentifier)))
+                (Equal EQUAL)
+                (InstallSetRvalue ON))
+              ((COMMA InstallSetValue)*
+                COMMA
+                (InstallSetValue
+                  (InstallOptionType PERSIST)
+                  (InstallLvalueVariable
+                    (LvalueVariable
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (DotIdentifier DotWordIdentifier)))
+                  (Equal EQUAL)
+                  (InstallSetRvalue
+                    (Expression
+                      (Literal
+                        (TextLiteral
+                          (TextLiteralHead
+                            (TextStringLiteral SingleQuotedText))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (InstallStatement
+          INSTALL
+          (GroupInstallStatement1
+            COMPONENT
+            (TextStringLiteralList
+              (TextStringLiteral SingleQuotedText))
+            (InstallSetValueList
+              SET
+              (InstallSetValue
+                (InstallLvalueVariable
+                  (LvalueVariable
+                    (Identifier
+                      (PureIdentifier
+                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (DotIdentifier DotWordIdentifier)))
+                (Equal EQUAL)
+                (InstallSetRvalue
+                  (Expression
+                    (Literal
+                      (NumLiteral
+                        (Int64Literal IntegerLiteral))))))
+              ((COMMA InstallSetValue)*
+                COMMA
+                (InstallSetValue
+                  (InstallLvalueVariable
+                    (LvalueVariable
+                      (Identifier
+                        (PureIdentifier BacktickIdentifier))))
+                  (Equal EQUAL)
+                  (InstallSetRvalue
+                    (Expression
+                      (Literal
+                        (NumLiteral
+                          (Int64Literal IntegerLiteral)))))))))))
+      SEMICOLON)))

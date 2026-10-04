@@ -1,0 +1,3 @@
+Parse error at line 1, column 35: Expected ONLY
+START TRANSACTION READ ONLY, READ WRITE;
+                                  ^^^^^

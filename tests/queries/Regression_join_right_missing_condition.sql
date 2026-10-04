@@ -1,0 +1,1 @@
+SELECT * FROM a RIGHT JOIN b JOIN c USING (x);

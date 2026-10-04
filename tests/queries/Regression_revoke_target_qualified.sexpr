@@ -1,0 +1,24 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (RevokeStatement
+            REVOKE
+            (GroupRevokeStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege SELECT))
+              ON
+              (GrantIdentifier
+                (QualifiedPair
+                  (Identifier
+                    (PureIdentifier
+                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (DotIdentifier DotWordIdentifier)))
+              FROM
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (TextStringLiteral SingleQuotedText)))))))))
+      SEMICOLON)))

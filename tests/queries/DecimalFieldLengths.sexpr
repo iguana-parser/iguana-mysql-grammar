@@ -1,0 +1,54 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (CreateStatement
+          CREATE
+          (CreateTable
+            TABLE
+            (TableName
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier)))))
+            (GroupCreateTable1
+              OPEN_PAR
+              (TableElementList
+                (TableElement
+                  (ColumnDefinition
+                    (ColumnName
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier XPrefixIdentifier))))
+                    (FieldDefinition
+                      (DataType
+                        INT
+                        (FieldLength OPEN_PAR DecimalLiteral CLOSE_PAR))
+                      GroupFieldDefinition1)))
+                ((COMMA TableElement)*
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          (GroupDataType2 VARCHAR)
+                          (FieldLength OPEN_PAR DecimalLiteral CLOSE_PAR))
+                        GroupFieldDefinition1)))
+                  COMMA
+                  (TableElement
+                    (ColumnDefinition
+                      (ColumnName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      (FieldDefinition
+                        (DataType
+                          BIT
+                          (FieldLength OPEN_PAR DecimalLiteral CLOSE_PAR))
+                        GroupFieldDefinition1)))))
+              CLOSE_PAR))))
+      SEMICOLON)))

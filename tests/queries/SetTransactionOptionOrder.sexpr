@@ -1,0 +1,48 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionType SESSION)
+            (StartOptionValueListFollowingOptionType
+              TRANSACTION
+              (TransactionCharacteristics
+                (TransactionAccessMode READ WRITE)
+                COMMA
+                (IsolationLevel
+                  ISOLATION
+                  LEVEL
+                  (GroupIsolationLevel1 READ UNCOMMITTED)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            TRANSACTION
+            (TransactionCharacteristics
+              (TransactionAccessMode READ ONLY)
+              COMMA
+              (IsolationLevel
+                ISOLATION
+                LEVEL
+                (GroupIsolationLevel1 SERIALIZABLE))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (SetStatement
+          SET
+          (StartOptionValueList
+            (OptionType GLOBAL)
+            (StartOptionValueListFollowingOptionType
+              TRANSACTION
+              (TransactionCharacteristics
+                (IsolationLevel
+                  ISOLATION
+                  LEVEL
+                  (GroupIsolationLevel1 REPEATABLE READ))
+                COMMA
+                (TransactionAccessMode READ ONLY))))))
+      SEMICOLON)))

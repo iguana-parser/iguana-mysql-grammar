@@ -1,0 +1,27 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (AlterUserStatement
+            ALTER
+            USER
+            (GroupAlterUserStatement3
+              (UserFunction
+                (GroupUserFunction1
+                  USER
+                  (Parentheses OPEN_PAR CLOSE_PAR)))
+              (GroupAlterUserStatement1
+                (UserRegistration
+                  (Factor
+                    (NumLiteral
+                      (Int64Literal IntegerLiteral))
+                    FACTOR)
+                  FINISH
+                  REGISTRATION
+                  SET
+                  CHALLENGE_RESPONSE
+                  AS
+                  (TextStringHash
+                    (TextStringLiteral SingleQuotedText))))))))
+      SEMICOLON)))

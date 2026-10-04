@@ -1,0 +1,1 @@
+SELECT a IS NOT \N FROM t;

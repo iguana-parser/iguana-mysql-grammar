@@ -1,0 +1,62 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (LoadStatement
+          LOAD
+          (DataOrXml DATA)
+          (LoadDataLock LOW_PRIORITY)
+          LOCAL
+          (LoadSourceType INFILE)
+          (TextStringLiteral SingleQuotedText)
+          INTO
+          TABLE
+          (TableRef
+            (QualifiedIdentifier
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))
+          (UsePartition
+            PARTITION
+            (IdentifierListWithParentheses
+              OPEN_PAR
+              (IdentifierList
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))
+              CLOSE_PAR))
+          (CharsetClause
+            (Charset CHAR SET)
+            (CharsetName
+              (TextOrIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))
+          (FieldsClause
+            COLUMNS
+            (FieldTerm+
+              (FieldTerm
+                TERMINATED
+                BY
+                (TextString
+                  (TextStringLiteral SingleQuotedText)))))
+          (LoadDataFileTail
+            (LoadDataFileTargetList
+              OPEN_PAR
+              (FieldOrVariableList
+                (FieldOrVariable
+                  (ColumnRef
+                    (FieldIdentifier
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                ((COMMA FieldOrVariable)*
+                  COMMA
+                  (FieldOrVariable
+                    (ColumnRef
+                      (FieldIdentifier
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier BPrefixIdentifier))))))))
+              CLOSE_PAR))))
+      SEMICOLON)))

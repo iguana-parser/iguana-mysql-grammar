@@ -1,0 +1,200 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (SelectStatement
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (ExpressionColumnRef
+                          (Identifier
+                            (PureIdentifier
+                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                    ((COMMA SelectItem)*
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            AVG
+                            OPEN_PAR
+                            (InSumExpr
+                              (Expression
+                                (ExpressionColumnRef
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                            CLOSE_PAR)))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (SumExpr
+                            (GroupSumExpr4
+                              SUM_CALL_OPEN
+                              (InSumExpr
+                                (Expression
+                                  (SumExpr
+                                    AVG
+                                    OPEN_PAR
+                                    (InSumExpr
+                                      (Expression
+                                        (ExpressionColumnRef
+                                          (Identifier
+                                            (PureIdentifier
+                                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    CLOSE_PAR)))
+                              CLOSE_PAR
+                              (WindowingClause
+                                OVER
+                                (WindowName
+                                  (Identifier
+                                    (PureIdentifier
+                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                      COMMA
+                      (SelectItem
+                        (Expression
+                          (WindowFunctionCall
+                            NTILE
+                            OPEN_PAR
+                            (StableInteger
+                              (Int64Literal IntegerLiteral))
+                            CLOSE_PAR
+                            (WindowingClause
+                              OVER
+                              (WindowName
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (FromClause
+                    FROM
+                    (TableReferenceList
+                      (TableReference
+                        (TableFactor
+                          (SingleTable
+                            (TableRef
+                              (QualifiedIdentifier
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                  (GroupByClause
+                    GROUP
+                    BY
+                    (OrderList
+                      (OrderExpression
+                        (Expression
+                          (ExpressionColumnRef
+                            (Identifier
+                              (PureIdentifier
+                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                  (HavingClause
+                    HAVING
+                    (Expression
+                      (Expression
+                        (Expression
+                          (BooleanPrimary
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                          (CompOp EQUAL)
+                          (Predicate
+                            (Expression
+                              (Subquery
+                                OPEN_PAR
+                                (QueryExpressionWithOptLockingClauses
+                                  (QueryExpression
+                                    (QueryExpressionBody
+                                      (QueryPrimary
+                                        (QuerySpecification
+                                          SELECT
+                                          (SelectItemList
+                                            (SelectItem
+                                              (Expression
+                                                (ExpressionColumnRef
+                                                  (Identifier
+                                                    (PureIdentifier
+                                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                          (FromClause
+                                            FROM
+                                            (TableReferenceList
+                                              (TableReference
+                                                (TableFactor
+                                                  (SingleTable
+                                                    (TableRef
+                                                      (QualifiedIdentifier
+                                                        (Identifier
+                                                          (PureIdentifier
+                                                            (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                                    (LimitClause
+                                      LIMIT
+                                      (LimitOptions
+                                        (LimitOption IntegerLiteral)))))
+                                CLOSE_PAR))))
+                        OR
+                        (Expression
+                          (BooleanPrimary
+                            (Expression
+                              (ExpressionColumnRef
+                                (Identifier
+                                  (PureIdentifier
+                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                          (CompOp EQUAL)
+                          (Predicate
+                            (Expression
+                              (Literal
+                                (TextLiteral
+                                  (TextLiteralHead
+                                    (TextStringLiteral SingleQuotedText))))))))
+                      OR
+                      (Expression
+                        (BooleanPrimary
+                          (Expression
+                            (ExpressionColumnRef
+                              (Identifier
+                                (PureIdentifier
+                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                        IS
+                        NULL)))
+                  (WindowClause
+                    WINDOW
+                    (WindowDefinition
+                      (WindowName
+                        (Identifier
+                          (PureIdentifier
+                            (UnquotedIdentifier OrdinaryIdentifier))))
+                      AS
+                      (WindowSpec
+                        OPEN_PAR
+                        (WindowSpecDetails
+                          (OrderClause
+                            ORDER
+                            BY
+                            (OrderList
+                              (OrderExpression
+                                (Expression
+                                  (ExpressionColumnRef
+                                    (Identifier
+                                      (PureIdentifier
+                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          (WindowFrameClause
+                            (WindowFrameUnits ROWS)
+                            (WindowFrameExtent
+                              (WindowFrameStart UNBOUNDED PRECEDING))))
+                        CLOSE_PAR))))))
+            (OrderClause
+              ORDER
+              BY
+              (OrderList
+                (OrderExpression
+                  (Expression
+                    (ExpressionColumnRef
+                      (Identifier
+                        (PureIdentifier
+                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Direction DESC)))))))
+      SEMICOLON)))

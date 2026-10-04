@@ -1,0 +1,1 @@
+CREATE TABLE adddate(i INT);

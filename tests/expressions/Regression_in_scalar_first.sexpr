@@ -1,0 +1,32 @@
+(Expression
+  (BitExpression
+    (Expression
+      (Literal
+        (NumLiteral
+          (Int64Literal IntegerLiteral)))))
+  IN
+  OPEN_PAR
+  (InListExpressions
+    (Expression
+      (Subquery
+        OPEN_PAR
+        (QueryExpressionWithOptLockingClauses
+          (QueryExpression
+            (QueryExpressionBody
+              (QueryPrimary
+                (QuerySpecification
+                  SELECT
+                  (SelectItemList
+                    (SelectItem
+                      (Expression
+                        (Literal
+                          (NumLiteral
+                            (Int64Literal IntegerLiteral)))))))))))
+        CLOSE_PAR))
+    COMMA
+    (ExprList
+      (Expression
+        (Literal
+          (NumLiteral
+            (Int64Literal IntegerLiteral))))))
+  CLOSE_PAR)

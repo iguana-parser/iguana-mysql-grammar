@@ -1,0 +1,91 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (DescribeStatement
+            DESCRIBE
+            (TableRef
+              (QualifiedIdentifier
+                (Identifier
+                  (PureIdentifier
+                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions
+              FORMAT
+              EQUAL
+              (JsonExplainFormat JsonFormatWord))
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList MULT)
+                        (FromClause
+                          FROM
+                          (TableReferenceList
+                            (TableReference
+                              (TableFactor
+                                (SingleTable
+                                  (TableRef
+                                    (QualifiedIdentifier
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (ExplainStatement
+            EXPLAIN
+            (ExplainOptions ANALYZE)
+            (ExplainableStatement
+              (SelectStatement
+                (QueryExpression
+                  (QueryExpressionBody
+                    (QueryPrimary
+                      (QuerySpecification
+                        SELECT
+                        (SelectItemList MULT)
+                        (FromClause
+                          FROM
+                          (TableReferenceList
+                            (TableReference
+                              (TableFactor
+                                (SingleTable
+                                  (TableRef
+                                    (QualifiedIdentifier
+                                      (Identifier
+                                        (PureIdentifier
+                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (HelpCommand
+            HELP
+            (TextOrIdentifier
+              (TextStringLiteral SingleQuotedText)))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (UseCommand
+            USE
+            (SchemaRef
+              (Identifier
+                (PureIdentifier
+                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (UtilityStatement
+          (RestartServer RESTART)))
+      SEMICOLON)))

@@ -1,0 +1,1 @@
+CREATE TABLE `count`(i INT);

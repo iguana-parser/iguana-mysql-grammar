@@ -1,0 +1,1 @@
+SELECT count, min, max, sum, now, mid FROM t;
