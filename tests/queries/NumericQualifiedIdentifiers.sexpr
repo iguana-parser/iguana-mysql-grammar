@@ -13,9 +13,7 @@
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotDigitIdentifier)))))
                     ((COMMA SelectItem)*
                       COMMA
@@ -23,9 +21,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotDigitIdentifier)))))
                       COMMA
                       (SelectItem
@@ -33,9 +29,7 @@
                           (Expression
                             (ExpressionColumnRef
                               (QualifiedPair
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)
                                 (DotIdentifier DotDigitIdentifier))))
                           MINUS
                           (Expression
@@ -50,7 +44,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -3,26 +3,18 @@
     (BitExpression
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier))))))
+          (Identifier IdentifierContextGuard IdentifierWordToken))))
     BETWEEN
     (BitExpression
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier BPrefixIdentifier))))))
+          (Identifier IdentifierContextGuard IdentifierWordToken))))
     AND
     (Predicate
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))))
   AND
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier OrdinaryIdentifier))))))
+      (Identifier IdentifierContextGuard IdentifierWordToken))))

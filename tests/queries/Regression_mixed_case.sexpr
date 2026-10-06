@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -23,18 +21,14 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                   (WhereClause
                     WHERE
                     (Expression
                       (BooleanPrimary
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                       (CompOp GREATER_OR_EQUAL)
                       (Predicate
                         (Expression

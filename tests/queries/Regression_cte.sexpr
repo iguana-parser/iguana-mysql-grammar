@@ -7,9 +7,7 @@
             (WithClause
               WITH
               (CommonTableExpression
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))
+                (Identifier IdentifierContextGuard IdentifierWordToken)
                 AS
                 (Subquery
                   OPEN_PAR
@@ -23,9 +21,7 @@
                               (SelectItem
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))
                             (FromClause
                               FROM
                               (TableReferenceList
@@ -34,9 +30,7 @@
                                     (SingleTable
                                       (TableRef
                                         (QualifiedIdentifier
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
                   CLOSE_PAR)))
             (QueryExpressionBody
               (QueryPrimary
@@ -46,9 +40,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -57,7 +49,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

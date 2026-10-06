@@ -53,25 +53,20 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (SelectAlias
                           (TextStringLiteral SingleQuotedText)))
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier BacktickIdentifier)))))
+                            (Identifier BacktickIdentifier))))
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))))
                   (FromClause
                     FROM
@@ -81,7 +76,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -13,9 +13,7 @@
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier))))
                       (SelectAlias
                         (TextStringLiteral SingleQuotedText))))
@@ -27,7 +25,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -15,9 +15,7 @@
                           (NumLiteral DecimalLiteral)))
                       (SelectAlias
                         AS
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier XPrefixIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
@@ -25,7 +23,5 @@
                           (Literal
                             (NumLiteral FloatLiteral)))
                         (SelectAlias
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)))

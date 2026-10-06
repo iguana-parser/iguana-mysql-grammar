@@ -5,9 +5,7 @@
         (TransactionOrLockingStatement
           (SavepointStatement
             SAVEPOINT
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier))))))
+            (Identifier IdentifierContextGuard IdentifierWordToken))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -16,9 +14,7 @@
             ROLLBACK
             (GroupSavepointStatement1
               TO
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -29,9 +25,7 @@
             (GroupSavepointStatement1
               TO
               SAVEPOINT
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -39,7 +33,5 @@
           (SavepointStatement
             RELEASE
             SAVEPOINT
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier))))))
+            (Identifier IdentifierContextGuard IdentifierWordToken))))
       SEMICOLON)))

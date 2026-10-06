@@ -9,18 +9,14 @@
             (LockItem
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (LockOption READ))
             ((COMMA LockItem)*
               COMMA
               (LockItem
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (LockOption WRITE))))))
       SEMICOLON)
     (Query

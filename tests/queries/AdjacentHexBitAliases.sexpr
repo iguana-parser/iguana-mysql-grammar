@@ -14,9 +14,7 @@
                         (Literal
                           (HexLiteral QuotedHexLiteral)))
                       (SelectAlias
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
@@ -24,25 +22,19 @@
                           (Literal
                             (HexLiteral QuotedHexLiteral)))
                         (SelectAlias
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier BPrefixIdentifier)))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))
                       COMMA
                       (SelectItem
                         (Expression
                           (Literal
                             (BinaryLiteral QuotedBinaryLiteral)))
                         (SelectAlias
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))
                       COMMA
                       (SelectItem
                         (Expression
                           (Literal
                             (BinaryLiteral QuotedBinaryLiteral)))
                         (SelectAlias
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)))

@@ -15,7 +15,5 @@
                           (NumLiteral
                             (Int64Literal IntegerLiteral))))
                       (SelectAlias
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)))

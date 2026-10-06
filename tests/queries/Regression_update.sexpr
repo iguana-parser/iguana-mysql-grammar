@@ -10,24 +10,18 @@
                 (SingleTable
                   (TableRef
                     (QualifiedIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))
           SET
           (UpdateList
             (UpdateElement
               (ColumnRef
                 (FieldIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               EQUAL
               (Expression
                 (Expression
                   (ExpressionColumnRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 PLUS
                 (Expression
                   (Literal
@@ -39,9 +33,7 @@
               (BooleanPrimary
                 (Expression
                   (ExpressionColumnRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))
               (CompOp EQUAL)
               (Predicate
                 (Expression

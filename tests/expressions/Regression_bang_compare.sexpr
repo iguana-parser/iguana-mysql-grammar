@@ -4,13 +4,9 @@
       LOGICAL_NOT
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))))
   (CompOp EQUAL)
   (Predicate
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier)))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))))

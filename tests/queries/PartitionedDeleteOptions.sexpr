@@ -13,16 +13,12 @@
             (GroupDeleteStatement1
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (PartitionDelete
                 PARTITION
                 OPEN_PAR
                 (IdentifierList
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 CLOSE_PAR)
               (WhereClause
                 WHERE
@@ -30,9 +26,7 @@
                   (BooleanPrimary
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (CompOp EQUAL)
                   (Predicate
                     (Expression
@@ -46,9 +40,7 @@
                   (OrderExpression
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (SimpleLimitClause
                 LIMIT
                 (LimitOption IntegerLiteral))))))

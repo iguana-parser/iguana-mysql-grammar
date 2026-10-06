@@ -9,18 +9,14 @@
             (GroupDeleteStatement1
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (WhereClause
                 WHERE
                 (Expression
                   (BitExpression
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   IN
                   OPEN_PAR
                   (InListExpressions

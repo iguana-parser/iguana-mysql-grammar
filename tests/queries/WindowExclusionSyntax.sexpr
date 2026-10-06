@@ -17,9 +17,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR
                             (WindowingClause
                               OVER
@@ -33,9 +31,7 @@
                                       (OrderExpression
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier))))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                   (WindowFrameClause
                                     (WindowFrameUnits ROWS)
                                     (WindowFrameExtent
@@ -58,9 +54,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -79,9 +73,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR
                             (WindowingClause
                               OVER
@@ -95,9 +87,7 @@
                                       (OrderExpression
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier))))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                   (WindowFrameClause
                                     (WindowFrameUnits ROWS)
                                     (WindowFrameExtent
@@ -116,9 +106,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -137,9 +125,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR
                             (WindowingClause
                               OVER
@@ -153,9 +139,7 @@
                                       (OrderExpression
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier))))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                   (WindowFrameClause
                                     (WindowFrameUnits RANGE)
                                     (WindowFrameExtent
@@ -172,9 +156,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -193,9 +175,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR
                             (WindowingClause
                               OVER
@@ -209,9 +189,7 @@
                                       (OrderExpression
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier))))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                   (WindowFrameClause
                                     (WindowFrameUnits GROUPS)
                                     (WindowFrameExtent
@@ -237,7 +215,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

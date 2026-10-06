@@ -9,22 +9,16 @@
           INTO
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (UsePartition
             PARTITION
             (IdentifierListWithParentheses
               OPEN_PAR
               (IdentifierList
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))
+                (Identifier IdentifierContextGuard IdentifierWordToken)
                 ((COMMA Identifier)*
                   COMMA
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               CLOSE_PAR))
           (GroupInsertStatement1
             (InsertFromConstructor
@@ -33,17 +27,13 @@
                 (InsertIdentifier
                   (ColumnRef
                     (FieldIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 ((COMMA InsertIdentifier)*
                   COMMA
                   (InsertIdentifier
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               CLOSE_PAR
               (InsertValues
                 VALUES
@@ -63,21 +53,15 @@
                   CLOSE_PAR)))
             (ValuesReference
               AS
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))
+              (Identifier IdentifierContextGuard IdentifierWordToken)
               (ColumnInternalRefList
                 OPEN_PAR
                 (ColumnInternalRef
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier XPrefixIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 ((COMMA ColumnInternalRef)*
                   COMMA
                   (ColumnInternalRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 CLOSE_PAR)))
           (InsertUpdateList
             ON
@@ -88,22 +72,16 @@
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 (Expression
                   (Expression
                     (ExpressionColumnRef
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier XPrefixIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   PLUS
                   (Expression
                     (ExpressionColumnRef
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -113,18 +91,14 @@
           INTO
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (GroupInsertStatement1
             SET
             (UpdateList
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 (Expression
                   (Literal
@@ -135,9 +109,7 @@
                 (UpdateElement
                   (ColumnRef
                     (FieldIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier BPrefixIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   EQUAL
                   (Expression
                     (Literal
@@ -145,9 +117,7 @@
                         (Int64Literal IntegerLiteral)))))))
             (ValuesReference
               AS
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (InsertUpdateList
             ON
             DUPLICATE
@@ -157,15 +127,11 @@
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier BPrefixIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 (Expression
                   (ExpressionColumnRef
                     (QualifiedPair
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (DotIdentifier DotWordIdentifier)))))))))
       SEMICOLON)))

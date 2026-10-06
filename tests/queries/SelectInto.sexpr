@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))
                   (IntoClause
                     INTO
                     (GroupIntoClause1
@@ -27,9 +25,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -44,9 +40,7 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))))
                     (FromClause
                       FROM
                       (TableReferenceList
@@ -55,9 +49,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))
             (IntoClause
               INTO
               (GroupIntoClause1
@@ -76,9 +68,7 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))))
                     (FromClause
                       FROM
                       (TableReferenceList
@@ -87,9 +77,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))
             (IntoClause
               INTO
               (GroupIntoClause1
@@ -116,9 +104,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))
                   (IntoClause
                     INTO
                     (GroupIntoClause1
@@ -132,7 +118,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

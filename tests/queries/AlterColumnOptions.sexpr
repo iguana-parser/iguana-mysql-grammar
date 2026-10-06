@@ -9,9 +9,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterCommandsModifierList
@@ -33,9 +31,7 @@
                       ADD
                       COLUMN
                       (GroupAlterListItem1
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (FieldDefinition
                           (DataType INT)
                           GroupFieldDefinition1)
@@ -46,9 +42,7 @@
                         MODIFY
                         COLUMN
                         (ColumnInternalRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier BPrefixIdentifier))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))
                         (FieldDefinition
                           (DataType
                             (GroupDataType2 VARCHAR)
@@ -59,9 +53,7 @@
                           GroupFieldDefinition1)
                         (Place
                           AFTER
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -72,9 +64,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
@@ -82,9 +72,7 @@
                       ALTER
                       COLUMN
                       (ColumnInternalRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (GroupAlterListItem3
                         SET
                         DEFAULT
@@ -102,9 +90,7 @@
                         ALTER
                         COLUMN
                         (ColumnInternalRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))
                         (GroupAlterListItem3 DROP DEFAULT))))))))))
       SEMICOLON)
     (Query
@@ -116,9 +102,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
@@ -126,15 +110,11 @@
                       ORDER
                       BY
                       (AlterOrderList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (Direction DESC)
                         ((COMMA Identifier Direction?)*
                           COMMA
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier BPrefixIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (Direction ASC)))))))))))
       SEMICOLON)
     (Query
@@ -146,9 +126,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
@@ -157,8 +135,6 @@
                       (GroupAlterListItem2
                         COLUMN
                         (ColumnInternalRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))
                         (Restrict RESTRICT))))))))))
       SEMICOLON)))

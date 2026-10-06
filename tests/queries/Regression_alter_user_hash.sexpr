@@ -12,17 +12,13 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (GroupAlterUser4
                     (IdentifiedWithPluginAsAuth
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       AS
                       (TextStringHash
                         (TextStringLiteral SingleQuotedText))))))

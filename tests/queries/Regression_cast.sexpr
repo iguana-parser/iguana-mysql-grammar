@@ -14,9 +14,7 @@
                         CAST_CALL_OPEN
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         AS
                         (CastType CHAR)
                         CLOSE_PAR))
@@ -28,15 +26,11 @@
                           OPEN_PAR
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           USING
                           (CharsetName
                             (TextOrIdentifier
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           CLOSE_PAR))))
                   (FromClause
                     FROM
@@ -46,7 +40,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -30,9 +30,7 @@
               (GroupAlterInstanceStatement1
                 FOR
                 CHANNEL
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -46,9 +44,7 @@
               (GroupAlterInstanceStatement1
                 FOR
                 CHANNEL
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))
+                (Identifier IdentifierContextGuard IdentifierWordToken)
                 NO
                 ROLLBACK
                 ON

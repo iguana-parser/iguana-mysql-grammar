@@ -8,17 +8,13 @@
             PROCEDURE
             (ProcedureName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             OPEN_PAR
             (ProcedureParameter
               IN
               (FunctionParameter
                 (ParameterName
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier XPrefixIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 (TypeWithOptCollate
                   (DataType INT))))
             ((COMMA ProcedureParameter)*
@@ -27,9 +23,7 @@
                 OUT
                 (FunctionParameter
                   (ParameterName
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))
                   (TypeWithOptCollate
                     (DataType INT)))))
             CLOSE_PAR
@@ -44,17 +38,13 @@
                           (VariableDeclaration
                             DECLARE
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (DataType INT)
                             DEFAULT
                             (Expression
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier XPrefixIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               PLUS
                               (Expression
                                 (Literal
@@ -70,16 +60,12 @@
                               (StartOptionValueList
                                 (OptionValueNoOptionType
                                   (LvalueVariable
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))
                                   (Equal EQUAL)
                                   (SetExprOrDefault
                                     (Expression
                                       (ExpressionColumnRef
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))))
                                 OptionValueListContinued))))
                         SEMICOLON))
                     END)))))))
@@ -92,15 +78,11 @@
             FUNCTION
             (FunctionName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             OPEN_PAR
             (FunctionParameter
               (ParameterName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier XPrefixIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (TypeWithOptCollate
                 (DataType INT)))
             CLOSE_PAR
@@ -116,9 +98,7 @@
                   (Expression
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier XPrefixIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     PLUS
                     (Expression
                       (Literal
@@ -133,17 +113,13 @@
             TRIGGER
             (TriggerName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             BEFORE
             INSERT
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FOR
             EACH
             ROW
@@ -154,9 +130,7 @@
                   (StartOptionValueList
                     (OptionValueNoOptionType
                       (LvalueVariable
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NEW)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (DotIdentifier DotWordIdentifier))
                       (Equal EQUAL)
                       (SetExprOrDefault
@@ -174,9 +148,7 @@
             EVENT
             (EventName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             ON
             SCHEDULE
             (Schedule
@@ -195,9 +167,7 @@
                   INTO
                   (TableRef
                     (QualifiedIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   (GroupInsertStatement1
                     (InsertFromConstructor
                       (InsertValues
@@ -217,9 +187,7 @@
           CALL
           (ProcedureRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           OPEN_PAR
           (ExprList
             (Expression

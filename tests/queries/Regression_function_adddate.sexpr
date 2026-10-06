@@ -16,9 +16,7 @@
                             ADDDATE_CALL_OPEN
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             COMMA
                             (GroupRuntimeFunctionCall1
                               (Expression
@@ -37,9 +35,7 @@
                               (UdfExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               ((COMMA UdfExpr)*
                                 COMMA
                                 (UdfExpr
@@ -56,9 +52,7 @@
                               SUBDATE_CALL_OPEN
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               COMMA
                               (GroupRuntimeFunctionCall2
                                 INTERVAL

@@ -23,7 +23,7 @@
                   (FunctionCall
                     (UnqualifiedFunctionName
                       (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                        (UnquotedIdentifier IdentifierContextGuard UnquotedIdentifierWordToken)))
                     OPEN_PAR
                     (UdfExprList
                       (UdfExpr
@@ -43,9 +43,7 @@
                   TABLE
                   (TableRef
                     (QualifiedIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)
     (Query
       (SimpleStatement

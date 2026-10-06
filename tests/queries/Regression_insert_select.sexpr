@@ -7,9 +7,7 @@
           INTO
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (GroupInsertStatement1
             (InsertQueryExpression
               (QueryExpressionWithOptLockingClauses

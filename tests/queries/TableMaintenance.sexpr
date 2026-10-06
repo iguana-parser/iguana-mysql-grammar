@@ -8,9 +8,7 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -20,17 +18,13 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           (Histogram
             UPDATE
             HISTOGRAM
             ON
             (IdentifierList
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (HistogramUpdateParam
               (HistogramNumBuckets WITH IntegerLiteral BUCKETS)))))
       SEMICOLON)
@@ -42,9 +36,7 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           (CheckOption*
             (CheckOption QUICK))))
       SEMICOLON)
@@ -56,9 +48,7 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           EXTENDED))
       SEMICOLON)
     (Query
@@ -69,9 +59,7 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -81,9 +69,7 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           (RepairType*
             (RepairType QUICK))))
       SEMICOLON)))

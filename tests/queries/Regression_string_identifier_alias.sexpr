@@ -16,7 +16,5 @@
                             (TextLiteralHead
                               (TextStringLiteral SingleQuotedText)))))
                       (SelectAlias
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)))

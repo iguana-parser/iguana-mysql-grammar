@@ -16,9 +16,7 @@
                           OPEN_PAR
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           (LeadLagInfo
                             COMMA
                             (StableInteger
@@ -27,9 +25,7 @@
                             (Expression
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               PLUS
                               (Expression
                                 (Literal
@@ -46,7 +42,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

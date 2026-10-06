@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       (GroupFieldDefinition1
@@ -27,9 +23,7 @@
                           (ColumnAttribute
                             (ConstraintName
                               CONSTRAINT
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (CheckConstraint
                               CHECK
                               (ExprWithParentheses
@@ -38,9 +32,7 @@
                                   (BooleanPrimary
                                     (Expression
                                       (ExpressionColumnRef
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                                   (CompOp GREATER_THAN)
                                   (Predicate
                                     (Expression
@@ -64,18 +56,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1)))
@@ -84,9 +72,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         (GroupFieldDefinition1
@@ -96,9 +82,7 @@
                             (Expression
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               PLUS
                               (Expression
                                 (Literal
@@ -116,9 +100,7 @@
                                     (BooleanPrimary
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier BPrefixIdentifier))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                                     (CompOp GREATER_THAN)
                                     (Predicate
                                       (Expression
@@ -139,18 +121,14 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
                     (AlterListItem
                       ADD
                       (GroupAlterListItem1
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (FieldDefinition
                           (DataType INT)
                           (GroupFieldDefinition1
@@ -164,9 +142,7 @@
                                       (BooleanPrimary
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                                       (CompOp GREATER_THAN)
                                       (Predicate
                                         (Expression

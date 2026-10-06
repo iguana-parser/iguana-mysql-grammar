@@ -15,9 +15,7 @@
                         OPEN_PAR
                         (SimpleIdentifier
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier)))
                         CLOSE_PAR)))
                   (FromClause
@@ -28,7 +26,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

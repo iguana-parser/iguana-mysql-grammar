@@ -18,9 +18,7 @@
                                 (TextStringLiteral SingleQuotedText)))))
                         COLLATE
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))
                       (SelectAlias
                         (TextStringLiteral SingleQuotedText))))))))))
       SEMICOLON)))

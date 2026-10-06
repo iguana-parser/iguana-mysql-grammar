@@ -39,18 +39,14 @@
                                         CLOSE_PAR)
                                       (TableAlias
                                         AS
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
                               COMMA
                               (TableReference
                                 (TableFactor
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
                               CLOSE_PAR)
                             CLOSE_PAR)))))))))))
       SEMICOLON)))

@@ -1,40 +1,28 @@
 (Expression
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier OrdinaryIdentifier)))))
+      (Identifier IdentifierContextGuard IdentifierWordToken)))
   BITWISE_OR
   (Expression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier)))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))
     BITWISE_AND
     (Expression
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))
       PLUS
       (Expression
         (Expression
           (ExpressionColumnRef
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier)))))
+            (Identifier IdentifierContextGuard IdentifierWordToken)))
         MULT
         (Expression
           (Expression
             (ExpressionColumnRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           BITWISE_XOR
           (Expression
             (ExpressionColumnRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))))))))

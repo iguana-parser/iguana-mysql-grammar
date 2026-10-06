@@ -17,9 +17,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             (IndexHintList
                               (IndexHint+
                                 (IndexHint
@@ -28,9 +26,7 @@
                                   OPEN_PAR
                                   (IndexList
                                     (IndexListElement
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                   CLOSE_PAR))))))))
                   (WhereClause
                     WHERE
@@ -38,9 +34,7 @@
                       (BooleanPrimary
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                       (CompOp EQUAL)
                       (Predicate
                         (Expression
@@ -66,9 +60,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               (IndexHintList
                                 (IndexHint+
                                   (IndexHint
@@ -87,9 +79,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               (IndexHintList
                                 (IndexHint+
                                   (IndexHint
@@ -98,9 +88,7 @@
                                     OPEN_PAR
                                     (IndexList
                                       (IndexListElement
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                                     CLOSE_PAR))))))
                         (JoinSpecification
                           ON
@@ -109,17 +97,13 @@
                               (Expression
                                 (ExpressionColumnRef
                                   (QualifiedPair
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)
                                     (DotIdentifier DotWordIdentifier)))))
                             (CompOp EQUAL)
                             (Predicate
                               (Expression
                                 (ExpressionColumnRef
                                   (QualifiedPair
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)
                                     (DotIdentifier DotWordIdentifier))))))))))))))))
       SEMICOLON)))

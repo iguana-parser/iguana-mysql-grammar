@@ -11,9 +11,7 @@
                   (RoleOrPrivilege SELECT)))
               ON
               (GrantIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               TO
               (GrantTargetList
                 (UserList

@@ -21,9 +21,7 @@
                               (SingleTable
                                 (TableRef
                                   (QualifiedIdentifier
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               CLOSE_PAR)
                             CLOSE_PAR)))))))))))
       SEMICOLON)))

@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType
                         (GroupDataType2 VARCHAR)

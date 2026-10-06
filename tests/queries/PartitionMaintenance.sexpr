@@ -9,9 +9,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -30,9 +28,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -40,14 +36,10 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         ((COMMA Identifier)*
                           COMMA
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -58,9 +50,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -77,9 +67,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -87,9 +75,7 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -100,9 +86,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -121,9 +105,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -131,9 +113,7 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     (RepairType*
                       (RepairType QUICK)))))))))
       SEMICOLON)
@@ -146,9 +126,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -165,9 +143,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -175,9 +151,7 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -188,24 +162,18 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
                     EXCHANGE
                     PARTITION
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     WITH
                     TABLE
                     (TableRef
                       (QualifiedIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     (WithValidation WITHOUT VALIDATION))))))))
       SEMICOLON)
     (Query
@@ -217,9 +185,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -227,9 +193,7 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     TABLESPACE)))))))
       SEMICOLON)
     (Query
@@ -241,9 +205,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
@@ -251,9 +213,7 @@
                     PARTITION
                     (AllOrPartitionNameList
                       (IdentifierList
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     TABLESPACE)))))))
       SEMICOLON)
     (Query
@@ -265,9 +225,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (RemovePartitioning REMOVE PARTITIONING))))))
       SEMICOLON)
@@ -280,16 +238,12 @@
             (AssignToKeycachePartition
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               PARTITION
               OPEN_PAR
               (AllOrPartitionNameList
                 (IdentifierList
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               CLOSE_PAR
               (CacheKeyList
                 (KeyOrIndex KEY)
@@ -299,14 +253,10 @@
                   ((COMMA KeyUsageElement)*
                     COMMA
                     (KeyUsageElement
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 CLOSE_PAR)))
           IN
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -318,9 +268,7 @@
           (PreloadTail
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (AdminPartition
               PARTITION
               OPEN_PAR

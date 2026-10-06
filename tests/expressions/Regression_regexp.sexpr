@@ -2,14 +2,10 @@
   (BitExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   (NotRule NOT)
   REGEXP
   (BitExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier)))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))))

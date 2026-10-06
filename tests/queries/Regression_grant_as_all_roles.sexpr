@@ -17,17 +17,13 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (GrantAs
                 AS
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (WithRoles
                   WITH
                   ROLE
@@ -38,7 +34,5 @@
                       (RoleList
                         (Role
                           (RoleIdentifierOrText
-                            (RoleIdentifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+                            (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken))))))))))))
       SEMICOLON)))

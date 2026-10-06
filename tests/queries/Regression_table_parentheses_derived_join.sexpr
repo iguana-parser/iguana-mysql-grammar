@@ -37,18 +37,14 @@
                                       CLOSE_PAR)
                                     (TableAlias
                                       AS
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))))
                               (InnerJoinType JOIN)
                               (TableReference
                                 (TableFactor
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
                               (JoinSpecification
                                 ON
                                 (Expression

@@ -13,25 +13,19 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (UsePartition
             PARTITION
             (IdentifierListWithParentheses
               OPEN_PAR
               (IdentifierList
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               CLOSE_PAR))
           (CharsetClause
             (Charset CHAR SET)
             (CharsetName
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           (FieldsClause
             COLUMNS
             (FieldTerm+
@@ -47,16 +41,12 @@
                 (FieldOrVariable
                   (ColumnRef
                     (FieldIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 ((COMMA FieldOrVariable)*
                   COMMA
                   (FieldOrVariable
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               CLOSE_PAR))))
       SEMICOLON)))

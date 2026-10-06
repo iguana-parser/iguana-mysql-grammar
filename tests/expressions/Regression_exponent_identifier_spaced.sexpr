@@ -1,9 +1,7 @@
 (Expression
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier ExponentIdentifier)))))
+      (Identifier IdentifierContextGuard IdentifierWordToken)))
   MINUS
   (Expression
     (Literal

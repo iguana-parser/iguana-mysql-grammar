@@ -15,9 +15,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           LoadDataFileTail))
       SEMICOLON)
     (Query
@@ -34,8 +32,6 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           LoadDataFileTail))
       SEMICOLON)))

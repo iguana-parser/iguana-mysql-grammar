@@ -18,9 +18,7 @@
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       AS
                       (TextStringHash
                         (TextStringLiteral SingleQuotedText)))))))
@@ -44,9 +42,7 @@
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       BY
                       RANDOM
                       PASSWORD)))))
@@ -70,9 +66,7 @@
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       AS
                       (TextStringHash
                         (TextStringLiteral SingleQuotedText)))
@@ -97,9 +91,7 @@
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       BY
                       RANDOM
                       PASSWORD))))

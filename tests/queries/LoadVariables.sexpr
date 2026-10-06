@@ -11,9 +11,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (LoadDataFileTail
             (LoadDataFileTargetList
               OPEN_PAR
@@ -43,9 +41,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (LoadDataFileTail
             (LoadDataFileTargetList
               OPEN_PAR
@@ -67,8 +63,7 @@
                     (UserVariable
                       AT_SIGN
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier BacktickIdentifier)))))))
+                        (Identifier BacktickIdentifier))))))
               CLOSE_PAR))))
       SEMICOLON)
     (Query
@@ -82,9 +77,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (LoadDataFileTail
             (LoadDataFileTargetList
               OPEN_PAR
@@ -93,17 +86,13 @@
                   (UserVariable
                     AT_SIGN
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 ((COMMA FieldOrVariable)*
                   COMMA
                   (FieldOrVariable
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   COMMA
                   (FieldOrVariable
                     (UserVariable
@@ -115,8 +104,7 @@
                     (UserVariable
                       AT_SIGN
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier BacktickIdentifier)))))))
+                        (Identifier BacktickIdentifier))))))
               CLOSE_PAR))))
       SEMICOLON)
     (Query
@@ -130,9 +118,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (LoadDataFileTail
             (LoadDataFileTargetList
               OPEN_PAR
@@ -144,9 +130,7 @@
                   (FieldOrVariable
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   COMMA
                   (FieldOrVariable
                     (UserVariable AtTextSuffix))))

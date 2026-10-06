@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (IdentifierKeyword
-                              (IdentifierKeywordsUnambiguous OJ)))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -23,12 +21,8 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (IdentifierKeyword
-                                    (IdentifierKeywordsUnambiguous OJ)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             (TableAlias
                               AS
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
       SEMICOLON)))

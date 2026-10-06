@@ -1,0 +1,137 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege SELECT))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege EXECUTE))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege EVENT))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (GrantStatement
+            GRANT
+            (GroupGrantStatement2
+              (RoleOrPrivilegesList
+                (RoleOrPrivilege
+                  (GroupRoleOrPrivilege2
+                    (RoleIdentifierOrText
+                      (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))
+              TO
+              (UserList
+                (User
+                  (UserIdentifierOrText
+                    (TextOrIdentifier
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
+      SEMICOLON)))

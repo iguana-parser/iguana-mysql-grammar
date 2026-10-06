@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       (GroupFieldDefinition1
@@ -30,9 +26,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NAME))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType
                           (GroupDataType2 VARCHAR)
@@ -49,9 +43,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType
                           DECIMAL

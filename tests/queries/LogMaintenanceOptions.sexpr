@@ -45,7 +45,5 @@
           (TableRefList
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)))

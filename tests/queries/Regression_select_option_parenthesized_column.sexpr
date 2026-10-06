@@ -14,9 +14,7 @@
                         OPEN_PAR
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (IdentifierKeyword
-                                (IdentifierKeywordsUnambiguous SQL_BUFFER_RESULT)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         CLOSE_PAR)))
                   (FromClause
                     FROM
@@ -26,7 +24,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

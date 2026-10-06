@@ -12,9 +12,7 @@
               ON
               (GrantIdentifier
                 (SchemaRef
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 DOT
                 MULT)
               TO

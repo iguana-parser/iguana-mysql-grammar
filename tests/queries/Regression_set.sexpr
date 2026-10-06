@@ -7,9 +7,7 @@
           (StartOptionValueList
             (OptionValueNoOptionType
               (LvalueVariable
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (Equal EQUAL)
               (SetExprOrDefault
                 (Expression

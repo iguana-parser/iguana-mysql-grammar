@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       (GroupFieldDefinition1
@@ -30,9 +26,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         (GroupFieldDefinition1
@@ -42,9 +36,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         (GroupFieldDefinition1
@@ -70,18 +62,14 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
                     (AlterListItem
                       ADD
                       (GroupAlterListItem1
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (FieldDefinition
                           (DataType INT)
                           (GroupFieldDefinition1

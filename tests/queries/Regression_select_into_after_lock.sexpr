@@ -13,9 +13,7 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))))
                     (FromClause
                       FROM
                       (TableReferenceList
@@ -24,9 +22,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))
             (LockingClauseList
               (LockingClause+
                 (LockingClause

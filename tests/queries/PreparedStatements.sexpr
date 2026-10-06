@@ -4,9 +4,7 @@
       (SimpleStatement
         (PreparedStatement
           PREPARE
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))
+          (Identifier IdentifierContextGuard IdentifierWordToken)
           FROM
           (TextLiteral
             (TextLiteralHead
@@ -17,9 +15,7 @@
         (PreparedStatement
           (ExecuteStatement
             EXECUTE
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier)))
+            (Identifier IdentifierContextGuard IdentifierWordToken)
             USING
             (ExecuteVarList
               (UserVariable AtTextSuffix)))))
@@ -29,7 +25,5 @@
         (PreparedStatement
           DEALLOCATE
           PREPARE
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))
       SEMICOLON)))

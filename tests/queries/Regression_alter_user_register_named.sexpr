@@ -10,9 +10,7 @@
               (User
                 (UserIdentifierOrText
                   (TextOrIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))
               (GroupAlterUserStatement2
                 (UserRegistration
                   (Factor

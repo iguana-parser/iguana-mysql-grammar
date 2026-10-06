@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1)
@@ -28,15 +24,11 @@
                         REFERENCES
                         (TableRef
                           (QualifiedIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (IdentifierListWithParentheses
                           OPEN_PAR
                           (IdentifierList
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))
                           CLOSE_PAR)
                         (GroupReferences1
                           ON

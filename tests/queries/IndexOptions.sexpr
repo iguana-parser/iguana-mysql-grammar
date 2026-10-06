@@ -8,9 +8,7 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (IndexTypeClause
                 USING
                 (IndexType BTREE))
@@ -18,16 +16,12 @@
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR))
               (IndexOption*
                 (IndexOption
@@ -75,31 +69,23 @@
               FULLTEXT
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR))
               (FulltextIndexOption*
                 (FulltextIndexOption
                   WITH
                   PARSER
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -110,23 +96,17 @@
               SPATIAL
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR))
               (SpatialIndexOption*
                 (SpatialIndexOption
@@ -145,9 +125,7 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (AlterCommandList
                   (AlterList
@@ -156,8 +134,6 @@
                       KW_INDEX
                       (IndexRef
                         (FieldIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))
                       (Visibility VISIBLE)))))))))
       SEMICOLON)))

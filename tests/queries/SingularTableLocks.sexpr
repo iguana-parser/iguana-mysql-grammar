@@ -9,14 +9,10 @@
             (LockItem
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (TableAlias
                 AS
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (LockOption READ)))))
       SEMICOLON)
     (Query

@@ -28,9 +28,7 @@
                               COLUMNS
                               OPEN_PAR
                               (JtColumn
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier XPrefixIdentifier)))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)
                                 (DataType INT)
                                 PATH
                                 (TextStringLiteral SingleQuotedText)
@@ -47,7 +45,5 @@
                             CLOSE_PAR
                             (TableAlias
                               AS
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
       SEMICOLON)))

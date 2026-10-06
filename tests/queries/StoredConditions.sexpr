@@ -8,18 +8,14 @@
             PROCEDURE
             (ProcedureName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             OPEN_PAR
             CLOSE_PAR
             (StoredRoutineBody
               (CompoundStatement
                 (LabeledBlock
                   (Label
-                    (LabelIdentifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken)
                     COLON)
                   (BeginEndBlock
                     BEGIN
@@ -28,9 +24,7 @@
                         (SpDeclaration
                           (ConditionDeclaration
                             DECLARE
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             CONDITION
                             FOR
                             (SpCondition
@@ -47,9 +41,7 @@
                             HANDLER
                             FOR
                             (HandlerCondition
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (CompoundStatement
                               (UnlabeledBlock
                                 (BeginEndBlock
@@ -85,13 +77,9 @@
                           (SimpleStatement
                             (SignalStatement
                               SIGNAL
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))))
                         SEMICOLON))
                     END)
                   (LabelRef
-                    (LabelIdentifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                    (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken))))))))
       SEMICOLON)))

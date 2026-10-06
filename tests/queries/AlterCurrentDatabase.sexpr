@@ -28,9 +28,7 @@
                       (Charset CHAR SET)
                       (CharsetName
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -46,7 +44,5 @@
                       COLLATE
                       (CollationName
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)))

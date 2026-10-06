@@ -6,9 +6,7 @@
           INSTALL
           (GroupInstallStatement1
             PLUGIN
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier)))
+            (Identifier IdentifierContextGuard IdentifierWordToken)
             SONAME
             (TextStringLiteral SingleQuotedText))))
       SEMICOLON)
@@ -19,9 +17,7 @@
           (GroupUninstallStatement1
             PLUGIN
             (PluginRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement

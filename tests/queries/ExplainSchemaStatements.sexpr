@@ -8,9 +8,7 @@
             FOR
             DATABASE
             (TextOrIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (ExplainableStatement
               (SelectStatement
                 (QueryExpression
@@ -22,9 +20,7 @@
                           (SelectItem
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))))
                         (FromClause
                           FROM
                           (TableReferenceList
@@ -33,9 +29,7 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -49,17 +43,14 @@
             FOR
             DATABASE
             (TextOrIdentifier
-              (Identifier
-                (PureIdentifier BacktickIdentifier)))
+              (Identifier BacktickIdentifier))
             (ExplainableStatement
               (InsertStatement
                 INSERT
                 INTO
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (GroupInsertStatement1
                   (InsertFromConstructor
                     (InsertValues
@@ -91,17 +82,13 @@
                       (SingleTable
                         (TableRef
                           (QualifiedIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                 SET
                 (UpdateList
                   (UpdateElement
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                     EQUAL
                     (Expression
                       (Literal
@@ -116,9 +103,7 @@
             FOR
             DATABASE
             (TextOrIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (ExplainableStatement
               (DeleteStatement
                 DELETE
@@ -127,9 +112,7 @@
                   (GroupDeleteStatement1
                     (TableRef
                       (QualifiedIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -139,18 +122,14 @@
             FOR
             DATABASE
             (TextOrIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (ExplainableStatement
               (ReplaceStatement
                 REPLACE
                 INTO
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (GroupReplaceStatement1
                   (InsertFromConstructor
                     (InsertValues

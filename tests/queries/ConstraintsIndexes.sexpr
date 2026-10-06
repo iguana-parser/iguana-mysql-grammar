@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1)))
@@ -28,9 +24,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         GroupFieldDefinition1)))
@@ -43,9 +37,7 @@
                           OPEN_PAR
                           (KeyPartOrExpression
                             (KeyPart
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           CLOSE_PAR))))
                   COMMA
                   (TableElement
@@ -56,48 +48,36 @@
                           (KeyOrIndex KEY))
                         (IndexNameAndType
                           (IndexName
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (KeyListWithExpression
                           OPEN_PAR
                           (KeyPartOrExpression
                             (KeyPart
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           CLOSE_PAR))))
                   COMMA
                   (TableElement
                     (TableConstraintDef
                       (ConstraintName
                         CONSTRAINT
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (GroupTableConstraintDef2
                         FOREIGN
                         KEY
                         (KeyList
                           OPEN_PAR
                           (KeyPart
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))
                           CLOSE_PAR)
                         (References
                           REFERENCES
                           (TableRef
                             (QualifiedIdentifier
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           (IdentifierListWithParentheses
                             OPEN_PAR
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             CLOSE_PAR)
                           (GroupReferences1
                             ON
@@ -108,9 +88,7 @@
                     (TableConstraintDef
                       (ConstraintName
                         CONSTRAINT
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (GroupTableConstraintDef2
                         (CheckConstraint
                           CHECK
@@ -120,9 +98,7 @@
                               (BooleanPrimary
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               (CompOp GREATER_THAN)
                               (Predicate
                                 (Expression
@@ -141,23 +117,17 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (Direction DESC)))
                   CLOSE_PAR))))))
       SEMICOLON)
@@ -169,16 +139,12 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
@@ -187,9 +153,7 @@
                       (Expression
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         PLUS
                         (Expression
                           (Literal
@@ -206,13 +170,9 @@
             KW_INDEX
             (IndexRef
               (FieldIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)))

@@ -8,9 +8,7 @@
             LOGFILE
             GROUP
             (LogfileGroupName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             ADD
             UNDOFILE
             (TextLiteral
@@ -29,9 +27,7 @@
                     EQUAL
                     (EngineRef
                       (TextOrIdentifier
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -42,9 +38,7 @@
               LOGFILE
               GROUP
               (LogfileGroupRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               ADD
               UNDOFILE
               (TextLiteral
@@ -57,9 +51,7 @@
                     EQUAL
                     (EngineRef
                       (TextOrIdentifier
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -69,16 +61,12 @@
             LOGFILE
             GROUP
             (LogfileGroupRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (DropLogfileGroupOption
               (TsOptionEngine
                 ENGINE
                 EQUAL
                 (EngineRef
                   (TextOrIdentifier
-                    (Identifier
-                      (IdentifierKeyword
-                        (IdentifierKeywordsUnambiguous NDBCLUSTER))))))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))))))
       SEMICOLON)))

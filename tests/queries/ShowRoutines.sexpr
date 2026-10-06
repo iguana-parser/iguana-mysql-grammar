@@ -24,9 +24,7 @@
                 (BooleanPrimary
                   (Expression
                     (ExpressionColumnRef
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (CompOp EQUAL)
                 (Predicate
                   (Expression
@@ -44,9 +42,7 @@
           (ProcedureRef
             (QualifiedIdentifier
               (QualifiedPair
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))
+                (Identifier IdentifierContextGuard IdentifierWordToken)
                 (DotIdentifier DotWordIdentifier))))))
       SEMICOLON)
     (Query
@@ -58,13 +54,11 @@
           (FunctionRef
             (QualifiedIdentifier
               (QualifiedPair
-                (Identifier
-                  (PureIdentifier BacktickIdentifier))
+                (Identifier BacktickIdentifier)
                 (DotIdentifier
                   DOT
                   (IdentifierAfterDot
-                    (Identifier
-                      (PureIdentifier BacktickIdentifier)))))))))
+                    (Identifier BacktickIdentifier))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -74,9 +68,7 @@
           PROCEDURE
           (ProcedureRef
             (QualifiedIdentifier
-              (Identifier
-                (IdentifierKeyword
-                  (IdentifierKeywordsUnambiguous STATUS)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -86,7 +78,5 @@
           FUNCTION
           (FunctionRef
             (QualifiedIdentifier
-              (Identifier
-                (IdentifierKeyword
-                  (IdentifierKeywordsUnambiguous CODE)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)))

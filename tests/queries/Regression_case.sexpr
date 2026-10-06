@@ -19,9 +19,7 @@
                               (BooleanPrimary
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               (CompOp GREATER_THAN)
                               (Predicate
                                 (Expression
@@ -32,9 +30,7 @@
                             THEN
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))))
                         (ElseExpression
                           ELSE
                           (Expression
@@ -50,7 +46,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier XPrefixIdentifier)))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))
                       (SelectAlias
                         (TextStringLiteral SingleQuotedText)))
                     ((COMMA SelectItem)*
@@ -22,27 +20,21 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier BPrefixIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (SelectAlias
                           (TextStringLiteral SingleQuotedText)))
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier XPrefixIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (SelectAlias
                           (TextStringLiteral SingleQuotedText)))
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier BPrefixIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         (SelectAlias
                           (TextStringLiteral SingleQuotedText)))))))))))
       SEMICOLON)))

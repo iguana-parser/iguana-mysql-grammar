@@ -7,9 +7,7 @@
           (CreateTablespace
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (TsDataFileName
               ADD
               (TsDataFile
@@ -24,9 +22,7 @@
                   EQUAL
                   (EngineRef
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))
               ((COMMA? TablespaceOption)*
                 (TablespaceOption
                   (TsOptionEngineAttribute
@@ -43,9 +39,7 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 (AlterTablespaceOptions
                   (AlterTablespaceOption
@@ -64,9 +58,7 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 (AlterTablespaceOptions
                   (AlterTablespaceOption
@@ -84,9 +76,7 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 (AlterTablespaceOptions
                   (AlterTablespaceOption

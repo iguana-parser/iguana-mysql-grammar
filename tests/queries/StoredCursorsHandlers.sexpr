@@ -8,9 +8,7 @@
             PROCEDURE
             (ProcedureName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             OPEN_PAR
             CLOSE_PAR
             (StoredRoutineBody
@@ -24,9 +22,7 @@
                           (VariableDeclaration
                             DECLARE
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (DataType INT)
                             DEFAULT
                             (Expression
@@ -38,17 +34,13 @@
                           (VariableDeclaration
                             DECLARE
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier XPrefixIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (DataType INT)))
                         SEMICOLON
                         (SpDeclaration
                           (CursorDeclaration
                             DECLARE
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             CURSOR
                             FOR
                             (SelectStatement
@@ -61,9 +53,7 @@
                                         (SelectItem
                                           (Expression
                                             (ExpressionColumnRef
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken)))))
                                       (FromClause
                                         FROM
                                         (TableReferenceList
@@ -72,9 +62,7 @@
                                               (SingleTable
                                                 (TableRef
                                                   (QualifiedIdentifier
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))
                         SEMICOLON
                         (SpDeclaration
                           (HandlerDeclaration
@@ -92,9 +80,7 @@
                                   (StartOptionValueList
                                     (OptionValueNoOptionType
                                       (LvalueVariable
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))
                                       (Equal EQUAL)
                                       (SetExprOrDefault
                                         (Expression
@@ -108,28 +94,20 @@
                         (CompoundStatement
                           (CursorOpen
                             OPEN
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         SEMICOLON
                         (CompoundStatement
                           (CursorFetch
                             FETCH
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             INTO
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier XPrefixIdentifier))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))))
                         SEMICOLON
                         (CompoundStatement
                           (CursorClose
                             CLOSE
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         SEMICOLON))
                     END)))))))
       SEMICOLON)))

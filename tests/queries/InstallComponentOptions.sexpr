@@ -13,9 +13,7 @@
               (InstallSetValue
                 (InstallLvalueVariable
                   (LvalueVariable
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     (DotIdentifier DotWordIdentifier)))
                 (Equal EQUAL)
                 (InstallSetRvalue
@@ -50,9 +48,7 @@
                 (InstallOptionType GLOBAL)
                 (InstallLvalueVariable
                   (LvalueVariable
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     (DotIdentifier DotWordIdentifier)))
                 (Equal EQUAL)
                 (InstallSetRvalue ON))
@@ -62,9 +58,7 @@
                   (InstallOptionType PERSIST)
                   (InstallLvalueVariable
                     (LvalueVariable
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (DotIdentifier DotWordIdentifier)))
                   (Equal EQUAL)
                   (InstallSetRvalue
@@ -87,9 +81,7 @@
               (InstallSetValue
                 (InstallLvalueVariable
                   (LvalueVariable
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     (DotIdentifier DotWordIdentifier)))
                 (Equal EQUAL)
                 (InstallSetRvalue
@@ -102,8 +94,7 @@
                 (InstallSetValue
                   (InstallLvalueVariable
                     (LvalueVariable
-                      (Identifier
-                        (PureIdentifier BacktickIdentifier))))
+                      (Identifier BacktickIdentifier)))
                   (Equal EQUAL)
                   (InstallSetRvalue
                     (Expression

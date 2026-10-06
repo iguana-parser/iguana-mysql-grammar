@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
@@ -31,9 +29,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                   (GroupByClause
                     GROUP
                     BY
@@ -41,9 +37,7 @@
                       (OrderExpression
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (HavingClause
                     HAVING
                     (Expression
@@ -66,9 +60,7 @@
                 (OrderExpression
                   (Expression
                     (ExpressionColumnRef
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))))
             (LimitClause
               LIMIT
               (LimitOptions

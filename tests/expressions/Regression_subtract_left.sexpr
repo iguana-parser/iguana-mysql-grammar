@@ -2,18 +2,12 @@
   (Expression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier)))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))
     MINUS
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   MINUS
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier OrdinaryIdentifier))))))
+      (Identifier IdentifierContextGuard IdentifierWordToken))))

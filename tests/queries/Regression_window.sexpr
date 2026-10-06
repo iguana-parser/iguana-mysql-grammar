@@ -25,9 +25,7 @@
                                   (OrderExpression
                                     (Expression
                                       (ExpressionColumnRef
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))))
                                 (OrderClause
                                   ORDER
                                   BY
@@ -35,9 +33,7 @@
                                     (OrderExpression
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                               CLOSE_PAR))))))
                   (FromClause
                     FROM
@@ -47,7 +43,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

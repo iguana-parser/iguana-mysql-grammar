@@ -23,14 +23,10 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                   (TableAlias
                                     AS
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                                 CLOSE_PAR)
                               CLOSE_PAR)
                             CLOSE_PAR)))))))))))

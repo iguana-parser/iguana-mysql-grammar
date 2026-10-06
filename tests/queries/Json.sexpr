@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))
                         (JsonOperator
                           JSON_SEPARATOR
                           (TextStringLiteral SingleQuotedText))))
@@ -23,9 +21,7 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))
                           (JsonOperator
                             JSON_UNQUOTED_SEPARATOR
                             (TextStringLiteral SingleQuotedText))))
@@ -38,9 +34,7 @@
                             (SimpleExpression
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             COMMA
                             (TextLiteral
                               (TextLiteralHead
@@ -54,9 +48,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -75,9 +67,7 @@
                           (SimpleExpression
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                           COMMA
                           (TextLiteral
                             (TextLiteralHead
@@ -103,9 +93,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -135,17 +123,13 @@
                               COLUMNS
                               OPEN_PAR
                               (JtColumn
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier NPrefixIdentifier)))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)
                                 FOR
                                 ORDINALITY)
                               ((COMMA JtColumn)*
                                 COMMA
                                 (JtColumn
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)
                                   (DataType INT)
                                   PATH
                                   (TextStringLiteral SingleQuotedText)
@@ -159,9 +143,7 @@
                             CLOSE_PAR
                             (TableAlias
                               AS
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -171,18 +153,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType JSON)
                       GroupFieldDefinition1)))
@@ -191,9 +169,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         (GroupFieldDefinition1
@@ -209,9 +185,7 @@
                                 (SimpleExpression
                                   (Expression
                                     (ExpressionColumnRef
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                                 COMMA
                                 (TextLiteral
                                   (TextLiteralHead

@@ -14,15 +14,13 @@
                         (FunctionCall
                           (UnqualifiedFunctionName
                             (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                              (UnquotedIdentifier IdentifierContextGuard UnquotedIdentifierWordToken)))
                           OPEN_PAR
                           (UdfExprList
                             (UdfExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               (SelectAlias
                                 (TextStringLiteral SingleQuotedText))))
                           CLOSE_PAR))))))))))

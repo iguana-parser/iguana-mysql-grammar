@@ -12,9 +12,7 @@
           (IfExistsIdentifier
             (PersistedVariableIdentifier
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -25,9 +23,7 @@
             (IfExists IF EXISTS)
             (PersistedVariableIdentifier
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -38,9 +34,7 @@
             (PersistedVariableIdentifier
               (QualifiedIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (IdentifierKeyword
-                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))))))
       SEMICOLON)
     (Query
@@ -53,9 +47,7 @@
             (PersistedVariableIdentifier
               (QualifiedIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (IdentifierKeyword
-                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))))))
       SEMICOLON)
     (Query
@@ -80,9 +72,7 @@
               (DotIdentifier
                 DOT
                 (IdentifierAfterDot
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -93,8 +83,7 @@
             (IfExists IF EXISTS)
             (PersistedVariableIdentifier
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier BacktickIdentifier)))))))
+                (Identifier BacktickIdentifier))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -105,8 +94,6 @@
             (PersistedVariableIdentifier
               (QualifiedIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (IdentifierKeyword
-                      (IdentifierKeywordsUnambiguous COMPONENT)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))))))
       SEMICOLON)))

@@ -12,9 +12,7 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (GroupAlterUser4
                     (IdentifiedWithPlugin
                       IDENTIFIED

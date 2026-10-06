@@ -18,9 +18,7 @@
               (AssignToKeycache
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))))
           IN
           DEFAULT))
       SEMICOLON)
@@ -36,9 +34,7 @@
               (PreloadKeys
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -50,9 +46,7 @@
               (GroupFlushTables1
                 (FlushTableList
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (FlushTablesOptions WITH READ LOCK))))))
       SEMICOLON)
     (Query

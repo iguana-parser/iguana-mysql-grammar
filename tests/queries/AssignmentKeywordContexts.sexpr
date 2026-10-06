@@ -219,8 +219,7 @@
                 (InstallSetValue
                   (InstallLvalueVariable
                     (LvalueVariable
-                      (Identifier
-                        (PureIdentifier BacktickIdentifier))))
+                      (Identifier BacktickIdentifier)))
                   (Equal EQUAL)
                   (InstallSetRvalue
                     (Expression

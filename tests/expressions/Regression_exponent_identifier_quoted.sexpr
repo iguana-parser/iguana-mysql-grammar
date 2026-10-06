@@ -1,8 +1,7 @@
 (Expression
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier BacktickIdentifier))))
+      (Identifier BacktickIdentifier)))
   MINUS
   (Expression
     (Literal

@@ -8,18 +8,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1))))
@@ -36,17 +32,13 @@
                         (BitExpression
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))))
                         CLOSE_PAR))
                     (PartitionDefinitions
                       OPEN_PAR
                       (PartitionDefinition
                         PARTITION
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (GroupPartitionDefinition1
                           VALUES
                           LESS
@@ -64,9 +56,7 @@
                         COMMA
                         (PartitionDefinition
                           PARTITION
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (GroupPartitionDefinition1 VALUES LESS THAN MAXVALUE)))
                       CLOSE_PAR))))))))
       SEMICOLON)
@@ -78,18 +68,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1))))
@@ -105,9 +91,7 @@
                       (BitExpression
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                       CLOSE_PAR)
                     PARTITIONS
                     (RealUlongNumber IntegerLiteral))))))))
@@ -121,26 +105,20 @@
               TABLE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (AlterTableActions
                 (StandaloneAlterCommands
                   (AlterPartition
                     REORGANIZE
                     PARTITION
                     (IdentifierList
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     INTO
                     (PartitionDefinitions
                       OPEN_PAR
                       (PartitionDefinition
                         PARTITION
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (GroupPartitionDefinition1
                           VALUES
                           LESS
@@ -158,9 +136,7 @@
                         COMMA
                         (PartitionDefinition
                           PARTITION
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (GroupPartitionDefinition1
                             VALUES
                             LESS

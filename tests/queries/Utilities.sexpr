@@ -7,9 +7,7 @@
             DESCRIBE
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -36,9 +34,7 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -62,9 +58,7 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -80,9 +74,7 @@
           (UseCommand
             USE
             (SchemaRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement

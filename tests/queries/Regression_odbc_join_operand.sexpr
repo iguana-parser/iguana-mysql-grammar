@@ -18,9 +18,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))))
                         (InnerJoinType JOIN)
                         (TableReference
                           OPEN_CURLY
@@ -32,18 +30,14 @@
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier BPrefixIdentifier))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
                               (InnerJoinType JOIN)
                               (TableReference
                                 (TableFactor
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                           CLOSE_CURLY)
                         (JoinSpecification
                           ON

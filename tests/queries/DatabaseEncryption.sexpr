@@ -7,9 +7,7 @@
           (CreateDatabase
             DATABASE
             (SchemaName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (CreateDatabaseOption*
               (CreateDatabaseOption
                 (DefaultEncryption
@@ -26,9 +24,7 @@
             (AlterDatabase
               DATABASE
               (SchemaRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (AlterDatabaseOption+
                 (AlterDatabaseOption
                   (CreateDatabaseOption

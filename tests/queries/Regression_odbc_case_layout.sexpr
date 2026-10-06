@@ -22,17 +22,13 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))))
                             (InnerJoinType JOIN)
                             (TableReference
                               (TableFactor
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier BPrefixIdentifier))))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                         CLOSE_CURLY)))))))))
       SEMICOLON)))

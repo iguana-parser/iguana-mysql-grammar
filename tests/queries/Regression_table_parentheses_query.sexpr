@@ -44,7 +44,5 @@
                               CLOSE_PAR)
                             (TableAlias
                               AS
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
       SEMICOLON)))

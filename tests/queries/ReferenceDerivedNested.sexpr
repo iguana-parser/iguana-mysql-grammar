@@ -13,9 +13,7 @@
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier)))))
                     ((COMMA SelectItem)*
                       COMMA
@@ -23,9 +21,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))))
                   (FromClause
                     FROM
@@ -35,9 +31,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))
                       ((COMMA TableReference)*
                         COMMA
                         (TableReference
@@ -56,15 +50,11 @@
                                               (Expression
                                                 (ExpressionColumnRef
                                                   (QualifiedPair
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier OrdinaryIdentifier)))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken)
                                                     (DotIdentifier DotWordIdentifier))))
                                               (SelectAlias
                                                 AS
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                                           (FromClause
                                             FROM
                                             (TableReferenceList
@@ -73,9 +63,7 @@
                                                   (SingleTable
                                                     (TableRef
                                                       (QualifiedIdentifier
-                                                        (Identifier
-                                                          (PureIdentifier
-                                                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                               ((COMMA TableReference)*
                                                 COMMA
                                                 (TableReference
@@ -94,9 +82,7 @@
                                                                       (Expression
                                                                         (ExpressionColumnRef
                                                                           (QualifiedPair
-                                                                            (Identifier
-                                                                              (PureIdentifier
-                                                                                (UnquotedIdentifier OrdinaryIdentifier)))
+                                                                            (Identifier IdentifierContextGuard IdentifierWordToken)
                                                                             (DotIdentifier DotWordIdentifier))))))
                                                                   (FromClause
                                                                     FROM
@@ -106,9 +92,7 @@
                                                                           (SingleTable
                                                                             (TableRef
                                                                               (QualifiedIdentifier
-                                                                                (Identifier
-                                                                                  (PureIdentifier
-                                                                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                                                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                                                                   (WhereClause
                                                                     WHERE
                                                                     (Expression
@@ -116,9 +100,7 @@
                                                                         (Expression
                                                                           (ExpressionColumnRef
                                                                             (QualifiedPair
-                                                                              (Identifier
-                                                                                (PureIdentifier
-                                                                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                                                                              (Identifier IdentifierContextGuard IdentifierWordToken)
                                                                               (DotIdentifier DotWordIdentifier)))))
                                                                       (CompOp GREATER_THAN)
                                                                       (Predicate
@@ -129,9 +111,7 @@
                                                         CLOSE_PAR)
                                                       (TableAlias
                                                         AS
-                                                        (Identifier
-                                                          (PureIdentifier
-                                                            (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                                           (WhereClause
                                             WHERE
                                             (Expression
@@ -139,25 +119,19 @@
                                                 (Expression
                                                   (ExpressionColumnRef
                                                     (QualifiedPair
-                                                      (Identifier
-                                                        (PureIdentifier
-                                                          (UnquotedIdentifier OrdinaryIdentifier)))
+                                                      (Identifier IdentifierContextGuard IdentifierWordToken)
                                                       (DotIdentifier DotWordIdentifier)))))
                                               (CompOp EQUAL)
                                               (Predicate
                                                 (Expression
                                                   (ExpressionColumnRef
                                                     (QualifiedPair
-                                                      (Identifier
-                                                        (PureIdentifier
-                                                          (UnquotedIdentifier OrdinaryIdentifier)))
+                                                      (Identifier IdentifierContextGuard IdentifierWordToken)
                                                       (DotIdentifier DotWordIdentifier))))))))))))
                                 CLOSE_PAR)
                               (TableAlias
                                 AS
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                   (WhereClause
                     WHERE
                     (Expression
@@ -165,17 +139,13 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))
                       (CompOp EQUAL)
                       (Predicate
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))))))))))
       SEMICOLON)))

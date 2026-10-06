@@ -14,9 +14,7 @@
                         TABLE
                         (TableRef
                           (QualifiedIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (OrderClause
                     ORDER
                     BY
@@ -25,9 +23,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier))))
                         (Direction ASC))))))))))
       SEMICOLON)))

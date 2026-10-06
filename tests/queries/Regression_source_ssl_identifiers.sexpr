@@ -12,17 +12,13 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (IdentifierKeyword
-                              (IdentifierKeywordsUnambiguous SOURCE_SSL_KEY))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (IdentifierKeyword
-                                (IdentifierKeywordsUnambiguous SOURCE_SSL_CRLPATH))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -31,7 +27,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

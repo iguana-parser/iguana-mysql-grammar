@@ -25,9 +25,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR)))
                       COMMA
                       (SelectItem
@@ -38,9 +36,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR)))
                       COMMA
                       (SelectItem
@@ -51,9 +47,7 @@
                               (InSumExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               CLOSE_PAR))))
                       COMMA
                       (SelectItem
@@ -64,9 +58,7 @@
                               (InSumExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               CLOSE_PAR))))))
                   (FromClause
                     FROM
@@ -76,9 +68,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -94,9 +84,7 @@
                         CAST_CALL_OPEN
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))
                         AS
                         (CastType SIGNED)
                         CLOSE_PAR))
@@ -108,15 +96,11 @@
                           OPEN_PAR
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           USING
                           (CharsetName
                             (TextOrIdentifier
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           CLOSE_PAR))
                       COMMA
                       (SelectItem
@@ -128,9 +112,7 @@
                             FROM
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             CLOSE_PAR)))))
                   (FromClause
                     FROM
@@ -140,9 +122,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -160,9 +140,7 @@
                             SUBSTRING_CALL_OPEN
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             (GroupSubstringFunction1
                               FROM
                               (Expression
@@ -192,9 +170,7 @@
                                 FROM
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               CLOSE_PAR))))
                       COMMA
                       (SelectItem
@@ -210,9 +186,7 @@
                             IN
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             CLOSE_PAR)))))
                   (FromClause
                     FROM
@@ -222,9 +196,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -258,17 +230,13 @@
                         (Expression
                           (FunctionCall
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier))
                             OPEN_PAR
                             (ExprList
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR)))
                       COMMA
                       (SelectItem
@@ -276,15 +244,13 @@
                           (FunctionCall
                             (UnqualifiedFunctionName
                               (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                                (UnquotedIdentifier IdentifierContextGuard UnquotedIdentifierWordToken)))
                             OPEN_PAR
                             (UdfExprList
                               (UdfExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))
                             CLOSE_PAR)))))
                   (FromClause
                     FROM
@@ -294,9 +260,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -315,9 +279,7 @@
                           (ExprList
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                           (OrderClause
                             ORDER
                             BY
@@ -325,9 +287,7 @@
                               (OrderExpression
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                                 (Direction DESC))))
                           SEPARATOR
                           (TextString
@@ -341,7 +301,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

@@ -10,20 +10,16 @@
               (GroupFlushTables1
                 (FlushTableList
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))
                   ((COMMA QualifiedIdentifier)*
                     COMMA
                     (QualifiedIdentifier
                       (QualifiedPair
-                        (Identifier
-                          (PureIdentifier BacktickIdentifier))
+                        (Identifier BacktickIdentifier)
                         (DotIdentifier
                           DOT
                           (IdentifierAfterDot
-                            (Identifier
-                              (PureIdentifier BacktickIdentifier)))))))))))))
+                            (Identifier BacktickIdentifier))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -36,9 +32,7 @@
                 (FlushTableList
                   (QualifiedIdentifier
                     (QualifiedPair
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (DotIdentifier DotWordIdentifier))))
                 (FlushTablesOptions WITH READ LOCK))))))
       SEMICOLON)
@@ -53,9 +47,7 @@
                 (FlushTableList
                   (QualifiedIdentifier
                     (QualifiedPair
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (DotIdentifier DotWordIdentifier))))
                 (FlushTablesOptions FOR EXPORT))))))
       SEMICOLON)))

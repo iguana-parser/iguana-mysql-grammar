@@ -2,9 +2,7 @@
   (BitExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   (NotRule NOT)
   LIKE
   (SimpleExpression
@@ -13,13 +11,9 @@
       (Expression
         (Expression
           (ExpressionColumnRef
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier BPrefixIdentifier)))))
+            (Identifier IdentifierContextGuard IdentifierWordToken)))
         PLUS
         (Expression
           (ExpressionColumnRef
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier))))))
+            (Identifier IdentifierContextGuard IdentifierWordToken))))
       CLOSE_PAR)))

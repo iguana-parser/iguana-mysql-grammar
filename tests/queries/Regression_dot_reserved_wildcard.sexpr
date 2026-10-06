@@ -12,9 +12,7 @@
                     (SelectItem
                       (TableWild
                         (QualifiedPair
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (DotIdentifier DotWordIdentifier))
                         DOT
                         MULT)))
@@ -26,7 +24,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

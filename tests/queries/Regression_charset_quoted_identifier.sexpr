@@ -12,6 +12,5 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier BacktickIdentifier))))))))))))
+                          (Identifier BacktickIdentifier)))))))))))
       SEMICOLON)))

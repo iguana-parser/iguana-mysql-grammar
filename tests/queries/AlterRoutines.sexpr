@@ -8,9 +8,7 @@
             PROCEDURE
             (ProcedureRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (RoutineAlterOptions
               (RoutineCreateOption+
                 (RoutineCreateOption
@@ -28,9 +26,7 @@
             FUNCTION
             (FunctionRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (RoutineAlterOptions
               (RoutineCreateOption+
                 (RoutineCreateOption
@@ -45,9 +41,7 @@
               EVENT
               (EventRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               ON
               SCHEDULE
               (Schedule

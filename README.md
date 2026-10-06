@@ -25,6 +25,16 @@ The grammar has three notable design choices:
   [single-phase parsing documentation](https://iguana-parser.org/docs/concepts/single-phase-parsing/)
   explains how token matching follows the grammar context.
 
+Identifiers use one lexical word token per keyword context, with a separate
+backtick alternative. An empty `IdentifierContextGuard` checks `!>>` restrictions
+at the beginning of the word, preserving adjacent function-call, string-prefix,
+and signed-exponent distinctions. This makes the identifier rules LL(1).
+Eight shared word classes define keyword membership. Each identifier context
+derives its exclusions from these classes. The grammar is standalone and can
+be edited manually; moving a keyword changes only its class membership.
+Adding or changing a spelling requires updating its terminal and class entry,
+including any corresponding function-call token.
+
 ## Scope
 
 The grammar targets MySQL 8.2 with default SQL syntax modes. Double quotes
@@ -43,17 +53,34 @@ handling. Server semantic validation is outside the grammar's scope.
 ## Build and tests
 
 The parser is generated from [`mysql.iggy`](mysql.iggy). With an Iguana source
-checkout at `build/iguana-upstream` and a CLI built from that same revision:
+checkout and a CLI built from that same revision, set `IGUANA_SRC` to the source
+directory. The checkout must be clean and match the CLI revision. Replace the
+placeholder below with its absolute path:
 
 ```sh
-iguana generate --grammar mysql.iggy --output build/iguana \
-  --runtime-path "$PWD/build/iguana-upstream/iguana-runtime" \
-  --bin-name iguana-mysql --match-memo false --format false
+IGUANA_SRC=/absolute/path/to/iguana-rs
+"$IGUANA_SRC/target/release/iguana" generate --grammar mysql.iggy --output build/iguana \
+  --runtime-path "$IGUANA_SRC/iguana-runtime" \
+  --bin-name iguana-mysql
 cargo build --manifest-path build/iguana/Cargo.toml
 ```
 
-The tested Iguana revision is `52e2a6dd1a72d48f745876b39add86458e916f33`.
+The tested Iguana revision is `57fa2bb8a384a6534f992d406852ba021ab3c5ed`.
+Generation uses default settings, including match memoization. Add
+`--unsafe true` to generate the unsafe version with the other settings unchanged.
 Generated Rust sources and build output are kept under `build/`.
+
+Run the optional keyword consistency check before regenerating golden files:
+
+```sh
+python3 scripts/check_keyword_classes.py
+```
+
+It checks terminal and class spellings, aliases, case variants and overlapping
+classes. It does not generate grammar content or determine whether a keyword
+belongs in the correct MySQL context. Golden tests check representative words
+from every class in each identifier context, rather than exhaustive MySQL
+conformance.
 
 The repository has golden-file tests for individual language features,
 including expected parse trees and rejected inputs:
@@ -62,7 +89,19 @@ including expected parse trees and rejected inputs:
 build/iguana/target/debug/iguana-mysql --dir tests/queries --ext sql --start Queries --check-sexpr
 build/iguana/target/debug/iguana-mysql --dir tests/expressions --ext sql --start Expression --check-sexpr
 build/iguana/target/debug/iguana-mysql --dir tests/query-expression-parens --ext sql --start QueryExpressionParens --check-sexpr
+(
+  for start in Identifier LabelIdentifier RoleIdentifier LValueIdentifier UnquotedIdentifier UnqualifiedFunctionName; do
+    build/iguana/target/debug/iguana-mysql --dir "tests/keyword-contexts/$start" --ext sql --start "$start" --check-sexpr || exit 1
+  done
+)
 ```
+
+`tests/keyword-contexts` checks one fixed word from each of the eight classes
+directly against these rules, plus ordinary and backticked controls. Rejected
+inputs are separate files so one error cannot hide later cases. Query tests
+also cover the same classes in `SET ROLE` and `GRANT` statements (where
+privilege alternatives can accept words rejected as role identifiers), and the
+adjacent-parenthesis distinction for contextual function spellings.
 
 The default corpus is listed in [`corpus/repos.txt`](corpus/repos.txt).
 See [`corpus/README.md`](corpus/README.md) for the current cached-file scope.

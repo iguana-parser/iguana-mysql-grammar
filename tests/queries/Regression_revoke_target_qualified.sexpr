@@ -11,9 +11,7 @@
               ON
               (GrantIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))
               FROM
               (UserList

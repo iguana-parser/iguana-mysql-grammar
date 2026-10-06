@@ -14,7 +14,7 @@
                         (FunctionCall
                           (UnqualifiedFunctionName
                             (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                              (UnquotedIdentifier IdentifierContextGuard UnquotedIdentifierWordToken)))
                           OPEN_PAR
                           (UdfExprList
                             (UdfExpr

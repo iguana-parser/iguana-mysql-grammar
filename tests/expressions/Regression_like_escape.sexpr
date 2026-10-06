@@ -2,16 +2,12 @@
   (BitExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   LIKE
   (SimpleExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   ESCAPE
   (SimpleExpression
     (Expression

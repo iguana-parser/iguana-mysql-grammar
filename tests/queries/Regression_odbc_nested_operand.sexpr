@@ -26,9 +26,7 @@
                                     (SingleTable
                                       (TableRef
                                         (QualifiedIdentifier
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                               CLOSE_CURLY)
                             (InnerJoinType JOIN)
                             (TableReference
@@ -36,8 +34,6 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier BPrefixIdentifier))))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                         CLOSE_CURLY)))))))))
       SEMICOLON)))

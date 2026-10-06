@@ -1,19 +1,13 @@
 (Expression
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier OrdinaryIdentifier)))))
+      (Identifier IdentifierContextGuard IdentifierWordToken)))
   OR
   (Expression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier)))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))
     AND
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier)))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))))

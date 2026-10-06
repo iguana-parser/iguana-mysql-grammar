@@ -12,16 +12,13 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier BacktickIdentifier)))))
+                          (Identifier BacktickIdentifier))))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (IdentifierKeyword
-                                (IdentifierKeywordsUnambiguous URL))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                       COMMA
                       (SelectItem
                         (Expression
@@ -31,9 +28,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))
                       COMMA
                       (SelectItem
@@ -45,9 +40,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier))
                             (DotIdentifier DotWordIdentifier))))))
                   (FromClause
@@ -58,13 +51,10 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier BacktickIdentifier))))
+                                (Identifier BacktickIdentifier)))
                             (TableAlias
                               AS
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -79,9 +69,7 @@
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (IdentifierKeyword
-                                (IdentifierKeywordsUnambiguous SQL_NO_CACHE)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier)))))
                     ((COMMA SelectItem)*
                       COMMA
@@ -89,9 +77,7 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (IdentifierKeyword
-                                  (IdentifierKeywordsUnambiguous SQL_BUFFER_RESULT)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))
                       COMMA
                       (SelectItem
@@ -111,9 +97,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -127,23 +111,18 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier BacktickIdentifier)))))
+                          (Identifier BacktickIdentifier))))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))
                       COMMA
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier ExponentIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -152,9 +131,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -164,17 +141,14 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (IdentifierKeyword
-                    (IdentifierKeywordsUnambiguous NAMES)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier BacktickIdentifier)))
+                      (Identifier BacktickIdentifier))
                     (FieldDefinition
                       (DataType INT)
                       GroupFieldDefinition1)))
@@ -183,9 +157,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous URL))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         GroupFieldDefinition1)))
@@ -193,9 +165,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous TIME))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         GroupFieldDefinition1)))))

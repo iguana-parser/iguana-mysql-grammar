@@ -27,8 +27,7 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier BacktickIdentifier)))))))
+                            (Identifier BacktickIdentifier))))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -37,6 +36,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier BacktickIdentifier)))))))))))))))
+                                (Identifier BacktickIdentifier))))))))))))))
       SEMICOLON)))

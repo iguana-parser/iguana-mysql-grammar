@@ -7,8 +7,6 @@
           (CreateTablespace
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             TsDataFileName)))
       SEMICOLON)))

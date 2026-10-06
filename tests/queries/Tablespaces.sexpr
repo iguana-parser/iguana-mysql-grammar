@@ -7,9 +7,7 @@
           (CreateTablespace
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (TsDataFileName
               ADD
               (TsDataFile
@@ -24,9 +22,7 @@
                   EQUAL
                   (EngineRef
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -36,15 +32,11 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 RENAME
                 TO
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -53,9 +45,7 @@
           (DropTableSpace
             TABLESPACE
             (TablespaceRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -65,9 +55,7 @@
             UNDO
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             ADD
             (TsDataFile
               DATAFILE
@@ -84,9 +72,7 @@
               UNDO
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               SET
               INACTIVE))))
       SEMICOLON)
@@ -98,7 +84,5 @@
             UNDO
             TABLESPACE
             (TablespaceRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)))

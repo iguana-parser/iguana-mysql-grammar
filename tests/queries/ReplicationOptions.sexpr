@@ -113,14 +113,10 @@
                 (SchemaIdentifierPair
                   OPEN_PAR
                   (SchemaRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))
                   COMMA
                   (SchemaRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier BPrefixIdentifier))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))
                   CLOSE_PAR))
               CLOSE_PAR)
             ((COMMA FilterDefinition)*

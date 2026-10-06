@@ -8,7 +8,5 @@
           PROCEDURE
           (ProcedureRef
             (QualifiedIdentifier
-              (Identifier
-                (IdentifierKeyword
-                  (IdentifierKeywordsUnambiguous STATUS)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)))

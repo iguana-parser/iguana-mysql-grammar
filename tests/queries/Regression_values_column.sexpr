@@ -7,9 +7,7 @@
           INTO
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (GroupInsertStatement1
             (InsertFromConstructor
               (InsertValues
@@ -31,16 +29,12 @@
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 (Expression
                   VALUES
                   OPEN_PAR
                   (SimpleIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))
                   CLOSE_PAR))))))
       SEMICOLON)))

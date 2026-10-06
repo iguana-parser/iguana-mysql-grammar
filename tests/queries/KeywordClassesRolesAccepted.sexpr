@@ -1,0 +1,57 @@
+(Queries
+  (Query*
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))))
+      SEMICOLON)
+    (Query
+      (SimpleStatement
+        (AccountManagementStatement
+          (SetRoleStatement
+            SET
+            ROLE
+            (RoleList
+              (Role
+                (RoleIdentifierOrText
+                  (RoleIdentifier IdentifierContextGuard RoleIdentifierWordToken)))))))
+      SEMICOLON)))

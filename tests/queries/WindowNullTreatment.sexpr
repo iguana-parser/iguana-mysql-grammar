@@ -17,9 +17,7 @@
                             OPEN_PAR
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             CLOSE_PAR)
                           (NullTreatment RESPECT NULLS)
                           (WindowingClause
@@ -34,9 +32,7 @@
                                     (OrderExpression
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                               CLOSE_PAR)))))
                     ((COMMA SelectItem)*
                       COMMA
@@ -48,9 +44,7 @@
                               OPEN_PAR
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               CLOSE_PAR)
                             (NullTreatment RESPECT NULLS)
                             (WindowingClause
@@ -65,9 +59,7 @@
                                       (OrderExpression
                                         (Expression
                                           (ExpressionColumnRef
-                                            (Identifier
-                                              (PureIdentifier
-                                                (UnquotedIdentifier BPrefixIdentifier)))))))))
+                                            (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                                 CLOSE_PAR)))))))
                   (FromClause
                     FROM
@@ -77,9 +69,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -97,9 +87,7 @@
                           OPEN_PAR
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)))
                           COMMA
                           (SimpleExpression
                             (Expression
@@ -122,9 +110,7 @@
                                     (OrderExpression
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier BPrefixIdentifier)))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                               CLOSE_PAR))))))
                   (FromClause
                     FROM
@@ -134,7 +120,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

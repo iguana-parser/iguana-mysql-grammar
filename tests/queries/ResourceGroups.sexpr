@@ -7,9 +7,7 @@
             CREATE
             RESOURCE
             GROUP
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier)))
+            (Identifier IdentifierContextGuard IdentifierWordToken)
             TYPE
             (Equal EQUAL)
             USER
@@ -31,9 +29,7 @@
             RESOURCE
             GROUP
             (ResourceGroupRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (ResourceGroupEnableDisable DISABLE)
             FORCE)))
       SEMICOLON)
@@ -44,9 +40,7 @@
             SET
             RESOURCE
             GROUP
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier)))
+            (Identifier IdentifierContextGuard IdentifierWordToken)
             FOR
             (ThreadIdList
               (RealUlongNumber IntegerLiteral)
@@ -62,8 +56,6 @@
             RESOURCE
             GROUP
             (ResourceGroupRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             FORCE)))
       SEMICOLON)))

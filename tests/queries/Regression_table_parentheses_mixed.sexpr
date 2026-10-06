@@ -27,18 +27,14 @@
                                           (SingleTable
                                             (TableRef
                                               (QualifiedIdentifier
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                                     COMMA
                                     (TableReference
                                       (TableFactor
                                         (SingleTable
                                           (TableRef
                                             (QualifiedIdentifier
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier BPrefixIdentifier))))))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                     CLOSE_PAR)))
                               (InnerJoinType JOIN)
                               (TableReference
@@ -53,18 +49,14 @@
                                             (SingleTable
                                               (TableRef
                                                 (QualifiedIdentifier
-                                                  (Identifier
-                                                    (PureIdentifier
-                                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                                       COMMA
                                       (TableReference
                                         (TableFactor
                                           (SingleTable
                                             (TableRef
                                               (QualifiedIdentifier
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken))))))
                                       CLOSE_PAR)
                                     CLOSE_PAR)))
                               (JoinSpecification
@@ -74,18 +66,14 @@
                                     (Expression
                                       (ExpressionColumnRef
                                         (QualifiedPair
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)
                                           (DotIdentifier DotWordIdentifier)))))
                                   (CompOp EQUAL)
                                   (Predicate
                                     (Expression
                                       (ExpressionColumnRef
                                         (QualifiedPair
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)
                                           (DotIdentifier DotWordIdentifier))))))))
                             CLOSE_PAR)))))))))))
       SEMICOLON)))

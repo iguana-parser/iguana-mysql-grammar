@@ -2646,16 +2646,18 @@ TableAliasRefList
 ParameterName
   = Identifier
 
+@NoLayout
 LabelIdentifier
-  = PureIdentifier
-  | LabelKeyword
+  = IdentifierContextGuard !>> IdentifierInvalidStart LabelIdentifierWordToken
+  | BacktickIdentifier
 
 LabelRef
   = LabelIdentifier
 
+@NoLayout
 RoleIdentifier
-  = PureIdentifier
-  | RoleKeyword
+  = IdentifierContextGuard !>> IdentifierInvalidStart RoleIdentifierWordToken
+  | BacktickIdentifier
 
 PluginRef
   = Identifier
@@ -2672,9 +2674,10 @@ WindowName
 PureIdentifier
   = (UnquotedIdentifier | BacktickIdentifier)
 
+@NoLayout
 Identifier
-  = PureIdentifier
-  | IdentifierKeyword
+  = IdentifierContextGuard !>> IdentifierInvalidStart IdentifierWordToken
+  | BacktickIdentifier
 
 IdentifierList
   = Identifier (COMMA Identifier)*
@@ -2778,9 +2781,10 @@ TextOrIdentifier
   = Identifier
   | TextStringLiteral
 
+@NoLayout
 LValueIdentifier
-  = PureIdentifier
-  | LValueKeyword
+  = IdentifierContextGuard !>> IdentifierInvalidStart LValueIdentifierWordToken
+  | BacktickIdentifier
 
 RoleIdentifierOrText
   = RoleIdentifier
@@ -2802,519 +2806,6 @@ OptionType
 
 JsonAttribute
   = TextStringLiteral
-
-IdentifierKeyword
-  = (IdentifierKeywordsUnambiguous | IdentifierKeywordsAmbiguous1RolesAndLabels | IdentifierKeywordsAmbiguous2Labels | IdentifierKeywordsAmbiguous3Roles | IdentifierKeywordsAmbiguous4SystemVariables)
-
-IdentifierKeywordsAmbiguous1RolesAndLabels
-  = EXECUTE
-  | RESTART
-  | SHUTDOWN
-
-IdentifierKeywordsAmbiguous2Labels
-  = ASCII
-  | BEGIN
-  | BYTE
-  | CACHE
-  | CHARSET
-  | CHECKSUM
-  | CLONE
-  | COMMENT
-  | COMMIT
-  | CONTAINS
-  | DEALLOCATE
-  | DO
-  | END
-  | FLUSH
-  | FOLLOWS
-  | HANDLER
-  | HELP
-  | IMPORT
-  | INSTALL
-  | LANGUAGE
-  | NO
-  | PRECEDES
-  | PREPARE
-  | REPAIR
-  | RESET
-  | ROLLBACK
-  | SAVEPOINT
-  | SIGNED
-  | SLAVE
-  | START
-  | STOP
-  | TRUNCATE
-  | UNICODE
-  | UNINSTALL
-  | XA
-
-LabelKeyword
-  = (IdentifierKeywordsUnambiguous | IdentifierKeywordsAmbiguous3Roles | IdentifierKeywordsAmbiguous4SystemVariables)
-
-IdentifierKeywordsAmbiguous3Roles
-  = EVENT
-  | FILE
-  | NONE
-  | PROCESS
-  | PROXY
-  | RELOAD
-  | REPLICATION
-  | RESOURCE
-  | KW_SUPER
-
-IdentifierKeywordsUnambiguous
-  = ACTION
-  | ACCOUNT
-  | ACTIVE
-  | ADMIN
-  | AFTER
-  | AGAINST
-  | AGGREGATE
-  | ALGORITHM
-  | ALWAYS
-  | ANY
-  | AT
-  | ATTRIBUTE
-  | AUTHENTICATION
-  | AUTOEXTEND_SIZE
-  | AUTO_INCREMENT
-  | AVG_ROW_LENGTH
-  | AVG
-  | BACKUP
-  | BINLOG
-  | BIT
-  | BLOCK
-  | BOOLEAN
-  | BOOL
-  | BTREE
-  | BUCKETS
-  | CASCADED
-  | CATALOG_NAME
-  | CHAIN
-  | CHALLENGE_RESPONSE
-  | CHANGED
-  | CHANNEL
-  | CIPHER
-  | CLASS_ORIGIN
-  | CLIENT
-  | CLOSE
-  | COALESCE
-  | CODE
-  | COLLATION
-  | COLUMNS
-  | COLUMN_FORMAT
-  | COLUMN_NAME
-  | COMMITTED
-  | COMPACT
-  | COMPLETION
-  | COMPONENT
-  | COMPRESSED
-  | COMPRESSION
-  | CONCURRENT
-  | CONNECTION
-  | CONSISTENT
-  | CONSTRAINT_CATALOG
-  | CONSTRAINT_NAME
-  | CONSTRAINT_SCHEMA
-  | CONTEXT
-  | CPU
-  | CURRENT
-  | CURSOR_NAME
-  | DATAFILE
-  | DATA
-  | DATETIME
-  | DATE
-  | DAY
-  | DEFAULT_AUTH
-  | DEFINER
-  | DEFINITION
-  | DELAY_KEY_WRITE
-  | DESCRIPTION
-  | DIAGNOSTICS
-  | DIRECTORY
-  | DISABLE
-  | DISCARD
-  | DISK
-  | DUMPFILE
-  | DUPLICATE
-  | DYNAMIC
-  | ENABLE
-  | ENCRYPTION
-  | ENDS
-  | ENFORCED
-  | ENGINES
-  | ENGINE
-  | ENUM
-  | ERRORS
-  | ERROR
-  | ESCAPE
-  | EVENTS
-  | EVERY
-  | EXCHANGE
-  | EXCLUDE
-  | EXPANSION
-  | EXPIRE
-  | EXPORT
-  | EXTENDED
-  | EXTENT_SIZE
-  | FACTOR
-  | FAST
-  | FAULTS
-  | FILE_BLOCK_SIZE
-  | FILTER
-  | FINISH
-  | FIRST
-  | FIXED
-  | FOLLOWING
-  | FORMAT
-  | FOUND
-  | FULL
-  | GENERAL
-  | GEOMETRYCOLLECTION
-  | GEOMETRY
-  | GET_FORMAT
-  | GET_MASTER_PUBLIC_KEY
-  | GET_SOURCE_PUBLIC_KEY
-  | GRANTS
-  | GROUP_REPLICATION
-  | GTID_ONLY
-  | HASH
-  | HISTOGRAM
-  | HISTORY
-  | HOSTS
-  | HOST
-  | HOUR
-  | IDENTIFIED
-  | IGNORE_SERVER_IDS
-  | INACTIVE
-  | INDEXES
-  | INITIAL_SIZE
-  | INITIAL
-  | INITIATE
-  | INSERT_METHOD
-  | INSTANCE
-  | INVISIBLE
-  | INVOKER
-  | IO
-  | IPC
-  | ISOLATION
-  | ISSUER
-  | JSON
-  | JSON_VALUE
-  | KEY_BLOCK_SIZE
-  | KEYRING
-  | LAST
-  | LEAVES
-  | LESS
-  | LEVEL
-  | LINESTRING
-  | LIST
-  | LOCKED
-  | LOCKS
-  | LOGFILE
-  | LOGS
-  | MASTER_AUTO_POSITION
-  | MASTER_COMPRESSION_ALGORITHM
-  | MASTER_CONNECT_RETRY
-  | MASTER_DELAY
-  | MASTER_HEARTBEAT_PERIOD
-  | MASTER_HOST
-  | NETWORK_NAMESPACE
-  | MASTER_LOG_FILE
-  | MASTER_LOG_POS
-  | MASTER_PASSWORD
-  | MASTER_PORT
-  | MASTER_PUBLIC_KEY_PATH
-  | MASTER_RETRY_COUNT
-  | MASTER_SSL_CAPATH
-  | MASTER_SSL_CA
-  | MASTER_SSL_CERT
-  | MASTER_SSL_CIPHER
-  | MASTER_SSL_CRLPATH
-  | MASTER_SSL_CRL
-  | MASTER_SSL_KEY
-  | MASTER_SSL
-  | MASTER
-  | MASTER_TLS_CIPHERSUITES
-  | MASTER_TLS_VERSION
-  | MASTER_USER
-  | MASTER_ZSTD_COMPRESSION_LEVEL
-  | MAX_CONNECTIONS_PER_HOUR
-  | MAX_QUERIES_PER_HOUR
-  | MAX_ROWS
-  | MAX_SIZE
-  | MAX_UPDATES_PER_HOUR
-  | MAX_USER_CONNECTIONS
-  | MEDIUM
-  | MEMORY
-  | MERGE
-  | MESSAGE_TEXT
-  | MICROSECOND
-  | MIGRATE
-  | MINUTE
-  | MIN_ROWS
-  | MODE
-  | MODIFY
-  | MONTH
-  | MULTILINESTRING
-  | MULTIPOINT
-  | MULTIPOLYGON
-  | MUTEX
-  | MYSQL_ERRNO
-  | NAMES
-  | NAME
-  | NATIONAL
-  | NCHAR
-  | NDBCLUSTER
-  | NESTED
-  | NEVER
-  | NEW
-  | NEXT
-  | NODEGROUP
-  | NOWAIT
-  | NO_WAIT
-  | NULLS
-  | NUMBER
-  | NVARCHAR
-  | OFFSET
-  | OJ
-  | OLD
-  | ONE
-  | ONLY
-  | OPEN
-  | OPTIONAL
-  | OPTIONS
-  | ORDINALITY
-  | ORGANIZATION
-  | OTHERS
-  | OWNER
-  | PACK_KEYS
-  | PAGE
-  | PARSER
-  | PARTIAL
-  | PARTITIONING
-  | PARTITIONS
-  | PASSWORD
-  | PATH
-  | PHASE
-  | PLUGINS
-  | PLUGIN_DIR
-  | PLUGIN
-  | POINT
-  | POLYGON
-  | PORT
-  | PRECEDING
-  | PRESERVE
-  | PREV
-  | PRIVILEGES
-  | PRIVILEGE_CHECKS_USER
-  | PROCESSLIST
-  | PROFILES
-  | PROFILE
-  | QUARTER
-  | QUERY
-  | QUICK
-  | READ_ONLY
-  | REBUILD
-  | RECOVER
-  | REDO_BUFFER_SIZE
-  | REDUNDANT
-  | REFERENCE
-  | REGISTRATION
-  | RELAY
-  | RELAYLOG
-  | RELAY_LOG_FILE
-  | RELAY_LOG_POS
-  | RELAY_THREAD
-  | REMOVE
-  | ASSIGN_GTIDS_TO_ANONYMOUS_TRANSACTIONS
-  | REORGANIZE
-  | REPEATABLE
-  | REPLICAS
-  | REPLICATE_DO_DB
-  | REPLICATE_DO_TABLE
-  | REPLICATE_IGNORE_DB
-  | REPLICATE_IGNORE_TABLE
-  | REPLICATE_REWRITE_DB
-  | REPLICATE_WILD_DO_TABLE
-  | REPLICATE_WILD_IGNORE_TABLE
-  | REPLICA
-  | USER_RESOURCES
-  | RESPECT
-  | RESTORE
-  | RESUME
-  | RETAIN
-  | RETURNED_SQLSTATE
-  | RETURNING
-  | RETURNS
-  | REUSE
-  | REVERSE
-  | ROLE
-  | ROLLUP
-  | ROTATE
-  | ROUTINE
-  | ROW_COUNT
-  | ROW_FORMAT
-  | RTREE
-  | SCHEDULE
-  | SCHEMA_NAME
-  | SECONDARY_ENGINE
-  | SECONDARY_ENGINE_ATTRIBUTE
-  | SECONDARY_LOAD
-  | SECONDARY
-  | SECONDARY_UNLOAD
-  | SECOND
-  | SECURITY
-  | SERIALIZABLE
-  | SERIAL
-  | SERVER
-  | SHARE
-  | SIMPLE
-  | SKIP
-  | SLOW
-  | SNAPSHOT
-  | SOCKET
-  | SONAME
-  | SOUNDS
-  | SOURCE_AUTO_POSITION
-  | SOURCE_BIND
-  | SOURCE_COMPRESSION_ALGORITHM
-  | SOURCE_CONNECTION_AUTO_FAILOVER
-  | SOURCE_CONNECT_RETRY
-  | SOURCE_DELAY
-  | SOURCE_HEARTBEAT_PERIOD
-  | SOURCE_HOST
-  | SOURCE_LOG_FILE
-  | SOURCE_LOG_POS
-  | SOURCE_PASSWORD
-  | SOURCE_PORT
-  | SOURCE_PUBLIC_KEY_PATH
-  | SOURCE_RETRY_COUNT
-  | SOURCE_SSL_CAPATH
-  | SOURCE_SSL_CA
-  | SOURCE_SSL_CERT
-  | SOURCE_SSL_CIPHER
-  | SOURCE_SSL_CRLPATH
-  | SOURCE_SSL_CRL
-  | SOURCE_SSL_KEY
-  | SOURCE_SSL
-  | SOURCE_SSL_VERIFY_SERVER_CERT
-  | SOURCE
-  | SOURCE_TLS_CIPHERSUITES
-  | SOURCE_TLS_VERSION
-  | SOURCE_USER
-  | SOURCE_ZSTD_COMPRESSION_LEVEL
-  | SQL_AFTER_GTIDS
-  | SQL_AFTER_MTS_GAPS
-  | SQL_BEFORE_GTIDS
-  | SQL_BUFFER_RESULT
-  | SQL_NO_CACHE
-  | SQL_THREAD
-  | SRID
-  | STACKED
-  | STARTS
-  | STATS_AUTO_RECALC
-  | STATS_PERSISTENT
-  | STATS_SAMPLE_PAGES
-  | STATUS
-  | STORAGE
-  | STRING
-  | ST_COLLECT
-  | SUBCLASS_ORIGIN
-  | SUBJECT
-  | SUBPARTITIONS
-  | SUBPARTITION
-  | SUSPEND
-  | SWAPS
-  | SWITCHES
-  | TABLES
-  | TABLESPACE
-  | TABLE_CHECKSUM
-  | TABLE_NAME
-  | TEMPORARY
-  | TEMPTABLE
-  | TEXT
-  | THAN
-  | THREAD_PRIORITY
-  | TIES
-  | TIMESTAMPADD
-  | TIMESTAMPDIFF
-  | TIMESTAMP
-  | TIME
-  | TLS
-  | TRANSACTION
-  | TRIGGERS
-  | TYPES
-  | TYPE
-  | UNBOUNDED
-  | UNCOMMITTED
-  | UNDEFINED
-  | UNDOFILE
-  | UNDO_BUFFER_SIZE
-  | UNKNOWN
-  | UNREGISTER
-  | UNTIL
-  | UPGRADE
-  | USER
-  | USE_FRM
-  | VALIDATION
-  | VALUE
-  | VARIABLES
-  | VCPU
-  | VIEW
-  | VISIBLE
-  | WAIT
-  | WARNINGS
-  | WEEK
-  | WEIGHT_STRING
-  | WITHOUT
-  | WORK
-  | WRAPPER
-  | X509
-  | XID
-  | XML
-  | YEAR
-  | ZONE
-  | ARRAY
-  | FAILED_LOGIN_ATTEMPTS
-  | MEMBER
-  | OFF
-  | PASSWORD_LOCK_TIME
-  | RANDOM
-  | REQUIRE_ROW_FORMAT
-  | REQUIRE_TABLE_PRIMARY_KEY_CHECK
-  | STREAM
-  | BULK
-  | GENERATE
-  | GTIDS
-  | LOG
-  | KW_PARSE_TREE
-  | S3
-  | BERNOULLI
-  | URL
-
-RoleKeyword
-  = (IdentifierKeywordsUnambiguous | IdentifierKeywordsAmbiguous2Labels | IdentifierKeywordsAmbiguous4SystemVariables)
-
-LValueKeyword
-  = IdentifierKeywordsUnambiguous
-  | IdentifierKeywordsAmbiguous1RolesAndLabels
-  | IdentifierKeywordsAmbiguous2Labels
-  | IdentifierKeywordsAmbiguous3Roles
-
-IdentifierKeywordsAmbiguous4SystemVariables
-  = GLOBAL
-  | LOCAL
-  | PERSIST
-  | PERSIST_ONLY
-  | SESSION
-
-RoleOrIdentifierKeyword
-  = (ACCOUNT | ASCII | ALWAYS | BACKUP | BEGIN | BYTE | CACHE | CHARSET | CHECKSUM | CLONE | CLOSE | COMMENT | COMMIT | CONTAINS | DEALLOCATE | DO | END | FLUSH | FOLLOWS | FORMAT | GROUP_REPLICATION | HANDLER | HELP | HOST | INSTALL | INVISIBLE | LANGUAGE | NO | OPEN | OPTIONS | OWNER | PARSER | PARTITION | PORT | PRECEDES | PREPARE | REMOVE | REPAIR | RESET | RESTORE | ROLE | ROLLBACK | SAVEPOINT | SECONDARY | SECONDARY_ENGINE | SECONDARY_LOAD | SECONDARY_UNLOAD | SECURITY | SERVER | SIGNED | SOCKET | SLAVE | SONAME | START | STOP | TRUNCATE | UNICODE | UNINSTALL | UPGRADE | VISIBLE | WRAPPER | XA)
-
-RoleOrLabelKeyword
-  = (ACTION | ACTIVE | AFTER | AGAINST | AGGREGATE | ALGORITHM | ANY | AT | AUTO_INCREMENT | AUTOEXTEND_SIZE | AVG_ROW_LENGTH | AVG | BINLOG | BIT | BLOCK | BOOL | BOOLEAN | BTREE | BUCKETS | CASCADED | CATALOG_NAME | CHAIN | CHANGED | CHANNEL | CIPHER | CLIENT | CLASS_ORIGIN | COALESCE | CODE | COLLATION | COLUMN_NAME | COLUMN_FORMAT | COLUMNS | COMMITTED | COMPACT | COMPLETION | COMPONENT | COMPRESSED | COMPRESSION | CONCURRENT | CONNECTION | CONSISTENT | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | CONTEXT | CPU | CURRENT | CURSOR_NAME | DATA | DATAFILE | DATETIME | DATE | DAY | DEFAULT_AUTH | DEFINER | DELAY_KEY_WRITE | DESCRIPTION | DIAGNOSTICS | DIRECTORY | DISABLE | DISCARD | DISK | DUMPFILE | DUPLICATE | DYNAMIC | ENCRYPTION | ENDS | ENUM | ENGINE | ENGINES | ENGINE_ATTRIBUTE | ERROR | ERRORS | ESCAPE | EVENTS | EVERY | EXCLUDE | EXPANSION | EXPORT | EXTENDED | EXTENT_SIZE | FAULTS | FAST | FOLLOWING | FOUND | ENABLE | FULL | FILE_BLOCK_SIZE | FILTER | FIRST | FIXED | GENERAL | GEOMETRY | GEOMETRYCOLLECTION | GET_FORMAT | GRANTS | GLOBAL | HASH | HISTOGRAM | HISTORY | HOSTS | HOUR | IDENTIFIED | IGNORE_SERVER_IDS | INVOKER | INDEXES | INITIAL_SIZE | INSTANCE | INACTIVE | IO | IPC | ISOLATION | ISSUER | INSERT_METHOD | JSON | KEY_BLOCK_SIZE | LAST | LEAVES | LESS | LEVEL | LINESTRING | LIST | LOCAL | LOCKED | LOCKS | LOGFILE | LOGS | MAX_ROWS | MASTER | MASTER_HEARTBEAT_PERIOD | MASTER_HOST | MASTER_PORT | MASTER_LOG_FILE | MASTER_LOG_POS | MASTER_USER | MASTER_PASSWORD | MASTER_PUBLIC_KEY_PATH | MASTER_CONNECT_RETRY | MASTER_RETRY_COUNT | MASTER_DELAY | MASTER_SSL | MASTER_SSL_CA | MASTER_SSL_CAPATH | MASTER_TLS_VERSION | MASTER_SSL_CERT | MASTER_SSL_CIPHER | MASTER_SSL_CRL | MASTER_SSL_CRLPATH | MASTER_SSL_KEY | MASTER_AUTO_POSITION | MAX_CONNECTIONS_PER_HOUR | MAX_QUERIES_PER_HOUR | MAX_SIZE | MAX_UPDATES_PER_HOUR | MAX_USER_CONNECTIONS | MEDIUM | MEMORY | MERGE | MESSAGE_TEXT | MICROSECOND | MIGRATE | MINUTE | MIN_ROWS | MODIFY | MODE | MONTH | MULTILINESTRING | MULTIPOINT | MULTIPOLYGON | MUTEX | MYSQL_ERRNO | NAME | NAMES | NATIONAL | NCHAR | NDBCLUSTER | NESTED | NEVER | NEXT | NEW | NO_WAIT | NODEGROUP | NULLS | NOWAIT | NUMBER | NVARCHAR | OFFSET | OLD | ONE | OPTIONAL | ORDINALITY | ORGANIZATION | OTHERS | PACK_KEYS | PAGE | PARTIAL | PARTITIONING | PARTITIONS | PASSWORD | PATH | PHASE | PLUGIN_DIR | PLUGIN | PLUGINS | POINT | POLYGON | PRECEDING | PRESERVE | PREV | THREAD_PRIORITY | PRIVILEGES | PROCESSLIST | PROFILE | PROFILES | QUARTER | QUERY | QUICK | READ_ONLY | REBUILD | RECOVER | REDO_BUFFER_SIZE | REDUNDANT | RELAY | RELAYLOG | RELAY_LOG_FILE | RELAY_LOG_POS | RELAY_THREAD | REORGANIZE | REPEATABLE | REPLICATE_DO_DB | REPLICATE_IGNORE_DB | REPLICATE_DO_TABLE | REPLICATE_IGNORE_TABLE | REPLICATE_WILD_DO_TABLE | REPLICATE_WILD_IGNORE_TABLE | REPLICATE_REWRITE_DB | USER_RESOURCES | RESPECT | RESUME | RETAIN | RETURNED_SQLSTATE | RETURNS | REUSE | REVERSE | ROLLUP | ROTATE | ROUTINE | ROW_COUNT | ROW_FORMAT | RTREE | SCHEDULE | SCHEMA_NAME | SECOND | SERIAL | SERIALIZABLE | SESSION | SHARE | SIMPLE | SKIP | SLOW | SNAPSHOT | SOUNDS | SOURCE | SQL_AFTER_GTIDS | SQL_AFTER_MTS_GAPS | SQL_BEFORE_GTIDS | SQL_BUFFER_RESULT | SQL_NO_CACHE | SQL_THREAD | SRID | STACKED | STARTS | STATS_AUTO_RECALC | STATS_PERSISTENT | STATS_SAMPLE_PAGES | STATUS | STORAGE | STRING | SUBCLASS_ORIGIN | SUBJECT | SUBPARTITION | SUBPARTITIONS | KW_SUPER | SUSPEND | SWAPS | SWITCHES | TABLE_NAME | TABLES | TABLE_CHECKSUM | TABLESPACE | TEMPORARY | TEMPTABLE | TEXT | THAN | TIES | TRANSACTION | TRIGGERS | TIMESTAMP | TIMESTAMPADD | TIMESTAMPDIFF | TIME | TYPES | TYPE | UNBOUNDED | UNCOMMITTED | UNDEFINED | UNDO_BUFFER_SIZE | UNDOFILE | UNKNOWN | UNTIL | USER | USE_FRM | VARIABLES | VCPU | VIEW | VALUE | WARNINGS | WAIT | WEEK | WORK | WEIGHT_STRING | X509 | XID | XML | YEAR)
-  | ADMIN
 
 FinalQuery
   = SimpleStatement
@@ -4489,32 +3980,22 @@ DotWordIdentifier = "." IdentifierStart IdentifierPart* !>> IdentifierPart
 // cannot already start an ordinary Identifier, making QualifiedPair disjoint.
 // Consume both components to require adjacency on both sides of the dot.
 @Regex
-KeywordQualifiedPair = ReservedQualifierWord "." IdentifierPart+ !>> IdentifierPart
+KeywordQualifiedPair = ReservedWord "." IdentifierPart+ !>> IdentifierPart
 
 // Numeric and national-string prefixes are tokens, not an identifier followed
 // by an adjacent string alias. With whitespace, `n 'alias'` remains possible.
-UnquotedIdentifier = OrdinaryIdentifier | ExponentIdentifier | NPrefixIdentifier | XPrefixIdentifier | BPrefixIdentifier | ContextualFunctionIdentifier | ContextualKeywordIdentifier
-
-@Regex
-OrdinaryIdentifier = IdentifierWord \ AllKeyword \ FloatPattern \ HexPattern \ BinaryPattern \ LiteralIntroducer \ ExponentIdentifierWord \ CharsetIntroducerWord
+@NoLayout
+UnquotedIdentifier
+  = IdentifierContextGuard !>> IdentifierInvalidStart UnquotedIdentifierWordToken
 
 @Regex
 ExponentIdentifierWord = [0-9]+ [eE]
 
 @Regex
-ExponentIdentifier = ExponentIdentifierWord !>> IdentifierPart !>> SignedExponent
-
-@Regex
 SignedExponent = [+\-] [0-9]
 
-// Conditional names are identifiers unless immediately followed by '('.
-// Oracle explicitly also admits a few function token kinds as identifiers.
-@Regex
-ContextualFunctionIdentifier = ContextualFunctionWord \ ContextualKeywordWord !>> IdentifierPart !>> OpenParen
-
-@Regex
-ContextualKeywordIdentifier = ContextualKeywordWord !>> IdentifierPart
-
+// Built-in function names followed by layout use this token. Adjacent '('
+// is consumed by the *_CALL_OPEN tokens; both paths enforce word boundaries.
 @Regex
 ContextualFunctionName = ContextualFunctionWord !>> IdentifierPart !>> OpenParen
 
@@ -4523,17 +4004,6 @@ OpenParen = "("
 
 @Regex
 LiteralIntroducer = [nNxXbB]
-
-@Regex
-NPrefixIdentifier = [nN] !>> SingleQuote !>> IdentifierPart
-
-// MySQL commits to a quoted hex/bit token on any adjacent quote, even when
-// its contents are invalid. Do not reopen an identifier-plus-string parse.
-@Regex
-XPrefixIdentifier = [xX] !>> SingleQuote !>> IdentifierPart
-
-@Regex
-BPrefixIdentifier = [bB] !>> SingleQuote !>> IdentifierPart
 
 @Regex
 SingleQuote = "'"
@@ -4653,14 +4123,13 @@ NonDotCharacter = ![.]
 @Regex
 DefaultWord = [dD] [eE] [fF] [aA] [uU] [lL] [tT]
 
-
 // MY_LEX_IDENT_OR_KEYWORD starts immediately after @@ and does not skip
 // whitespace/comments. It applies keyword lookup with function=false.
 @Regex
 AT_AT_SIGN = "@@" !>> WhiteSpace !>> BlockComment !>> HashComment !>> DashComment
 
 @Regex
-SystemVariableWord = IdentifierPart+ \ ReservedQualifierWord !>> IdentifierPart
+SystemVariableWord = IdentifierPart+ \ ReservedWord !>> IdentifierPart
 
 // check_reserved_words uses MySQL's UTF-8 lowercase comparison. U+0130 is
 // the only non-ASCII character whose lowercase maps into these three words.
@@ -4683,7 +4152,6 @@ ForbiddenRvaluePrefix
   | "'" EscapedVariablePrefixWord ("\\0" ("''" | "\\" AnyCharacter | !['\\])*)? "'"
   | "\"" EscapedVariablePrefixWord ("\\0" ("\"\"" | "\\" AnyCharacter | !["\\])*)? "\""
 
-
 // These names occur only after an explicit system-variable scope dot. A dot
 // followed by a letter enters MY_LEX_IDENT_START even with layout before it.
 // A dot followed by a digit does so only if the preceding word was adjacent;
@@ -4704,7 +4172,6 @@ AdjacentScopedDigitWord = NonDotCharacter !<< [0-9] IdentifierPart* !>> Identifi
 // or separated first components leave the lexer in its ordinary numeric mode.
 @Regex
 DotDigitIdentifier = NonIdentifierPart !<< "." [0-9] IdentifierPart* !>> IdentifierPart
-
 
 @Regex
 DigitCharacter = [0-9]
@@ -7120,1127 +6587,15 @@ VARIANCE_CALL_OPEN = ([vV] [aA] [rR] [iI] [aA] [nN] [cC] [eE] "(" | [vV] [aA] [r
 VAR_SAMP_CALL_OPEN = ([vV] [aA] [rR] "_" [sS] [aA] [mM] [pP] "(")
 
 @Regex
-AllKeyword = [aA] [cC] [cC] [eE] [sS] [sS] [iI] [bB] [lL] [eE]
-  | [aA] [cC] [cC] [oO] [uU] [nN] [tT]
-  | [aA] [cC] [tT] [iI] [oO] [nN]
-  | [aA] [dD] [dD]
-  | [aA] [dD] [dD] [dD] [aA] [tT] [eE]
-  | [aA] [fF] [tT] [eE] [rR]
-  | [aA] [gG] [aA] [iI] [nN] [sS] [tT]
-  | [aA] [gG] [gG] [rR] [eE] [gG] [aA] [tT] [eE]
-  | [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM]
-  | [aA] [lL] [lL]
-  | [aA] [lL] [tT] [eE] [rR]
-  | [aA] [lL] [wW] [aA] [yY] [sS]
-  | [aA] [nN] [aA] [lL] [yY] [zZ] [eE]
-  | [aA] [nN] [dD]
-  | [aA] [nN] [yY]
-  | [sS] [oO] [mM] [eE]
-  | [aA] [sS]
-  | [aA] [sS] [cC]
-  | [aA] [sS] [cC] [iI] [iI]
-  | [aA] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [aA] [tT]
-  | [aA] [uU] [tT] [oO] [eE] [xX] [tT] [eE] [nN] [dD] "_" [sS] [iI] [zZ] [eE]
-  | [aA] [uU] [tT] [oO] "_" [iI] [nN] [cC] [rR] [eE] [mM] [eE] [nN] [tT]
-  | [aA] [vV] [gG] "_" [rR] [oO] [wW] "_" [lL] [eE] [nN] [gG] [tT] [hH]
-  | [aA] [vV] [gG]
-  | [bB] [aA] [cC] [kK] [uU] [pP]
-  | [bB] [eE] [fF] [oO] [rR] [eE]
-  | [bB] [eE] [gG] [iI] [nN]
-  | [bB] [eE] [tT] [wW] [eE] [eE] [nN]
-  | [bB] [iI] [gG] [iI] [nN] [tT]
-  | [iI] [nN] [tT] "8"
-  | [bB] [iI] [nN] [aA] [rR] [yY]
-  | [bB] [iI] [nN] [lL] [oO] [gG]
-  | [bB] [iI] [tT] "_" [aA] [nN] [dD]
-  | [bB] [iI] [tT] "_" [oO] [rR]
-  | [bB] [iI] [tT]
-  | [bB] [iI] [tT] "_" [xX] [oO] [rR]
-  | [bB] [lL] [oO] [bB]
-  | [bB] [lL] [oO] [cC] [kK]
-  | [bB] [oO] [oO] [lL] [eE] [aA] [nN]
-  | [bB] [oO] [oO] [lL]
-  | [bB] [oO] [tT] [hH]
-  | [bB] [tT] [rR] [eE] [eE]
-  | [bB] [yY]
-  | [bB] [yY] [tT] [eE]
-  | [cC] [aA] [cC] [hH] [eE]
-  | [cC] [aA] [lL] [lL]
-  | [cC] [aA] [sS] [cC] [aA] [dD] [eE]
-  | [cC] [aA] [sS] [cC] [aA] [dD] [eE] [dD]
-  | [cC] [aA] [sS] [eE]
-  | [cC] [aA] [sS] [tT]
-  | [cC] [aA] [tT] [aA] [lL] [oO] [gG] "_" [nN] [aA] [mM] [eE]
-  | [cC] [hH] [aA] [iI] [nN]
-  | [cC] [hH] [aA] [nN] [gG] [eE]
-  | [cC] [hH] [aA] [nN] [gG] [eE] [dD]
-  | [cC] [hH] [aA] [nN] [nN] [eE] [lL]
-  | [cC] [hH] [aA] [rR] [sS] [eE] [tT]
-  | [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
-  | [cC] [hH] [aA] [rR]
-  | [cC] [hH] [eE] [cC] [kK] [sS] [uU] [mM]
-  | [cC] [hH] [eE] [cC] [kK]
-  | [cC] [iI] [pP] [hH] [eE] [rR]
-  | [cC] [lL] [aA] [sS] [sS] "_" [oO] [rR] [iI] [gG] [iI] [nN]
-  | [cC] [lL] [iI] [eE] [nN] [tT]
-  | [cC] [lL] [oO] [sS] [eE]
-  | [cC] [oO] [aA] [lL] [eE] [sS] [cC] [eE]
-  | [cC] [oO] [dD] [eE]
-  | [cC] [oO] [lL] [lL] [aA] [tT] [eE]
-  | [cC] [oO] [lL] [lL] [aA] [tT] [iI] [oO] [nN]
-  | [cC] [oO] [lL] [uU] [mM] [nN] [sS]
-  | [fF] [iI] [eE] [lL] [dD] [sS]
-  | [cC] [oO] [lL] [uU] [mM] [nN]
-  | [cC] [oO] [lL] [uU] [mM] [nN] "_" [nN] [aA] [mM] [eE]
-  | [cC] [oO] [lL] [uU] [mM] [nN] "_" [fF] [oO] [rR] [mM] [aA] [tT]
-  | [cC] [oO] [mM] [mM] [eE] [nN] [tT]
-  | [cC] [oO] [mM] [mM] [iI] [tT] [tT] [eE] [dD]
-  | [cC] [oO] [mM] [mM] [iI] [tT]
-  | [cC] [oO] [mM] [pP] [aA] [cC] [tT]
-  | [cC] [oO] [mM] [pP] [lL] [eE] [tT] [iI] [oO] [nN]
-  | [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [eE] [dD]
-  | [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN]
-  | [cC] [oO] [nN] [cC] [uU] [rR] [rR] [eE] [nN] [tT]
-  | [cC] [oO] [nN] [dD] [iI] [tT] [iI] [oO] [nN]
-  | [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN]
-  | [cC] [oO] [nN] [sS] [iI] [sS] [tT] [eE] [nN] [tT]
-  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT]
-  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [cC] [aA] [tT] [aA] [lL] [oO] [gG]
-  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [nN] [aA] [mM] [eE]
-  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [sS] [cC] [hH] [eE] [mM] [aA]
-  | [cC] [oO] [nN] [tT] [aA] [iI] [nN] [sS]
-  | [cC] [oO] [nN] [tT] [eE] [xX] [tT]
-  | [cC] [oO] [nN] [tT] [iI] [nN] [uU] [eE]
-  | [cC] [oO] [nN] [vV] [eE] [rR] [tT]
-  | [cC] [oO] [uU] [nN] [tT]
-  | [cC] [pP] [uU]
-  | [cC] [rR] [eE] [aA] [tT] [eE]
-  | [cC] [rR] [oO] [sS] [sS]
-  | [cC] [uU] [bB] [eE]
-  | [cC] [uU] [rR] [dD] [aA] [tT] [eE]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [dD] [aA] [tT] [eE]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE]
-  | [cC] [uU] [rR] [tT] [iI] [mM] [eE]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE]
-  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [nN] [oO] [wW]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [uU] [sS] [eE] [rR]
-  | [cC] [uU] [rR] [sS] [oO] [rR]
-  | [cC] [uU] [rR] [sS] [oO] [rR] "_" [nN] [aA] [mM] [eE]
-  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE]
-  | [sS] [cC] [hH] [eE] [mM] [aA]
-  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE] [sS]
-  | [sS] [cC] [hH] [eE] [mM] [aA] [sS]
-  | [dD] [aA] [tT] [aA] [fF] [iI] [lL] [eE]
-  | [dD] [aA] [tT] [aA]
-  | [dD] [aA] [tT] [eE] [tT] [iI] [mM] [eE]
-  | [dD] [aA] [tT] [eE] "_" [aA] [dD] [dD]
-  | [dD] [aA] [tT] [eE] "_" [sS] [uU] [bB]
-  | [dD] [aA] [tT] [eE]
-  | [dD] [aA] [yY] [oO] [fF] [mM] [oO] [nN] [tT] [hH]
-  | [dD] [aA] [yY]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [dD] [aA] [yY]
-  | [dD] [aA] [yY] "_" [hH] [oO] [uU] [rR]
-  | [dD] [aA] [yY] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [dD] [aA] [yY] "_" [mM] [iI] [nN] [uU] [tT] [eE]
-  | [dD] [aA] [yY] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [dD] [eE] [aA] [lL] [lL] [oO] [cC] [aA] [tT] [eE]
-  | [dD] [eE] [cC]
-  | [dD] [eE] [cC] [iI] [mM] [aA] [lL]
-  | [dD] [eE] [cC] [lL] [aA] [rR] [eE]
-  | [dD] [eE] [fF] [aA] [uU] [lL] [tT]
-  | [dD] [eE] [fF] [aA] [uU] [lL] [tT] "_" [aA] [uU] [tT] [hH]
-  | [dD] [eE] [fF] [iI] [nN] [eE] [rR]
-  | [dD] [eE] [lL] [aA] [yY] [eE] [dD]
-  | [dD] [eE] [lL] [aA] [yY] "_" [kK] [eE] [yY] "_" [wW] [rR] [iI] [tT] [eE]
-  | [dD] [eE] [lL] [eE] [tT] [eE]
-  | [dD] [eE] [sS] [cC]
-  | [dD] [eE] [sS] [cC] [rR] [iI] [bB] [eE]
-  | [dD] [eE] [tT] [eE] [rR] [mM] [iI] [nN] [iI] [sS] [tT] [iI] [cC]
-  | [dD] [iI] [aA] [gG] [nN] [oO] [sS] [tT] [iI] [cC] [sS]
-  | [dD] [iI] [rR] [eE] [cC] [tT] [oO] [rR] [yY]
-  | [dD] [iI] [sS] [aA] [bB] [lL] [eE]
-  | [dD] [iI] [sS] [cC] [aA] [rR] [dD]
-  | [dD] [iI] [sS] [kK]
-  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT]
-  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT] [rR] [oO] [wW]
-  | [dD] [iI] [vV]
-  | [dD] [oO] [uU] [bB] [lL] [eE]
-  | [fF] [lL] [oO] [aA] [tT] "8"
-  | [dD] [oO]
-  | [dD] [rR] [oO] [pP]
-  | [dD] [uU] [aA] [lL]
-  | [dD] [uU] [mM] [pP] [fF] [iI] [lL] [eE]
-  | [dD] [uU] [pP] [lL] [iI] [cC] [aA] [tT] [eE]
-  | [dD] [yY] [nN] [aA] [mM] [iI] [cC]
-  | [eE] [aA] [cC] [hH]
-  | [eE] [lL] [sS] [eE]
-  | [eE] [lL] [sS] [eE] [iI] [fF]
-  | [eE] [nN] [aA] [bB] [lL] [eE]
-  | [eE] [nN] [cC] [lL] [oO] [sS] [eE] [dD]
-  | [eE] [nN] [cC] [rR] [yY] [pP] [tT] [iI] [oO] [nN]
-  | [eE] [nN] [dD]
-  | [eE] [nN] [dD] [sS]
-  | [eE] [nN] [gG] [iI] [nN] [eE] [sS]
-  | [eE] [nN] [gG] [iI] [nN] [eE]
-  | [eE] [nN] [uU] [mM]
-  | [eE] [rR] [rR] [oO] [rR]
-  | [eE] [rR] [rR] [oO] [rR] [sS]
-  | [eE] [sS] [cC] [aA] [pP] [eE] [dD]
-  | [eE] [sS] [cC] [aA] [pP] [eE]
-  | [eE] [vV] [eE] [nN] [tT] [sS]
-  | [eE] [vV] [eE] [nN] [tT]
-  | [eE] [vV] [eE] [rR] [yY]
-  | [eE] [xX] [cC] [hH] [aA] [nN] [gG] [eE]
-  | [eE] [xX] [eE] [cC] [uU] [tT] [eE]
-  | [eE] [xX] [iI] [sS] [tT] [sS]
-  | [eE] [xX] [iI] [tT]
-  | [eE] [xX] [pP] [aA] [nN] [sS] [iI] [oO] [nN]
-  | [eE] [xX] [pP] [iI] [rR] [eE]
-  | [eE] [xX] [pP] [lL] [aA] [iI] [nN]
-  | [eE] [xX] [pP] [oO] [rR] [tT]
-  | [eE] [xX] [tT] [eE] [nN] [dD] [eE] [dD]
-  | [eE] [xX] [tT] [eE] [nN] [tT] "_" [sS] [iI] [zZ] [eE]
-  | [eE] [xX] [tT] [rR] [aA] [cC] [tT]
-  | [fF] [aA] [lL] [sS] [eE]
-  | [fF] [aA] [sS] [tT]
-  | [fF] [aA] [uU] [lL] [tT] [sS]
-  | [fF] [eE] [tT] [cC] [hH]
-  | [fF] [iI] [lL] [eE]
-  | [fF] [iI] [lL] [eE] "_" [bB] [lL] [oO] [cC] [kK] "_" [sS] [iI] [zZ] [eE]
-  | [fF] [iI] [lL] [tT] [eE] [rR]
-  | [fF] [iI] [rR] [sS] [tT]
-  | [fF] [iI] [xX] [eE] [dD]
-  | [fF] [lL] [oO] [aA] [tT] "4"
-  | [fF] [lL] [oO] [aA] [tT]
-  | [fF] [lL] [uU] [sS] [hH]
-  | [fF] [oO] [lL] [lL] [oO] [wW] [sS]
-  | [fF] [oO] [rR] [cC] [eE]
-  | [fF] [oO] [rR] [eE] [iI] [gG] [nN]
-  | [fF] [oO] [rR]
-  | [fF] [oO] [rR] [mM] [aA] [tT]
-  | [fF] [oO] [uU] [nN] [dD]
-  | [fF] [rR] [oO] [mM]
-  | [fF] [uU] [lL] [lL]
-  | [fF] [uU] [lL] [lL] [tT] [eE] [xX] [tT]
-  | [fF] [uU] [nN] [cC] [tT] [iI] [oO] [nN]
-  | [gG] [eE] [tT]
-  | [gG] [eE] [nN] [eE] [rR] [aA] [lL]
-  | [gG] [eE] [nN] [eE] [rR] [aA] [tT] [eE] [dD]
-  | [gG] [rR] [oO] [uU] [pP] "_" [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
-  | [gG] [eE] [oO] [mM] [eE] [tT] [rR] [yY] [cC] [oO] [lL] [lL] [eE] [cC] [tT] [iI] [oO] [nN]
-  | [gG] [eE] [oO] [mM] [cC] [oO] [lL] [lL] [eE] [cC] [tT] [iI] [oO] [nN]
-  | [gG] [eE] [oO] [mM] [eE] [tT] [rR] [yY]
-  | [gG] [eE] [tT] "_" [fF] [oO] [rR] [mM] [aA] [tT]
-  | [gG] [lL] [oO] [bB] [aA] [lL]
-  | [gG] [rR] [aA] [nN] [tT]
-  | [gG] [rR] [aA] [nN] [tT] [sS]
-  | [gG] [rR] [oO] [uU] [pP]
-  | [gG] [rR] [oO] [uU] [pP] "_" [cC] [oO] [nN] [cC] [aA] [tT]
-  | [hH] [aA] [nN] [dD] [lL] [eE] [rR]
-  | [hH] [aA] [sS] [hH]
-  | [hH] [aA] [vV] [iI] [nN] [gG]
-  | [hH] [eE] [lL] [pP]
-  | [hH] [iI] [gG] [hH] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
-  | [hH] [oO] [sS] [tT]
-  | [hH] [oO] [sS] [tT] [sS]
-  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [nN] [uU] [tT] [eE]
-  | [hH] [oO] [uU] [rR] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [hH] [oO] [uU] [rR]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [hH] [oO] [uU] [rR]
-  | [iI] [dD] [eE] [nN] [tT] [iI] [fF] [iI] [eE] [dD]
-  | [iI] [fF]
-  | [iI] [gG] [nN] [oO] [rR] [eE]
-  | [iI] [gG] [nN] [oO] [rR] [eE] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [iI] [dD] [sS]
-  | [iI] [mM] [pP] [oO] [rR] [tT]
-  | [iI] [nN] [dD] [eE] [xX] [eE] [sS]
-  | [iI] [nN] [dD] [eE] [xX]
-  | [iI] [nN] [fF] [iI] [lL] [eE]
-  | [iI] [nN] [iI] [tT] [iI] [aA] [lL] "_" [sS] [iI] [zZ] [eE]
-  | [iI] [nN] [nN] [eE] [rR]
-  | [iI] [nN] [oO] [uU] [tT]
-  | [iI] [nN] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [iI] [nN] [sS] [eE] [rR] [tT]
-  | [iI] [nN] [sS] [eE] [rR] [tT] "_" [mM] [eE] [tT] [hH] [oO] [dD]
-  | [iI] [nN] [sS] [tT] [aA] [nN] [cC] [eE]
-  | [iI] [nN] [sS] [tT] [aA] [lL] [lL]
-  | [iI] [nN] [tT] [eE] [gG] [eE] [rR]
-  | [iI] [nN] [tT]
-  | [iI] [nN] [tT] "4"
-  | [iI] [nN] [tT] [eE] [rR] [vV] [aA] [lL]
-  | [iI] [nN] [tT] [oO]
-  | [iI] [nN] [vV] [oO] [kK] [eE] [rR]
-  | [iI] [nN]
-  | [iI] [oO] "_" [aA] [fF] [tT] [eE] [rR] "_" [gG] [tT] [iI] [dD] [sS]
-  | [iI] [oO] "_" [bB] [eE] [fF] [oO] [rR] [eE] "_" [gG] [tT] [iI] [dD] [sS]
-  | [iI] [oO] "_" [tT] [hH] [rR] [eE] [aA] [dD]
-  | [rR] [eE] [lL] [aA] [yY] "_" [tT] [hH] [rR] [eE] [aA] [dD]
-  | [iI] [oO]
-  | [iI] [pP] [cC]
-  | [iI] [sS]
-  | [iI] [sS] [oO] [lL] [aA] [tT] [iI] [oO] [nN]
-  | [iI] [sS] [sS] [uU] [eE] [rR]
-  | [iI] [tT] [eE] [rR] [aA] [tT] [eE]
-  | [jJ] [oO] [iI] [nN]
-  | [jJ] [sS] [oO] [nN]
-  | [kK] [eE] [yY] [sS]
-  | [kK] [eE] [yY] "_" [bB] [lL] [oO] [cC] [kK] "_" [sS] [iI] [zZ] [eE]
-  | [kK] [eE] [yY]
-  | [kK] [iI] [lL] [lL]
-  | [lL] [aA] [nN] [gG] [uU] [aA] [gG] [eE]
-  | [lL] [aA] [sS] [tT]
-  | [lL] [eE] [aA] [dD] [iI] [nN] [gG]
-  | [lL] [eE] [aA] [vV] [eE] [sS]
-  | [lL] [eE] [aA] [vV] [eE]
-  | [lL] [eE] [fF] [tT]
-  | [lL] [eE] [sS] [sS]
-  | [lL] [eE] [vV] [eE] [lL]
-  | [lL] [iI] [kK] [eE]
-  | [lL] [iI] [mM] [iI] [tT]
-  | [lL] [iI] [nN] [eE] [aA] [rR]
-  | [lL] [iI] [nN] [eE] [sS]
-  | [lL] [iI] [nN] [eE] [sS] [tT] [rR] [iI] [nN] [gG]
-  | [lL] [iI] [sS] [tT]
-  | [lL] [oO] [aA] [dD]
-  | [lL] [oO] [cC] [aA] [lL]
-  | [lL] [oO] [cC] [kK] [sS]
-  | [lL] [oO] [cC] [kK]
-  | [lL] [oO] [gG] [fF] [iI] [lL] [eE]
-  | [lL] [oO] [gG] [sS]
-  | [lL] [oO] [nN] [gG] [bB] [lL] [oO] [bB]
-  | [lL] [oO] [nN] [gG] [tT] [eE] [xX] [tT]
-  | [lL] [oO] [nN] [gG]
-  | [lL] [oO] [oO] [pP]
-  | [lL] [oO] [wW] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [aA] [uU] [tT] [oO] "_" [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [bB] [iI] [nN] [dD]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] "_" [rR] [eE] [tT] [rR] [yY]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [dD] [eE] [lL] [aA] [yY]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [hH] [oO] [sS] [tT]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [oO] [rR] [tT]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [rR] [eE] [tT] [rR] [yY] "_" [cC] [oO] [uU] [nN] [tT]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [aA] [pP] [aA] [tT] [hH]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [aA]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [eE] [rR] [tT]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [iI] [pP] [hH] [eE] [rR]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL] [pP] [aA] [tT] [hH]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [kK] [eE] [yY]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [vV] [eE] [rR] [iI] [fF] [yY] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [cC] [eE] [rR] [tT]
-  | [mM] [aA] [sS] [tT] [eE] [rR]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [tT] [lL] [sS] "_" [vV] [eE] [rR] [sS] [iI] [oO] [nN]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [uU] [sS] [eE] [rR]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [hH] [eE] [aA] [rR] [tT] [bB] [eE] [aA] [tT] "_" [pP] [eE] [rR] [iI] [oO] [dD]
-  | [mM] [aA] [tT] [cC] [hH]
-  | [mM] [aA] [xX] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
-  | [mM] [aA] [xX] "_" [qQ] [uU] [eE] [rR] [iI] [eE] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
-  | [mM] [aA] [xX] "_" [rR] [oO] [wW] [sS]
-  | [mM] [aA] [xX] "_" [sS] [iI] [zZ] [eE]
-  | [mM] [aA] [xX]
-  | [mM] [aA] [xX] "_" [uU] [pP] [dD] [aA] [tT] [eE] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
-  | [mM] [aA] [xX] "_" [uU] [sS] [eE] [rR] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] [sS]
-  | [mM] [aA] [xX] [vV] [aA] [lL] [uU] [eE]
-  | [mM] [eE] [dD] [iI] [uU] [mM] [bB] [lL] [oO] [bB]
-  | [mM] [eE] [dD] [iI] [uU] [mM] [iI] [nN] [tT]
-  | [mM] [iI] [dD] [dD] [lL] [eE] [iI] [nN] [tT]
-  | [iI] [nN] [tT] "3"
-  | [mM] [eE] [dD] [iI] [uU] [mM] [tT] [eE] [xX] [tT]
-  | [mM] [eE] [dD] [iI] [uU] [mM]
-  | [mM] [eE] [mM] [oO] [rR] [yY]
-  | [mM] [eE] [rR] [gG] [eE]
-  | [mM] [eE] [sS] [sS] [aA] [gG] [eE] "_" [tT] [eE] [xX] [tT]
-  | [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [mM] [iI] [dD]
-  | [sS] [uU] [bB] [sS] [tT] [rR]
-  | [sS] [uU] [bB] [sS] [tT] [rR] [iI] [nN] [gG]
-  | [mM] [iI] [gG] [rR] [aA] [tT] [eE]
-  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [mM] [iI] [nN] [uU] [tT] [eE]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [mM] [iI] [nN] [uU] [tT] [eE]
-  | [mM] [iI] [nN] "_" [rR] [oO] [wW] [sS]
-  | [mM] [iI] [nN]
-  | [mM] [oO] [dD] [eE]
-  | [mM] [oO] [dD] [iI] [fF] [iI] [eE] [sS]
-  | [mM] [oO] [dD] [iI] [fF] [yY]
-  | [mM] [oO] [dD]
-  | [mM] [oO] [nN] [tT] [hH]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [mM] [oO] [nN] [tT] [hH]
-  | [mM] [uU] [lL] [tT] [iI] [lL] [iI] [nN] [eE] [sS] [tT] [rR] [iI] [nN] [gG]
-  | [mM] [uU] [lL] [tT] [iI] [pP] [oO] [iI] [nN] [tT]
-  | [mM] [uU] [lL] [tT] [iI] [pP] [oO] [lL] [yY] [gG] [oO] [nN]
-  | [mM] [uU] [tT] [eE] [xX]
-  | [mM] [yY] [sS] [qQ] [lL] "_" [eE] [rR] [rR] [nN] [oO]
-  | [nN] [aA] [mM] [eE] [sS]
-  | [nN] [aA] [mM] [eE]
-  | [nN] [aA] [tT] [iI] [oO] [nN] [aA] [lL]
-  | [nN] [aA] [tT] [uU] [rR] [aA] [lL]
-  | [nN] [cC] [hH] [aA] [rR]
-  | [nN] [dD] [bB]
-  | [nN] [dD] [bB] [cC] [lL] [uU] [sS] [tT] [eE] [rR]
-  | [nN] [eE] [vV] [eE] [rR]
-  | [nN] [eE] [wW]
-  | [nN] [eE] [xX] [tT]
-  | [nN] [oO] [dD] [eE] [gG] [rR] [oO] [uU] [pP]
-  | [nN] [oO] [nN] [eE]
-  | [nN] [oO] [tT]
-  | [nN] [oO]
-  | [nN] [oO] "_" [wW] [aA] [iI] [tT]
-  | [nN] [oO] "_" [wW] [rR] [iI] [tT] [eE] "_" [tT] [oO] "_" [bB] [iI] [nN] [lL] [oO] [gG]
-  | [nN] [uU] [lL] [lL]
-  | [nN] [uU] [mM] [bB] [eE] [rR]
-  | [nN] [uU] [mM] [eE] [rR] [iI] [cC]
-  | [nN] [vV] [aA] [rR] [cC] [hH] [aA] [rR]
-  | [oO] [fF] [fF] [lL] [iI] [nN] [eE]
-  | [oO] [fF] [fF] [sS] [eE] [tT]
-  | [oO] [nN]
-  | [oO] [nN] [eE]
-  | [oO] [nN] [lL] [iI] [nN] [eE]
-  | [oO] [nN] [lL] [yY]
-  | [oO] [pP] [eE] [nN]
-  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE]
-  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE] [rR] "_" [cC] [oO] [sS] [tT] [sS]
-  | [oO] [pP] [tT] [iI] [oO] [nN] [sS]
-  | [oO] [pP] [tT] [iI] [oO] [nN]
-  | [oO] [pP] [tT] [iI] [oO] [nN] [aA] [lL] [lL] [yY]
-  | [oO] [rR] [dD] [eE] [rR]
-  | [oO] [rR]
-  | [oO] [uU] [tT] [eE] [rR]
-  | [oO] [uU] [tT] [fF] [iI] [lL] [eE]
-  | [oO] [uU] [tT]
-  | [oO] [wW] [nN] [eE] [rR]
-  | [pP] [aA] [cC] [kK] "_" [kK] [eE] [yY] [sS]
-  | [pP] [aA] [gG] [eE]
-  | [pP] [aA] [rR] [sS] [eE] [rR]
-  | [pP] [aA] [rR] [tT] [iI] [aA] [lL]
-  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [iI] [nN] [gG]
-  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [sS]
-  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN]
-  | [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
-  | [pP] [hH] [aA] [sS] [eE]
-  | [pP] [lL] [uU] [gG] [iI] [nN] [sS]
-  | [pP] [lL] [uU] [gG] [iI] [nN] "_" [dD] [iI] [rR]
-  | [pP] [lL] [uU] [gG] [iI] [nN]
-  | [pP] [oO] [iI] [nN] [tT]
-  | [pP] [oO] [lL] [yY] [gG] [oO] [nN]
-  | [pP] [oO] [rR] [tT]
-  | [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
-  | [pP] [rR] [eE] [cC] [eE] [dD] [eE] [sS]
-  | [pP] [rR] [eE] [cC] [iI] [sS] [iI] [oO] [nN]
-  | [pP] [rR] [eE] [pP] [aA] [rR] [eE]
-  | [pP] [rR] [eE] [sS] [eE] [rR] [vV] [eE]
-  | [pP] [rR] [eE] [vV]
-  | [pP] [rR] [iI] [mM] [aA] [rR] [yY]
-  | [pP] [rR] [iI] [vV] [iI] [lL] [eE] [gG] [eE] [sS]
-  | [pP] [rR] [oO] [cC] [eE] [dD] [uU] [rR] [eE]
-  | [pP] [rR] [oO] [cC] [eE] [sS] [sS]
-  | [pP] [rR] [oO] [cC] [eE] [sS] [sS] [lL] [iI] [sS] [tT]
-  | [pP] [rR] [oO] [fF] [iI] [lL] [eE]
-  | [pP] [rR] [oO] [fF] [iI] [lL] [eE] [sS]
-  | [pP] [rR] [oO] [xX] [yY]
-  | [pP] [uU] [rR] [gG] [eE]
-  | [qQ] [uU] [aA] [rR] [tT] [eE] [rR]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [qQ] [uU] [aA] [rR] [tT] [eE] [rR]
-  | [qQ] [uU] [eE] [rR] [yY]
-  | [qQ] [uU] [iI] [cC] [kK]
-  | [rR] [aA] [nN] [gG] [eE]
-  | [rR] [eE] [aA] [dD] [sS]
-  | [rR] [eE] [aA] [dD] "_" [oO] [nN] [lL] [yY]
-  | [rR] [eE] [aA] [dD]
-  | [rR] [eE] [aA] [dD] "_" [wW] [rR] [iI] [tT] [eE]
-  | [rR] [eE] [aA] [lL]
-  | [rR] [eE] [bB] [uU] [iI] [lL] [dD]
-  | [rR] [eE] [cC] [oO] [vV] [eE] [rR]
-  | [rR] [eE] [dD] [oO] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [sS] [iI] [zZ] [eE]
-  | [rR] [eE] [dD] [uU] [nN] [dD] [aA] [nN] [tT]
-  | [rR] [eE] [fF] [eE] [rR] [eE] [nN] [cC] [eE] [sS]
-  | [rR] [eE] [gG] [eE] [xX] [pP]
-  | [rR] [lL] [iI] [kK] [eE]
-  | [rR] [eE] [lL] [aA] [yY]
-  | [rR] [eE] [lL] [aA] [yY] [lL] [oO] [gG]
-  | [rR] [eE] [lL] [aA] [yY] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
-  | [rR] [eE] [lL] [aA] [yY] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
-  | [rR] [eE] [lL] [eE] [aA] [sS] [eE]
-  | [rR] [eE] [lL] [oO] [aA] [dD]
-  | [rR] [eE] [mM] [oO] [vV] [eE]
-  | [rR] [eE] [nN] [aA] [mM] [eE]
-  | [rR] [eE] [oO] [rR] [gG] [aA] [nN] [iI] [zZ] [eE]
-  | [rR] [eE] [pP] [aA] [iI] [rR]
-  | [rR] [eE] [pP] [eE] [aA] [tT] [aA] [bB] [lL] [eE]
-  | [rR] [eE] [pP] [eE] [aA] [tT]
-  | [rR] [eE] [pP] [lL] [aA] [cC] [eE]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [dD] [oO] "_" [dD] [bB]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [dD] [bB]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL] [eE]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL] [eE]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [rR] [eE] [wW] [rR] [iI] [tT] [eE] "_" [dD] [bB]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [rR] [eE] [wW] [rR] [iI] [tT] [eE] "_" [dD]
-  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE]
-  | [rR] [eE] [sS] [eE] [tT]
-  | [rR] [eE] [sS] [iI] [gG] [nN] [aA] [lL]
-  | [rR] [eE] [sS] [tT] [oO] [rR] [eE]
-  | [rR] [eE] [sS] [tT] [rR] [iI] [cC] [tT]
-  | [rR] [eE] [sS] [uU] [mM] [eE]
-  | [rR] [eE] [tT] [uU] [rR] [nN] [eE] [dD] "_" [sS] [qQ] [lL] [sS] [tT] [aA] [tT] [eE]
-  | [rR] [eE] [tT] [uU] [rR] [nN] [sS]
-  | [rR] [eE] [tT] [uU] [rR] [nN]
-  | [rR] [eE] [tT] [uU] [rR]
-  | [rR] [eE] [vV] [eE] [rR] [sS] [eE]
-  | [rR] [eE] [vV] [oO] [kK] [eE]
-  | [rR] [iI] [gG] [hH] [tT]
-  | [rR] [oO] [lL] [lL] [bB] [aA] [cC] [kK]
-  | [rR] [oO] [lL] [lL] [uU] [pP]
-  | [rR] [oO] [tT] [aA] [tT] [eE]
-  | [rR] [oO] [uU] [tT] [iI] [nN] [eE]
-  | [rR] [oO] [wW] [sS]
-  | [rR] [oO] [wW] "_" [cC] [oO] [uU] [nN] [tT]
-  | [rR] [oO] [wW] "_" [fF] [oO] [rR] [mM] [aA] [tT]
-  | [rR] [oO] [wW]
-  | [rR] [tT] [rR] [eE] [eE]
-  | [sS] [aA] [vV] [eE] [pP] [oO] [iI] [nN] [tT]
-  | [sS] [cC] [hH] [eE] [dD] [uU] [lL] [eE]
-  | [sS] [cC] [hH] [eE] [mM] [aA] "_" [nN] [aA] [mM] [eE]
-  | [sS] [eE] [cC] [oO] [nN] [dD] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [sS] [eE] [cC] [oO] [nN] [dD]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [sS] [eE] [cC] [uU] [rR] [iI] [tT] [yY]
-  | [sS] [eE] [lL] [eE] [cC] [tT]
-  | [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [sS] [eE] [pP] [aA] [rR] [aA] [tT] [oO] [rR]
-  | [sS] [eE] [rR] [iI] [aA] [lL] [iI] [zZ] [aA] [bB] [lL] [eE]
-  | [sS] [eE] [rR] [iI] [aA] [lL]
-  | [sS] [eE] [sS] [sS] [iI] [oO] [nN]
-  | [sS] [eE] [rR] [vV] [eE] [rR]
-  | [sS] [eE] [sS] [sS] [iI] [oO] [nN] "_" [uU] [sS] [eE] [rR]
-  | [sS] [yY] [sS] [tT] [eE] [mM] "_" [uU] [sS] [eE] [rR]
-  | [uU] [sS] [eE] [rR]
-  | [sS] [eE] [tT]
-  | [sS] [hH] [aA] [rR] [eE]
-  | [sS] [hH] [oO] [wW]
-  | [sS] [hH] [uU] [tT] [dD] [oO] [wW] [nN]
-  | [sS] [iI] [gG] [nN] [aA] [lL]
-  | [sS] [iI] [gG] [nN] [eE] [dD]
-  | [sS] [iI] [mM] [pP] [lL] [eE]
-  | [sS] [lL] [aA] [vV] [eE]
-  | [sS] [lL] [oO] [wW]
-  | [sS] [mM] [aA] [lL] [lL] [iI] [nN] [tT]
-  | [iI] [nN] [tT] "2"
-  | [sS] [nN] [aA] [pP] [sS] [hH] [oO] [tT]
-  | [sS] [oO] [cC] [kK] [eE] [tT]
-  | [sS] [oO] [nN] [aA] [mM] [eE]
-  | [sS] [oO] [uU] [nN] [dD] [sS]
-  | [sS] [oO] [uU] [rR] [cC] [eE]
-  | [sS] [pP] [aA] [tT] [iI] [aA] [lL]
-  | [sS] [pP] [eE] [cC] [iI] [fF] [iI] [cC]
-  | [sS] [qQ] [lL] [eE] [xX] [cC] [eE] [pP] [tT] [iI] [oO] [nN]
-  | [sS] [qQ] [lL] [sS] [tT] [aA] [tT] [eE]
-  | [sS] [qQ] [lL] [wW] [aA] [rR] [nN] [iI] [nN] [gG]
-  | [sS] [qQ] [lL] "_" [aA] [fF] [tT] [eE] [rR] "_" [gG] [tT] [iI] [dD] [sS]
-  | [sS] [qQ] [lL] "_" [aA] [fF] [tT] [eE] [rR] "_" [mM] [tT] [sS] "_" [gG] [aA] [pP] [sS]
-  | [sS] [qQ] [lL] "_" [bB] [eE] [fF] [oO] [rR] [eE] "_" [gG] [tT] [iI] [dD] [sS]
-  | [sS] [qQ] [lL] "_" [bB] [iI] [gG] "_" [rR] [eE] [sS] [uU] [lL] [tT]
-  | [sS] [qQ] [lL] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [rR] [eE] [sS] [uU] [lL] [tT]
-  | [sS] [qQ] [lL] "_" [cC] [aA] [lL] [cC] "_" [fF] [oO] [uU] [nN] [dD] "_" [rR] [oO] [wW] [sS]
-  | [sS] [qQ] [lL] "_" [nN] [oO] "_" [cC] [aA] [cC] [hH] [eE]
-  | [sS] [qQ] [lL] "_" [sS] [mM] [aA] [lL] [lL] "_" [rR] [eE] [sS] [uU] [lL] [tT]
-  | [sS] [qQ] [lL]
-  | [sS] [qQ] [lL] "_" [tT] [hH] [rR] [eE] [aA] [dD]
-  | [sS] [sS] [lL]
-  | [sS] [tT] [aA] [cC] [kK] [eE] [dD]
-  | [sS] [tT] [aA] [rR] [tT] [iI] [nN] [gG]
-  | [sS] [tT] [aA] [rR] [tT] [sS]
-  | [sS] [tT] [aA] [rR] [tT]
-  | [sS] [tT] [aA] [tT] [sS] "_" [aA] [uU] [tT] [oO] "_" [rR] [eE] [cC] [aA] [lL] [cC]
-  | [sS] [tT] [aA] [tT] [sS] "_" [pP] [eE] [rR] [sS] [iI] [sS] [tT] [eE] [nN] [tT]
-  | [sS] [tT] [aA] [tT] [sS] "_" [sS] [aA] [mM] [pP] [lL] [eE] "_" [pP] [aA] [gG] [eE] [sS]
-  | [sS] [tT] [aA] [tT] [uU] [sS]
-  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [sS] [aA] [mM] [pP]
-  | [sS] [tT] [dD] [dD] [eE] [vV]
-  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [pP] [oO] [pP]
-  | [sS] [tT] [dD]
-  | [sS] [tT] [oO] [pP]
-  | [sS] [tT] [oO] [rR] [aA] [gG] [eE]
-  | [sS] [tT] [oO] [rR] [eE] [dD]
-  | [sS] [tT] [rR] [aA] [iI] [gG] [hH] [tT] "_" [jJ] [oO] [iI] [nN]
-  | [sS] [tT] [rR] [iI] [nN] [gG]
-  | [sS] [uU] [bB] [cC] [lL] [aA] [sS] [sS] "_" [oO] [rR] [iI] [gG] [iI] [nN]
-  | [sS] [uU] [bB] [dD] [aA] [tT] [eE]
-  | [sS] [uU] [bB] [jJ] [eE] [cC] [tT]
-  | [sS] [uU] [bB] [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [sS]
-  | [sS] [uU] [bB] [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN]
-  | [sS] [uU] [mM]
-  | [sS] [uU] [pP] [eE] [rR]
-  | [sS] [uU] [sS] [pP] [eE] [nN] [dD]
-  | [sS] [wW] [aA] [pP] [sS]
-  | [sS] [wW] [iI] [tT] [cC] [hH] [eE] [sS]
-  | [sS] [yY] [sS] [dD] [aA] [tT] [eE]
-  | [tT] [aA] [bB] [lL] [eE] [sS]
-  | [tT] [aA] [bB] [lL] [eE] [sS] [pP] [aA] [cC] [eE]
-  | [tT] [aA] [bB] [lL] [eE]
-  | [tT] [aA] [bB] [lL] [eE] "_" [cC] [hH] [eE] [cC] [kK] [sS] [uU] [mM]
-  | [tT] [aA] [bB] [lL] [eE] "_" [nN] [aA] [mM] [eE]
-  | [tT] [eE] [mM] [pP] [oO] [rR] [aA] [rR] [yY]
-  | [tT] [eE] [mM] [pP] [tT] [aA] [bB] [lL] [eE]
-  | [tT] [eE] [rR] [mM] [iI] [nN] [aA] [tT] [eE] [dD]
-  | [tT] [eE] [xX] [tT]
-  | [tT] [hH] [aA] [nN]
-  | [tT] [hH] [eE] [nN]
-  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP] [aA] [dD] [dD]
-  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP] [dD] [iI] [fF] [fF]
-  | [tT] [iI] [mM] [eE]
-  | [tT] [iI] [nN] [yY] [bB] [lL] [oO] [bB]
-  | [tT] [iI] [nN] [yY] [iI] [nN] [tT]
-  | [iI] [nN] [tT] "1"
-  | [tT] [iI] [nN] [yY] [tT] [eE] [xX] [tT]
-  | [tT] [oO]
-  | [tT] [rR] [aA] [iI] [lL] [iI] [nN] [gG]
-  | [tT] [rR] [aA] [nN] [sS] [aA] [cC] [tT] [iI] [oO] [nN]
-  | [tT] [rR] [iI] [gG] [gG] [eE] [rR] [sS]
-  | [tT] [rR] [iI] [gG] [gG] [eE] [rR]
-  | [tT] [rR] [iI] [mM]
-  | [tT] [rR] [uU] [eE]
-  | [tT] [rR] [uU] [nN] [cC] [aA] [tT] [eE]
-  | [tT] [yY] [pP] [eE] [sS]
-  | [tT] [yY] [pP] [eE]
-  | [uU] [nN] [cC] [oO] [mM] [mM] [iI] [tT] [tT] [eE] [dD]
-  | [uU] [nN] [dD] [eE] [fF] [iI] [nN] [eE] [dD]
-  | [uU] [nN] [dD] [oO] [fF] [iI] [lL] [eE]
-  | [uU] [nN] [dD] [oO] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [sS] [iI] [zZ] [eE]
-  | [uU] [nN] [dD] [oO]
-  | [uU] [nN] [iI] [cC] [oO] [dD] [eE]
-  | [uU] [nN] [iI] [nN] [sS] [tT] [aA] [lL] [lL]
-  | [uU] [nN] [iI] [oO] [nN]
-  | [uU] [nN] [iI] [qQ] [uU] [eE]
-  | [uU] [nN] [kK] [nN] [oO] [wW] [nN]
-  | [uU] [nN] [lL] [oO] [cC] [kK]
-  | [uU] [nN] [sS] [iI] [gG] [nN] [eE] [dD]
-  | [uU] [nN] [tT] [iI] [lL]
-  | [uU] [pP] [dD] [aA] [tT] [eE]
-  | [uU] [pP] [gG] [rR] [aA] [dD] [eE]
-  | [uU] [sS] [aA] [gG] [eE]
-  | [uU] [sS] [eE] [rR] "_" [rR] [eE] [sS] [oO] [uU] [rR] [cC] [eE] [sS]
-  | [uU] [sS] [eE] "_" [fF] [rR] [mM]
-  | [uU] [sS] [eE]
-  | [uU] [sS] [iI] [nN] [gG]
-  | [uU] [tT] [cC] "_" [dD] [aA] [tT] [eE]
-  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE]
-  | [vV] [aA] [lL] [iI] [dD] [aA] [tT] [iI] [oO] [nN]
-  | [vV] [aA] [lL] [uU] [eE] [sS]
-  | [vV] [aA] [lL] [uU] [eE]
-  | [vV] [aA] [rR] [bB] [iI] [nN] [aA] [rR] [yY]
-  | [vV] [aA] [rR] [cC] [hH] [aA] [rR]
-  | [vV] [aA] [rR] [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
-  | [vV] [aA] [rR] [iI] [aA] [bB] [lL] [eE] [sS]
-  | [vV] [aA] [rR] [iI] [aA] [nN] [cC] [eE]
-  | [vV] [aA] [rR] "_" [pP] [oO] [pP]
-  | [vV] [aA] [rR] [yY] [iI] [nN] [gG]
-  | [vV] [aA] [rR] "_" [sS] [aA] [mM] [pP]
-  | [vV] [iI] [eE] [wW]
-  | [vV] [iI] [rR] [tT] [uU] [aA] [lL]
-  | [wW] [aA] [iI] [tT]
-  | [wW] [aA] [rR] [nN] [iI] [nN] [gG] [sS]
-  | [wW] [eE] [eE] [kK]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [wW] [eE] [eE] [kK]
-  | [wW] [eE] [iI] [gG] [hH] [tT] "_" [sS] [tT] [rR] [iI] [nN] [gG]
-  | [wW] [hH] [eE] [nN]
-  | [wW] [hH] [eE] [rR] [eE]
-  | [wW] [hH] [iI] [lL] [eE]
-  | [wW] [iI] [tT] [hH]
-  | [wW] [iI] [tT] [hH] [oO] [uU] [tT]
-  | [wW] [oO] [rR] [kK]
-  | [wW] [rR] [aA] [pP] [pP] [eE] [rR]
-  | [wW] [rR] [iI] [tT] [eE]
-  | [xX] "5" "0" "9"
-  | [xX] [aA]
-  | [xX] [iI] [dD]
-  | [xX] [mM] [lL]
-  | [xX] [oO] [rR]
-  | [yY] [eE] [aA] [rR] "_" [mM] [oO] [nN] [tT] [hH]
-  | [yY] [eE] [aA] [rR]
-  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [yY] [eE] [aA] [rR]
-  | [zZ] [eE] [rR] [oO] [fF] [iI] [lL] [lL]
-  | [pP] [eE] [rR] [sS] [iI] [sS] [tT]
-  | [rR] [oO] [lL] [eE]
-  | [aA] [dD] [mM] [iI] [nN]
-  | [iI] [nN] [vV] [iI] [sS] [iI] [bB] [lL] [eE]
-  | [vV] [iI] [sS] [iI] [bB] [lL] [eE]
-  | [eE] [xX] [cC] [eE] [pP] [tT]
-  | [cC] [oO] [mM] [pP] [oO] [nN] [eE] [nN] [tT]
-  | [rR] [eE] [cC] [uU] [rR] [sS] [iI] [vV] [eE]
-  | [jJ] [sS] [oO] [nN] "_" [oO] [bB] [jJ] [eE] [cC] [tT] [aA] [gG] [gG]
-  | [jJ] [sS] [oO] [nN] "_" [aA] [rR] [rR] [aA] [yY] [aA] [gG] [gG]
-  | [oO] [fF]
-  | [sS] [kK] [iI] [pP]
-  | [lL] [oO] [cC] [kK] [eE] [dD]
-  | [nN] [oO] [wW] [aA] [iI] [tT]
-  | [gG] [rR] [oO] [uU] [pP] [iI] [nN] [gG]
-  | [pP] [eE] [rR] [sS] [iI] [sS] [tT] "_" [oO] [nN] [lL] [yY]
-  | [hH] [iI] [sS] [tT] [oO] [gG] [rR] [aA] [mM]
-  | [bB] [uU] [cC] [kK] [eE] [tT] [sS]
-  | [cC] [lL] [oO] [nN] [eE]
-  | [cC] [uU] [mM] [eE] "_" [dD] [iI] [sS] [tT]
-  | [dD] [eE] [nN] [sS] [eE] "_" [rR] [aA] [nN] [kK]
-  | [eE] [xX] [cC] [lL] [uU] [dD] [eE]
-  | [fF] [iI] [rR] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
-  | [fF] [oO] [lL] [lL] [oO] [wW] [iI] [nN] [gG]
-  | [gG] [rR] [oO] [uU] [pP] [sS]
-  | [lL] [aA] [gG]
-  | [lL] [aA] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
-  | [lL] [eE] [aA] [dD]
-  | [nN] [tT] [hH] "_" [vV] [aA] [lL] [uU] [eE]
-  | [nN] [tT] [iI] [lL] [eE]
-  | [nN] [uU] [lL] [lL] [sS]
-  | [oO] [tT] [hH] [eE] [rR] [sS]
-  | [oO] [vV] [eE] [rR]
-  | [pP] [eE] [rR] [cC] [eE] [nN] [tT] "_" [rR] [aA] [nN] [kK]
-  | [pP] [rR] [eE] [cC] [eE] [dD] [iI] [nN] [gG]
-  | [rR] [aA] [nN] [kK]
-  | [rR] [eE] [sS] [pP] [eE] [cC] [tT]
-  | [rR] [oO] [wW] "_" [nN] [uU] [mM] [bB] [eE] [rR]
-  | [tT] [iI] [eE] [sS]
-  | [uU] [nN] [bB] [oO] [uU] [nN] [dD] [eE] [dD]
-  | [wW] [iI] [nN] [dD] [oO] [wW]
-  | [eE] [mM] [pP] [tT] [yY]
-  | [jJ] [sS] [oO] [nN] "_" [tT] [aA] [bB] [lL] [eE]
-  | [nN] [eE] [sS] [tT] [eE] [dD]
-  | [oO] [rR] [dD] [iI] [nN] [aA] [lL] [iI] [tT] [yY]
-  | [pP] [aA] [tT] [hH]
-  | [hH] [iI] [sS] [tT] [oO] [rR] [yY]
-  | [rR] [eE] [uU] [sS] [eE]
-  | [sS] [rR] [iI] [dD]
-  | [tT] [hH] [rR] [eE] [aA] [dD] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
-  | [rR] [eE] [sS] [oO] [uU] [rR] [cC] [eE]
-  | [sS] [yY] [sS] [tT] [eE] [mM]
-  | [vV] [cC] [pP] [uU]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY] "_" [pP] [aA] [tT] [hH]
-  | [gG] [eE] [tT] "_" [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY]
-  | [rR] [eE] [sS] [tT] [aA] [rR] [tT]
-  | [dD] [eE] [fF] [iI] [nN] [iI] [tT] [iI] [oO] [nN]
-  | [dD] [eE] [sS] [cC] [rR] [iI] [pP] [tT] [iI] [oO] [nN]
-  | [oO] [rR] [gG] [aA] [nN] [iI] [zZ] [aA] [tT] [iI] [oO] [nN]
-  | [rR] [eE] [fF] [eE] [rR] [eE] [nN] [cC] [eE]
-  | [oO] [pP] [tT] [iI] [oO] [nN] [aA] [lL]
-  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY]
-  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [eE] [nN] [gG] [iI] [nN] [eE]
-  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [lL] [oO] [aA] [dD]
-  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [uU] [nN] [lL] [oO] [aA] [dD]
-  | [aA] [cC] [tT] [iI] [vV] [eE]
-  | [iI] [nN] [aA] [cC] [tT] [iI] [vV] [eE]
-  | [lL] [aA] [tT] [eE] [rR] [aA] [lL]
-  | [rR] [eE] [tT] [aA] [iI] [nN]
-  | [oO] [lL] [dD]
-  | [nN] [eE] [tT] [wW] [oO] [rR] [kK] "_" [nN] [aA] [mM] [eE] [sS] [pP] [aA] [cC] [eE]
-  | [eE] [nN] [fF] [oO] [rR] [cC] [eE] [dD]
-  | [aA] [rR] [rR] [aA] [yY]
-  | [oO] [jJ]
-  | [mM] [eE] [mM] [bB] [eE] [rR]
-  | [rR] [aA] [nN] [dD] [oO] [mM]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM] [sS]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [zZ] [sS] [tT] [dD] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [lL] [eE] [vV] [eE] [lL]
-  | [pP] [rR] [iI] [vV] [iI] [lL] [eE] [gG] [eE] "_" [cC] [hH] [eE] [cC] [kK] [sS] "_" [uU] [sS] [eE] [rR]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [tT] [lL] [sS] "_" [cC] [iI] [pP] [hH] [eE] [rR] [sS] [uU] [iI] [tT] [eE] [sS]
-  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE] "_" [rR] [oO] [wW] "_" [fF] [oO] [rR] [mM] [aA] [tT]
-  | [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD] "_" [lL] [oO] [cC] [kK] "_" [tT] [iI] [mM] [eE]
-  | [fF] [aA] [iI] [lL] [eE] [dD] "_" [lL] [oO] [gG] [iI] [nN] "_" [aA] [tT] [tT] [eE] [mM] [pP] [tT] [sS]
-  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE] "_" [pP] [rR] [iI] [mM] [aA] [rR] [yY] "_" [kK] [eE] [yY] "_" [cC] [hH] [eE] [cC] [kK]
-  | [sS] [tT] [rR] [eE] [aA] [mM]
-  | [oO] [fF] [fF]
-  | [rR] [eE] [tT] [uU] [rR] [nN] [iI] [nN] [gG]
-  | [jJ] [sS] [oO] [nN] "_" [vV] [aA] [lL] [uU] [eE]
-  | [tT] [lL] [sS]
-  | [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
-  | [eE] [nN] [gG] [iI] [nN] [eE] "_" [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
-  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [eE] [nN] [gG] [iI] [nN] [eE] "_" [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] "_" [aA] [uU] [tT] [oO] "_" [fF] [aA] [iI] [lL] [oO] [vV] [eE] [rR]
-  | [zZ] [oO] [nN] [eE]
-  | [gG] [rR] [aA] [mM] [mM] [aA] [rR] "_" [sS] [eE] [lL] [eE] [cC] [tT] [oO] [rR] "_" [dD] [eE] [rR] [iI] [vV] [eE] [dD]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA]
-  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [sS]
-  | [aA] [sS] [sS] [iI] [gG] [nN] "_" [gG] [tT] [iI] [dD] [sS] "_" [tT] [oO] "_" [aA] [nN] [oO] [nN] [yY] [mM] [oO] [uU] [sS] "_" [tT] [rR] [aA] [nN] [sS] [aA] [cC] [tT] [iI] [oO] [nN] [sS]
-  | [gG] [eE] [tT] "_" [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [aA] [uU] [tT] [oO] "_" [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [bB] [iI] [nN] [dD]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM] [sS]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] "_" [rR] [eE] [tT] [rR] [yY]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [dD] [eE] [lL] [aA] [yY]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [hH] [eE] [aA] [rR] [tT] [bB] [eE] [aA] [tT] "_" [pP] [eE] [rR] [iI] [oO] [dD]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [hH] [oO] [sS] [tT]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [oO] [rR] [tT]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY] "_" [pP] [aA] [tT] [hH]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [rR] [eE] [tT] [rR] [yY] "_" [cC] [oO] [uU] [nN] [tT]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [aA]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [aA] [pP] [aA] [tT] [hH]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [eE] [rR] [tT]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [iI] [pP] [hH] [eE] [rR]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL] [pP] [aA] [tT] [hH]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [kK] [eE] [yY]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [vV] [eE] [rR] [iI] [fF] [yY] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [cC] [eE] [rR] [tT]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [tT] [lL] [sS] "_" [cC] [iI] [pP] [hH] [eE] [rR] [sS] [uU] [iI] [tT] [eE] [sS]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [tT] [lL] [sS] "_" [vV] [eE] [rR] [sS] [iI] [oO] [nN]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [uU] [sS] [eE] [rR]
-  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [zZ] [sS] [tT] [dD] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [lL] [eE] [vV] [eE] [lL]
-  | [sS] [tT] "_" [cC] [oO] [lL] [lL] [eE] [cC] [tT]
-  | [kK] [eE] [yY] [rR] [iI] [nN] [gG]
-  | [aA] [uU] [tT] [hH] [eE] [nN] [tT] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
-  | [fF] [aA] [cC] [tT] [oO] [rR]
-  | [fF] [iI] [nN] [iI] [sS] [hH]
-  | [iI] [nN] [iI] [tT] [iI] [aA] [tT] [eE]
-  | [rR] [eE] [gG] [iI] [sS] [tT] [rR] [aA] [tT] [iI] [oO] [nN]
-  | [uU] [nN] [rR] [eE] [gG] [iI] [sS] [tT] [eE] [rR]
-  | [iI] [nN] [iI] [tT] [iI] [aA] [lL]
-  | [cC] [hH] [aA] [lL] [lL] [eE] [nN] [gG] [eE] "_" [rR] [eE] [sS] [pP] [oO] [nN] [sS] [eE]
-  | [gG] [tT] [iI] [dD] "_" [oO] [nN] [lL] [yY]
-  | [iI] [nN] [tT] [eE] [rR] [sS] [eE] [cC] [tT]
-  | [bB] [uU] [lL] [kK]
-  | [uU] [rR] [lL]
-  | [gG] [eE] [nN] [eE] [rR] [aA] [tT] [eE]
-  | [pP] [aA] [rR] [sS] [eE] "_" [tT] [rR] [eE] [eE]
-  | [lL] [oO] [gG]
-  | [gG] [tT] [iI] [dD] [sS]
-  | [pP] [aA] [rR] [aA] [lL] [lL] [eE] [lL]
-  | [sS] "3"
-  | [qQ] [uU] [aA] [lL] [iI] [fF] [yY]
-  | [aA] [uU] [tT] [oO]
-  | [mM] [aA] [nN] [uU] [aA] [lL]
-  | [bB] [eE] [rR] [nN] [oO] [uU] [lL] [lL] [iI]
-  | [tT] [aA] [bB] [lL] [eE] [sS] [aA] [mM] [pP] [lL] [eE]
+ContextualFunctionWord = FunctionOnlyWord | ContextualKeywordWord
 
+// Function spellings admitted as identifiers even before an adjacent '('.
 @Regex
-ReservedQualifierWord = [aA] [cC] [cC] [eE] [sS] [sS] [iI] [bB] [lL] [eE]
-  | [aA] [dD] [dD]
-  | [aA] [lL] [lL]
-  | [aA] [lL] [tT] [eE] [rR]
-  | [aA] [nN] [aA] [lL] [yY] [zZ] [eE]
-  | [aA] [nN] [dD]
-  | [aA] [sS]
-  | [aA] [sS] [cC]
-  | [aA] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [aA] [uU] [tT] [oO]
-  | [bB] [eE] [fF] [oO] [rR] [eE]
-  | [bB] [eE] [tT] [wW] [eE] [eE] [nN]
-  | [bB] [iI] [gG] [iI] [nN] [tT]
-  | [bB] [iI] [nN] [aA] [rR] [yY]
-  | [bB] [lL] [oO] [bB]
-  | [bB] [oO] [tT] [hH]
-  | [bB] [yY]
-  | [cC] [aA] [lL] [lL]
-  | [cC] [aA] [sS] [cC] [aA] [dD] [eE]
-  | [cC] [aA] [sS] [eE]
-  | [cC] [hH] [aA] [nN] [gG] [eE]
-  | [cC] [hH] [aA] [rR]
-  | [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
-  | [cC] [hH] [eE] [cC] [kK]
-  | [cC] [oO] [lL] [lL] [aA] [tT] [eE]
-  | [cC] [oO] [lL] [uU] [mM] [nN]
-  | [cC] [oO] [nN] [dD] [iI] [tT] [iI] [oO] [nN]
-  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT]
-  | [cC] [oO] [nN] [tT] [iI] [nN] [uU] [eE]
-  | [cC] [oO] [nN] [vV] [eE] [rR] [tT]
-  | [cC] [rR] [eE] [aA] [tT] [eE]
-  | [cC] [rR] [oO] [sS] [sS]
-  | [cC] [uU] [bB] [eE]
-  | [cC] [uU] [mM] [eE] "_" [dD] [iI] [sS] [tT]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [uU] [sS] [eE] [rR]
-  | [cC] [uU] [rR] [sS] [oO] [rR]
-  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE]
-  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE] [sS]
-  | [dD] [aA] [yY] "_" [hH] [oO] [uU] [rR]
-  | [dD] [aA] [yY] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [dD] [aA] [yY] "_" [mM] [iI] [nN] [uU] [tT] [eE]
-  | [dD] [aA] [yY] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [dD] [eE] [cC]
-  | [dD] [eE] [cC] [iI] [mM] [aA] [lL]
-  | [dD] [eE] [cC] [lL] [aA] [rR] [eE]
-  | [dD] [eE] [fF] [aA] [uU] [lL] [tT]
-  | [dD] [eE] [lL] [aA] [yY] [eE] [dD]
-  | [dD] [eE] [lL] [eE] [tT] [eE]
-  | [dD] [eE] [nN] [sS] [eE] "_" [rR] [aA] [nN] [kK]
-  | [dD] [eE] [sS] [cC]
-  | [dD] [eE] [sS] [cC] [rR] [iI] [bB] [eE]
-  | [dD] [eE] [tT] [eE] [rR] [mM] [iI] [nN] [iI] [sS] [tT] [iI] [cC]
-  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT]
-  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT] [rR] [oO] [wW]
-  | [dD] [iI] [vV]
-  | [dD] [oO] [uU] [bB] [lL] [eE]
-  | [dD] [rR] [oO] [pP]
-  | [dD] [uU] [aA] [lL]
-  | [eE] [aA] [cC] [hH]
-  | [eE] [lL] [sS] [eE]
-  | [eE] [lL] [sS] [eE] [iI] [fF]
-  | [eE] [mM] [pP] [tT] [yY]
-  | [eE] [nN] [cC] [lL] [oO] [sS] [eE] [dD]
-  | [eE] [nN] [gG] [iI] [nN] [eE] "_" [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
-  | [eE] [sS] [cC] [aA] [pP] [eE] [dD]
-  | [eE] [xX] [cC] [eE] [pP] [tT]
-  | [eE] [xX] [iI] [sS] [tT] [sS]
-  | [eE] [xX] [iI] [tT]
-  | [eE] [xX] [pP] [lL] [aA] [iI] [nN]
-  | [fF] [aA] [lL] [sS] [eE]
-  | [fF] [eE] [tT] [cC] [hH]
-  | [fF] [iI] [rR] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
-  | [fF] [lL] [oO] [aA] [tT]
-  | [fF] [lL] [oO] [aA] [tT] "4"
-  | [fF] [lL] [oO] [aA] [tT] "8"
-  | [fF] [oO] [rR]
-  | [fF] [oO] [rR] [cC] [eE]
-  | [fF] [oO] [rR] [eE] [iI] [gG] [nN]
-  | [fF] [rR] [oO] [mM]
-  | [fF] [uU] [lL] [lL] [tT] [eE] [xX] [tT]
-  | [fF] [uU] [nN] [cC] [tT] [iI] [oO] [nN]
-  | [gG] [eE] [nN] [eE] [rR] [aA] [tT] [eE] [dD]
-  | [gG] [eE] [tT]
-  | [gG] [rR] [aA] [mM] [mM] [aA] [rR] "_" [sS] [eE] [lL] [eE] [cC] [tT] [oO] [rR] "_" [dD] [eE] [rR] [iI] [vV] [eE] [dD]
-  | [gG] [rR] [aA] [nN] [tT]
-  | [gG] [rR] [oO] [uU] [pP]
-  | [gG] [rR] [oO] [uU] [pP] [iI] [nN] [gG]
-  | [gG] [rR] [oO] [uU] [pP] [sS]
-  | [hH] [aA] [vV] [iI] [nN] [gG]
-  | [hH] [iI] [gG] [hH] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
-  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [nN] [uU] [tT] [eE]
-  | [hH] [oO] [uU] [rR] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [iI] [fF]
-  | [iI] [gG] [nN] [oO] [rR] [eE]
-  | [iI] [nN]
-  | [iI] [nN] [dD] [eE] [xX]
-  | [iI] [nN] [fF] [iI] [lL] [eE]
-  | [iI] [nN] [nN] [eE] [rR]
-  | [iI] [nN] [oO] [uU] [tT]
-  | [iI] [nN] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [iI] [nN] [sS] [eE] [rR] [tT]
-  | [iI] [nN] [tT]
-  | [iI] [nN] [tT] "1"
-  | [iI] [nN] [tT] "2"
-  | [iI] [nN] [tT] "3"
-  | [iI] [nN] [tT] "4"
-  | [iI] [nN] [tT] "8"
-  | [iI] [nN] [tT] [eE] [gG] [eE] [rR]
-  | [iI] [nN] [tT] [eE] [rR] [sS] [eE] [cC] [tT]
-  | [iI] [nN] [tT] [eE] [rR] [vV] [aA] [lL]
-  | [iI] [nN] [tT] [oO]
-  | [iI] [oO] "_" [aA] [fF] [tT] [eE] [rR] "_" [gG] [tT] [iI] [dD] [sS]
-  | [iI] [oO] "_" [bB] [eE] [fF] [oO] [rR] [eE] "_" [gG] [tT] [iI] [dD] [sS]
-  | [iI] [sS]
-  | [iI] [tT] [eE] [rR] [aA] [tT] [eE]
-  | [jJ] [oO] [iI] [nN]
-  | [jJ] [sS] [oO] [nN] "_" [aA] [rR] [rR] [aA] [yY] [aA] [gG] [gG]
-  | [jJ] [sS] [oO] [nN] "_" [oO] [bB] [jJ] [eE] [cC] [tT] [aA] [gG] [gG]
-  | [jJ] [sS] [oO] [nN] "_" [tT] [aA] [bB] [lL] [eE]
-  | [kK] [eE] [yY]
-  | [kK] [eE] [yY] [sS]
-  | [kK] [iI] [lL] [lL]
-  | [lL] [aA] [gG]
-  | [lL] [aA] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
-  | [lL] [aA] [tT] [eE] [rR] [aA] [lL]
-  | [lL] [eE] [aA] [dD]
-  | [lL] [eE] [aA] [dD] [iI] [nN] [gG]
-  | [lL] [eE] [aA] [vV] [eE]
-  | [lL] [eE] [fF] [tT]
-  | [lL] [iI] [kK] [eE]
-  | [lL] [iI] [mM] [iI] [tT]
-  | [lL] [iI] [nN] [eE] [aA] [rR]
-  | [lL] [iI] [nN] [eE] [sS]
-  | [lL] [oO] [aA] [dD]
-  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE]
-  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [lL] [oO] [cC] [kK]
-  | [lL] [oO] [nN] [gG]
-  | [lL] [oO] [nN] [gG] [bB] [lL] [oO] [bB]
-  | [lL] [oO] [nN] [gG] [tT] [eE] [xX] [tT]
-  | [lL] [oO] [oO] [pP]
-  | [lL] [oO] [wW] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
-  | [mM] [aA] [nN] [uU] [aA] [lL]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [bB] [iI] [nN] [dD]
-  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [vV] [eE] [rR] [iI] [fF] [yY] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [cC] [eE] [rR] [tT]
-  | [mM] [aA] [tT] [cC] [hH]
-  | [mM] [aA] [xX] [vV] [aA] [lL] [uU] [eE]
-  | [mM] [eE] [dD] [iI] [uU] [mM] [bB] [lL] [oO] [bB]
-  | [mM] [eE] [dD] [iI] [uU] [mM] [iI] [nN] [tT]
-  | [mM] [eE] [dD] [iI] [uU] [mM] [tT] [eE] [xX] [tT]
-  | [mM] [iI] [dD] [dD] [lL] [eE] [iI] [nN] [tT]
-  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [sS] [eE] [cC] [oO] [nN] [dD]
-  | [mM] [oO] [dD]
-  | [mM] [oO] [dD] [iI] [fF] [iI] [eE] [sS]
-  | [nN] [aA] [tT] [uU] [rR] [aA] [lL]
-  | [nN] [oO] [tT]
-  | [nN] [oO] "_" [wW] [rR] [iI] [tT] [eE] "_" [tT] [oO] "_" [bB] [iI] [nN] [lL] [oO] [gG]
-  | [nN] [tT] [hH] "_" [vV] [aA] [lL] [uU] [eE]
-  | [nN] [tT] [iI] [lL] [eE]
-  | [nN] [uU] [lL] [lL]
-  | [nN] [uU] [mM] [eE] [rR] [iI] [cC]
-  | [oO] [fF]
-  | [oO] [fF] [fF] [lL] [iI] [nN] [eE]
-  | [oO] [nN]
-  | [oO] [nN] [lL] [iI] [nN] [eE]
-  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE]
-  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE] [rR] "_" [cC] [oO] [sS] [tT] [sS]
-  | [oO] [pP] [tT] [iI] [oO] [nN]
-  | [oO] [pP] [tT] [iI] [oO] [nN] [aA] [lL] [lL] [yY]
-  | [oO] [rR]
-  | [oO] [rR] [dD] [eE] [rR]
-  | [oO] [uU] [tT]
-  | [oO] [uU] [tT] [eE] [rR]
-  | [oO] [uU] [tT] [fF] [iI] [lL] [eE]
-  | [oO] [vV] [eE] [rR]
-  | [pP] [aA] [rR] [aA] [lL] [lL] [eE] [lL]
-  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN]
-  | [pP] [eE] [rR] [cC] [eE] [nN] [tT] "_" [rR] [aA] [nN] [kK]
-  | [pP] [rR] [eE] [cC] [iI] [sS] [iI] [oO] [nN]
-  | [pP] [rR] [iI] [mM] [aA] [rR] [yY]
-  | [pP] [rR] [oO] [cC] [eE] [dD] [uU] [rR] [eE]
-  | [pP] [uU] [rR] [gG] [eE]
-  | [qQ] [uU] [aA] [lL] [iI] [fF] [yY]
-  | [rR] [aA] [nN] [gG] [eE]
-  | [rR] [aA] [nN] [kK]
-  | [rR] [eE] [aA] [dD]
-  | [rR] [eE] [aA] [dD] [sS]
-  | [rR] [eE] [aA] [dD] "_" [wW] [rR] [iI] [tT] [eE]
-  | [rR] [eE] [aA] [lL]
-  | [rR] [eE] [cC] [uU] [rR] [sS] [iI] [vV] [eE]
-  | [rR] [eE] [fF] [eE] [rR] [eE] [nN] [cC] [eE] [sS]
-  | [rR] [eE] [gG] [eE] [xX] [pP]
-  | [rR] [eE] [lL] [eE] [aA] [sS] [eE]
-  | [rR] [eE] [nN] [aA] [mM] [eE]
-  | [rR] [eE] [pP] [eE] [aA] [tT]
-  | [rR] [eE] [pP] [lL] [aA] [cC] [eE]
-  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE]
-  | [rR] [eE] [sS] [iI] [gG] [nN] [aA] [lL]
-  | [rR] [eE] [sS] [tT] [rR] [iI] [cC] [tT]
-  | [rR] [eE] [tT] [uU] [rR]
-  | [rR] [eE] [tT] [uU] [rR] [nN]
-  | [rR] [eE] [vV] [oO] [kK] [eE]
-  | [rR] [iI] [gG] [hH] [tT]
-  | [rR] [lL] [iI] [kK] [eE]
-  | [rR] [oO] [wW]
-  | [rR] [oO] [wW] [sS]
-  | [rR] [oO] [wW] "_" [nN] [uU] [mM] [bB] [eE] [rR]
-  | [sS] [cC] [hH] [eE] [mM] [aA]
-  | [sS] [cC] [hH] [eE] [mM] [aA] [sS]
-  | [sS] [eE] [cC] [oO] [nN] [dD] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
-  | [sS] [eE] [lL] [eE] [cC] [tT]
-  | [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
-  | [sS] [eE] [pP] [aA] [rR] [aA] [tT] [oO] [rR]
-  | [sS] [eE] [tT]
-  | [sS] [hH] [oO] [wW]
-  | [sS] [iI] [gG] [nN] [aA] [lL]
-  | [sS] [mM] [aA] [lL] [lL] [iI] [nN] [tT]
-  | [sS] [pP] [aA] [tT] [iI] [aA] [lL]
-  | [sS] [pP] [eE] [cC] [iI] [fF] [iI] [cC]
-  | [sS] [qQ] [lL]
-  | [sS] [qQ] [lL] [eE] [xX] [cC] [eE] [pP] [tT] [iI] [oO] [nN]
-  | [sS] [qQ] [lL] [sS] [tT] [aA] [tT] [eE]
-  | [sS] [qQ] [lL] [wW] [aA] [rR] [nN] [iI] [nN] [gG]
-  | [sS] [qQ] [lL] "_" [bB] [iI] [gG] "_" [rR] [eE] [sS] [uU] [lL] [tT]
-  | [sS] [qQ] [lL] "_" [cC] [aA] [lL] [cC] "_" [fF] [oO] [uU] [nN] [dD] "_" [rR] [oO] [wW] [sS]
-  | [sS] [qQ] [lL] "_" [sS] [mM] [aA] [lL] [lL] "_" [rR] [eE] [sS] [uU] [lL] [tT]
-  | [sS] [sS] [lL]
-  | [sS] [tT] [aA] [rR] [tT] [iI] [nN] [gG]
-  | [sS] [tT] [oO] [rR] [eE] [dD]
-  | [sS] [tT] [rR] [aA] [iI] [gG] [hH] [tT] "_" [jJ] [oO] [iI] [nN]
-  | [sS] [yY] [sS] [tT] [eE] [mM]
-  | [tT] [aA] [bB] [lL] [eE]
-  | [tT] [aA] [bB] [lL] [eE] [sS] [aA] [mM] [pP] [lL] [eE]
-  | [tT] [eE] [rR] [mM] [iI] [nN] [aA] [tT] [eE] [dD]
-  | [tT] [hH] [eE] [nN]
-  | [tT] [iI] [nN] [yY] [bB] [lL] [oO] [bB]
-  | [tT] [iI] [nN] [yY] [iI] [nN] [tT]
-  | [tT] [iI] [nN] [yY] [tT] [eE] [xX] [tT]
-  | [tT] [oO]
-  | [tT] [rR] [aA] [iI] [lL] [iI] [nN] [gG]
-  | [tT] [rR] [iI] [gG] [gG] [eE] [rR]
-  | [tT] [rR] [uU] [eE]
-  | [uU] [nN] [dD] [oO]
-  | [uU] [nN] [iI] [oO] [nN]
-  | [uU] [nN] [iI] [qQ] [uU] [eE]
-  | [uU] [nN] [lL] [oO] [cC] [kK]
-  | [uU] [nN] [sS] [iI] [gG] [nN] [eE] [dD]
-  | [uU] [pP] [dD] [aA] [tT] [eE]
-  | [uU] [sS] [aA] [gG] [eE]
-  | [uU] [sS] [eE]
-  | [uU] [sS] [iI] [nN] [gG]
-  | [uU] [tT] [cC] "_" [dD] [aA] [tT] [eE]
-  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE]
-  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
-  | [vV] [aA] [lL] [uU] [eE] [sS]
-  | [vV] [aA] [rR] [bB] [iI] [nN] [aA] [rR] [yY]
-  | [vV] [aA] [rR] [cC] [hH] [aA] [rR]
-  | [vV] [aA] [rR] [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
-  | [vV] [aA] [rR] [yY] [iI] [nN] [gG]
-  | [vV] [iI] [rR] [tT] [uU] [aA] [lL]
-  | [wW] [hH] [eE] [nN]
-  | [wW] [hH] [eE] [rR] [eE]
-  | [wW] [hH] [iI] [lL] [eE]
-  | [wW] [iI] [nN] [dD] [oO] [wW]
-  | [wW] [iI] [tT] [hH]
-  | [wW] [rR] [iI] [tT] [eE]
-  | [xX] [oO] [rR]
-  | [yY] [eE] [aA] [rR] "_" [mM] [oO] [nN] [tT] [hH]
-  | [zZ] [eE] [rR] [oO] [fF] [iI] [lL] [lL]
-
-@Regex
-ContextualFunctionWord = [aA] [dD] [dD] [dD] [aA] [tT] [eE]
-  | [bB] [iI] [tT] "_" [aA] [nN] [dD]
-  | [bB] [iI] [tT] "_" [oO] [rR]
-  | [bB] [iI] [tT] "_" [xX] [oO] [rR]
-  | [cC] [aA] [sS] [tT]
-  | [cC] [oO] [uU] [nN] [tT]
-  | [cC] [uU] [rR] [dD] [aA] [tT] [eE]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [dD] [aA] [tT] [eE]
-  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE]
-  | [cC] [uU] [rR] [tT] [iI] [mM] [eE]
-  | [dD] [aA] [tT] [eE] "_" [aA] [dD] [dD]
-  | [dD] [aA] [tT] [eE] "_" [sS] [uU] [bB]
-  | [eE] [xX] [tT] [rR] [aA] [cC] [tT]
-  | [gG] [rR] [oO] [uU] [pP] "_" [cC] [oO] [nN] [cC] [aA] [tT]
-  | [mM] [aA] [xX]
-  | [mM] [iI] [dD]
-  | [sS] [uU] [bB] [sS] [tT] [rR]
-  | [sS] [uU] [bB] [sS] [tT] [rR] [iI] [nN] [gG]
-  | [mM] [iI] [nN]
-  | [nN] [oO] [wW]
-  | [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
+ContextualKeywordWord
+  = [aA] [dD] [dD] [dD] [aA] [tT] [eE]
   | [sS] [eE] [sS] [sS] [iI] [oO] [nN] "_" [uU] [sS] [eE] [rR]
-  | [sS] [yY] [sS] [tT] [eE] [mM] "_" [uU] [sS] [eE] [rR]
-  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [sS] [aA] [mM] [pP]
-  | [sS] [tT] [dD] [dD] [eE] [vV]
-  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [pP] [oO] [pP]
-  | [sS] [tT] [dD]
   | [sS] [uU] [bB] [dD] [aA] [tT] [eE]
-  | [sS] [uU] [mM]
-  | [sS] [yY] [sS] [dD] [aA] [tT] [eE]
-  | [tT] [rR] [iI] [mM]
-  | [vV] [aA] [rR] [iI] [aA] [nN] [cC] [eE]
-  | [vV] [aA] [rR] "_" [pP] [oO] [pP]
-  | [vV] [aA] [rR] "_" [sS] [aA] [mM] [pP]
-
-@Regex
-ContextualKeywordWord = [aA] [dD] [dD] [dD] [aA] [tT] [eE]
-  | [sS] [eE] [sS] [sS] [iI] [oO] [nN] "_" [uU] [sS] [eE] [rR]
   | [sS] [yY] [sS] [tT] [eE] [mM] "_" [uU] [sS] [eE] [rR]
-  | [sS] [uU] [bB] [dD] [aA] [tT] [eE]
 
 @Regex
 CharsetIntroducerWord = "_" [aA] [rR] [mM] [sS] [cC] [iI] [iI] "8"
@@ -8285,3 +6640,888 @@ CharsetIntroducerWord = "_" [aA] [rR] [mM] [sS] [cC] [iI] [iI] "8"
   | "_" [uU] [tT] [fF] "8" [mM] [bB] "3"
   | "_" [uU] [tT] [fF] "8" [mM] [bB] "4"
   | "_" [uU] [tT] [fF] "8"
+
+// Derive identifier exclusions from the shared classes, rather than keeping
+// an independently copied keyword list for each context.
+@Regex
+UnquotedIdentifierRejectedKeywords = ReservedWord | UnambiguousKeywordWord | Ambiguous1Word | Ambiguous2Word | Ambiguous3Word | Ambiguous4Word
+
+@Regex
+UnquotedIdentifierWordToken = IdentifierWord \ UnquotedIdentifierRejectedKeywords \ IdentifierLiteralShape !>> IdentifierPart
+
+@Regex
+IdentifierRejectedKeywords = ReservedWord
+
+// Check at the beginning of the word, before any characters are consumed.
+// Function-only names cannot precede an adjacent '('; n/x/b commit to a
+// string/hex/bit token on any adjacent quote, even for invalid contents.
+// An adjacent signed exponent makes a number rather than an identifier.
+@Regex
+IdentifierInvalidStart = FunctionOnlyWord OpenParen
+  | LiteralIntroducer SingleQuote
+  | ExponentIdentifierWord SignedExponent
+
+@Regex
+IdentifierWordToken = IdentifierWord \ IdentifierRejectedKeywords \ IdentifierLiteralShape !>> IdentifierPart
+
+@Regex
+LabelIdentifierRejectedKeywords = ReservedWord | Ambiguous1Word | Ambiguous2Word
+
+@Regex
+LabelIdentifierWordToken = IdentifierWord \ LabelIdentifierRejectedKeywords \ IdentifierLiteralShape !>> IdentifierPart
+
+@Regex
+RoleIdentifierRejectedKeywords = ReservedWord | Ambiguous1Word | Ambiguous3Word
+
+@Regex
+RoleIdentifierWordToken = IdentifierWord \ RoleIdentifierRejectedKeywords \ IdentifierLiteralShape !>> IdentifierPart
+
+@Regex
+LValueIdentifierRejectedKeywords = ReservedWord | Ambiguous4Word
+
+@Regex
+LValueIdentifierWordToken = IdentifierWord \ LValueIdentifierRejectedKeywords \ IdentifierLiteralShape !>> IdentifierPart
+
+// The empty guard lets !>> inspect the word's starting position. No layout
+// is inserted between this guard, its restriction and the identifier token.
+@NoLayout
+IdentifierContextGuard = ()
+
+// Keyword classification is defined once in these eight disjoint classes.
+// Keep each spelling in exactly one class; the rejection rules above derive
+// their context-specific sets from these classes. Keyword terminals retain
+// their own spellings and boundaries. scripts/check_keyword_classes.py checks
+// that these copies agree, including aliases and function-call tokens.
+//
+// Reserved in every unquoted identifier context.
+@Regex
+ReservedWord
+  = [aA] [cC] [cC] [eE] [sS] [sS] [iI] [bB] [lL] [eE]
+  | [aA] [dD] [dD]
+  | [aA] [lL] [lL]
+  | [aA] [lL] [tT] [eE] [rR]
+  | [aA] [nN] [aA] [lL] [yY] [zZ] [eE]
+  | [aA] [nN] [dD]
+  | [aA] [sS]
+  | [aA] [sS] [cC]
+  | [aA] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
+  | [aA] [uU] [tT] [oO]
+  | [bB] [eE] [fF] [oO] [rR] [eE]
+  | [bB] [eE] [tT] [wW] [eE] [eE] [nN]
+  | [bB] [iI] [gG] [iI] [nN] [tT]
+  | [bB] [iI] [nN] [aA] [rR] [yY]
+  | [bB] [lL] [oO] [bB]
+  | [bB] [oO] [tT] [hH]
+  | [bB] [yY]
+  | [cC] [aA] [lL] [lL]
+  | [cC] [aA] [sS] [cC] [aA] [dD] [eE]
+  | [cC] [aA] [sS] [eE]
+  | [cC] [hH] [aA] [nN] [gG] [eE]
+  | [cC] [hH] [aA] [rR]
+  | [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
+  | [cC] [hH] [eE] [cC] [kK]
+  | [cC] [oO] [lL] [lL] [aA] [tT] [eE]
+  | [cC] [oO] [lL] [uU] [mM] [nN]
+  | [cC] [oO] [nN] [dD] [iI] [tT] [iI] [oO] [nN]
+  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT]
+  | [cC] [oO] [nN] [tT] [iI] [nN] [uU] [eE]
+  | [cC] [oO] [nN] [vV] [eE] [rR] [tT]
+  | [cC] [rR] [eE] [aA] [tT] [eE]
+  | [cC] [rR] [oO] [sS] [sS]
+  | [cC] [uU] [bB] [eE]
+  | [cC] [uU] [mM] [eE] "_" [dD] [iI] [sS] [tT]
+  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
+  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [uU] [sS] [eE] [rR]
+  | [cC] [uU] [rR] [sS] [oO] [rR]
+  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE]
+  | [dD] [aA] [tT] [aA] [bB] [aA] [sS] [eE] [sS]
+  | [dD] [aA] [yY] "_" [hH] [oO] [uU] [rR]
+  | [dD] [aA] [yY] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
+  | [dD] [aA] [yY] "_" [mM] [iI] [nN] [uU] [tT] [eE]
+  | [dD] [aA] [yY] "_" [sS] [eE] [cC] [oO] [nN] [dD]
+  | [dD] [eE] [cC]
+  | [dD] [eE] [cC] [iI] [mM] [aA] [lL]
+  | [dD] [eE] [cC] [lL] [aA] [rR] [eE]
+  | [dD] [eE] [fF] [aA] [uU] [lL] [tT]
+  | [dD] [eE] [lL] [aA] [yY] [eE] [dD]
+  | [dD] [eE] [lL] [eE] [tT] [eE]
+  | [dD] [eE] [nN] [sS] [eE] "_" [rR] [aA] [nN] [kK]
+  | [dD] [eE] [sS] [cC]
+  | [dD] [eE] [sS] [cC] [rR] [iI] [bB] [eE]
+  | [dD] [eE] [tT] [eE] [rR] [mM] [iI] [nN] [iI] [sS] [tT] [iI] [cC]
+  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT]
+  | [dD] [iI] [sS] [tT] [iI] [nN] [cC] [tT] [rR] [oO] [wW]
+  | [dD] [iI] [vV]
+  | [dD] [oO] [uU] [bB] [lL] [eE]
+  | [dD] [rR] [oO] [pP]
+  | [dD] [uU] [aA] [lL]
+  | [eE] [aA] [cC] [hH]
+  | [eE] [lL] [sS] [eE]
+  | [eE] [lL] [sS] [eE] [iI] [fF]
+  | [eE] [mM] [pP] [tT] [yY]
+  | [eE] [nN] [cC] [lL] [oO] [sS] [eE] [dD]
+  | [eE] [nN] [gG] [iI] [nN] [eE] "_" [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
+  | [eE] [sS] [cC] [aA] [pP] [eE] [dD]
+  | [eE] [xX] [cC] [eE] [pP] [tT]
+  | [eE] [xX] [iI] [sS] [tT] [sS]
+  | [eE] [xX] [iI] [tT]
+  | [eE] [xX] [pP] [lL] [aA] [iI] [nN]
+  | [fF] [aA] [lL] [sS] [eE]
+  | [fF] [eE] [tT] [cC] [hH]
+  | [fF] [iI] [rR] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
+  | [fF] [lL] [oO] [aA] [tT]
+  | [fF] [lL] [oO] [aA] [tT] "4"
+  | [fF] [lL] [oO] [aA] [tT] "8"
+  | [fF] [oO] [rR]
+  | [fF] [oO] [rR] [cC] [eE]
+  | [fF] [oO] [rR] [eE] [iI] [gG] [nN]
+  | [fF] [rR] [oO] [mM]
+  | [fF] [uU] [lL] [lL] [tT] [eE] [xX] [tT]
+  | [fF] [uU] [nN] [cC] [tT] [iI] [oO] [nN]
+  | [gG] [eE] [nN] [eE] [rR] [aA] [tT] [eE] [dD]
+  | [gG] [eE] [tT]
+  | [gG] [rR] [aA] [mM] [mM] [aA] [rR] "_" [sS] [eE] [lL] [eE] [cC] [tT] [oO] [rR] "_" [dD] [eE] [rR] [iI] [vV] [eE] [dD]
+  | [gG] [rR] [aA] [nN] [tT]
+  | [gG] [rR] [oO] [uU] [pP]
+  | [gG] [rR] [oO] [uU] [pP] [iI] [nN] [gG]
+  | [gG] [rR] [oO] [uU] [pP] [sS]
+  | [hH] [aA] [vV] [iI] [nN] [gG]
+  | [hH] [iI] [gG] [hH] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
+  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
+  | [hH] [oO] [uU] [rR] "_" [mM] [iI] [nN] [uU] [tT] [eE]
+  | [hH] [oO] [uU] [rR] "_" [sS] [eE] [cC] [oO] [nN] [dD]
+  | [iI] [fF]
+  | [iI] [gG] [nN] [oO] [rR] [eE]
+  | [iI] [nN]
+  | [iI] [nN] [dD] [eE] [xX]
+  | [iI] [nN] [fF] [iI] [lL] [eE]
+  | [iI] [nN] [nN] [eE] [rR]
+  | [iI] [nN] [oO] [uU] [tT]
+  | [iI] [nN] [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
+  | [iI] [nN] [sS] [eE] [rR] [tT]
+  | [iI] [nN] [tT]
+  | [iI] [nN] [tT] "1"
+  | [iI] [nN] [tT] "2"
+  | [iI] [nN] [tT] "3"
+  | [iI] [nN] [tT] "4"
+  | [iI] [nN] [tT] "8"
+  | [iI] [nN] [tT] [eE] [gG] [eE] [rR]
+  | [iI] [nN] [tT] [eE] [rR] [sS] [eE] [cC] [tT]
+  | [iI] [nN] [tT] [eE] [rR] [vV] [aA] [lL]
+  | [iI] [nN] [tT] [oO]
+  | [iI] [oO] "_" [aA] [fF] [tT] [eE] [rR] "_" [gG] [tT] [iI] [dD] [sS]
+  | [iI] [oO] "_" [bB] [eE] [fF] [oO] [rR] [eE] "_" [gG] [tT] [iI] [dD] [sS]
+  | [iI] [sS]
+  | [iI] [tT] [eE] [rR] [aA] [tT] [eE]
+  | [jJ] [oO] [iI] [nN]
+  | [jJ] [sS] [oO] [nN] "_" [aA] [rR] [rR] [aA] [yY] [aA] [gG] [gG]
+  | [jJ] [sS] [oO] [nN] "_" [oO] [bB] [jJ] [eE] [cC] [tT] [aA] [gG] [gG]
+  | [jJ] [sS] [oO] [nN] "_" [tT] [aA] [bB] [lL] [eE]
+  | [kK] [eE] [yY]
+  | [kK] [eE] [yY] [sS]
+  | [kK] [iI] [lL] [lL]
+  | [lL] [aA] [gG]
+  | [lL] [aA] [sS] [tT] "_" [vV] [aA] [lL] [uU] [eE]
+  | [lL] [aA] [tT] [eE] [rR] [aA] [lL]
+  | [lL] [eE] [aA] [dD]
+  | [lL] [eE] [aA] [dD] [iI] [nN] [gG]
+  | [lL] [eE] [aA] [vV] [eE]
+  | [lL] [eE] [fF] [tT]
+  | [lL] [iI] [kK] [eE]
+  | [lL] [iI] [mM] [iI] [tT]
+  | [lL] [iI] [nN] [eE] [aA] [rR]
+  | [lL] [iI] [nN] [eE] [sS]
+  | [lL] [oO] [aA] [dD]
+  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE]
+  | [lL] [oO] [cC] [aA] [lL] [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
+  | [lL] [oO] [cC] [kK]
+  | [lL] [oO] [nN] [gG]
+  | [lL] [oO] [nN] [gG] [bB] [lL] [oO] [bB]
+  | [lL] [oO] [nN] [gG] [tT] [eE] [xX] [tT]
+  | [lL] [oO] [oO] [pP]
+  | [lL] [oO] [wW] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
+  | [mM] [aA] [nN] [uU] [aA] [lL]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [bB] [iI] [nN] [dD]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [vV] [eE] [rR] [iI] [fF] [yY] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [cC] [eE] [rR] [tT]
+  | [mM] [aA] [tT] [cC] [hH]
+  | [mM] [aA] [xX] [vV] [aA] [lL] [uU] [eE]
+  | [mM] [eE] [dD] [iI] [uU] [mM] [bB] [lL] [oO] [bB]
+  | [mM] [eE] [dD] [iI] [uU] [mM] [iI] [nN] [tT]
+  | [mM] [eE] [dD] [iI] [uU] [mM] [tT] [eE] [xX] [tT]
+  | [mM] [iI] [dD] [dD] [lL] [eE] [iI] [nN] [tT]
+  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
+  | [mM] [iI] [nN] [uU] [tT] [eE] "_" [sS] [eE] [cC] [oO] [nN] [dD]
+  | [mM] [oO] [dD]
+  | [mM] [oO] [dD] [iI] [fF] [iI] [eE] [sS]
+  | [nN] [aA] [tT] [uU] [rR] [aA] [lL]
+  | [nN] [oO] "_" [wW] [rR] [iI] [tT] [eE] "_" [tT] [oO] "_" [bB] [iI] [nN] [lL] [oO] [gG]
+  | [nN] [oO] [tT]
+  | [nN] [tT] [hH] "_" [vV] [aA] [lL] [uU] [eE]
+  | [nN] [tT] [iI] [lL] [eE]
+  | [nN] [uU] [lL] [lL]
+  | [nN] [uU] [mM] [eE] [rR] [iI] [cC]
+  | [oO] [fF]
+  | [oO] [fF] [fF] [lL] [iI] [nN] [eE]
+  | [oO] [nN]
+  | [oO] [nN] [lL] [iI] [nN] [eE]
+  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE]
+  | [oO] [pP] [tT] [iI] [mM] [iI] [zZ] [eE] [rR] "_" [cC] [oO] [sS] [tT] [sS]
+  | [oO] [pP] [tT] [iI] [oO] [nN]
+  | [oO] [pP] [tT] [iI] [oO] [nN] [aA] [lL] [lL] [yY]
+  | [oO] [rR]
+  | [oO] [rR] [dD] [eE] [rR]
+  | [oO] [uU] [tT]
+  | [oO] [uU] [tT] [eE] [rR]
+  | [oO] [uU] [tT] [fF] [iI] [lL] [eE]
+  | [oO] [vV] [eE] [rR]
+  | [pP] [aA] [rR] [aA] [lL] [lL] [eE] [lL]
+  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN]
+  | [pP] [eE] [rR] [cC] [eE] [nN] [tT] "_" [rR] [aA] [nN] [kK]
+  | [pP] [rR] [eE] [cC] [iI] [sS] [iI] [oO] [nN]
+  | [pP] [rR] [iI] [mM] [aA] [rR] [yY]
+  | [pP] [rR] [oO] [cC] [eE] [dD] [uU] [rR] [eE]
+  | [pP] [uU] [rR] [gG] [eE]
+  | [qQ] [uU] [aA] [lL] [iI] [fF] [yY]
+  | [rR] [aA] [nN] [gG] [eE]
+  | [rR] [aA] [nN] [kK]
+  | [rR] [eE] [aA] [dD]
+  | [rR] [eE] [aA] [dD] "_" [wW] [rR] [iI] [tT] [eE]
+  | [rR] [eE] [aA] [dD] [sS]
+  | [rR] [eE] [aA] [lL]
+  | [rR] [eE] [cC] [uU] [rR] [sS] [iI] [vV] [eE]
+  | [rR] [eE] [fF] [eE] [rR] [eE] [nN] [cC] [eE] [sS]
+  | [rR] [eE] [gG] [eE] [xX] [pP]
+  | [rR] [eE] [lL] [eE] [aA] [sS] [eE]
+  | [rR] [eE] [nN] [aA] [mM] [eE]
+  | [rR] [eE] [pP] [eE] [aA] [tT]
+  | [rR] [eE] [pP] [lL] [aA] [cC] [eE]
+  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE]
+  | [rR] [eE] [sS] [iI] [gG] [nN] [aA] [lL]
+  | [rR] [eE] [sS] [tT] [rR] [iI] [cC] [tT]
+  | [rR] [eE] [tT] [uU] [rR]
+  | [rR] [eE] [tT] [uU] [rR] [nN]
+  | [rR] [eE] [vV] [oO] [kK] [eE]
+  | [rR] [iI] [gG] [hH] [tT]
+  | [rR] [lL] [iI] [kK] [eE]
+  | [rR] [oO] [wW]
+  | [rR] [oO] [wW] "_" [nN] [uU] [mM] [bB] [eE] [rR]
+  | [rR] [oO] [wW] [sS]
+  | [sS] [cC] [hH] [eE] [mM] [aA]
+  | [sS] [cC] [hH] [eE] [mM] [aA] [sS]
+  | [sS] [eE] [cC] [oO] [nN] [dD] "_" [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
+  | [sS] [eE] [lL] [eE] [cC] [tT]
+  | [sS] [eE] [nN] [sS] [iI] [tT] [iI] [vV] [eE]
+  | [sS] [eE] [pP] [aA] [rR] [aA] [tT] [oO] [rR]
+  | [sS] [eE] [tT]
+  | [sS] [hH] [oO] [wW]
+  | [sS] [iI] [gG] [nN] [aA] [lL]
+  | [sS] [mM] [aA] [lL] [lL] [iI] [nN] [tT]
+  | [sS] [pP] [aA] [tT] [iI] [aA] [lL]
+  | [sS] [pP] [eE] [cC] [iI] [fF] [iI] [cC]
+  | [sS] [qQ] [lL]
+  | [sS] [qQ] [lL] "_" [bB] [iI] [gG] "_" [rR] [eE] [sS] [uU] [lL] [tT]
+  | [sS] [qQ] [lL] "_" [cC] [aA] [lL] [cC] "_" [fF] [oO] [uU] [nN] [dD] "_" [rR] [oO] [wW] [sS]
+  | [sS] [qQ] [lL] "_" [sS] [mM] [aA] [lL] [lL] "_" [rR] [eE] [sS] [uU] [lL] [tT]
+  | [sS] [qQ] [lL] [eE] [xX] [cC] [eE] [pP] [tT] [iI] [oO] [nN]
+  | [sS] [qQ] [lL] [sS] [tT] [aA] [tT] [eE]
+  | [sS] [qQ] [lL] [wW] [aA] [rR] [nN] [iI] [nN] [gG]
+  | [sS] [sS] [lL]
+  | [sS] [tT] [aA] [rR] [tT] [iI] [nN] [gG]
+  | [sS] [tT] [oO] [rR] [eE] [dD]
+  | [sS] [tT] [rR] [aA] [iI] [gG] [hH] [tT] "_" [jJ] [oO] [iI] [nN]
+  | [sS] [yY] [sS] [tT] [eE] [mM]
+  | [tT] [aA] [bB] [lL] [eE]
+  | [tT] [aA] [bB] [lL] [eE] [sS] [aA] [mM] [pP] [lL] [eE]
+  | [tT] [eE] [rR] [mM] [iI] [nN] [aA] [tT] [eE] [dD]
+  | [tT] [hH] [eE] [nN]
+  | [tT] [iI] [nN] [yY] [bB] [lL] [oO] [bB]
+  | [tT] [iI] [nN] [yY] [iI] [nN] [tT]
+  | [tT] [iI] [nN] [yY] [tT] [eE] [xX] [tT]
+  | [tT] [oO]
+  | [tT] [rR] [aA] [iI] [lL] [iI] [nN] [gG]
+  | [tT] [rR] [iI] [gG] [gG] [eE] [rR]
+  | [tT] [rR] [uU] [eE]
+  | [uU] [nN] [dD] [oO]
+  | [uU] [nN] [iI] [oO] [nN]
+  | [uU] [nN] [iI] [qQ] [uU] [eE]
+  | [uU] [nN] [lL] [oO] [cC] [kK]
+  | [uU] [nN] [sS] [iI] [gG] [nN] [eE] [dD]
+  | [uU] [pP] [dD] [aA] [tT] [eE]
+  | [uU] [sS] [aA] [gG] [eE]
+  | [uU] [sS] [eE]
+  | [uU] [sS] [iI] [nN] [gG]
+  | [uU] [tT] [cC] "_" [dD] [aA] [tT] [eE]
+  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE]
+  | [uU] [tT] [cC] "_" [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
+  | [vV] [aA] [lL] [uU] [eE] [sS]
+  | [vV] [aA] [rR] [bB] [iI] [nN] [aA] [rR] [yY]
+  | [vV] [aA] [rR] [cC] [hH] [aA] [rR]
+  | [vV] [aA] [rR] [cC] [hH] [aA] [rR] [aA] [cC] [tT] [eE] [rR]
+  | [vV] [aA] [rR] [yY] [iI] [nN] [gG]
+  | [vV] [iI] [rR] [tT] [uU] [aA] [lL]
+  | [wW] [hH] [eE] [nN]
+  | [wW] [hH] [eE] [rR] [eE]
+  | [wW] [hH] [iI] [lL] [eE]
+  | [wW] [iI] [nN] [dD] [oO] [wW]
+  | [wW] [iI] [tT] [hH]
+  | [wW] [rR] [iI] [tT] [eE]
+  | [xX] [oO] [rR]
+  | [yY] [eE] [aA] [rR] "_" [mM] [oO] [nN] [tT] [hH]
+  | [zZ] [eE] [rR] [oO] [fF] [iI] [lL] [lL]
+
+// Admitted in every identifier context except unquoted function names.
+@Regex
+UnambiguousKeywordWord
+  = [aA] [cC] [cC] [oO] [uU] [nN] [tT]
+  | [aA] [cC] [tT] [iI] [oO] [nN]
+  | [aA] [cC] [tT] [iI] [vV] [eE]
+  | [aA] [dD] [mM] [iI] [nN]
+  | [aA] [fF] [tT] [eE] [rR]
+  | [aA] [gG] [aA] [iI] [nN] [sS] [tT]
+  | [aA] [gG] [gG] [rR] [eE] [gG] [aA] [tT] [eE]
+  | [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM]
+  | [aA] [lL] [wW] [aA] [yY] [sS]
+  | [aA] [nN] [yY]
+  | [aA] [rR] [rR] [aA] [yY]
+  | [aA] [sS] [sS] [iI] [gG] [nN] "_" [gG] [tT] [iI] [dD] [sS] "_" [tT] [oO] "_" [aA] [nN] [oO] [nN] [yY] [mM] [oO] [uU] [sS] "_" [tT] [rR] [aA] [nN] [sS] [aA] [cC] [tT] [iI] [oO] [nN] [sS]
+  | [aA] [tT]
+  | [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
+  | [aA] [uU] [tT] [hH] [eE] [nN] [tT] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
+  | [aA] [uU] [tT] [oO] "_" [iI] [nN] [cC] [rR] [eE] [mM] [eE] [nN] [tT]
+  | [aA] [uU] [tT] [oO] [eE] [xX] [tT] [eE] [nN] [dD] "_" [sS] [iI] [zZ] [eE]
+  | [aA] [vV] [gG]
+  | [aA] [vV] [gG] "_" [rR] [oO] [wW] "_" [lL] [eE] [nN] [gG] [tT] [hH]
+  | [bB] [aA] [cC] [kK] [uU] [pP]
+  | [bB] [eE] [rR] [nN] [oO] [uU] [lL] [lL] [iI]
+  | [bB] [iI] [nN] [lL] [oO] [gG]
+  | [bB] [iI] [tT]
+  | [bB] [lL] [oO] [cC] [kK]
+  | [bB] [oO] [oO] [lL]
+  | [bB] [oO] [oO] [lL] [eE] [aA] [nN]
+  | [bB] [tT] [rR] [eE] [eE]
+  | [bB] [uU] [cC] [kK] [eE] [tT] [sS]
+  | [bB] [uU] [lL] [kK]
+  | [cC] [aA] [sS] [cC] [aA] [dD] [eE] [dD]
+  | [cC] [aA] [tT] [aA] [lL] [oO] [gG] "_" [nN] [aA] [mM] [eE]
+  | [cC] [hH] [aA] [iI] [nN]
+  | [cC] [hH] [aA] [lL] [lL] [eE] [nN] [gG] [eE] "_" [rR] [eE] [sS] [pP] [oO] [nN] [sS] [eE]
+  | [cC] [hH] [aA] [nN] [gG] [eE] [dD]
+  | [cC] [hH] [aA] [nN] [nN] [eE] [lL]
+  | [cC] [iI] [pP] [hH] [eE] [rR]
+  | [cC] [lL] [aA] [sS] [sS] "_" [oO] [rR] [iI] [gG] [iI] [nN]
+  | [cC] [lL] [iI] [eE] [nN] [tT]
+  | [cC] [lL] [oO] [sS] [eE]
+  | [cC] [oO] [aA] [lL] [eE] [sS] [cC] [eE]
+  | [cC] [oO] [dD] [eE]
+  | [cC] [oO] [lL] [lL] [aA] [tT] [iI] [oO] [nN]
+  | [cC] [oO] [lL] [uU] [mM] [nN] "_" [fF] [oO] [rR] [mM] [aA] [tT]
+  | [cC] [oO] [lL] [uU] [mM] [nN] "_" [nN] [aA] [mM] [eE]
+  | [cC] [oO] [lL] [uU] [mM] [nN] [sS]
+  | [cC] [oO] [mM] [mM] [iI] [tT] [tT] [eE] [dD]
+  | [cC] [oO] [mM] [pP] [aA] [cC] [tT]
+  | [cC] [oO] [mM] [pP] [lL] [eE] [tT] [iI] [oO] [nN]
+  | [cC] [oO] [mM] [pP] [oO] [nN] [eE] [nN] [tT]
+  | [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [eE] [dD]
+  | [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN]
+  | [cC] [oO] [nN] [cC] [uU] [rR] [rR] [eE] [nN] [tT]
+  | [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN]
+  | [cC] [oO] [nN] [sS] [iI] [sS] [tT] [eE] [nN] [tT]
+  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [cC] [aA] [tT] [aA] [lL] [oO] [gG]
+  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [nN] [aA] [mM] [eE]
+  | [cC] [oO] [nN] [sS] [tT] [rR] [aA] [iI] [nN] [tT] "_" [sS] [cC] [hH] [eE] [mM] [aA]
+  | [cC] [oO] [nN] [tT] [eE] [xX] [tT]
+  | [cC] [pP] [uU]
+  | [cC] [uU] [rR] [rR] [eE] [nN] [tT]
+  | [cC] [uU] [rR] [sS] [oO] [rR] "_" [nN] [aA] [mM] [eE]
+  | [dD] [aA] [tT] [aA]
+  | [dD] [aA] [tT] [aA] [fF] [iI] [lL] [eE]
+  | [dD] [aA] [tT] [eE]
+  | [dD] [aA] [tT] [eE] [tT] [iI] [mM] [eE]
+  | [dD] [aA] [yY]
+  | [dD] [aA] [yY] [oO] [fF] [mM] [oO] [nN] [tT] [hH]
+  | [dD] [eE] [fF] [aA] [uU] [lL] [tT] "_" [aA] [uU] [tT] [hH]
+  | [dD] [eE] [fF] [iI] [nN] [eE] [rR]
+  | [dD] [eE] [fF] [iI] [nN] [iI] [tT] [iI] [oO] [nN]
+  | [dD] [eE] [lL] [aA] [yY] "_" [kK] [eE] [yY] "_" [wW] [rR] [iI] [tT] [eE]
+  | [dD] [eE] [sS] [cC] [rR] [iI] [pP] [tT] [iI] [oO] [nN]
+  | [dD] [iI] [aA] [gG] [nN] [oO] [sS] [tT] [iI] [cC] [sS]
+  | [dD] [iI] [rR] [eE] [cC] [tT] [oO] [rR] [yY]
+  | [dD] [iI] [sS] [aA] [bB] [lL] [eE]
+  | [dD] [iI] [sS] [cC] [aA] [rR] [dD]
+  | [dD] [iI] [sS] [kK]
+  | [dD] [uU] [mM] [pP] [fF] [iI] [lL] [eE]
+  | [dD] [uU] [pP] [lL] [iI] [cC] [aA] [tT] [eE]
+  | [dD] [yY] [nN] [aA] [mM] [iI] [cC]
+  | [eE] [nN] [aA] [bB] [lL] [eE]
+  | [eE] [nN] [cC] [rR] [yY] [pP] [tT] [iI] [oO] [nN]
+  | [eE] [nN] [dD] [sS]
+  | [eE] [nN] [fF] [oO] [rR] [cC] [eE] [dD]
+  | [eE] [nN] [gG] [iI] [nN] [eE]
+  | [eE] [nN] [gG] [iI] [nN] [eE] [sS]
+  | [eE] [nN] [uU] [mM]
+  | [eE] [rR] [rR] [oO] [rR]
+  | [eE] [rR] [rR] [oO] [rR] [sS]
+  | [eE] [sS] [cC] [aA] [pP] [eE]
+  | [eE] [vV] [eE] [nN] [tT] [sS]
+  | [eE] [vV] [eE] [rR] [yY]
+  | [eE] [xX] [cC] [hH] [aA] [nN] [gG] [eE]
+  | [eE] [xX] [cC] [lL] [uU] [dD] [eE]
+  | [eE] [xX] [pP] [aA] [nN] [sS] [iI] [oO] [nN]
+  | [eE] [xX] [pP] [iI] [rR] [eE]
+  | [eE] [xX] [pP] [oO] [rR] [tT]
+  | [eE] [xX] [tT] [eE] [nN] [dD] [eE] [dD]
+  | [eE] [xX] [tT] [eE] [nN] [tT] "_" [sS] [iI] [zZ] [eE]
+  | [fF] [aA] [cC] [tT] [oO] [rR]
+  | [fF] [aA] [iI] [lL] [eE] [dD] "_" [lL] [oO] [gG] [iI] [nN] "_" [aA] [tT] [tT] [eE] [mM] [pP] [tT] [sS]
+  | [fF] [aA] [sS] [tT]
+  | [fF] [aA] [uU] [lL] [tT] [sS]
+  | [fF] [iI] [eE] [lL] [dD] [sS]
+  | [fF] [iI] [lL] [eE] "_" [bB] [lL] [oO] [cC] [kK] "_" [sS] [iI] [zZ] [eE]
+  | [fF] [iI] [lL] [tT] [eE] [rR]
+  | [fF] [iI] [nN] [iI] [sS] [hH]
+  | [fF] [iI] [rR] [sS] [tT]
+  | [fF] [iI] [xX] [eE] [dD]
+  | [fF] [oO] [lL] [lL] [oO] [wW] [iI] [nN] [gG]
+  | [fF] [oO] [rR] [mM] [aA] [tT]
+  | [fF] [oO] [uU] [nN] [dD]
+  | [fF] [uU] [lL] [lL]
+  | [gG] [eE] [nN] [eE] [rR] [aA] [lL]
+  | [gG] [eE] [nN] [eE] [rR] [aA] [tT] [eE]
+  | [gG] [eE] [oO] [mM] [cC] [oO] [lL] [lL] [eE] [cC] [tT] [iI] [oO] [nN]
+  | [gG] [eE] [oO] [mM] [eE] [tT] [rR] [yY]
+  | [gG] [eE] [oO] [mM] [eE] [tT] [rR] [yY] [cC] [oO] [lL] [lL] [eE] [cC] [tT] [iI] [oO] [nN]
+  | [gG] [eE] [tT] "_" [fF] [oO] [rR] [mM] [aA] [tT]
+  | [gG] [eE] [tT] "_" [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY]
+  | [gG] [eE] [tT] "_" [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY]
+  | [gG] [rR] [aA] [nN] [tT] [sS]
+  | [gG] [rR] [oO] [uU] [pP] "_" [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
+  | [gG] [tT] [iI] [dD] "_" [oO] [nN] [lL] [yY]
+  | [gG] [tT] [iI] [dD] [sS]
+  | [hH] [aA] [sS] [hH]
+  | [hH] [iI] [sS] [tT] [oO] [gG] [rR] [aA] [mM]
+  | [hH] [iI] [sS] [tT] [oO] [rR] [yY]
+  | [hH] [oO] [sS] [tT]
+  | [hH] [oO] [sS] [tT] [sS]
+  | [hH] [oO] [uU] [rR]
+  | [iI] [dD] [eE] [nN] [tT] [iI] [fF] [iI] [eE] [dD]
+  | [iI] [gG] [nN] [oO] [rR] [eE] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [iI] [dD] [sS]
+  | [iI] [nN] [aA] [cC] [tT] [iI] [vV] [eE]
+  | [iI] [nN] [dD] [eE] [xX] [eE] [sS]
+  | [iI] [nN] [iI] [tT] [iI] [aA] [lL]
+  | [iI] [nN] [iI] [tT] [iI] [aA] [lL] "_" [sS] [iI] [zZ] [eE]
+  | [iI] [nN] [iI] [tT] [iI] [aA] [tT] [eE]
+  | [iI] [nN] [sS] [eE] [rR] [tT] "_" [mM] [eE] [tT] [hH] [oO] [dD]
+  | [iI] [nN] [sS] [tT] [aA] [nN] [cC] [eE]
+  | [iI] [nN] [vV] [iI] [sS] [iI] [bB] [lL] [eE]
+  | [iI] [nN] [vV] [oO] [kK] [eE] [rR]
+  | [iI] [oO]
+  | [iI] [oO] "_" [tT] [hH] [rR] [eE] [aA] [dD]
+  | [iI] [pP] [cC]
+  | [iI] [sS] [oO] [lL] [aA] [tT] [iI] [oO] [nN]
+  | [iI] [sS] [sS] [uU] [eE] [rR]
+  | [jJ] [sS] [oO] [nN]
+  | [jJ] [sS] [oO] [nN] "_" [vV] [aA] [lL] [uU] [eE]
+  | [kK] [eE] [yY] "_" [bB] [lL] [oO] [cC] [kK] "_" [sS] [iI] [zZ] [eE]
+  | [kK] [eE] [yY] [rR] [iI] [nN] [gG]
+  | [lL] [aA] [sS] [tT]
+  | [lL] [eE] [aA] [vV] [eE] [sS]
+  | [lL] [eE] [sS] [sS]
+  | [lL] [eE] [vV] [eE] [lL]
+  | [lL] [iI] [nN] [eE] [sS] [tT] [rR] [iI] [nN] [gG]
+  | [lL] [iI] [sS] [tT]
+  | [lL] [oO] [cC] [kK] [eE] [dD]
+  | [lL] [oO] [cC] [kK] [sS]
+  | [lL] [oO] [gG]
+  | [lL] [oO] [gG] [fF] [iI] [lL] [eE]
+  | [lL] [oO] [gG] [sS]
+  | [mM] [aA] [sS] [tT] [eE] [rR]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [aA] [uU] [tT] [oO] "_" [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM] [sS]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] "_" [rR] [eE] [tT] [rR] [yY]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [dD] [eE] [lL] [aA] [yY]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [hH] [eE] [aA] [rR] [tT] [bB] [eE] [aA] [tT] "_" [pP] [eE] [rR] [iI] [oO] [dD]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [hH] [oO] [sS] [tT]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [oO] [rR] [tT]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY] "_" [pP] [aA] [tT] [hH]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [rR] [eE] [tT] [rR] [yY] "_" [cC] [oO] [uU] [nN] [tT]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [aA]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [aA] [pP] [aA] [tT] [hH]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [eE] [rR] [tT]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [iI] [pP] [hH] [eE] [rR]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL] [pP] [aA] [tT] [hH]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [sS] [sS] [lL] "_" [kK] [eE] [yY]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [tT] [lL] [sS] "_" [cC] [iI] [pP] [hH] [eE] [rR] [sS] [uU] [iI] [tT] [eE] [sS]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [tT] [lL] [sS] "_" [vV] [eE] [rR] [sS] [iI] [oO] [nN]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [uU] [sS] [eE] [rR]
+  | [mM] [aA] [sS] [tT] [eE] [rR] "_" [zZ] [sS] [tT] [dD] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [lL] [eE] [vV] [eE] [lL]
+  | [mM] [aA] [xX] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
+  | [mM] [aA] [xX] "_" [qQ] [uU] [eE] [rR] [iI] [eE] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
+  | [mM] [aA] [xX] "_" [rR] [oO] [wW] [sS]
+  | [mM] [aA] [xX] "_" [sS] [iI] [zZ] [eE]
+  | [mM] [aA] [xX] "_" [uU] [pP] [dD] [aA] [tT] [eE] [sS] "_" [pP] [eE] [rR] "_" [hH] [oO] [uU] [rR]
+  | [mM] [aA] [xX] "_" [uU] [sS] [eE] [rR] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] [sS]
+  | [mM] [eE] [dD] [iI] [uU] [mM]
+  | [mM] [eE] [mM] [bB] [eE] [rR]
+  | [mM] [eE] [mM] [oO] [rR] [yY]
+  | [mM] [eE] [rR] [gG] [eE]
+  | [mM] [eE] [sS] [sS] [aA] [gG] [eE] "_" [tT] [eE] [xX] [tT]
+  | [mM] [iI] [cC] [rR] [oO] [sS] [eE] [cC] [oO] [nN] [dD]
+  | [mM] [iI] [gG] [rR] [aA] [tT] [eE]
+  | [mM] [iI] [nN] "_" [rR] [oO] [wW] [sS]
+  | [mM] [iI] [nN] [uU] [tT] [eE]
+  | [mM] [oO] [dD] [eE]
+  | [mM] [oO] [dD] [iI] [fF] [yY]
+  | [mM] [oO] [nN] [tT] [hH]
+  | [mM] [uU] [lL] [tT] [iI] [lL] [iI] [nN] [eE] [sS] [tT] [rR] [iI] [nN] [gG]
+  | [mM] [uU] [lL] [tT] [iI] [pP] [oO] [iI] [nN] [tT]
+  | [mM] [uU] [lL] [tT] [iI] [pP] [oO] [lL] [yY] [gG] [oO] [nN]
+  | [mM] [uU] [tT] [eE] [xX]
+  | [mM] [yY] [sS] [qQ] [lL] "_" [eE] [rR] [rR] [nN] [oO]
+  | [nN] [aA] [mM] [eE]
+  | [nN] [aA] [mM] [eE] [sS]
+  | [nN] [aA] [tT] [iI] [oO] [nN] [aA] [lL]
+  | [nN] [cC] [hH] [aA] [rR]
+  | [nN] [dD] [bB]
+  | [nN] [dD] [bB] [cC] [lL] [uU] [sS] [tT] [eE] [rR]
+  | [nN] [eE] [sS] [tT] [eE] [dD]
+  | [nN] [eE] [tT] [wW] [oO] [rR] [kK] "_" [nN] [aA] [mM] [eE] [sS] [pP] [aA] [cC] [eE]
+  | [nN] [eE] [vV] [eE] [rR]
+  | [nN] [eE] [wW]
+  | [nN] [eE] [xX] [tT]
+  | [nN] [oO] "_" [wW] [aA] [iI] [tT]
+  | [nN] [oO] [dD] [eE] [gG] [rR] [oO] [uU] [pP]
+  | [nN] [oO] [wW] [aA] [iI] [tT]
+  | [nN] [uU] [lL] [lL] [sS]
+  | [nN] [uU] [mM] [bB] [eE] [rR]
+  | [nN] [vV] [aA] [rR] [cC] [hH] [aA] [rR]
+  | [oO] [fF] [fF]
+  | [oO] [fF] [fF] [sS] [eE] [tT]
+  | [oO] [jJ]
+  | [oO] [lL] [dD]
+  | [oO] [nN] [eE]
+  | [oO] [nN] [lL] [yY]
+  | [oO] [pP] [eE] [nN]
+  | [oO] [pP] [tT] [iI] [oO] [nN] [aA] [lL]
+  | [oO] [pP] [tT] [iI] [oO] [nN] [sS]
+  | [oO] [rR] [dD] [iI] [nN] [aA] [lL] [iI] [tT] [yY]
+  | [oO] [rR] [gG] [aA] [nN] [iI] [zZ] [aA] [tT] [iI] [oO] [nN]
+  | [oO] [tT] [hH] [eE] [rR] [sS]
+  | [oO] [wW] [nN] [eE] [rR]
+  | [pP] [aA] [cC] [kK] "_" [kK] [eE] [yY] [sS]
+  | [pP] [aA] [gG] [eE]
+  | [pP] [aA] [rR] [sS] [eE] "_" [tT] [rR] [eE] [eE]
+  | [pP] [aA] [rR] [sS] [eE] [rR]
+  | [pP] [aA] [rR] [tT] [iI] [aA] [lL]
+  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [iI] [nN] [gG]
+  | [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [sS]
+  | [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
+  | [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD] "_" [lL] [oO] [cC] [kK] "_" [tT] [iI] [mM] [eE]
+  | [pP] [aA] [tT] [hH]
+  | [pP] [hH] [aA] [sS] [eE]
+  | [pP] [lL] [uU] [gG] [iI] [nN]
+  | [pP] [lL] [uU] [gG] [iI] [nN] "_" [dD] [iI] [rR]
+  | [pP] [lL] [uU] [gG] [iI] [nN] [sS]
+  | [pP] [oO] [iI] [nN] [tT]
+  | [pP] [oO] [lL] [yY] [gG] [oO] [nN]
+  | [pP] [oO] [rR] [tT]
+  | [pP] [rR] [eE] [cC] [eE] [dD] [iI] [nN] [gG]
+  | [pP] [rR] [eE] [sS] [eE] [rR] [vV] [eE]
+  | [pP] [rR] [eE] [vV]
+  | [pP] [rR] [iI] [vV] [iI] [lL] [eE] [gG] [eE] "_" [cC] [hH] [eE] [cC] [kK] [sS] "_" [uU] [sS] [eE] [rR]
+  | [pP] [rR] [iI] [vV] [iI] [lL] [eE] [gG] [eE] [sS]
+  | [pP] [rR] [oO] [cC] [eE] [sS] [sS] [lL] [iI] [sS] [tT]
+  | [pP] [rR] [oO] [fF] [iI] [lL] [eE]
+  | [pP] [rR] [oO] [fF] [iI] [lL] [eE] [sS]
+  | [qQ] [uU] [aA] [rR] [tT] [eE] [rR]
+  | [qQ] [uU] [eE] [rR] [yY]
+  | [qQ] [uU] [iI] [cC] [kK]
+  | [rR] [aA] [nN] [dD] [oO] [mM]
+  | [rR] [eE] [aA] [dD] "_" [oO] [nN] [lL] [yY]
+  | [rR] [eE] [bB] [uU] [iI] [lL] [dD]
+  | [rR] [eE] [cC] [oO] [vV] [eE] [rR]
+  | [rR] [eE] [dD] [oO] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [sS] [iI] [zZ] [eE]
+  | [rR] [eE] [dD] [uU] [nN] [dD] [aA] [nN] [tT]
+  | [rR] [eE] [fF] [eE] [rR] [eE] [nN] [cC] [eE]
+  | [rR] [eE] [gG] [iI] [sS] [tT] [rR] [aA] [tT] [iI] [oO] [nN]
+  | [rR] [eE] [lL] [aA] [yY]
+  | [rR] [eE] [lL] [aA] [yY] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
+  | [rR] [eE] [lL] [aA] [yY] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
+  | [rR] [eE] [lL] [aA] [yY] "_" [tT] [hH] [rR] [eE] [aA] [dD]
+  | [rR] [eE] [lL] [aA] [yY] [lL] [oO] [gG]
+  | [rR] [eE] [mM] [oO] [vV] [eE]
+  | [rR] [eE] [oO] [rR] [gG] [aA] [nN] [iI] [zZ] [eE]
+  | [rR] [eE] [pP] [eE] [aA] [tT] [aA] [bB] [lL] [eE]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [sS]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [dD] [oO] "_" [dD] [bB]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL] [eE]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [dD] [bB]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [rR] [eE] [wW] [rR] [iI] [tT] [eE] "_" [dD]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [rR] [eE] [wW] [rR] [iI] [tT] [eE] "_" [dD] [bB]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [dD] [oO] "_" [tT] [aA] [bB] [lL] [eE]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [eE] "_" [wW] [iI] [lL] [dD] "_" [iI] [gG] [nN] [oO] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE]
+  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE] "_" [rR] [oO] [wW] "_" [fF] [oO] [rR] [mM] [aA] [tT]
+  | [rR] [eE] [qQ] [uU] [iI] [rR] [eE] "_" [tT] [aA] [bB] [lL] [eE] "_" [pP] [rR] [iI] [mM] [aA] [rR] [yY] "_" [kK] [eE] [yY] "_" [cC] [hH] [eE] [cC] [kK]
+  | [rR] [eE] [sS] [pP] [eE] [cC] [tT]
+  | [rR] [eE] [sS] [tT] [oO] [rR] [eE]
+  | [rR] [eE] [sS] [uU] [mM] [eE]
+  | [rR] [eE] [tT] [aA] [iI] [nN]
+  | [rR] [eE] [tT] [uU] [rR] [nN] [eE] [dD] "_" [sS] [qQ] [lL] [sS] [tT] [aA] [tT] [eE]
+  | [rR] [eE] [tT] [uU] [rR] [nN] [iI] [nN] [gG]
+  | [rR] [eE] [tT] [uU] [rR] [nN] [sS]
+  | [rR] [eE] [uU] [sS] [eE]
+  | [rR] [eE] [vV] [eE] [rR] [sS] [eE]
+  | [rR] [oO] [lL] [eE]
+  | [rR] [oO] [lL] [lL] [uU] [pP]
+  | [rR] [oO] [tT] [aA] [tT] [eE]
+  | [rR] [oO] [uU] [tT] [iI] [nN] [eE]
+  | [rR] [oO] [wW] "_" [cC] [oO] [uU] [nN] [tT]
+  | [rR] [oO] [wW] "_" [fF] [oO] [rR] [mM] [aA] [tT]
+  | [rR] [tT] [rR] [eE] [eE]
+  | [sS] "3"
+  | [sS] [cC] [hH] [eE] [dD] [uU] [lL] [eE]
+  | [sS] [cC] [hH] [eE] [mM] [aA] "_" [nN] [aA] [mM] [eE]
+  | [sS] [eE] [cC] [oO] [nN] [dD]
+  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY]
+  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [eE] [nN] [gG] [iI] [nN] [eE]
+  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [eE] [nN] [gG] [iI] [nN] [eE] "_" [aA] [tT] [tT] [rR] [iI] [bB] [uU] [tT] [eE]
+  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [lL] [oO] [aA] [dD]
+  | [sS] [eE] [cC] [oO] [nN] [dD] [aA] [rR] [yY] "_" [uU] [nN] [lL] [oO] [aA] [dD]
+  | [sS] [eE] [cC] [uU] [rR] [iI] [tT] [yY]
+  | [sS] [eE] [rR] [iI] [aA] [lL]
+  | [sS] [eE] [rR] [iI] [aA] [lL] [iI] [zZ] [aA] [bB] [lL] [eE]
+  | [sS] [eE] [rR] [vV] [eE] [rR]
+  | [sS] [hH] [aA] [rR] [eE]
+  | [sS] [iI] [mM] [pP] [lL] [eE]
+  | [sS] [kK] [iI] [pP]
+  | [sS] [lL] [oO] [wW]
+  | [sS] [nN] [aA] [pP] [sS] [hH] [oO] [tT]
+  | [sS] [oO] [cC] [kK] [eE] [tT]
+  | [sS] [oO] [mM] [eE]
+  | [sS] [oO] [nN] [aA] [mM] [eE]
+  | [sS] [oO] [uU] [nN] [dD] [sS]
+  | [sS] [oO] [uU] [rR] [cC] [eE]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [aA] [uU] [tT] [oO] "_" [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [bB] [iI] [nN] [dD]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [aA] [lL] [gG] [oO] [rR] [iI] [tT] [hH] [mM] [sS]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] "_" [rR] [eE] [tT] [rR] [yY]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [cC] [oO] [nN] [nN] [eE] [cC] [tT] [iI] [oO] [nN] "_" [aA] [uU] [tT] [oO] "_" [fF] [aA] [iI] [lL] [oO] [vV] [eE] [rR]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [dD] [eE] [lL] [aA] [yY]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [hH] [eE] [aA] [rR] [tT] [bB] [eE] [aA] [tT] "_" [pP] [eE] [rR] [iI] [oO] [dD]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [hH] [oO] [sS] [tT]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [lL] [oO] [gG] "_" [fF] [iI] [lL] [eE]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [lL] [oO] [gG] "_" [pP] [oO] [sS]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [aA] [sS] [sS] [wW] [oO] [rR] [dD]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [oO] [rR] [tT]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [pP] [uU] [bB] [lL] [iI] [cC] "_" [kK] [eE] [yY] "_" [pP] [aA] [tT] [hH]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [rR] [eE] [tT] [rR] [yY] "_" [cC] [oO] [uU] [nN] [tT]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [aA]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [aA] [pP] [aA] [tT] [hH]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [eE] [rR] [tT]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [iI] [pP] [hH] [eE] [rR]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [cC] [rR] [lL] [pP] [aA] [tT] [hH]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [kK] [eE] [yY]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [sS] [sS] [lL] "_" [vV] [eE] [rR] [iI] [fF] [yY] "_" [sS] [eE] [rR] [vV] [eE] [rR] "_" [cC] [eE] [rR] [tT]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [tT] [lL] [sS] "_" [cC] [iI] [pP] [hH] [eE] [rR] [sS] [uU] [iI] [tT] [eE] [sS]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [tT] [lL] [sS] "_" [vV] [eE] [rR] [sS] [iI] [oO] [nN]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [uU] [sS] [eE] [rR]
+  | [sS] [oO] [uU] [rR] [cC] [eE] "_" [zZ] [sS] [tT] [dD] "_" [cC] [oO] [mM] [pP] [rR] [eE] [sS] [sS] [iI] [oO] [nN] "_" [lL] [eE] [vV] [eE] [lL]
+  | [sS] [qQ] [lL] "_" [aA] [fF] [tT] [eE] [rR] "_" [gG] [tT] [iI] [dD] [sS]
+  | [sS] [qQ] [lL] "_" [aA] [fF] [tT] [eE] [rR] "_" [mM] [tT] [sS] "_" [gG] [aA] [pP] [sS]
+  | [sS] [qQ] [lL] "_" [bB] [eE] [fF] [oO] [rR] [eE] "_" [gG] [tT] [iI] [dD] [sS]
+  | [sS] [qQ] [lL] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [rR] [eE] [sS] [uU] [lL] [tT]
+  | [sS] [qQ] [lL] "_" [nN] [oO] "_" [cC] [aA] [cC] [hH] [eE]
+  | [sS] [qQ] [lL] "_" [tT] [hH] [rR] [eE] [aA] [dD]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [dD] [aA] [yY]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [hH] [oO] [uU] [rR]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [mM] [iI] [nN] [uU] [tT] [eE]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [mM] [oO] [nN] [tT] [hH]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [qQ] [uU] [aA] [rR] [tT] [eE] [rR]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [sS] [eE] [cC] [oO] [nN] [dD]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [wW] [eE] [eE] [kK]
+  | [sS] [qQ] [lL] "_" [tT] [sS] [iI] "_" [yY] [eE] [aA] [rR]
+  | [sS] [rR] [iI] [dD]
+  | [sS] [tT] "_" [cC] [oO] [lL] [lL] [eE] [cC] [tT]
+  | [sS] [tT] [aA] [cC] [kK] [eE] [dD]
+  | [sS] [tT] [aA] [rR] [tT] [sS]
+  | [sS] [tT] [aA] [tT] [sS] "_" [aA] [uU] [tT] [oO] "_" [rR] [eE] [cC] [aA] [lL] [cC]
+  | [sS] [tT] [aA] [tT] [sS] "_" [pP] [eE] [rR] [sS] [iI] [sS] [tT] [eE] [nN] [tT]
+  | [sS] [tT] [aA] [tT] [sS] "_" [sS] [aA] [mM] [pP] [lL] [eE] "_" [pP] [aA] [gG] [eE] [sS]
+  | [sS] [tT] [aA] [tT] [uU] [sS]
+  | [sS] [tT] [oO] [rR] [aA] [gG] [eE]
+  | [sS] [tT] [rR] [eE] [aA] [mM]
+  | [sS] [tT] [rR] [iI] [nN] [gG]
+  | [sS] [uU] [bB] [cC] [lL] [aA] [sS] [sS] "_" [oO] [rR] [iI] [gG] [iI] [nN]
+  | [sS] [uU] [bB] [jJ] [eE] [cC] [tT]
+  | [sS] [uU] [bB] [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN]
+  | [sS] [uU] [bB] [pP] [aA] [rR] [tT] [iI] [tT] [iI] [oO] [nN] [sS]
+  | [sS] [uU] [sS] [pP] [eE] [nN] [dD]
+  | [sS] [wW] [aA] [pP] [sS]
+  | [sS] [wW] [iI] [tT] [cC] [hH] [eE] [sS]
+  | [tT] [aA] [bB] [lL] [eE] "_" [cC] [hH] [eE] [cC] [kK] [sS] [uU] [mM]
+  | [tT] [aA] [bB] [lL] [eE] "_" [nN] [aA] [mM] [eE]
+  | [tT] [aA] [bB] [lL] [eE] [sS]
+  | [tT] [aA] [bB] [lL] [eE] [sS] [pP] [aA] [cC] [eE]
+  | [tT] [eE] [mM] [pP] [oO] [rR] [aA] [rR] [yY]
+  | [tT] [eE] [mM] [pP] [tT] [aA] [bB] [lL] [eE]
+  | [tT] [eE] [xX] [tT]
+  | [tT] [hH] [aA] [nN]
+  | [tT] [hH] [rR] [eE] [aA] [dD] "_" [pP] [rR] [iI] [oO] [rR] [iI] [tT] [yY]
+  | [tT] [iI] [eE] [sS]
+  | [tT] [iI] [mM] [eE]
+  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP]
+  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP] [aA] [dD] [dD]
+  | [tT] [iI] [mM] [eE] [sS] [tT] [aA] [mM] [pP] [dD] [iI] [fF] [fF]
+  | [tT] [lL] [sS]
+  | [tT] [rR] [aA] [nN] [sS] [aA] [cC] [tT] [iI] [oO] [nN]
+  | [tT] [rR] [iI] [gG] [gG] [eE] [rR] [sS]
+  | [tT] [yY] [pP] [eE]
+  | [tT] [yY] [pP] [eE] [sS]
+  | [uU] [nN] [bB] [oO] [uU] [nN] [dD] [eE] [dD]
+  | [uU] [nN] [cC] [oO] [mM] [mM] [iI] [tT] [tT] [eE] [dD]
+  | [uU] [nN] [dD] [eE] [fF] [iI] [nN] [eE] [dD]
+  | [uU] [nN] [dD] [oO] "_" [bB] [uU] [fF] [fF] [eE] [rR] "_" [sS] [iI] [zZ] [eE]
+  | [uU] [nN] [dD] [oO] [fF] [iI] [lL] [eE]
+  | [uU] [nN] [kK] [nN] [oO] [wW] [nN]
+  | [uU] [nN] [rR] [eE] [gG] [iI] [sS] [tT] [eE] [rR]
+  | [uU] [nN] [tT] [iI] [lL]
+  | [uU] [pP] [gG] [rR] [aA] [dD] [eE]
+  | [uU] [rR] [lL]
+  | [uU] [sS] [eE] "_" [fF] [rR] [mM]
+  | [uU] [sS] [eE] [rR]
+  | [uU] [sS] [eE] [rR] "_" [rR] [eE] [sS] [oO] [uU] [rR] [cC] [eE] [sS]
+  | [vV] [aA] [lL] [iI] [dD] [aA] [tT] [iI] [oO] [nN]
+  | [vV] [aA] [lL] [uU] [eE]
+  | [vV] [aA] [rR] [iI] [aA] [bB] [lL] [eE] [sS]
+  | [vV] [cC] [pP] [uU]
+  | [vV] [iI] [eE] [wW]
+  | [vV] [iI] [sS] [iI] [bB] [lL] [eE]
+  | [wW] [aA] [iI] [tT]
+  | [wW] [aA] [rR] [nN] [iI] [nN] [gG] [sS]
+  | [wW] [eE] [eE] [kK]
+  | [wW] [eE] [iI] [gG] [hH] [tT] "_" [sS] [tT] [rR] [iI] [nN] [gG]
+  | [wW] [iI] [tT] [hH] [oO] [uU] [tT]
+  | [wW] [oO] [rR] [kK]
+  | [wW] [rR] [aA] [pP] [pP] [eE] [rR]
+  | [xX] "5" "0" "9"
+  | [xX] [iI] [dD]
+  | [xX] [mM] [lL]
+  | [yY] [eE] [aA] [rR]
+  | [zZ] [oO] [nN] [eE]
+
+// Admitted as an identifier or SET variable, but not a role or label.
+@Regex
+Ambiguous1Word
+  = [eE] [xX] [eE] [cC] [uU] [tT] [eE]
+  | [rR] [eE] [sS] [tT] [aA] [rR] [tT]
+  | [sS] [hH] [uU] [tT] [dD] [oO] [wW] [nN]
+
+// Admitted as an identifier, role or SET variable, but not a label.
+@Regex
+Ambiguous2Word
+  = [aA] [sS] [cC] [iI] [iI]
+  | [bB] [eE] [gG] [iI] [nN]
+  | [bB] [yY] [tT] [eE]
+  | [cC] [aA] [cC] [hH] [eE]
+  | [cC] [hH] [aA] [rR] [sS] [eE] [tT]
+  | [cC] [hH] [eE] [cC] [kK] [sS] [uU] [mM]
+  | [cC] [lL] [oO] [nN] [eE]
+  | [cC] [oO] [mM] [mM] [eE] [nN] [tT]
+  | [cC] [oO] [mM] [mM] [iI] [tT]
+  | [cC] [oO] [nN] [tT] [aA] [iI] [nN] [sS]
+  | [dD] [eE] [aA] [lL] [lL] [oO] [cC] [aA] [tT] [eE]
+  | [dD] [oO]
+  | [eE] [nN] [dD]
+  | [fF] [lL] [uU] [sS] [hH]
+  | [fF] [oO] [lL] [lL] [oO] [wW] [sS]
+  | [hH] [aA] [nN] [dD] [lL] [eE] [rR]
+  | [hH] [eE] [lL] [pP]
+  | [iI] [mM] [pP] [oO] [rR] [tT]
+  | [iI] [nN] [sS] [tT] [aA] [lL] [lL]
+  | [lL] [aA] [nN] [gG] [uU] [aA] [gG] [eE]
+  | [nN] [oO]
+  | [pP] [rR] [eE] [cC] [eE] [dD] [eE] [sS]
+  | [pP] [rR] [eE] [pP] [aA] [rR] [eE]
+  | [rR] [eE] [pP] [aA] [iI] [rR]
+  | [rR] [eE] [sS] [eE] [tT]
+  | [rR] [oO] [lL] [lL] [bB] [aA] [cC] [kK]
+  | [sS] [aA] [vV] [eE] [pP] [oO] [iI] [nN] [tT]
+  | [sS] [iI] [gG] [nN] [eE] [dD]
+  | [sS] [lL] [aA] [vV] [eE]
+  | [sS] [tT] [aA] [rR] [tT]
+  | [sS] [tT] [oO] [pP]
+  | [tT] [rR] [uU] [nN] [cC] [aA] [tT] [eE]
+  | [uU] [nN] [iI] [cC] [oO] [dD] [eE]
+  | [uU] [nN] [iI] [nN] [sS] [tT] [aA] [lL] [lL]
+  | [xX] [aA]
+
+// Admitted as an identifier, label or SET variable, but not a role.
+@Regex
+Ambiguous3Word
+  = [eE] [vV] [eE] [nN] [tT]
+  | [fF] [iI] [lL] [eE]
+  | [nN] [oO] [nN] [eE]
+  | [pP] [rR] [oO] [cC] [eE] [sS] [sS]
+  | [pP] [rR] [oO] [xX] [yY]
+  | [rR] [eE] [lL] [oO] [aA] [dD]
+  | [rR] [eE] [pP] [lL] [iI] [cC] [aA] [tT] [iI] [oO] [nN]
+  | [rR] [eE] [sS] [oO] [uU] [rR] [cC] [eE]
+  | [sS] [uU] [pP] [eE] [rR]
+
+// Scope keywords: admitted as identifiers, roles and labels, but not SET variables.
+@Regex
+Ambiguous4Word
+  = [gG] [lL] [oO] [bB] [aA] [lL]
+  | [lL] [oO] [cC] [aA] [lL]
+  | [pP] [eE] [rR] [sS] [iI] [sS] [tT]
+  | [pP] [eE] [rR] [sS] [iI] [sS] [tT] "_" [oO] [nN] [lL] [yY]
+  | [sS] [eE] [sS] [sS] [iI] [oO] [nN]
+
+// Admitted as identifiers unless '(' follows immediately.
+@Regex
+FunctionOnlyWord
+  = [bB] [iI] [tT] "_" [aA] [nN] [dD]
+  | [bB] [iI] [tT] "_" [oO] [rR]
+  | [bB] [iI] [tT] "_" [xX] [oO] [rR]
+  | [cC] [aA] [sS] [tT]
+  | [cC] [oO] [uU] [nN] [tT]
+  | [cC] [uU] [rR] [dD] [aA] [tT] [eE]
+  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [dD] [aA] [tT] [eE]
+  | [cC] [uU] [rR] [rR] [eE] [nN] [tT] "_" [tT] [iI] [mM] [eE]
+  | [cC] [uU] [rR] [tT] [iI] [mM] [eE]
+  | [dD] [aA] [tT] [eE] "_" [aA] [dD] [dD]
+  | [dD] [aA] [tT] [eE] "_" [sS] [uU] [bB]
+  | [eE] [xX] [tT] [rR] [aA] [cC] [tT]
+  | [gG] [rR] [oO] [uU] [pP] "_" [cC] [oO] [nN] [cC] [aA] [tT]
+  | [mM] [aA] [xX]
+  | [mM] [iI] [dD]
+  | [mM] [iI] [nN]
+  | [nN] [oO] [wW]
+  | [pP] [oO] [sS] [iI] [tT] [iI] [oO] [nN]
+  | [sS] [tT] [dD]
+  | [sS] [tT] [dD] [dD] [eE] [vV]
+  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [pP] [oO] [pP]
+  | [sS] [tT] [dD] [dD] [eE] [vV] "_" [sS] [aA] [mM] [pP]
+  | [sS] [uU] [bB] [sS] [tT] [rR]
+  | [sS] [uU] [bB] [sS] [tT] [rR] [iI] [nN] [gG]
+  | [sS] [uU] [mM]
+  | [sS] [yY] [sS] [dD] [aA] [tT] [eE]
+  | [tT] [rR] [iI] [mM]
+  | [vV] [aA] [rR] "_" [pP] [oO] [pP]
+  | [vV] [aA] [rR] "_" [sS] [aA] [mM] [pP]
+  | [vV] [aA] [rR] [iI] [aA] [nN] [cC] [eE]
+
+// All unquoted identifier tokens exclude the same literal shapes.
+@Regex
+IdentifierLiteralShape = FloatPattern | HexPattern | BinaryPattern | CharsetIntroducerWord

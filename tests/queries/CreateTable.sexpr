@@ -13,18 +13,14 @@
               EXISTS)
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               OPEN_PAR
               (TableElementList
                 (TableElement
                   (ColumnDefinition
                     (ColumnName
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))
                     (FieldDefinition
                       (DataType INT)
                       (GroupFieldDefinition1
@@ -36,9 +32,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NAME))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType
                           (GroupDataType2 VARCHAR)
@@ -64,9 +58,7 @@
                   (TableElement
                     (ColumnDefinition
                       (ColumnName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       (FieldDefinition
                         (DataType INT)
                         (GroupFieldDefinition1
@@ -78,9 +70,7 @@
                             (Expression
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               PLUS
                               (Expression
                                 (Literal
@@ -96,9 +86,7 @@
                     EQUAL
                     (EngineRef
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   ((COMMA? CreateTableOption)*
                     (CreateTableOption
                       (DefaultCharset
@@ -107,9 +95,7 @@
                         EQUAL
                         (CharsetName
                           (TextOrIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -119,16 +105,12 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               LIKE
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -138,9 +120,7 @@
             TABLE
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (GroupCreateTable1
               (CreateTableOptionsEtc
                 (CreatePartitioningEtc
@@ -162,7 +142,5 @@
                                         (SingleTable
                                           (TableRef
                                             (QualifiedIdentifier
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))))))
       SEMICOLON)))

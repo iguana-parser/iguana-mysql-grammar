@@ -19,23 +19,17 @@
                               (SingleTable
                                 (TableRef
                                   (QualifiedIdentifier
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))))
                           (NaturalJoinType NATURAL JOIN)
                           (TableFactor
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier BPrefixIdentifier))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))))
                         (NaturalJoinType NATURAL LEFT JOIN)
                         (TableFactor
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

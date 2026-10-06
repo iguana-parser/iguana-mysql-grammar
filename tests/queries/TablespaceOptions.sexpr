@@ -7,9 +7,7 @@
           (CreateTablespace
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (TsDataFileName
               ADD
               (TsDataFile
@@ -50,9 +48,7 @@
                     EQUAL
                     (EngineRef
                       (TextOrIdentifier
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NDBCLUSTER)))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)))))
                 (TablespaceOption
                   (TsOptionWait WAIT))
                 (TablespaceOption
@@ -81,9 +77,7 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 ADD
                 DATAFILE
@@ -109,9 +103,7 @@
                         EQUAL
                         (EngineRef
                           (TextOrIdentifier
-                            (Identifier
-                              (IdentifierKeyword
-                                (IdentifierKeywordsUnambiguous NDBCLUSTER)))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)))))
                     COMMA
                     (AlterTablespaceOption
                       (TsOptionWait NO_WAIT)))))))))
@@ -124,9 +116,7 @@
             (AlterTablespace
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (GroupAlterTablespace1
                 (AlterTablespaceOptions
                   (AlterTablespaceOption
@@ -143,9 +133,7 @@
             UNDO
             TABLESPACE
             (TablespaceName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             ADD
             (TsDataFile
               DATAFILE
@@ -159,9 +147,7 @@
                   EQUAL
                   (EngineRef
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -172,9 +158,7 @@
               UNDO
               TABLESPACE
               (TablespaceRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               SET
               INACTIVE
               (UndoTableSpaceOptions
@@ -184,7 +168,5 @@
                     EQUAL
                     (EngineRef
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))))))
       SEMICOLON)))

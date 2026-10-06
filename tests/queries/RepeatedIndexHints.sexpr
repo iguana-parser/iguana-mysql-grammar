@@ -17,9 +17,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             (IndexHintList
                               (IndexHint+
                                 (IndexHint
@@ -28,9 +26,7 @@
                                   OPEN_PAR
                                   (IndexList
                                     (IndexListElement
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                   CLOSE_PAR)
                                 (IndexHint
                                   (IndexHintType IGNORE)
@@ -41,15 +37,11 @@
                                   OPEN_PAR
                                   (IndexList
                                     (IndexListElement
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))
                                     ((COMMA IndexListElement)*
                                       COMMA
                                       (IndexListElement
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                                   CLOSE_PAR))))))))))))))
       SEMICOLON)
     (Query
@@ -69,9 +61,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             (IndexHintList
                               (IndexHint+
                                 (IndexHint
@@ -80,9 +70,7 @@
                                   OPEN_PAR
                                   (IndexList
                                     (IndexListElement
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                   CLOSE_PAR)
                                 (IndexHint
                                   (IndexHintType IGNORE)
@@ -90,9 +78,7 @@
                                   OPEN_PAR
                                   (IndexList
                                     (IndexListElement
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                   CLOSE_PAR))))))
                       ((COMMA TableReference)*
                         COMMA
@@ -101,9 +87,7 @@
                             (SingleTable
                               (TableRef
                                 (QualifiedIdentifier
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))
                               (IndexHintList
                                 (IndexHint+
                                   (IndexHint
@@ -112,8 +96,6 @@
                                     OPEN_PAR
                                     (IndexList
                                       (IndexListElement
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))
                                     CLOSE_PAR)))))))))))))))
       SEMICOLON)))

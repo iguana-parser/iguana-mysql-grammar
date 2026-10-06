@@ -40,9 +40,7 @@
             (StartOptionValueListFollowingOptionType
               (OptionValueFollowingOptionType
                 (LvalueVariable
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 (Equal EQUAL)
                 (SetExprOrDefault
                   (Expression
@@ -62,16 +60,12 @@
               (GroupOptionValueNoOptionType1
                 (CharsetName
                   (TextOrIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (Collate
                   COLLATE
                   (CollationName
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))))
             OptionValueListContinued)))
       SEMICOLON)
     (Query

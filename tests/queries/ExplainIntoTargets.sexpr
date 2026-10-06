@@ -13,9 +13,7 @@
                 INTO
                 AT_SIGN
                 (TextOrIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))))
             (ExplainableStatement
               (SelectStatement
                 (QueryExpression

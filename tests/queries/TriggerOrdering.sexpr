@@ -8,26 +8,20 @@
             TRIGGER
             (TriggerName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             BEFORE
             INSERT
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FOR
             EACH
             ROW
             (TriggerFollowsPrecedesClause
               FOLLOWS
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (CompoundStatement
               (SimpleStatement
                 (SetStatement
@@ -35,9 +29,7 @@
                   (StartOptionValueList
                     (OptionValueNoOptionType
                       (LvalueVariable
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NEW)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (DotIdentifier DotWordIdentifier))
                       (Equal EQUAL)
                       (SetExprOrDefault
@@ -55,17 +47,13 @@
             TRIGGER
             (TriggerName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             BEFORE
             INSERT
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FOR
             EACH
             ROW
@@ -80,9 +68,7 @@
                   (StartOptionValueList
                     (OptionValueNoOptionType
                       (LvalueVariable
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NEW)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (DotIdentifier DotWordIdentifier))
                       (Equal EQUAL)
                       (SetExprOrDefault
@@ -100,17 +86,13 @@
             TRIGGER
             (TriggerName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             BEFORE
             INSERT
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FOR
             EACH
             ROW
@@ -125,9 +107,7 @@
                   (StartOptionValueList
                     (OptionValueNoOptionType
                       (LvalueVariable
-                        (Identifier
-                          (IdentifierKeyword
-                            (IdentifierKeywordsUnambiguous NEW)))
+                        (Identifier IdentifierContextGuard IdentifierWordToken)
                         (DotIdentifier DotWordIdentifier))
                       (Equal EQUAL)
                       (SetExprOrDefault

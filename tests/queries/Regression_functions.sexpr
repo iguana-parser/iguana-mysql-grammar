@@ -17,9 +17,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))
                           CLOSE_PAR)))
                     ((COMMA SelectItem)*
                       COMMA
@@ -31,9 +29,7 @@
                               (InSumExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))
                               CLOSE_PAR))))
                       COMMA
                       (SelectItem
@@ -45,9 +41,7 @@
                               (ExprList
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                                 ((COMMA Expression)*
                                   COMMA
                                   (Expression
@@ -61,15 +55,13 @@
                           (FunctionCall
                             (UnqualifiedFunctionName
                               (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                                (UnquotedIdentifier IdentifierContextGuard UnquotedIdentifierWordToken)))
                             OPEN_PAR
                             (UdfExprList
                               (UdfExpr
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))
                             CLOSE_PAR)))))
                   (FromClause
                     FROM
@@ -79,7 +71,5 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)))

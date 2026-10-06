@@ -10,16 +10,12 @@
             (TableRefList
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               ((COMMA TableRef)*
                 COMMA
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -31,9 +27,7 @@
             (ViewRefList
               (ViewRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -43,9 +37,7 @@
             DATABASE
             (IfExists IF EXISTS)
             (SchemaRef
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -56,9 +48,7 @@
             (IfExists IF EXISTS)
             (ProcedureRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -69,9 +59,7 @@
             (IfExists IF EXISTS)
             (FunctionRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -82,9 +70,7 @@
             (IfExists IF EXISTS)
             (TriggerRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -95,7 +81,5 @@
             (IfExists IF EXISTS)
             (EventRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)))

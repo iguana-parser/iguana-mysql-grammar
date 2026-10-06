@@ -12,9 +12,7 @@
           TABLES
           (InDb
             (FromOrIn FROM)
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier))))
+            (Identifier IdentifierContextGuard IdentifierWordToken))
           (LikeOrWhere
             (LikeClause
               LIKE
@@ -67,9 +65,7 @@
           (EngineOrAll
             (EngineRef
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           LOGS))
       SEMICOLON)
     (Query
@@ -80,9 +76,7 @@
           (EngineOrAll
             (EngineRef
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           MUTEX))
       SEMICOLON)
     (Query
@@ -93,9 +87,7 @@
           (EngineOrAll
             (EngineRef
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           STATUS))
       SEMICOLON)
     (Query
@@ -107,9 +99,7 @@
           FROM
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -153,9 +143,7 @@
           (FromOrIn FROM)
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -248,9 +236,7 @@
           CREATE
           DATABASE
           (SchemaRef
-            (Identifier
-              (PureIdentifier
-                (UnquotedIdentifier OrdinaryIdentifier))))))
+            (Identifier IdentifierContextGuard IdentifierWordToken))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -260,9 +246,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -272,9 +256,7 @@
           VIEW
           (ViewRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -291,9 +273,7 @@
           PROCEDURE
           (ProcedureRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -303,9 +283,7 @@
           FUNCTION
           (FunctionRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -315,9 +293,7 @@
           TRIGGER
           (TriggerRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -327,9 +303,7 @@
           EVENT
           (EventRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)
     (Query
       (SimpleStatement

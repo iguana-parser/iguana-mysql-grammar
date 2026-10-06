@@ -62,9 +62,7 @@
               (AclType TABLE)
               (GrantIdentifier
                 (SchemaRef
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 DOT
                 MULT)
               TO
@@ -94,9 +92,7 @@
               ON
               (GrantIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))
               TO
               (GrantTargetList
@@ -139,9 +135,7 @@
               ON
               (GrantIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)
                   (DotIdentifier DotWordIdentifier)))
               FROM
               (UserList

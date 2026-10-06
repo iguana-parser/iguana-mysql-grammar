@@ -17,15 +17,11 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (GrantAs
                 AS
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (IdentifierKeyword
-                          (IdentifierKeywordsUnambiguous USER)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)))

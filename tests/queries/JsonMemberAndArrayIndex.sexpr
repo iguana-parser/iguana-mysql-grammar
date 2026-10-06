@@ -14,9 +14,7 @@
                         (BitExpression
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (IdentifierKeyword
-                                  (IdentifierKeywordsUnambiguous VALUE))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))))
                         MEMBER
                         OF
                         (SimpleExprWithParentheses
@@ -24,9 +22,7 @@
                           (SimpleExpression
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                           CLOSE_PAR))))
                   (FromClause
                     FROM
@@ -36,9 +32,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -48,16 +42,12 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
@@ -67,9 +57,7 @@
                         CAST_CALL_OPEN
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))
                           (JsonOperator
                             JSON_SEPARATOR
                             (TextStringLiteral SingleQuotedText)))

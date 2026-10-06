@@ -22,18 +22,14 @@
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))))
                             (OuterJoinType LEFT JOIN)
                             (TableReference
                               (TableFactor
                                 (SingleTable
                                   (TableRef
                                     (QualifiedIdentifier
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier BPrefixIdentifier))))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))))
                             (JoinSpecification
                               ON
                               (Expression
@@ -41,18 +37,14 @@
                                   (Expression
                                     (ExpressionColumnRef
                                       (QualifiedPair
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)
                                         (DotIdentifier DotWordIdentifier)))))
                                 (CompOp EQUAL)
                                 (Predicate
                                   (Expression
                                     (ExpressionColumnRef
                                       (QualifiedPair
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier BPrefixIdentifier)))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)
                                         (DotIdentifier DotWordIdentifier)))))))))
                         CLOSE_CURLY)))))))))
       SEMICOLON)))

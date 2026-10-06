@@ -12,9 +12,7 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (GroupAlterUser4
                     (IdentifiedWithPlugin
                       IDENTIFIED
@@ -35,9 +33,7 @@
                   (User
                     (UserIdentifierOrText
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (GroupAlterUser4
                     ADD
                     (Factor
@@ -49,9 +45,7 @@
                         IDENTIFIED
                         WITH
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))
                         BY
                         (TextStringLiteral SingleQuotedText))))))
               CreateUserTail))))
@@ -66,9 +60,7 @@
               (User
                 (UserIdentifierOrText
                   (TextOrIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))
               (GroupAlterUserStatement2
                 (UserRegistration
                   (Factor
@@ -114,9 +106,7 @@
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (GroupCreateUser1
                   (Identification
                     (IdentifiedByPassword
@@ -130,9 +120,7 @@
                         IDENTIFIED
                         WITH
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))))))
             CreateUserTail)))
       SEMICOLON)
     (Query
@@ -146,17 +134,13 @@
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (GroupCreateUser1
                   (IdentifiedWithPlugin
                     IDENTIFIED
                     WITH
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   (InitialAuth
                     INITIAL
                     AUTHENTICATION
@@ -177,17 +161,13 @@
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (GroupCreateUser1
                   (IdentifiedWithPlugin
                     IDENTIFIED
                     WITH
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   (InitialAuth
                     INITIAL
                     AUTHENTICATION

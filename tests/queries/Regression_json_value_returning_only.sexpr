@@ -36,8 +36,6 @@
                                 (Charset CHAR SET)
                                 (CharsetName
                                   (TextOrIdentifier
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))))
                           CLOSE_PAR))))))))))
       SEMICOLON)))

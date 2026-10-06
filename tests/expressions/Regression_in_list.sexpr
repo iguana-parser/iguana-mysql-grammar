@@ -2,23 +2,17 @@
   (BitExpression
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier OrdinaryIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   (NotRule NOT)
   IN
   OPEN_PAR
   (InListExpressions
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier)))))
+        (Identifier IdentifierContextGuard IdentifierWordToken)))
     COMMA
     (ExprList
       (Expression
         (ExpressionColumnRef
-          (Identifier
-            (PureIdentifier
-              (UnquotedIdentifier OrdinaryIdentifier)))))))
+          (Identifier IdentifierContextGuard IdentifierWordToken)))))
   CLOSE_PAR)

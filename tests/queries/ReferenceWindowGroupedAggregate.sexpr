@@ -12,9 +12,7 @@
                     (SelectItem
                       (Expression
                         (ExpressionColumnRef
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                     ((COMMA SelectItem)*
                       COMMA
                       (SelectItem
@@ -25,9 +23,7 @@
                             (InSumExpr
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                             CLOSE_PAR)))
                       COMMA
                       (SelectItem
@@ -43,17 +39,13 @@
                                     (InSumExpr
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                                     CLOSE_PAR)))
                               CLOSE_PAR
                               (WindowingClause
                                 OVER
                                 (WindowName
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
                       COMMA
                       (SelectItem
                         (Expression
@@ -66,9 +58,7 @@
                             (WindowingClause
                               OVER
                               (WindowName
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                   (FromClause
                     FROM
                     (TableReferenceList
@@ -77,9 +67,7 @@
                           (SingleTable
                             (TableRef
                               (QualifiedIdentifier
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))))))
                   (GroupByClause
                     GROUP
                     BY
@@ -87,9 +75,7 @@
                       (OrderExpression
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (HavingClause
                     HAVING
                     (Expression
@@ -98,9 +84,7 @@
                           (BooleanPrimary
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                           (CompOp EQUAL)
                           (Predicate
                             (Expression
@@ -116,9 +100,7 @@
                                             (SelectItem
                                               (Expression
                                                 (ExpressionColumnRef
-                                                  (Identifier
-                                                    (PureIdentifier
-                                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))
                                           (FromClause
                                             FROM
                                             (TableReferenceList
@@ -127,9 +109,7 @@
                                                   (SingleTable
                                                     (TableRef
                                                       (QualifiedIdentifier
-                                                        (Identifier
-                                                          (PureIdentifier
-                                                            (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                                                        (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
                                     (LimitClause
                                       LIMIT
                                       (LimitOptions
@@ -140,9 +120,7 @@
                           (BooleanPrimary
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken))))
                           (CompOp EQUAL)
                           (Predicate
                             (Expression
@@ -155,18 +133,14 @@
                         (BooleanPrimary
                           (Expression
                             (ExpressionColumnRef
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))))
                         IS
                         NULL)))
                   (WindowClause
                     WINDOW
                     (WindowDefinition
                       (WindowName
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       AS
                       (WindowSpec
                         OPEN_PAR
@@ -178,9 +152,7 @@
                               (OrderExpression
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken))))))
                           (WindowFrameClause
                             (WindowFrameUnits ROWS)
                             (WindowFrameExtent
@@ -193,8 +165,6 @@
                 (OrderExpression
                   (Expression
                     (ExpressionColumnRef
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   (Direction DESC)))))))
       SEMICOLON)))

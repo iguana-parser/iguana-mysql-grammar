@@ -22,16 +22,12 @@
             VIEW
             (ViewName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (ViewTail
               (ColumnInternalRefList
                 OPEN_PAR
                 (ColumnInternalRef
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken))
                 CLOSE_PAR)
               AS
               (ViewQueryBlock
@@ -45,9 +41,7 @@
                             (SelectItem
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))
                           (FromClause
                             FROM
                             (TableReferenceList
@@ -56,9 +50,7 @@
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
                 (ViewCheckOption WITH CASCADED CHECK OPTION))))))
       SEMICOLON)
     (Query
@@ -76,9 +68,7 @@
               VIEW
               (ViewRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (ViewTail
                 AS
                 (ViewQueryBlock
@@ -92,9 +82,7 @@
                               (SelectItem
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))
                             (FromClause
                               FROM
                               (TableReferenceList
@@ -103,7 +91,5 @@
                                     (SingleTable
                                       (TableRef
                                         (QualifiedIdentifier
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))))
       SEMICOLON)))

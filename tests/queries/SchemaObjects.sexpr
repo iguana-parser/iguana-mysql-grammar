@@ -11,18 +11,14 @@
               (NotRule NOT)
               EXISTS)
             (SchemaName
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (CreateDatabaseOption*
               (CreateDatabaseOption
                 (DefaultCharset
                   (Charset CHAR SET)
                   (CharsetName
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -32,9 +28,7 @@
             (AlterDatabase
               DATABASE
               (SchemaRef
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (AlterDatabaseOption+
                 (AlterDatabaseOption
                   (CreateDatabaseOption
@@ -42,9 +36,7 @@
                       (Charset CHAR SET)
                       (CharsetName
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -55,9 +47,7 @@
             VIEW
             (ViewName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (ViewTail
               AS
               (ViewQueryBlock
@@ -71,9 +61,7 @@
                             (SelectItem
                               (Expression
                                 (ExpressionColumnRef
-                                  (Identifier
-                                    (PureIdentifier
-                                      (UnquotedIdentifier OrdinaryIdentifier)))))))
+                                  (Identifier IdentifierContextGuard IdentifierWordToken)))))
                           (FromClause
                             FROM
                             (TableReferenceList
@@ -82,9 +70,7 @@
                                   (SingleTable
                                     (TableRef
                                       (QualifiedIdentifier
-                                        (Identifier
-                                          (PureIdentifier
-                                            (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))
+                                        (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))
                 (ViewCheckOption WITH LOCAL CHECK OPTION))))))
       SEMICOLON)
     (Query
@@ -96,9 +82,7 @@
               VIEW
               (ViewRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (ViewTail
                 AS
                 (ViewQueryBlock
@@ -112,9 +96,7 @@
                               (SelectItem
                                 (Expression
                                   (ExpressionColumnRef
-                                    (Identifier
-                                      (PureIdentifier
-                                        (UnquotedIdentifier BPrefixIdentifier)))))))
+                                    (Identifier IdentifierContextGuard IdentifierWordToken)))))
                             (FromClause
                               FROM
                               (TableReferenceList
@@ -123,9 +105,7 @@
                                     (SingleTable
                                       (TableRef
                                         (QualifiedIdentifier
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier)))))))))))))))))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken)))))))))))))))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -135,29 +115,21 @@
           (RenamePair
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             TO
             (TableName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))
           ((COMMA RenamePair)*
             COMMA
             (RenamePair
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               TO
               (TableName
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))))))
       SEMICOLON)
     (Query
       (SimpleStatement
@@ -166,7 +138,5 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))))
       SEMICOLON)))

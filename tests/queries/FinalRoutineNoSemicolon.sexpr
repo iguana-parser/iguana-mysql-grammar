@@ -7,9 +7,7 @@
           PROCEDURE
           (ProcedureName
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           OPEN_PAR
           CLOSE_PAR
           (StoredRoutineBody

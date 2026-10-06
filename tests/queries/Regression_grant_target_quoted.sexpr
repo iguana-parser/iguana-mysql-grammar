@@ -10,13 +10,11 @@
               ON
               (GrantIdentifier
                 (QualifiedPair
-                  (Identifier
-                    (PureIdentifier BacktickIdentifier))
+                  (Identifier BacktickIdentifier)
                   (DotIdentifier
                     DOT
                     (IdentifierAfterDot
-                      (Identifier
-                        (PureIdentifier BacktickIdentifier))))))
+                      (Identifier BacktickIdentifier)))))
               TO
               (GrantTargetList
                 (UserList

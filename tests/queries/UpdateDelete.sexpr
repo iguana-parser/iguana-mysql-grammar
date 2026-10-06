@@ -10,24 +10,18 @@
                 (SingleTable
                   (TableRef
                     (QualifiedIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))))))
           SET
           (UpdateList
             (UpdateElement
               (ColumnRef
                 (FieldIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               EQUAL
               (Expression
                 (Expression
                   (ExpressionColumnRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 PLUS
                 (Expression
                   (Literal
@@ -38,9 +32,7 @@
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier BPrefixIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 DEFAULT)))
           (WhereClause
@@ -49,9 +41,7 @@
               (BooleanPrimary
                 (Expression
                   (ExpressionColumnRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))
               (CompOp EQUAL)
               (Predicate
                 (Expression
@@ -65,9 +55,7 @@
               (OrderExpression
                 (Expression
                   (ExpressionColumnRef
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier))))))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken))))))
           (SimpleLimitClause
             LIMIT
             (LimitOption IntegerLiteral))))
@@ -83,18 +71,14 @@
                   (SingleTable
                     (TableRef
                       (QualifiedIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (InnerJoinType JOIN)
               (TableReference
                 (TableFactor
                   (SingleTable
                     (TableRef
                       (QualifiedIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (JoinSpecification
                 ON
                 (Expression
@@ -102,18 +86,14 @@
                     (Expression
                       (ExpressionColumnRef
                         (QualifiedPair
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (DotIdentifier DotWordIdentifier)))))
                   (CompOp EQUAL)
                   (Predicate
                     (Expression
                       (ExpressionColumnRef
                         (QualifiedPair
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier)))
+                          (Identifier IdentifierContextGuard IdentifierWordToken)
                           (DotIdentifier DotWordIdentifier)))))))))
           SET
           (UpdateList
@@ -121,17 +101,13 @@
               (ColumnRef
                 (FieldIdentifier
                   (QualifiedPair
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     (DotIdentifier DotWordIdentifier))))
               EQUAL
               (Expression
                 (ExpressionColumnRef
                   (QualifiedPair
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)
                     (DotIdentifier DotWordIdentifier))))))))
       SEMICOLON)
     (Query
@@ -143,18 +119,14 @@
             (GroupDeleteStatement1
               (TableRef
                 (QualifiedIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (WhereClause
                 WHERE
                 (Expression
                   (BooleanPrimary
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))
                   (CompOp EQUAL)
                   (Predicate
                     (Expression
@@ -168,9 +140,7 @@
                   (OrderExpression
                     (Expression
                       (ExpressionColumnRef
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               (SimpleLimitClause
                 LIMIT
                 (LimitOption IntegerLiteral))))))
@@ -182,9 +152,7 @@
           (GroupDeleteStatement2
             (TableAliasRefList
               (TableRefWithWildcard
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FROM
             (TableReferenceList
               (TableReference
@@ -193,18 +161,14 @@
                     (SingleTable
                       (TableRef
                         (QualifiedIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))))
                 (InnerJoinType JOIN)
                 (TableReference
                   (TableFactor
                     (SingleTable
                       (TableRef
                         (QualifiedIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))))
                 (JoinSpecification
                   ON
                   (Expression
@@ -212,18 +176,14 @@
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier)))))
                     (CompOp EQUAL)
                     (Predicate
                       (Expression
                         (ExpressionColumnRef
                           (QualifiedPair
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier)))
+                            (Identifier IdentifierContextGuard IdentifierWordToken)
                             (DotIdentifier DotWordIdentifier))))))))))))
       SEMICOLON)
     (Query
@@ -235,9 +195,7 @@
             (GroupDeleteStatement1
               (TableAliasRefList
                 (TableRefWithWildcard
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               USING
               (TableReferenceList
                 (TableReference
@@ -246,18 +204,14 @@
                       (SingleTable
                         (TableRef
                           (QualifiedIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (InnerJoinType JOIN)
                   (TableReference
                     (TableFactor
                       (SingleTable
                         (TableRef
                           (QualifiedIdentifier
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier OrdinaryIdentifier))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))
                   (JoinSpecification
                     ON
                     (Expression
@@ -265,17 +219,13 @@
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))
                       (CompOp EQUAL)
                       (Predicate
                         (Expression
                           (ExpressionColumnRef
                             (QualifiedPair
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (Identifier IdentifierContextGuard IdentifierWordToken)
                               (DotIdentifier DotWordIdentifier)))))))))))))
       SEMICOLON)))

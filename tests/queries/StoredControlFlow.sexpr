@@ -8,9 +8,7 @@
             PROCEDURE
             (ProcedureName
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             OPEN_PAR
             CLOSE_PAR
             (StoredRoutineBody
@@ -24,9 +22,7 @@
                           (VariableDeclaration
                             DECLARE
                             (IdentifierList
-                              (Identifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier XPrefixIdentifier))))
+                              (Identifier IdentifierContextGuard IdentifierWordToken))
                             (DataType INT)
                             DEFAULT
                             (Expression
@@ -44,9 +40,7 @@
                                 (BooleanPrimary
                                   (Expression
                                     (ExpressionColumnRef
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                                 (CompOp EQUAL)
                                 (Predicate
                                   (Expression
@@ -64,9 +58,7 @@
                                           (StartOptionValueList
                                             (OptionValueNoOptionType
                                               (LvalueVariable
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken))
                                               (Equal EQUAL)
                                               (SetExprOrDefault
                                                 (Expression
@@ -82,9 +74,7 @@
                                     (BooleanPrimary
                                       (Expression
                                         (ExpressionColumnRef
-                                          (Identifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier XPrefixIdentifier))))))
+                                          (Identifier IdentifierContextGuard IdentifierWordToken))))
                                     (CompOp EQUAL)
                                     (Predicate
                                       (Expression
@@ -102,9 +92,7 @@
                                               (StartOptionValueList
                                                 (OptionValueNoOptionType
                                                   (LvalueVariable
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier XPrefixIdentifier))))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken))
                                                   (Equal EQUAL)
                                                   (SetExprOrDefault
                                                     (Expression
@@ -124,9 +112,7 @@
                                               (StartOptionValueList
                                                 (OptionValueNoOptionType
                                                   (LvalueVariable
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier XPrefixIdentifier))))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken))
                                                   (Equal EQUAL)
                                                   (SetExprOrDefault
                                                     (Expression
@@ -143,9 +129,7 @@
                             CASE
                             (Expression
                               (ExpressionColumnRef
-                                (Identifier
-                                  (PureIdentifier
-                                    (UnquotedIdentifier XPrefixIdentifier)))))
+                                (Identifier IdentifierContextGuard IdentifierWordToken)))
                             ((WhenExpression ThenStatement)+
                               (WhenExpression
                                 WHEN
@@ -164,9 +148,7 @@
                                           (StartOptionValueList
                                             (OptionValueNoOptionType
                                               (LvalueVariable
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken))
                                               (Equal EQUAL)
                                               (SetExprOrDefault
                                                 (Expression
@@ -186,9 +168,7 @@
                                         (StartOptionValueList
                                           (OptionValueNoOptionType
                                             (LvalueVariable
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken))
                                             (Equal EQUAL)
                                             (SetExprOrDefault
                                               (Expression
@@ -208,9 +188,7 @@
                                 (BooleanPrimary
                                   (Expression
                                     (ExpressionColumnRef
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                                 (CompOp LESS_THAN)
                                 (Predicate
                                   (Expression
@@ -227,17 +205,13 @@
                                         (StartOptionValueList
                                           (OptionValueNoOptionType
                                             (LvalueVariable
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken))
                                             (Equal EQUAL)
                                             (SetExprOrDefault
                                               (Expression
                                                 (Expression
                                                   (ExpressionColumnRef
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                                                 PLUS
                                                 (Expression
                                                   (Literal
@@ -261,17 +235,13 @@
                                         (StartOptionValueList
                                           (OptionValueNoOptionType
                                             (LvalueVariable
-                                              (Identifier
-                                                (PureIdentifier
-                                                  (UnquotedIdentifier XPrefixIdentifier))))
+                                              (Identifier IdentifierContextGuard IdentifierWordToken))
                                             (Equal EQUAL)
                                             (SetExprOrDefault
                                               (Expression
                                                 (Expression
                                                   (ExpressionColumnRef
-                                                    (Identifier
-                                                      (PureIdentifier
-                                                        (UnquotedIdentifier XPrefixIdentifier)))))
+                                                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                                                 MINUS
                                                 (Expression
                                                   (Literal
@@ -284,9 +254,7 @@
                                 (BooleanPrimary
                                   (Expression
                                     (ExpressionColumnRef
-                                      (Identifier
-                                        (PureIdentifier
-                                          (UnquotedIdentifier XPrefixIdentifier))))))
+                                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                                 (CompOp EQUAL)
                                 (Predicate
                                   (Expression
@@ -299,9 +267,7 @@
                         (CompoundStatement
                           (LabeledControl
                             (Label
-                              (LabelIdentifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier)))
+                              (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken)
                               COLON)
                             (UnlabeledControl
                               (LoopBlock
@@ -315,17 +281,13 @@
                                           (StartOptionValueList
                                             (OptionValueNoOptionType
                                               (LvalueVariable
-                                                (Identifier
-                                                  (PureIdentifier
-                                                    (UnquotedIdentifier XPrefixIdentifier))))
+                                                (Identifier IdentifierContextGuard IdentifierWordToken))
                                               (Equal EQUAL)
                                               (SetExprOrDefault
                                                 (Expression
                                                   (Expression
                                                     (ExpressionColumnRef
-                                                      (Identifier
-                                                        (PureIdentifier
-                                                          (UnquotedIdentifier XPrefixIdentifier)))))
+                                                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                                                   PLUS
                                                   (Expression
                                                     (Literal
@@ -341,9 +303,7 @@
                                             (BooleanPrimary
                                               (Expression
                                                 (ExpressionColumnRef
-                                                  (Identifier
-                                                    (PureIdentifier
-                                                      (UnquotedIdentifier XPrefixIdentifier))))))
+                                                  (Identifier IdentifierContextGuard IdentifierWordToken))))
                                             (CompOp LESS_THAN)
                                             (Predicate
                                               (Expression
@@ -358,9 +318,7 @@
                                                   (IterateStatement
                                                     ITERATE
                                                     (LabelRef
-                                                      (LabelIdentifier
-                                                        (PureIdentifier
-                                                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                                                      (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken))))
                                                 SEMICOLON))))
                                         END
                                         IF))
@@ -369,16 +327,12 @@
                                       (LeaveStatement
                                         LEAVE
                                         (LabelRef
-                                          (LabelIdentifier
-                                            (PureIdentifier
-                                              (UnquotedIdentifier OrdinaryIdentifier))))))
+                                          (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken))))
                                     SEMICOLON))
                                 END
                                 LOOP))
                             (LabelRef
-                              (LabelIdentifier
-                                (PureIdentifier
-                                  (UnquotedIdentifier OrdinaryIdentifier))))))
+                              (LabelIdentifier IdentifierContextGuard LabelIdentifierWordToken))))
                         SEMICOLON))
                     END)))))))
       SEMICOLON)))

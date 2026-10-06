@@ -2,14 +2,10 @@
   OPEN_PAR
   (Expression
     (ExpressionColumnRef
-      (Identifier
-        (PureIdentifier
-          (UnquotedIdentifier OrdinaryIdentifier)))))
+      (Identifier IdentifierContextGuard IdentifierWordToken)))
   COMMA
   (ExprList
     (Expression
       (ExpressionColumnRef
-        (Identifier
-          (PureIdentifier
-            (UnquotedIdentifier BPrefixIdentifier))))))
+        (Identifier IdentifierContextGuard IdentifierWordToken))))
   CLOSE_PAR)

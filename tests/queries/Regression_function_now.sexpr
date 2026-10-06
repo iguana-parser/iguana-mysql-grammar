@@ -26,7 +26,5 @@
                       (SelectItem
                         (Expression
                           (ExpressionColumnRef
-                            (Identifier
-                              (PureIdentifier
-                                (UnquotedIdentifier ContextualFunctionIdentifier))))))))))))))
+                            (Identifier IdentifierContextGuard IdentifierWordToken))))))))))))
       SEMICOLON)))

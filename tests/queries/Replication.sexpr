@@ -55,9 +55,7 @@
               OPEN_PAR
               (FilterDbList
                 (SchemaRef
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               CLOSE_PAR)
             ((COMMA FilterDefinition)*
               COMMA
@@ -68,9 +66,7 @@
                 (FilterTableList
                   (FilterTableRef
                     (QualifiedPair
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)
                       (DotIdentifier DotWordIdentifier))))
                 CLOSE_PAR)))))
       SEMICOLON)

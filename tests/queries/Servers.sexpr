@@ -8,16 +8,12 @@
             SERVER
             (ServerName
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             FOREIGN
             DATA
             WRAPPER
             (TextOrIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier))))
+              (Identifier IdentifierContextGuard IdentifierWordToken))
             (ServerOptions
               OPTIONS
               OPEN_PAR
@@ -50,9 +46,7 @@
               SERVER
               (ServerRef
                 (TextOrIdentifier
-                  (Identifier
-                    (PureIdentifier
-                      (UnquotedIdentifier OrdinaryIdentifier)))))
+                  (Identifier IdentifierContextGuard IdentifierWordToken)))
               (ServerOptions
                 OPTIONS
                 OPEN_PAR
@@ -72,7 +66,5 @@
             (IfExists IF EXISTS)
             (ServerRef
               (TextOrIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))))))
       SEMICOLON)))

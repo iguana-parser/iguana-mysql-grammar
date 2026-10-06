@@ -12,9 +12,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (FieldsClause
             COLUMNS
             (FieldTerm+
@@ -46,26 +44,20 @@
                 (FieldOrVariable
                   (ColumnRef
                     (FieldIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 ((COMMA FieldOrVariable)*
                   COMMA
                   (FieldOrVariable
                     (ColumnRef
                       (FieldIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier BPrefixIdentifier))))))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))))))
               CLOSE_PAR)
             SET
             (UpdateList
               (UpdateElement
                 (ColumnRef
                   (FieldIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier BPrefixIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 EQUAL
                 (Expression
                   (RvalueSystemOrUserVariable
@@ -82,9 +74,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           (XmlRowsIdentifiedBy
             ROWS
             IDENTIFIED

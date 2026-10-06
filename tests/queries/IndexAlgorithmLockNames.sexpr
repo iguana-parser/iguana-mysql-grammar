@@ -8,23 +8,17 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR)))
             (IndexLockAndAlgorithm
               (AlterAlgorithmOption
@@ -45,23 +39,17 @@
               FULLTEXT
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR)))
             (IndexLockAndAlgorithm
               (AlterLockOption
@@ -82,23 +70,17 @@
               SPATIAL
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR)))
             (IndexLockAndAlgorithm
               (AlterAlgorithmOption
@@ -115,15 +97,11 @@
             KW_INDEX
             (IndexRef
               (FieldIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             ON
             (TableRef
               (QualifiedIdentifier
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier)))))
+                (Identifier IdentifierContextGuard IdentifierWordToken)))
             (IndexLockAndAlgorithm
               (AlterAlgorithmOption
                 ALGORITHM
@@ -142,23 +120,17 @@
             (GroupCreateIndex1
               KW_INDEX
               (IndexName
-                (Identifier
-                  (PureIdentifier
-                    (UnquotedIdentifier OrdinaryIdentifier))))
+                (Identifier IdentifierContextGuard IdentifierWordToken))
               (CreateIndexTarget
                 ON
                 (TableRef
                   (QualifiedIdentifier
-                    (Identifier
-                      (PureIdentifier
-                        (UnquotedIdentifier OrdinaryIdentifier)))))
+                    (Identifier IdentifierContextGuard IdentifierWordToken)))
                 (KeyListWithExpression
                   OPEN_PAR
                   (KeyPartOrExpression
                     (KeyPart
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   CLOSE_PAR)))
             (IndexLockAndAlgorithm
               (AlterAlgorithmOption

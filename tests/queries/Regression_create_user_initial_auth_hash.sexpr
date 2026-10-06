@@ -11,17 +11,13 @@
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (GroupCreateUser1
                   (IdentifiedWithPlugin
                     IDENTIFIED
                     WITH
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier)))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken)))
                   (InitialAuth
                     INITIAL
                     AUTHENTICATION
@@ -29,9 +25,7 @@
                       IDENTIFIED
                       WITH
                       (TextOrIdentifier
-                        (Identifier
-                          (PureIdentifier
-                            (UnquotedIdentifier OrdinaryIdentifier))))
+                        (Identifier IdentifierContextGuard IdentifierWordToken))
                       AS
                       (TextStringHash
                         (TextStringLiteral SingleQuotedText)))))))

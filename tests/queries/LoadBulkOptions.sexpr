@@ -16,9 +16,7 @@
           TABLE
           (TableRef
             (QualifiedIdentifier
-              (Identifier
-                (PureIdentifier
-                  (UnquotedIdentifier OrdinaryIdentifier)))))
+              (Identifier IdentifierContextGuard IdentifierWordToken)))
           LoadDataFileTail
           (LoadParallel PARALLEL EQUAL IntegerLiteral)
           (LoadMemory

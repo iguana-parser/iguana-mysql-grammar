@@ -11,9 +11,7 @@
                 (User
                   (UserIdentifierOrText
                     (TextOrIdentifier
-                      (Identifier
-                        (PureIdentifier
-                          (UnquotedIdentifier OrdinaryIdentifier))))))
+                      (Identifier IdentifierContextGuard IdentifierWordToken))))
                 (GroupCreateUser1
                   (Identification
                     (IdentifiedByPassword
@@ -27,8 +25,6 @@
                         IDENTIFIED
                         WITH
                         (TextOrIdentifier
-                          (Identifier
-                            (PureIdentifier
-                              (UnquotedIdentifier OrdinaryIdentifier))))))))))
+                          (Identifier IdentifierContextGuard IdentifierWordToken))))))))
             CreateUserTail)))
       SEMICOLON)))
