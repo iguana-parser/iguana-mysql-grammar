@@ -24,6 +24,12 @@ reproducible from fresh clones.
 because the retained download is a release archive without a pinned Git entry.
 The old derived, transformed SQL directory is not part of this corpus.
 
+Two read-query workloads were added later. `job` is the Join Order Benchmark,
+all `.sql` files of its repository: 113 queries written for PostgreSQL, plus
+the schema. `clickbench` selects `mysql/*.sql` of ClickBench: the table
+definition and 43 queries, one per line; the other directories are other
+database systems.
+
 ## One measured pass
 
 Use the release parser from the repository root:

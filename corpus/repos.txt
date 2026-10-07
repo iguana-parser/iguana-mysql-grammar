@@ -15,3 +15,5 @@ tidb sql Queries https://github.com/pingcap/tidb 93a01d31f6da205ae4bf37682529390
 mysql-server-8.2 sql Queries https://github.com/mysql/mysql-server 87307d4ddd88405117e3f1e51323836d57ab1f57
 chinook sql Queries https://github.com/lerocha/chinook-database 7f67772503d71ba90f19283c38e93923addb43fa
 openemr sql Queries https://github.com/openemr/openemr bbc6881936a074bc3d94e0c0da73a6b063908d1e
+job sql Queries https://github.com/gregrahn/join-order-benchmark a39603662e023e449cb2121997a5034df9e02ebf
+clickbench sql Queries https://github.com/ClickHouse/ClickBench e6bda4e229d7ba3543662eec26fbf514cb3fe935
