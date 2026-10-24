@@ -1,0 +1,4 @@
+# corpus: clickbench
+# files=2 ok=2 amb=0 error=0 ioerror=0
+mysql/create.sql	ok
+mysql/queries.sql	ok

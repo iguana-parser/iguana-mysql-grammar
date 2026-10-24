@@ -1,0 +1,486 @@
+# corpus: phpmyadmin-sql-parser
+# files=484 ok=306 amb=0 error=178 ioerror=0
+tests/data/bugs/fuzz1.in	error	Parse error at line 1, column 6: Expected one of ALGORITHM, DATABASE, DEFINER, EVENT, FUNCTION, INSTANCE, LOGFILE, OFFLINE, ONLINE, PROCEDURE, SERVER, USER, SQL, TABLESPACE, TABLE, UNDO, VIEW, RESOURCE
+tests/data/bugs/fuzz2.in	error	Parse error at line 1, column 5: Expected one of BacktickIdentifier, RECURSIVE, IdentifierWordToken, EOF
+tests/data/bugs/fuzz3.in	error	Parse error at line 1, column 5: Expected one of BacktickIdentifier, RECURSIVE, IdentifierWordToken, EOF
+tests/data/bugs/fuzz4.in	error	Parse error at line 1, column 6: Expected one of ALGORITHM, DATABASE, DEFINER, EVENT, FUNCTION, INSTANCE, LOGFILE, OFFLINE, ONLINE, PROCEDURE, SERVER, USER, SQL, TABLESPACE, TABLE, UNDO, VIEW, RESOURCE
+tests/data/bugs/fuzz5.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/bugs/fuzz6.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/bugs/gh14.in	ok
+tests/data/bugs/gh16.in	ok
+tests/data/bugs/gh202.in	error	Parse error at line 1, column 43: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/bugs/gh234.in	ok
+tests/data/bugs/gh317.in	ok
+tests/data/bugs/gh412.in	ok
+tests/data/bugs/gh478.in	ok
+tests/data/bugs/gh492.in	error	Parse error at line 1, column 9: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, OPEN_CURLY, IGNORE, LOW_PRIORITY, WRITE, JSON_TABLE, LATERAL, IdentifierWordToken, EOF
+tests/data/bugs/gh496.in	ok
+tests/data/bugs/gh498.in	ok
+tests/data/bugs/gh499.in	error	Parse error at line 10, column 16: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/bugs/gh508.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/bugs/gh511.in	ok
+tests/data/bugs/gh9.in	error	Parse error at line 2, column 1: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/bugs/pma11800.in	ok
+tests/data/bugs/pma11836.in	ok
+tests/data/bugs/pma11843.in	ok
+tests/data/bugs/pma11879.in	ok
+tests/data/lexer/lex.in	error	Parse error at line 1, column 8: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, MULT, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ALL, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, DISTINCT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HIGH_PRIORITY, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, SQL_BIG_RESULT, SQL_BUFFER_RESULT, SQL_CALC_FOUND_ROWS, SQL_NO_CACHE, SQL_SMALL_RESULT, STRAIGHT_JOIN, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/lexer/lexBool.in	ok
+tests/data/lexer/lexComment.in	error	Parse error at line 2, column 8: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, MULT, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ALL, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, DISTINCT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HIGH_PRIORITY, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, SQL_BIG_RESULT, SQL_BUFFER_RESULT, SQL_CALC_FOUND_ROWS, SQL_NO_CACHE, SQL_SMALL_RESULT, STRAIGHT_JOIN, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/lexer/lexCommentEnd.in	ok
+tests/data/lexer/lexDelimiter.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexDelimiter2.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexDelimiterErr1.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexDelimiterErr2.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexDelimiterErr3.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexDelimiterLen.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/lexer/lexEmptyCStyleComment.in	error	Parse error at line 2, column 1: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, COMMA, SEMICOLON, CLOSE_PAR, AND, AS, BETWEEN, COLLATE, KW_DIV, FOR, FROM, GROUP, HAVING, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, REGEXP, SOUNDS, UNION, WHERE, WITH, XOR, EXCEPT, WINDOW, MEMBER, INTERSECT, QUALIFY, IdentifierWordToken, EOF
+tests/data/lexer/lexKeyword.in	ok
+tests/data/lexer/lexKeyword2.in	ok
+tests/data/lexer/lexLabel1.in	ok
+tests/data/lexer/lexLabel2.in	ok
+tests/data/lexer/lexNoLabel.in	ok
+tests/data/lexer/lexNumber.in	error	Parse error at line 3, column 16: Forbidden follow: IdentifierInvalidStart
+tests/data/lexer/lexOperator.in	ok
+tests/data/lexer/lexOperatorStarIsArithmetic.in	error	Parse error at line 2, column 1: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, COMMA, SEMICOLON, CLOSE_PAR, AND, AS, BETWEEN, COLLATE, KW_DIV, FOR, FROM, GROUP, HAVING, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, REGEXP, SOUNDS, UNION, WHERE, WITH, XOR, EXCEPT, WINDOW, MEMBER, INTERSECT, QUALIFY, IdentifierWordToken, EOF
+tests/data/lexer/lexOperatorStarIsWildcard.in	error	Parse error at line 2, column 1: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, OPEN_CURLY, DUAL, JSON_TABLE, LATERAL, IdentifierWordToken
+tests/data/lexer/lexString.in	ok
+tests/data/lexer/lexStringErr1.in	error	Parse error at line 1, column 22: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/lexer/lexSymbol.in	ok
+tests/data/lexer/lexSymbolErr1.in	error	Parse error at line 2, column 23: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/lexer/lexSymbolErr2.in	error	Parse error at line 2, column 24: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/lexer/lexSymbolErr3.in	error	Parse error at line 1, column 8: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, MULT, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ALL, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, DISTINCT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HIGH_PRIORITY, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, SQL_BIG_RESULT, SQL_BUFFER_RESULT, SQL_CALC_FOUND_ROWS, SQL_NO_CACHE, SQL_SMALL_RESULT, STRAIGHT_JOIN, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/lexer/lexSymbolUser1.in	ok
+tests/data/lexer/lexSymbolUser2.in	ok
+tests/data/lexer/lexSymbolUser3.in	ok
+tests/data/lexer/lexSymbolUser4_mariadb_100400.in	error	Parse error at line 1, column 41: Expected one of BY, WITH
+tests/data/lexer/lexSymbolUser5_mariadb_100400.in	error	Parse error at line 1, column 42: Expected one of BY, WITH
+tests/data/lexer/lexUtf8.in	ok
+tests/data/lexer/lexWhitespace.in	ok
+tests/data/lexer/lexWildcardThenComment.in	error	Parse error at line 3, column 1: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, FROM, GROUP, HAVING, INTO, LIMIT, LOCK, ON, ORDER, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/misc/parseParameter.in	error	Parse error at line 1, column 65: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, CLOSE_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/misc/parseParameter2.in	ok
+tests/data/parser/parse.in	ok
+tests/data/parser/parse2.in	ok
+tests/data/parser/parseAlter.in	ok
+tests/data/parser/parseAlter10.in	ok
+tests/data/parser/parseAlter11.in	ok
+tests/data/parser/parseAlter12.in	ok
+tests/data/parser/parseAlter13.in	ok
+tests/data/parser/parseAlter14.in	ok
+tests/data/parser/parseAlter2.in	error	Parse error at line 1, column 25: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseAlter3.in	error	Parse error at line 3, column 1: Expected one of COMMA, SEMICOLON, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+tests/data/parser/parseAlter4.in	ok
+tests/data/parser/parseAlter5.in	ok
+tests/data/parser/parseAlter6.in	ok
+tests/data/parser/parseAlter7.in	ok
+tests/data/parser/parseAlter8.in	ok
+tests/data/parser/parseAlter9.in	ok
+tests/data/parser/parseAlterErr.in	error	Parse error at line 2, column 81: Expected one of COMMA, SEMICOLON, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+tests/data/parser/parseAlterErr2.in	error	Parse error at line 2, column 63: Expected one of COMMA, SEMICOLON, PARTITION, REMOVE, EOF
+tests/data/parser/parseAlterErr3.in	ok
+tests/data/parser/parseAlterErr4.in	error	Parse error at line 1, column 50: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PLUS, MINUS, OPEN_PAR, DATE, FALSE, NULL, TIMESTAMP, TIME, TRUE
+tests/data/parser/parseAlterEvent.in	ok
+tests/data/parser/parseAlterEvent2.in	ok
+tests/data/parser/parseAlterEvent3.in	ok
+tests/data/parser/parseAlterEvent4.in	ok
+tests/data/parser/parseAlterEvent5.in	ok
+tests/data/parser/parseAlterEvent6.in	ok
+tests/data/parser/parseAlterEvent7.in	ok
+tests/data/parser/parseAlterEvent8.in	ok
+tests/data/parser/parseAlterEvent9.in	ok
+tests/data/parser/parseAlterEventComplete.in	ok
+tests/data/parser/parseAlterEventErr.in	ok
+tests/data/parser/parseAlterEventOnScheduleAt.in	ok
+tests/data/parser/parseAlterEventOnScheduleAt2.in	ok
+tests/data/parser/parseAlterEventOnScheduleEvery.in	ok
+tests/data/parser/parseAlterEventOnScheduleEvery2.in	error	Parse error at line 2, column 16: Expected one of SEMICOLON, COMMENT, DISABLE, DO, ENABLE, ENDS, ON, RENAME, STARTS, EOF
+tests/data/parser/parseAlterEventOnScheduleEvery3.in	ok
+tests/data/parser/parseAlterEventOnScheduleEvery4.in	ok
+tests/data/parser/parseAlterEventOnScheduleEvery5.in	ok
+tests/data/parser/parseAlterEventOnScheduleEvery6.in	ok
+tests/data/parser/parseAlterEventWithDefiner.in	ok
+tests/data/parser/parseAlterEventWithOtherDefiners.in	ok
+tests/data/parser/parseAlterFunction1.in	ok
+tests/data/parser/parseAlterFunction2.in	ok
+tests/data/parser/parseAlterFunction3.in	ok
+tests/data/parser/parseAlterFunction4.in	ok
+tests/data/parser/parseAlterFunction5.in	ok
+tests/data/parser/parseAlterFunction6.in	ok
+tests/data/parser/parseAlterProcedure1.in	ok
+tests/data/parser/parseAlterProcedure2.in	ok
+tests/data/parser/parseAlterProcedure3.in	ok
+tests/data/parser/parseAlterProcedure4.in	ok
+tests/data/parser/parseAlterProcedure5.in	ok
+tests/data/parser/parseAlterProcedure6.in	ok
+tests/data/parser/parseAlterRenameColumn.in	ok
+tests/data/parser/parseAlterRenameColumns.in	ok
+tests/data/parser/parseAlterTableAddColumnWithCheck.in	ok
+tests/data/parser/parseAlterTableAddSpatialIndex1.in	ok
+tests/data/parser/parseAlterTableAddUniqueKey1.in	ok
+tests/data/parser/parseAlterTableAddUniqueKey2.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyAsc.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyAscDesc.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyAscLower.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyDesc.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyDescAsc.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyDescLower.in	ok
+tests/data/parser/parseAlterTableAddUniqueKeyTwoDesc.in	ok
+tests/data/parser/parseAlterTableCharacterSet1.in	ok
+tests/data/parser/parseAlterTableCharacterSet2.in	ok
+tests/data/parser/parseAlterTableCharacterSet3.in	ok
+tests/data/parser/parseAlterTableCharacterSet4.in	ok
+tests/data/parser/parseAlterTableCharacterSet5.in	ok
+tests/data/parser/parseAlterTableCharacterSet6.in	ok
+tests/data/parser/parseAlterTableCharacterSet7.in	ok
+tests/data/parser/parseAlterTableCoalescePartition.in	ok
+tests/data/parser/parseAlterTableDropAddIndex1.in	ok
+tests/data/parser/parseAlterTableDropColumn1.in	ok
+tests/data/parser/parseAlterTableModifyColumn.in	ok
+tests/data/parser/parseAlterTableModifyColumnEnum1.in	ok
+tests/data/parser/parseAlterTableModifyColumnEnum2.in	ok
+tests/data/parser/parseAlterTableModifyColumnEnum3.in	ok
+tests/data/parser/parseAlterTablePartitionByRange1.in	ok
+tests/data/parser/parseAlterTablePartitionByRange2.in	ok
+tests/data/parser/parseAlterTableRenameIndex1.in	ok
+tests/data/parser/parseAlterTableRenameIndex2.in	ok
+tests/data/parser/parseAlterTableRenameKey1.in	ok
+tests/data/parser/parseAlterTableRenameKey2.in	ok
+tests/data/parser/parseAlterTableSetAutoIncrementError.in	error	Parse error at line 1, column 31: Expected one of IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral
+tests/data/parser/parseAlterUser.in	ok
+tests/data/parser/parseAlterUser1.in	ok
+tests/data/parser/parseAlterUser10.in	error	Parse error at line 1, column 68: Expected one of COMMA, SEMICOLON, ACCOUNT, AS, BY, COMMENT, PASSWORD, REQUIRE, WITH, PASSWORD_LOCK_TIME, FAILED_LOGIN_ATTEMPTS, ATTRIBUTE, EOF
+tests/data/parser/parseAlterUser2.in	ok
+tests/data/parser/parseAlterUser3.in	ok
+tests/data/parser/parseAlterUser4.in	ok
+tests/data/parser/parseAlterUser5.in	ok
+tests/data/parser/parseAlterUser6.in	ok
+tests/data/parser/parseAlterUser7.in	ok
+tests/data/parser/parseAlterUser8.in	ok
+tests/data/parser/parseAlterUser9.in	error	Parse error at line 1, column 41: Expected one of BY, WITH
+tests/data/parser/parseAlterWithInvisible.in	ok
+tests/data/parser/parseAnalyzeErr1.in	error	Parse error at line 1, column 27: Expected TABLE
+tests/data/parser/parseAnalyzeErr2.in	error	Parse error at line 1, column 8: Expected TABLE
+tests/data/parser/parseAnalyzeTable.in	ok
+tests/data/parser/parseAnalyzeTable1.in	ok
+tests/data/parser/parseArrayErr1.in	error	Parse error at line 1, column 29: Expected OPEN_PAR
+tests/data/parser/parseArrayErr3.in	error	Parse error at line 1, column 38: Expected CLOSE_PAR
+tests/data/parser/parseCall.in	ok
+tests/data/parser/parseCall2.in	ok
+tests/data/parser/parseCall3.in	ok
+tests/data/parser/parseCall4.in	ok
+tests/data/parser/parseCall5.in	ok
+tests/data/parser/parseCreateDatabase.in	ok
+tests/data/parser/parseCreateDatabaseErr.in	error	Parse error at line 1, column 35: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+tests/data/parser/parseCreateFunction.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateFunctionErr1.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateFunctionErr2.in	error	Parse error at line 1, column 31: Expected one of BIGINT, BINARY, BIT, BLOB, BOOLEAN, BOOL, CHAR, DATETIME, DATE, DECIMAL, DOUBLE, ENUM, FIXED, FLOAT, GEOMETRYCOLLECTION, GEOMETRY, INT, JSON, LINESTRING, LONGBLOB, LONGTEXT, LONG, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NATIONAL, NCHAR, NUMERIC, NVARCHAR, POINT, POLYGON, REAL, SERIAL, SET, SMALLINT, TEXT, TIMESTAMP, TIME, TINYBLOB, TINYINT, TINYTEXT, VARBINARY, VARCHAR, YEAR
+tests/data/parser/parseCreateFunctionErr3.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateOrReplaceView1.in	ok
+tests/data/parser/parseCreateProcedure.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateProcedure1.in	ok
+tests/data/parser/parseCreateProcedure2.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateProcedure3.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateProcedure4.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseCreateSchema.in	ok
+tests/data/parser/parseCreateSchemaErr.in	error	Parse error at line 1, column 33: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+tests/data/parser/parseCreateTable.in	ok
+tests/data/parser/parseCreateTable10.in	ok
+tests/data/parser/parseCreateTable11.in	ok
+tests/data/parser/parseCreateTable12.in	error	Parse error at line 1, column 19: Expected one of DEFINER, EVENT, FUNCTION, PROCEDURE, SPATIAL, SQL, TRIGGER, VIEW, EOF
+tests/data/parser/parseCreateTable13.in	ok
+tests/data/parser/parseCreateTable14.in	ok
+tests/data/parser/parseCreateTable15.in	ok
+tests/data/parser/parseCreateTable16.in	ok
+tests/data/parser/parseCreateTable17.in	ok
+tests/data/parser/parseCreateTable18.in	ok
+tests/data/parser/parseCreateTable2.in	ok
+tests/data/parser/parseCreateTable3.in	error	Parse error at line 5, column 33: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+tests/data/parser/parseCreateTable4.in	ok
+tests/data/parser/parseCreateTable5.in	ok
+tests/data/parser/parseCreateTable6.in	ok
+tests/data/parser/parseCreateTable7.in	ok
+tests/data/parser/parseCreateTable8.in	ok
+tests/data/parser/parseCreateTable9.in	ok
+tests/data/parser/parseCreateTableAsSelect.in	ok
+tests/data/parser/parseCreateTableEnforcedCheck.in	ok
+tests/data/parser/parseCreateTableErr1.in	error	Parse error at line 2, column 10: Expected one of BIGINT, BINARY, BIT, BLOB, BOOLEAN, BOOL, CHAR, DATETIME, DATE, DECIMAL, DOUBLE, ENUM, FIXED, FLOAT, GEOMETRYCOLLECTION, GEOMETRY, INT, JSON, LINESTRING, LONGBLOB, LONGTEXT, LONG, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NATIONAL, NCHAR, NUMERIC, NVARCHAR, POINT, POLYGON, REAL, SERIAL, SET, SMALLINT, TEXT, TIMESTAMP, TIME, TINYBLOB, TINYINT, TINYTEXT, VARBINARY, VARCHAR, YEAR
+tests/data/parser/parseCreateTableErr2.in	error	Parse error at line 1, column 13: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseCreateTableErr3.in	error	Parse error at line 1, column 32: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseCreateTableErr4.in	error	Parse error at line 1, column 25: Expected one of BacktickIdentifier, OPEN_PAR, CHECK, CONSTRAINT, FOREIGN, FULLTEXT, KW_INDEX, KEY, LIKE, PRIMARY, SELECT, SPATIAL, TABLE, UNIQUE, VALUES, WITH, IdentifierWordToken
+tests/data/parser/parseCreateTableErr5.in	error	Parse error at line 1, column 25: Expected one of BacktickIdentifier, OPEN_PAR, CHECK, CONSTRAINT, FOREIGN, FULLTEXT, KW_INDEX, KEY, LIKE, PRIMARY, SELECT, SPATIAL, TABLE, UNIQUE, VALUES, WITH, IdentifierWordToken
+tests/data/parser/parseCreateTableLike.in	ok
+tests/data/parser/parseCreateTableNotEnforcedCheck.in	ok
+tests/data/parser/parseCreateTableSRID.in	ok
+tests/data/parser/parseCreateTableSelect.in	ok
+tests/data/parser/parseCreateTableSpatial.in	ok
+tests/data/parser/parseCreateTableTimestampWithPrecision.in	ok
+tests/data/parser/parseCreateTableWithInvisibleKey.in	ok
+tests/data/parser/parseCreateTableWithParser.in	error	Parse error at line 3, column 48: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, WITH, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+tests/data/parser/parseCreateTrigger.in	error	Parse error at line 2, column 49: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, COMMA, SEMICOLON, OPEN_PAR, AND, BETWEEN, COLLATE, KW_DIV, IN, IS, LIKE, KW_MOD, NOT, OR, REGEXP, SOUNDS, XOR, MEMBER, EOF
+tests/data/parser/parseCreateUser1.in	ok
+tests/data/parser/parseCreateUser2.in	error	Parse error at line 2, column 14: Expected one of BY, WITH
+tests/data/parser/parseCreateView.in	ok
+tests/data/parser/parseCreateView2.in	ok
+tests/data/parser/parseCreateView3.in	ok
+tests/data/parser/parseCreateView4.in	ok
+tests/data/parser/parseCreateView5.in	ok
+tests/data/parser/parseCreateViewAsWithAs.in	ok
+tests/data/parser/parseCreateViewMultiple.in	error	Parse error at line 3, column 1: Expected one of SEMICOLON, OPEN_PAR, AS, AUTOEXTEND_SIZE, AUTO_INCREMENT, AVG_ROW_LENGTH, CHARSET, CHAR, CHECKSUM, COLLATE, COMMENT, COMPRESSION, CONNECTION, DATA, DEFAULT, DELAY_KEY_WRITE, ENCRYPTION, ENGINE, IGNORE, KW_INDEX, INSERT_METHOD, KEY_BLOCK_SIZE, MAX_ROWS, MIN_ROWS, PACK_KEYS, PARTITION, PASSWORD, REPLACE, ROW_FORMAT, SELECT, START, STATS_AUTO_RECALC, STATS_PERSISTENT, STATS_SAMPLE_PAGES, STORAGE, TABLESPACE, TABLE, TABLE_CHECKSUM, UNION, VALUES, WITH, SECONDARY_ENGINE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+tests/data/parser/parseCreateViewWithQuotes.in	ok
+tests/data/parser/parseCreateViewWithUnion.in	ok
+tests/data/parser/parseCreateViewWithWrongSyntax.in	error	Parse error at line 1, column 33: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/parser/parseCreateViewWithoutQuotes.in	ok
+tests/data/parser/parseDelete.in	ok
+tests/data/parser/parseDelete10.in	ok
+tests/data/parser/parseDelete11.in	ok
+tests/data/parser/parseDelete12.in	error	Parse error at line 1, column 43: Expected one of SEMICOLON, EOF
+tests/data/parser/parseDelete13.in	ok
+tests/data/parser/parseDelete2.in	ok
+tests/data/parser/parseDelete3.in	ok
+tests/data/parser/parseDelete4.in	ok
+tests/data/parser/parseDelete5.in	error	Parse error at line 1, column 52: Expected one of SEMICOLON, EOF
+tests/data/parser/parseDelete6.in	ok
+tests/data/parser/parseDelete7.in	error	Parse error at line 1, column 42: Expected one of SEMICOLON, EOF
+tests/data/parser/parseDelete8.in	error	Parse error at line 1, column 30: Expected one of SEMICOLON, EOF
+tests/data/parser/parseDelete9.in	ok
+tests/data/parser/parseDeleteErr1.in	error	Parse error at line 1, column 14: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, FROM, IGNORE, LOW_PRIORITY, QUICK, IdentifierWordToken
+tests/data/parser/parseDeleteErr10.in	error	Parse error at line 1, column 57: Expected one of COMMA, SEMICOLON, CLOSE_PAR, CLOSE_CURLY, CROSS, FORCE, FOR, GROUP, HAVING, IGNORE, INNER, INTO, JOIN, LEFT, LIMIT, LOCK, NATURAL, ON, ORDER, RIGHT, SET, STRAIGHT_JOIN, UNION, USE, USING, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, TABLESAMPLE, EOF
+tests/data/parser/parseDeleteErr11.in	error	Parse error at line 1, column 38: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, SEMICOLON, CLOSE_PAR, AND, BETWEEN, COLLATE, KW_DIV, FOR, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, RANGE, REGEXP, ROWS, SEPARATOR, SOUNDS, WITH, XOR, GROUPS, MEMBER, EOF
+tests/data/parser/parseDeleteErr12.in	error	Parse error at line 1, column 57: Expected one of COMMA, SEMICOLON, CLOSE_PAR, CLOSE_CURLY, CROSS, FORCE, FOR, GROUP, HAVING, IGNORE, INNER, INTO, JOIN, LEFT, LIMIT, LOCK, NATURAL, ON, ORDER, RIGHT, SET, STRAIGHT_JOIN, UNION, USE, USING, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, TABLESAMPLE, EOF
+tests/data/parser/parseDeleteErr2.in	error	Parse error at line 1, column 31: Expected one of COMMA, FROM
+tests/data/parser/parseDeleteErr3.in	error	Parse error at line 1, column 31: Expected one of COMMA, FROM
+tests/data/parser/parseDeleteErr4.in	error	Parse error at line 1, column 36: Expected one of COMMA, USING
+tests/data/parser/parseDeleteErr5.in	error	Parse error at line 1, column 52: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, HAVING, INTO, LIMIT, LOCK, ON, ORDER, RANGE, ROWS, SEPARATOR, UNION, WITH, EXCEPT, GROUPS, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseDeleteErr6.in	error	Parse error at line 1, column 36: Expected one of COMMA, USING
+tests/data/parser/parseDeleteErr7.in	error	Parse error at line 1, column 54: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, HAVING, INTO, LIMIT, LOCK, ON, ORDER, RANGE, ROWS, SEPARATOR, UNION, WITH, EXCEPT, GROUPS, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseDeleteErr8.in	error	Parse error at line 1, column 26: Expected one of DotWordIdentifier, BacktickIdentifier, DotDigitIdentifier, EQUAL, DOT, COMMA, SEMICOLON, OPEN_PAR, CLOSE_PAR, CLOSE_CURLY, ALGORITHM, AS, CHARSET, CHAR, COLUMNS, CROSS, FORCE, FOR, FROM, GROUP, HAVING, IGNORE, INNER, INTO, JOIN, LEFT, LIMIT, LINES, LOCK, MEMORY, NATURAL, ON, ORDER, PARTITION, RIGHT, ROWS, SELECT, SET, STRAIGHT_JOIN, TABLE, UNION, USE, USING, VALUES, VALUE, WHERE, WITH, EXCEPT, SKIP, NOWAIT, WINDOW, INTERSECT, PARALLEL, QUALIFY, TABLESAMPLE, IdentifierWordToken, EOF
+tests/data/parser/parseDeleteErr9.in	error	Parse error at line 1, column 57: Expected one of COMMA, SEMICOLON, CLOSE_PAR, CLOSE_CURLY, CROSS, FORCE, FOR, GROUP, HAVING, IGNORE, INNER, INTO, JOIN, LEFT, LIMIT, LOCK, NATURAL, ON, ORDER, RIGHT, SET, STRAIGHT_JOIN, UNION, USE, USING, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, TABLESAMPLE, EOF
+tests/data/parser/parseDeleteJoin.in	ok
+tests/data/parser/parseDelimiter.in	error	Parse error at line 2, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseDrop.in	ok
+tests/data/parser/parseDrop2.in	ok
+tests/data/parser/parseExplain.in	ok
+tests/data/parser/parseExplain1.in	error	Parse error at line 1, column 9: Expected one of BacktickIdentifier, UnquotedHexLiteral, QuotedHexLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, SEMICOLON, OPEN_PAR, ALL, BINARY, ENGINE, ERROR, GENERAL, HOSTS, LOCAL, LOGS, NO_WRITE_TO_BINLOG, OPTIMIZER_COSTS, PARTITIONS, PRIVILEGES, RELAY, SLOW, STATUS, TABLES, TABLE, USER_RESOURCES, IdentifierWordToken, EOF
+tests/data/parser/parseExplain10.in	ok
+tests/data/parser/parseExplain11.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseExplain12.in	ok
+tests/data/parser/parseExplain13.in	ok
+tests/data/parser/parseExplain14.in	ok
+tests/data/parser/parseExplain2.in	ok
+tests/data/parser/parseExplain3.in	ok
+tests/data/parser/parseExplain4.in	ok
+tests/data/parser/parseExplain5.in	ok
+tests/data/parser/parseExplain6.in	ok
+tests/data/parser/parseExplain7.in	ok
+tests/data/parser/parseExplain8.in	ok
+tests/data/parser/parseExplain9.in	error	Parse error at line 1, column 20: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, DotDigitIdentifier, DOT, SEMICOLON, IdentifierWordToken, EOF
+tests/data/parser/parseExplainErr.in	error	Parse error at line 1, column 13: Expected one of CONNECTION, DATABASE
+tests/data/parser/parseExplainErr1.in	error	Parse error at line 1, column 9: Expected one of BacktickIdentifier, UnquotedHexLiteral, QuotedHexLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, SEMICOLON, OPEN_PAR, ALL, BINARY, ENGINE, ERROR, GENERAL, HOSTS, LOCAL, LOGS, NO_WRITE_TO_BINLOG, OPTIMIZER_COSTS, PARTITIONS, PRIVILEGES, RELAY, SLOW, STATUS, TABLES, TABLE, USER_RESOURCES, IdentifierWordToken, EOF
+tests/data/parser/parseExplainErr2.in	error	Parse error at line 1, column 17: Expected one of OPEN_PAR, DELETE, FOR, FORMAT, INSERT, REPLACE, SELECT, TABLE, UPDATE, VALUES, WITH, EOF
+tests/data/parser/parseExplainErr3.in	error	Parse error at line 1, column 9: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, ANALYZE, DELETE, FOR, FORMAT, INSERT, INTO, REPLACE, SELECT, TABLE, UPDATE, VALUES, WITH, IdentifierWordToken
+tests/data/parser/parseInsert.in	ok
+tests/data/parser/parseInsertErr.in	error	Parse error at line 1, column 8: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, DELAYED, HIGH_PRIORITY, IGNORE, INTO, LOW_PRIORITY, IdentifierWordToken, EOF
+tests/data/parser/parseInsertErr2.in	error	Parse error at line 1, column 15: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, PARTITION, SELECT, SET, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseInsertFunction.in	ok
+tests/data/parser/parseInsertIntoErr.in	error	Parse error at line 1, column 15: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, PARTITION, SELECT, SET, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseInsertIntoSet.in	error	Parse error at line 1, column 21: Expected one of KeywordQualifiedPair, BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseInsertOnDuplicateKey.in	ok
+tests/data/parser/parseInsertOnDuplicateKeyErr.in	error	Parse error at line 2, column 18: Expected UPDATE
+tests/data/parser/parseInsertSelect.in	ok
+tests/data/parser/parseInsertSelectOnDuplicateKey.in	ok
+tests/data/parser/parseInsertSet.in	error	Parse error at line 1, column 27: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseInsertSetOnDuplicateKey.in	error	Parse error at line 1, column 27: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseKill.in	ok
+tests/data/parser/parseKill2.in	ok
+tests/data/parser/parseKill3.in	error	Parse error at line 1, column 15: Expected one of DotWordIdentifier, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, DotDigitIdentifier, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, DOT, COMMA, SEMICOLON, OPEN_PAR, CLOSE_PAR, CLOSE_CURLY, JSON_SEPARATOR, JSON_UNQUOTED_SEPARATOR, ALGORITHM, AND, AS, ASC, AT, BETWEEN, COLLATE, COMMENT, CROSS, DAY, DAY_HOUR, DAY_MICROSECOND, DAY_MINUTE, DAY_SECOND, DESC, DISABLE, KW_DIV, DO, ELSE, ENABLE, END, ENDS, ESCAPE, FOR, FROM, GROUP, HAVING, HOUR_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, HOUR, INNER, INTO, IN, IS, JOIN, LEFT, LIKE, LIMIT, LOCK, MEMORY, MICROSECOND, MINUTE_MICROSECOND, MINUTE_SECOND, MINUTE, KW_MOD, MONTH, NATURAL, NOT, ON, ORDER, OR, QUARTER, RANGE, REGEXP, RENAME, RIGHT, ROWS, SECOND_MICROSECOND, SECOND, SEPARATOR, SET, SOUNDS, STRAIGHT_JOIN, THEN, UNION, USING, WEEK, WHEN, WHERE, WITH, XOR, YEAR_MONTH, YEAR, EXCEPT, GROUPS, WINDOW, MEMBER, INTERSECT, PARALLEL, QUALIFY, IdentifierWordToken, EOF
+tests/data/parser/parseKillConnection.in	ok
+tests/data/parser/parseKillErr1.in	error	Parse error at line 1, column 23: Expected one of DotWordIdentifier, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, DotDigitIdentifier, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, DOT, COMMA, SEMICOLON, CLOSE_PAR, CLOSE_CURLY, JSON_SEPARATOR, JSON_UNQUOTED_SEPARATOR, ALGORITHM, AND, AS, ASC, AT, BETWEEN, COLLATE, COMMENT, CROSS, DAY, DAY_HOUR, DAY_MICROSECOND, DAY_MINUTE, DAY_SECOND, DESC, DISABLE, KW_DIV, DO, ELSE, ENABLE, END, ENDS, ESCAPE, FOR, FROM, GROUP, HAVING, HOUR_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, HOUR, INNER, INTO, IN, IS, JOIN, LEFT, LIKE, LIMIT, LOCK, MEMORY, MICROSECOND, MINUTE_MICROSECOND, MINUTE_SECOND, MINUTE, KW_MOD, MONTH, NATURAL, NOT, ON, ORDER, OR, QUARTER, RANGE, REGEXP, RENAME, RIGHT, ROWS, SECOND_MICROSECOND, SECOND, SEPARATOR, SET, SOUNDS, STRAIGHT_JOIN, THEN, UNION, USING, WEEK, WHEN, WHERE, WITH, XOR, YEAR_MONTH, YEAR, EXCEPT, GROUPS, WINDOW, MEMBER, INTERSECT, PARALLEL, QUALIFY, IdentifierWordToken, EOF
+tests/data/parser/parseKillErr2.in	error	Parse error at line 1, column 5: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/parser/parseKillErr3.in	error	Parse error at line 1, column 13: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, MULT, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ALL, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, DISTINCT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HIGH_PRIORITY, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, SQL_BIG_RESULT, SQL_BUFFER_RESULT, SQL_CALC_FOUND_ROWS, SQL_NO_CACHE, SQL_SMALL_RESULT, STRAIGHT_JOIN, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/parser/parseKillErr4.in	error	Parse error at line 1, column 13: Expected OPEN_PAR
+tests/data/parser/parseKillQuery.in	ok
+tests/data/parser/parseLimitErr1.in	error	Parse error at line 1, column 42: Expected one of SEMICOLON, CLOSE_PAR, FOR, INTO, LOCK, ON, WITH, EOF
+tests/data/parser/parseLimitErr2.in	error	Parse error at line 1, column 34: Expected one of BacktickIdentifier, IntegerLiteral, LongLiteral, UnsignedLongLiteral, PARAM_MARKER, IdentifierWordToken
+tests/data/parser/parseLoad1.in	ok
+tests/data/parser/parseLoad2.in	ok
+tests/data/parser/parseLoad3.in	ok
+tests/data/parser/parseLoad4.in	error	Parse error at line 8, column 5: Expected one of KeywordQualifiedPair, BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseLoad5.in	ok
+tests/data/parser/parseLoad6.in	error	Parse error at line 9, column 5: Expected one of KeywordQualifiedPair, BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseLoad7.in	ok
+tests/data/parser/parseLoad8.in	ok
+tests/data/parser/parseLoadErr1.in	error	Parse error at line 1, column 27: Expected one of INFILE, URL, S3
+tests/data/parser/parseLoadErr2.in	error	Parse error at line 1, column 22: Expected one of INFILE, URL, S3
+tests/data/parser/parseLoadErr3.in	error	Parse error at line 3, column 1: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, SEMICOLON, OPEN_PAR, CLOSE_PAR, ALGORITHM, CHARSET, CHAR, COLUMNS, FOR, FROM, GROUP, HAVING, IGNORE, INTO, LIMIT, LINES, LOCK, MEMORY, ON, ORDER, ROWS, SET, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, PARALLEL, QUALIFY, EOF
+tests/data/parser/parseLoadErr4.in	error	Parse error at line 2, column 6: Expected TABLE
+tests/data/parser/parseLoadErr5.in	error	Parse error at line 3, column 1: Expected one of DotWordIdentifier, BacktickIdentifier, DotDigitIdentifier, EQUAL, DOT, COMMA, SEMICOLON, OPEN_PAR, CLOSE_PAR, CLOSE_CURLY, ALGORITHM, AS, CHARSET, CHAR, COLUMNS, CROSS, FORCE, FOR, GROUP, HAVING, IGNORE, INNER, INTO, JOIN, LEFT, LIMIT, LINES, LOCK, MEMORY, NATURAL, ON, ORDER, PARTITION, RIGHT, ROWS, SELECT, SET, STRAIGHT_JOIN, TABLE, UNION, USE, USING, VALUES, VALUE, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, PARALLEL, QUALIFY, TABLESAMPLE, IdentifierWordToken, EOF
+tests/data/parser/parseLoadErr6.in	error	Parse error at line 3, column 1: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, SEMICOLON, OPEN_PAR, CLOSE_PAR, ALGORITHM, CHARSET, CHAR, COLUMNS, FOR, FROM, GROUP, HAVING, IGNORE, INTO, LIMIT, LINES, LOCK, MEMORY, ON, ORDER, ROWS, SET, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, PARALLEL, QUALIFY, EOF
+tests/data/parser/parseLock1.in	ok
+tests/data/parser/parseLock2.in	ok
+tests/data/parser/parseLock3.in	ok
+tests/data/parser/parseLock4.in	ok
+tests/data/parser/parseLock5.in	ok
+tests/data/parser/parseLock6.in	ok
+tests/data/parser/parseLockErr1.in	error	Parse error at line 1, column 19: Expected one of DotWordIdentifier, BacktickIdentifier, DotDigitIdentifier, EQUAL, DOT, AS, LOW_PRIORITY, READ, WRITE, IdentifierWordToken
+tests/data/parser/parseLockErr10.in	error	Parse error at line 1, column 49: Expected one of COMMA, SEMICOLON, EOF
+tests/data/parser/parseLockErr2.in	error	Parse error at line 1, column 28: Expected one of LOW_PRIORITY, READ, WRITE
+tests/data/parser/parseLockErr3.in	ok
+tests/data/parser/parseLockErr4.in	error	Parse error at line 2, column 6: Expected one of INSTANCE, TABLES, TABLE
+tests/data/parser/parseLockErr5.in	error	Parse error at line 2, column 31: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseLockErr6.in	error	Parse error at line 2, column 19: Expected one of DotWordIdentifier, BacktickIdentifier, DotDigitIdentifier, EQUAL, DOT, AS, LOW_PRIORITY, READ, WRITE, IdentifierWordToken
+tests/data/parser/parseLockErr7.in	error	Parse error at line 1, column 30: Expected one of LOW_PRIORITY, READ, WRITE
+tests/data/parser/parseLockErr8.in	error	Parse error at line 1, column 35: Expected one of COMMA, SEMICOLON, EOF
+tests/data/parser/parseLockErr9.in	error	Parse error at line 1, column 43: Expected WRITE
+tests/data/parser/parsePurge.in	ok
+tests/data/parser/parsePurge2.in	ok
+tests/data/parser/parsePurge3.in	ok
+tests/data/parser/parsePurge4.in	ok
+tests/data/parser/parsePurgeErr.in	error	Parse error at line 1, column 7: Expected one of BINARY, MASTER
+tests/data/parser/parsePurgeErr2.in	error	Parse error at line 1, column 19: Expected one of BEFORE, TO
+tests/data/parser/parsePurgeErr3.in	error	Parse error at line 1, column 34: Expected one of SEMICOLON, EOF
+tests/data/parser/parseRename.in	ok
+tests/data/parser/parseRename2.in	ok
+tests/data/parser/parseRenameErr1.in	error	Parse error at line 1, column 19: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseRenameErr2.in	error	Parse error at line 1, column 14: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+tests/data/parser/parseRenameErr3.in	error	Parse error at line 1, column 16: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, TO
+tests/data/parser/parseRenameErr4.in	error	Parse error at line 1, column 25: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, COMMA, SEMICOLON, EOF
+tests/data/parser/parseRenameErr5.in	error	Parse error at line 1, column 8: Expected one of USER, TABLES, TABLE
+tests/data/parser/parseReplace.in	ok
+tests/data/parser/parseReplace2.in	ok
+tests/data/parser/parseReplaceErr.in	error	Parse error at line 3, column 2: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, WITH
+tests/data/parser/parseReplaceErr2.in	error	Parse error at line 1, column 9: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, DELAYED, INTO, LOW_PRIORITY, IdentifierWordToken, EOF
+tests/data/parser/parseReplaceErr3.in	error	Parse error at line 1, column 16: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, PARTITION, SELECT, SET, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseReplaceIntoErr.in	error	Parse error at line 1, column 16: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, PARTITION, SELECT, SET, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseReplaceSelect.in	ok
+tests/data/parser/parseReplaceSet.in	error	Parse error at line 1, column 28: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, VALUE, WITH
+tests/data/parser/parseReplaceValues.in	ok
+tests/data/parser/parseRestore.in	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+tests/data/parser/parseSelect.in	error	Parse error at line 2, column 5: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, COMMA, SEMICOLON, CLOSE_PAR, AND, AS, BETWEEN, COLLATE, KW_DIV, FOR, FROM, GROUP, HAVING, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, REGEXP, SOUNDS, UNION, WHERE, WITH, XOR, EXCEPT, WINDOW, MEMBER, INTERSECT, QUALIFY, IdentifierWordToken, EOF
+tests/data/parser/parseSelect10.in	ok
+tests/data/parser/parseSelect11.in	ok
+tests/data/parser/parseSelect12.in	ok
+tests/data/parser/parseSelect13.in	ok
+tests/data/parser/parseSelect14.in	ok
+tests/data/parser/parseSelect15.in	ok
+tests/data/parser/parseSelect16.in	ok
+tests/data/parser/parseSelect2.in	ok
+tests/data/parser/parseSelect3.in	ok
+tests/data/parser/parseSelect4.in	ok
+tests/data/parser/parseSelect5.in	ok
+tests/data/parser/parseSelect6.in	ok
+tests/data/parser/parseSelect7.in	ok
+tests/data/parser/parseSelect8.in	ok
+tests/data/parser/parseSelect9.in	ok
+tests/data/parser/parseSelectAggregateWithPartitionAndAlias.in	ok
+tests/data/parser/parseSelectCase1.in	ok
+tests/data/parser/parseSelectCase2.in	ok
+tests/data/parser/parseSelectCase3.in	ok
+tests/data/parser/parseSelectCase4.in	ok
+tests/data/parser/parseSelectCase5.in	ok
+tests/data/parser/parseSelectCaseAlias1.in	ok
+tests/data/parser/parseSelectCaseAlias2.in	ok
+tests/data/parser/parseSelectCaseAlias3.in	ok
+tests/data/parser/parseSelectCaseAlias4.in	ok
+tests/data/parser/parseSelectCaseAlias5.in	ok
+tests/data/parser/parseSelectCaseAlias6.in	ok
+tests/data/parser/parseSelectCaseAliasErr1.in	error	Parse error at line 2, column 47: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/parser/parseSelectCaseAliasErr2.in	error	Parse error at line 2, column 47: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/parser/parseSelectCaseAliasErr3.in	error	Parse error at line 2, column 51: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, FROM, GROUP, HAVING, INTO, LIMIT, LOCK, ON, ORDER, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseSelectCaseAliasErr4.in	error	Parse error at line 1, column 76: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/parser/parseSelectCaseErr1.in	error	Parse error at line 1, column 90: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, AND, BETWEEN, COLLATE, KW_DIV, IN, IS, LIKE, KW_MOD, NOT, OR, REGEXP, SOUNDS, WHEN, XOR, MEMBER
+tests/data/parser/parseSelectCaseErr2.in	error	Parse error at line 2, column 6: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, FROM, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, WHEN, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken, EOF
+tests/data/parser/parseSelectCaseErr3.in	error	Parse error at line 2, column 15: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, AND, BETWEEN, COLLATE, KW_DIV, IN, IS, LIKE, KW_MOD, NOT, OR, REGEXP, SOUNDS, THEN, XOR, MEMBER
+tests/data/parser/parseSelectCaseErr4.in	error	Parse error at line 2, column 8: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, AND, BETWEEN, COLLATE, KW_DIV, IN, IS, LIKE, KW_MOD, NOT, OR, REGEXP, SOUNDS, WHEN, XOR, MEMBER
+tests/data/parser/parseSelectCaseErr5.in	error	Parse error at line 2, column 34: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, AND, BETWEEN, COLLATE, KW_DIV, IN, IS, LIKE, KW_MOD, NOT, OR, REGEXP, SOUNDS, THEN, XOR, MEMBER
+tests/data/parser/parseSelectEndOptions1.in	ok
+tests/data/parser/parseSelectEndOptions2.in	ok
+tests/data/parser/parseSelectEndOptionsErr.in	ok
+tests/data/parser/parseSelectErr1.in	error	Parse error at line 2, column 5: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, COMMA, SEMICOLON, CLOSE_PAR, AND, AS, BETWEEN, COLLATE, KW_DIV, FOR, FROM, GROUP, HAVING, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, REGEXP, SOUNDS, UNION, WHERE, WITH, XOR, EXCEPT, WINDOW, MEMBER, INTERSECT, QUALIFY, IdentifierWordToken, EOF
+tests/data/parser/parseSelectErr2.in	error	Parse error at line 1, column 36: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, IdentifierWordToken
+tests/data/parser/parseSelectExists.in	ok
+tests/data/parser/parseSelectGroupBy.in	ok
+tests/data/parser/parseSelectGroupByErr.in	error	Parse error at line 1, column 47: Expected one of SEMICOLON, CLOSE_PAR, FOR, HAVING, INTO, LIMIT, LOCK, ON, ORDER, UNION, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseSelectGroupByWithComments.in	ok
+tests/data/parser/parseSelectIndexHint1.in	ok
+tests/data/parser/parseSelectIndexHint2.in	ok
+tests/data/parser/parseSelectIndexHintErr1.in	error	Parse error at line 1, column 29: Expected one of KW_INDEX, KEY
+tests/data/parser/parseSelectIndexHintErr2.in	error	Parse error at line 1, column 29: Expected one of KW_INDEX, KEY
+tests/data/parser/parseSelectIndexHintErr3.in	error	Parse error at line 1, column 39: Expected one of GROUP, JOIN, ORDER
+tests/data/parser/parseSelectIndexHintErr4.in	error	Parse error at line 1, column 39: Expected one of GROUP, JOIN, ORDER
+tests/data/parser/parseSelectIntoOptions1.in	ok
+tests/data/parser/parseSelectIntoOptions2.in	ok
+tests/data/parser/parseSelectIntoOptions3.in	ok
+tests/data/parser/parseSelectJoinCross.in	ok
+tests/data/parser/parseSelectJoinMultiple.in	ok
+tests/data/parser/parseSelectJoinMultiple2.in	ok
+tests/data/parser/parseSelectJoinNatural.in	ok
+tests/data/parser/parseSelectJoinNaturalLeft.in	ok
+tests/data/parser/parseSelectJoinNaturalLeftOuter.in	ok
+tests/data/parser/parseSelectJoinNaturalRight.in	ok
+tests/data/parser/parseSelectJoinNaturalRightOuter.in	ok
+tests/data/parser/parseSelectJoinStraight.in	ok
+tests/data/parser/parseSelectNested.in	ok
+tests/data/parser/parseSelectOrderByComment.in	ok
+tests/data/parser/parseSelectOrderByIsNull.in	ok
+tests/data/parser/parseSelectOverAlias_mariadb_100600.in	ok
+tests/data/parser/parseSelectUnion.in	ok
+tests/data/parser/parseSelectUnion2.in	ok
+tests/data/parser/parseSelectWhere.in	ok
+tests/data/parser/parseSelectWhereCollate.in	ok
+tests/data/parser/parseSelectWithParenthesis.in	ok
+tests/data/parser/parseSelectWrongOrder.in	error	Parse error at line 1, column 43: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, INTO, LOCK, OFFSET, ON, WITH, EOF
+tests/data/parser/parseSelectWrongOrder2.in	error	Parse error at line 1, column 68: Expected one of EQUAL, NULL_SAFE_EQUAL, GREATER_OR_EQUAL, GREATER_THAN, LESS_OR_EQUAL, LESS_THAN, NOT_EQUAL, PLUS, MINUS, MULT, DIV, MOD, SHIFT_LEFT, SHIFT_RIGHT, LOGICAL_AND, BITWISE_AND, BITWISE_XOR, LOGICAL_OR, BITWISE_OR, SEMICOLON, CLOSE_PAR, AND, BETWEEN, COLLATE, KW_DIV, FOR, GROUP, HAVING, INTO, IN, IS, LIKE, LIMIT, LOCK, KW_MOD, NOT, ON, ORDER, OR, REGEXP, SOUNDS, UNION, WITH, XOR, EXCEPT, WINDOW, MEMBER, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseSetCharacterSet.in	ok
+tests/data/parser/parseSetCharacterSetError.in	error	Parse error at line 1, column 19: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, BINARY, DEFAULT, IdentifierWordToken
+tests/data/parser/parseSetCharset.in	ok
+tests/data/parser/parseSetCharsetError.in	error	Parse error at line 1, column 13: Expected one of DotWordIdentifier, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, DotDigitIdentifier, EQUAL, ASSIGN, DOT, BINARY, DEFAULT, IdentifierWordToken
+tests/data/parser/parseSetError1.in	error	Parse error at line 1, column 20: Expected one of COMMA, SEMICOLON, EOF
+tests/data/parser/parseSetGlobalVariable.in	ok
+tests/data/parser/parseSetNames.in	ok
+tests/data/parser/parseSetNames2.in	ok
+tests/data/parser/parseSetNames3.in	error	Parse error at line 1, column 18: Expected one of COMMA, SEMICOLON, EOF
+tests/data/parser/parseSetNamesError.in	error	Parse error at line 1, column 11: Expected one of DotWordIdentifier, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, DotDigitIdentifier, EQUAL, ASSIGN, DOT, BINARY, DEFAULT, IdentifierWordToken
+tests/data/parser/parseSetNamesError2.in	error	Parse error at line 1, column 18: Expected one of COMMA, SEMICOLON, EOF
+tests/data/parser/parseSetNamesError3.in	error	Parse error at line 1, column 25: Expected one of BacktickIdentifier, SingleQuotedText, DoubleQuotedText, BINARY, IdentifierWordToken
+tests/data/parser/parseSetVariable.in	ok
+tests/data/parser/parseSetVariable2.in	ok
+tests/data/parser/parseTable1.in	ok
+tests/data/parser/parseTransaction.in	ok
+tests/data/parser/parseTransaction2.in	ok
+tests/data/parser/parseTransaction3.in	ok
+tests/data/parser/parseTransaction4.in	ok
+tests/data/parser/parseTransaction5.in	ok
+tests/data/parser/parseTransaction6.in	ok
+tests/data/parser/parseTransaction7.in	ok
+tests/data/parser/parseTransactionErr1.in	ok
+tests/data/parser/parseUnlock1.in	ok
+tests/data/parser/parseUnlockErr1.in	error	Parse error at line 1, column 15: Expected one of SEMICOLON, EOF
+tests/data/parser/parseUpdate1.in	ok
+tests/data/parser/parseUpdate2.in	error	Parse error at line 8, column 9: Expected one of SEMICOLON, EOF
+tests/data/parser/parseUpdate3.in	error	Parse error at line 1, column 23: Expected one of TemporalKeyword, KeywordQualifiedPair, ContextualFunctionName, BacktickIdentifier, SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, AtTextSuffix, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, AT_AT_SIGN, PLUS, MINUS, LOGICAL_NOT, BITWISE_NOT, OPEN_PAR, OPEN_CURLY, AT_SIGN, PARAM_MARKER, ASCII, AVG, BINARY, CASE, CHARSET, CHAR, COALESCE, COLLATION, CONVERT, NOW, CURRENT_USER, DATABASE, DATE, DAY, DEFAULT, EXISTS, FALSE, FORMAT, GEOMETRYCOLLECTION, GET_FORMAT, HOUR, IF, INSERT, INTERVAL, LEFT, LINESTRING, MATCH, MICROSECOND, MINUTE, KW_MOD, MONTH, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON, NOT, NULL, POINT, POLYGON, QUARTER, REPEAT, REPLACE, REVERSE, RIGHT, ROW_COUNT, ROW, SECOND, USER, TIMESTAMP, TIMESTAMPADD, TIMESTAMPDIFF, TIME, TRUE, TRUNCATE, UTC_DATE, UTC_TIMESTAMP, UTC_TIME, VALUES, WEEK, WEIGHT_STRING, YEAR, JSON_OBJECTAGG, JSON_ARRAYAGG, GROUPING, CUME_DIST, DENSE_RANK, FIRST_VALUE, LAG, LAST_VALUE, LEAD, NTH_VALUE, NTILE, PERCENT_RANK, RANK, ROW_NUMBER, JSON_VALUE, ST_COLLECT, LOG, ADDDATE_CALL_OPEN, BIT_AND_CALL_OPEN, BIT_OR_CALL_OPEN, BIT_XOR_CALL_OPEN, CAST_CALL_OPEN, COUNT_CALL_OPEN, CURDATE_CALL_OPEN, CURTIME_CALL_OPEN, DATE_ADD_CALL_OPEN, DATE_SUB_CALL_OPEN, EXTRACT_CALL_OPEN, GROUP_CONCAT_CALL_OPEN, MAX_CALL_OPEN, SUBSTRING_CALL_OPEN, MIN_CALL_OPEN, NOW_CALL_OPEN, POSITION_CALL_OPEN, USER_CALL_OPEN, STDDEV_SAMP_CALL_OPEN, STD_CALL_OPEN, SUBDATE_CALL_OPEN, SUM_CALL_OPEN, SYSDATE_CALL_OPEN, TRIM_CALL_OPEN, VARIANCE_CALL_OPEN, VAR_SAMP_CALL_OPEN, UnquotedIdentifierWordToken, IdentifierWordToken
+tests/data/parser/parseUpdate4.in	ok
+tests/data/parser/parseUpdate5.in	ok
+tests/data/parser/parseUpdate6.in	ok
+tests/data/parser/parseUpdate7.in	ok
+tests/data/parser/parseUpdateEmptySet.in	error	Parse error at line 1, column 17: Expected one of KeywordQualifiedPair, BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseUpdateErr.in	error	Parse error at line 7, column 1: Expected one of KeywordQualifiedPair, BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseWhere0.in	ok
+tests/data/parser/parseWithStatement.in	ok
+tests/data/parser/parseWithStatement1.in	ok
+tests/data/parser/parseWithStatement2.in	ok
+tests/data/parser/parseWithStatement3.in	ok
+tests/data/parser/parseWithStatement4.in	error	Parse error at line 1, column 79: Expected one of COMMA, OPEN_PAR, DELETE, SELECT, TABLE, UPDATE, VALUES, EOF
+tests/data/parser/parseWithStatement5.in	ok
+tests/data/parser/parseWithStatement6.in	error	Parse error at line 1, column 23: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, OPEN_PAR, AS
+tests/data/parser/parseWithStatement7.in	ok
+tests/data/parser/parseWithStatementErr.in	error	Parse error at line 1, column 33: Expected AS
+tests/data/parser/parseWithStatementErr1.in	error	Parse error at line 1, column 41: Expected AS
+tests/data/parser/parseWithStatementErr2.in	error	Parse error at line 1, column 51: Expected one of OPEN_PAR, DELETE, SELECT, TABLE, UPDATE, VALUES
+tests/data/parser/parseWithStatementErr3.in	error	Parse error at line 1, column 76: Expected one of BacktickIdentifier, IdentifierWordToken
+tests/data/parser/parseWithStatementErr4.in	error	Parse error at line 1, column 76: Expected one of COMMA, OPEN_PAR, DELETE, SELECT, TABLE, UPDATE, VALUES, EOF
+tests/data/parser/parseWithStatementErr5.in	error	Parse error at line 1, column 30: Expected one of BacktickIdentifier, RECURSIVE, IdentifierWordToken, EOF
+tests/data/parser/parseWithStatementErr6.in	error	Parse error at line 1, column 45: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, WITH
+tests/data/parser/parseWithStatementErr7.in	error	Parse error at line 1, column 35: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, FROM, GROUP, HAVING, INTO, LIMIT, LOCK, ON, ORDER, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parseWithStatementErr8.in	error	Parse error at line 1, column 67: Expected one of COMMA, SEMICOLON, CLOSE_PAR, FOR, FROM, GROUP, HAVING, INTO, LIMIT, LOCK, ON, ORDER, UNION, WHERE, WITH, EXCEPT, WINDOW, INTERSECT, QUALIFY, EOF
+tests/data/parser/parsephpMyAdminExport1.in	error	Parse error at line 16, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF

@@ -65,9 +65,11 @@ IGUANA_SRC=/absolute/path/to/iguana-rs
 cargo build --manifest-path build/iguana/Cargo.toml
 ```
 
-The tested Iguana revision is `57fa2bb8a384a6534f992d406852ba021ab3c5ed`.
+The tested Iguana version is `v0.1.0-alpha.4`
+(`538f94524fbd4fea3f27837eabced5cc8b53c181`).
 Generation uses default settings, including match memoization. Add
-`--unsafe true` to generate the unsafe version with the other settings unchanged.
+`--first-parse true` to generate the first-parse version with the other
+settings unchanged.
 Generated Rust sources and build output are kept under `build/`.
 
 Run the optional keyword consistency check before regenerating golden files:

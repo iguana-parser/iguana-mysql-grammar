@@ -1,0 +1,527 @@
+# corpus: tidb
+# files=525 ok=384 amb=0 error=137 ioerror=4
+br/tests/br_full_cluster_restore/full_data.sql	error	Parse error at line 42, column 27: Expected TYPE
+br/tests/br_pitr/incremental_data/delete_range.sql	error	Parse error at line 120, column 72: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr/incremental_data/ingest_repair.sql	error	Parse error at line 83, column 51: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr/incremental_data/key_types.sql	error	Parse error at line 12, column 24: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr/prepare_data/delete_range.sql	error	Parse error at line 83, column 70: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr/prepare_data/ingest_repair.sql	error	Parse error at line 2, column 73: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PLUS, MINUS, OPEN_PAR, NOW, DATE, FALSE, NULL, TIMESTAMP, TIME, TRUE, NOW_CALL_OPEN
+br/tests/br_pitr/prepare_data/key_types.sql	error	Parse error at line 6, column 24: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr_failpoint/intersect_data/ingest_repair1.sql	ok
+br/tests/br_pitr_failpoint/prepare_data/ingest_repair.sql	error	Parse error at line 1, column 73: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PLUS, MINUS, OPEN_PAR, NOW, DATE, FALSE, NULL, TIMESTAMP, TIME, TRUE, NOW_CALL_OPEN
+br/tests/br_pitr_gc_safepoint/prepare_data/delete_range.sql	error	Parse error at line 83, column 70: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr_gc_safepoint/prepare_data/ingest_repair.sql	error	Parse error at line 2, column 73: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PLUS, MINUS, OPEN_PAR, NOW, DATE, FALSE, NULL, TIMESTAMP, TIME, TRUE, NOW_CALL_OPEN
+br/tests/br_pitr_table_filter/sqls/log.sql	error	Parse error at line 185, column 78: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_pitr_table_filter/sqls/snapshot.sql	error	Parse error at line 116, column 83: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+br/tests/br_tiflash_conflict/prepare_data/insert_data.sql	ok
+br/tests/br_tiflash_conflict/prepare_data/prepare_data.sql	error	Parse error at line 57, column 20: Expected one of DotWordIdentifier, DotDigitIdentifier, DOT, SEMICOLON, ADD, ALGORITHM, ALTER, ANALYZE, AUTOEXTEND_SIZE, AUTO_INCREMENT, AVG_ROW_LENGTH, CHANGE, CHARSET, CHAR, CHECKSUM, CHECK, COALESCE, COLLATE, COMMENT, COMPRESSION, CONNECTION, CONVERT, DATA, DEFAULT, DELAY_KEY_WRITE, DISABLE, DISCARD, DROP, ENABLE, ENCRYPTION, ENGINE, EXCHANGE, FORCE, IMPORT, KW_INDEX, INSERT_METHOD, KEY_BLOCK_SIZE, LOCK, MAX_ROWS, MIN_ROWS, MODIFY, OPTIMIZE, ORDER, PACK_KEYS, PARTITION, PASSWORD, REBUILD, REMOVE, RENAME, REORGANIZE, REPAIR, ROW_FORMAT, START, STATS_AUTO_RECALC, STATS_PERSISTENT, STATS_SAMPLE_PAGES, STORAGE, TABLESPACE, TABLE_CHECKSUM, TRUNCATE, UNION, WITH, WITHOUT, SECONDARY_ENGINE, SECONDARY_LOAD, SECONDARY_UNLOAD, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+dumpling/tests/e2e_csv/data/e2e_csv-schema-create.sql	error	Parse error at line 1, column 27: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+dumpling/tests/e2e_csv/data/e2e_csv.escape-schema.sql	ok
+dumpling/tests/e2e_csv/data/e2e_csv.escape.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/e2e_csv/data/e2e_csv.t-schema.sql	ok
+dumpling/tests/e2e_csv/data/e2e_csv.t.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/e2e_foreign_key/data/e2e_foreign_key.sql	ok
+dumpling/tests/naughty_strings/data/naughty_strings-schema-create.sql	error	Parse error at line 1, column 35: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+dumpling/tests/naughty_strings/data/naughty_strings.escape-schema.sql	ok
+dumpling/tests/naughty_strings/data/naughty_strings.escape.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/naughty_strings/data/naughty_strings.t-schema.sql	ok
+dumpling/tests/naughty_strings/data/naughty_strings.t.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/naughty_strings/expect/naughty_strings.escape.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/naughty_strings/expect/naughty_strings.t.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/data/pt_case_0.sql	error	Parse error at line 1, column 61: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+dumpling/tests/partition_table/data/pt_case_1.sql	error	Parse error at line 1, column 61: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+dumpling/tests/partition_table/data/pt_case_2.sql	error	Parse error at line 1, column 61: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+dumpling/tests/partition_table/result/pt_case_0-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/result/pt_case_0.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/result/pt_case_1-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/result/pt_case_1.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/result/pt_case_2-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/partition_table/result/pt_case_2.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/placement_policy/result/x-placement-policy-create.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/placement_policy/result/x1-placement-policy-create.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/primary_key/data/pk_case_0.sql	ok
+dumpling/tests/primary_key/data/pk_case_1.sql	ok
+dumpling/tests/primary_key/data/pk_case_2.sql	ok
+dumpling/tests/primary_key/data/pk_case_3.sql	ok
+dumpling/tests/primary_key/result/pk_case_0.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/primary_key/result/pk_case_1.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/primary_key/result/pk_case_2.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/primary_key/result/pk_case_3.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database-schema-create-mysql57.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database-schema-create.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database.quote-table-schema-mysql57.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database.quote-table-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database.quote-table.000000000-mysql57.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/quote/data/quote-database.quote-table.000000000.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/rows/data/rows.t.000000000.sql	ok
+dumpling/tests/rows_extreme_int/data/rei.t.0.sql	ok
+dumpling/tests/rows_extreme_int/data/rei.t2.0.sql	ok
+dumpling/tests/sequences/data/sequences.s-schema-sequence-expect.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/views/data/views-schema-create.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/views/data/views.v-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+dumpling/tests/views/data/views.v-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_add_index/data/add_index.multi_indexes-schema.sql	error	Parse error at line 2, column 27: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_add_index/data/add_index.multi_indexes.0.sql	ok
+lightning/tests/lightning_add_index/data/add_index.non_pk_auto_inc-schema.sql	error	Parse error at line 2, column 33: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_add_index/data/add_index.non_pk_auto_inc.0.sql	ok
+lightning/tests/lightning_alter_random/data/alter_random-schema-create.sql	error	Parse error at line 1, column 32: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+lightning/tests/lightning_alter_random/data/alter_random.t-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_alter_random/data/alter_random.t.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_auto_columns/data/lightning_auto_cols-schema-create.sql	ok
+lightning/tests/lightning_auto_columns/data/lightning_auto_cols.t_auto_incr-schema.sql	ok
+lightning/tests/lightning_auto_columns/data/lightning_auto_cols.t_auto_incr.sql	ok
+lightning/tests/lightning_auto_columns/data/lightning_auto_cols.t_auto_random-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_auto_columns/data/lightning_auto_cols.t_auto_random.sql	ok
+lightning/tests/lightning_auto_random_default/data/auto_random-schema-create.sql	error	Parse error at line 1, column 31: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+lightning/tests/lightning_auto_random_default/data/auto_random.t-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_auto_random_default/data/auto_random.t.0.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_auto_random_default/data/auto_random.t.1.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_bom_file/original_data/mytest.testtbl-schema.sql	ok
+lightning/tests/lightning_character_sets/gb18030/charsets-schema-create.sql	ok
+lightning/tests/lightning_character_sets/gb18030/charsets.gb18030-schema.sql	ioerror	stream did not contain valid UTF-8
+lightning/tests/lightning_character_sets/gb18030/charsets.gb18030.sql	ok
+lightning/tests/lightning_character_sets/greek/charsets-schema-create.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_character_sets/greek/charsets.greek-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_character_sets/greek/charsets.greek.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_character_sets/latin1/charsets-schema-create.sql	ok
+lightning/tests/lightning_character_sets/latin1/charsets.latin1-schema.sql	ioerror	stream did not contain valid UTF-8
+lightning/tests/lightning_character_sets/mixed/charsets-schema-create.sql	ok
+lightning/tests/lightning_character_sets/mixed/charsets.mixed-schema.sql	ioerror	stream did not contain valid UTF-8
+lightning/tests/lightning_character_sets/mixed/charsets.mixed.sql	ok
+lightning/tests/lightning_character_sets/utf8mb4/charsets-schema-create.sql	ok
+lightning/tests/lightning_character_sets/utf8mb4/charsets.utf8mb4-schema.sql	ok
+lightning/tests/lightning_character_sets/utf8mb4/charsets.utf8mb4.sql	ok
+lightning/tests/lightning_check_partial_imported/data/db01.tbl01-schema.sql	ok
+lightning/tests/lightning_checkpoint_dirty_tableid/data/cpdt-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_dirty_tableid/data/cpdt.t-schema.sql	ok
+lightning/tests/lightning_checkpoint_dirty_tableid/data/cpdt.t.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.a-schema.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.a.1.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.a.2.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.a.3.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.b-schema.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.b.1.sql	ok
+lightning/tests/lightning_checkpoint_engines/data/cpeng.b.2.sql	ok
+lightning/tests/lightning_checkpoint_engines_order/data/disk_quota_checkpoint-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_engines_order/data/disk_quota_checkpoint.t-schema.sql	ok
+lightning/tests/lightning_checkpoint_engines_order/data/disk_quota_checkpoint.t.0.sql	ok
+lightning/tests/lightning_checkpoint_engines_order/data/disk_quota_checkpoint.t.1.sql	ok
+lightning/tests/lightning_checkpoint_engines_order/data/disk_quota_checkpoint.t.2.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/bad-data/cped-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/bad-data/cped.t-schema.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/bad-data/cped.t.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/good-data/cped-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/good-data/cped.t-schema.sql	ok
+lightning/tests/lightning_checkpoint_error_destroy/good-data/cped.t.sql	ok
+lightning/tests/lightning_checkpoint_timestamp/data/cpts-schema-create.sql	ok
+lightning/tests/lightning_checkpoint_timestamp/data/cpts.cpts-schema.sql	ok
+lightning/tests/lightning_checkpoint_timestamp/data/cpts.cpts.1.sql	ok
+lightning/tests/lightning_checkpoint_timestamp/data/cpts.cpts.2.sql	ok
+lightning/tests/lightning_checksum_mismatch/data/cm-schema-create.sql	ok
+lightning/tests/lightning_checksum_mismatch/data/cm.t-schema.sql	ok
+lightning/tests/lightning_cmdline_override/data/cmdline_override-schema-create.sql	ok
+lightning/tests/lightning_cmdline_override/data/cmdline_override.t-schema.sql	ok
+lightning/tests/lightning_cmdline_override/data/cmdline_override.t.sql	ok
+lightning/tests/lightning_column_permutation/data/perm-schema-create.sql	ok
+lightning/tests/lightning_column_permutation/data/perm.test_perm-schema.sql	ok
+lightning/tests/lightning_config_max_error/data/mytest.testtbl-schema.sql	ok
+lightning/tests/lightning_config_skip_csv_header/data/mytest.testtbl-schema.sql	ok
+lightning/tests/lightning_csv/data/auto_incr_id-schema-create.sql	ok
+lightning/tests/lightning_csv/data/auto_incr_id.clustered-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/auto_incr_id.clustered_cache1-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/auto_incr_id.nonclustered-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/auto_incr_id.nonclustered_cache1-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/auto_incr_id.nonclustered_cache1_initial_autoid-schema.sql	error	Parse error at line 5, column 21: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/auto_incr_id.nonclustered_cache1_shard_autorowid-schema.sql	error	Parse error at line 8, column 21: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/csv-schema-create.sql	ok
+lightning/tests/lightning_csv/data/csv.empty_strings-schema.sql	ok
+lightning/tests/lightning_csv/data/csv.escapes-schema.sql	ok
+lightning/tests/lightning_csv/data/csv.threads-schema.sql	ok
+lightning/tests/lightning_csv/data/no_auto_incr_id-schema-create.sql	ok
+lightning/tests/lightning_csv/data/no_auto_incr_id.clustered-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/no_auto_incr_id.clustered_cache1-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/no_auto_incr_id.no_pk-schema.sql	ok
+lightning/tests/lightning_csv/data/no_auto_incr_id.no_pk_cache1-schema.sql	error	Parse error at line 4, column 60: Expected one of COMMA, SEMICOLON, OPEN_PAR, AS, AUTOEXTEND_SIZE, AUTO_INCREMENT, AVG_ROW_LENGTH, CHARSET, CHAR, CHECKSUM, COLLATE, COMMENT, COMPRESSION, CONNECTION, DATA, DEFAULT, DELAY_KEY_WRITE, ENCRYPTION, ENGINE, IGNORE, KW_INDEX, INSERT_METHOD, KEY_BLOCK_SIZE, MAX_ROWS, MIN_ROWS, PACK_KEYS, PARTITION, PASSWORD, REPLACE, ROW_FORMAT, SELECT, START, STATS_AUTO_RECALC, STATS_PERSISTENT, STATS_SAMPLE_PAGES, STORAGE, TABLESPACE, TABLE, TABLE_CHECKSUM, UNION, VALUES, WITH, SECONDARY_ENGINE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/no_auto_incr_id.nonclustered-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/data/no_auto_incr_id.nonclustered_cache1-schema.sql	error	Parse error at line 4, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_csv/errData/db-schema-create.sql	ok
+lightning/tests/lightning_csv/errData/db.test-schema.sql	ok
+lightning/tests/lightning_default-columns/data/defcol-schema-create.sql	ok
+lightning/tests/lightning_default-columns/data/defcol.t-schema.sql	ok
+lightning/tests/lightning_default-columns/data/defcol.t.1.sql	ok
+lightning/tests/lightning_default-columns/data/defcol.t.2.sql	ok
+lightning/tests/lightning_default-columns/data/defcol.u-schema.sql	ok
+lightning/tests/lightning_default-columns/data/defcol.u.1.sql	ok
+lightning/tests/lightning_disable_scheduler_by_key_range/data/test-schema-create.sql	ok
+lightning/tests/lightning_disable_scheduler_by_key_range/data/test.t-schema.sql	ok
+lightning/tests/lightning_disable_scheduler_by_key_range/data/test.t.sql	ok
+lightning/tests/lightning_disk_quota/data/disk_quota-schema-create.sql	ok
+lightning/tests/lightning_disk_quota/data/disk_quota.t-schema.sql	error	Parse error at line 2, column 33: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_disk_quota/data/disk_quota.t.0.sql	ok
+lightning/tests/lightning_disk_quota/data/disk_quota.t.1.sql	ok
+lightning/tests/lightning_disk_quota/data/disk_quota.t.2.sql	ok
+lightning/tests/lightning_disk_quota/data/disk_quota.t.3.sql	ok
+lightning/tests/lightning_distributed_import/data1/distributed_import-schema-create.sql	ok
+lightning/tests/lightning_distributed_import/data1/distributed_import.t-schema.sql	ok
+lightning/tests/lightning_distributed_import/data2/distributed_import-schema-create.sql	ok
+lightning/tests/lightning_distributed_import/data2/distributed_import.t-schema.sql	ok
+lightning/tests/lightning_drop_other_tables_halfway/data/lntest.tbl01-schema.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect-schema-create.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.ta-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.ta.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.ta.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tb-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tb.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tb.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tc-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tc.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tc.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.td-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.td.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.td.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.te-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.te.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.te.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tf-schema.sql	error	Parse error at line 2, column 34: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tf.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tf.1.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tg-schema.sql	error	Parse error at line 2, column 33: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tg.0.sql	ok
+lightning/tests/lightning_duplicate_detection/data/dup_detect.tg.1.sql	ok
+lightning/tests/lightning_duplicate_detection_new/data/test.dup_detect-schema.sql	ok
+lightning/tests/lightning_duplicate_detection_new/data/test.dup_detect.1.sql	ok
+lightning/tests/lightning_duplicate_detection_new/data/test.dup_detect.2.sql	ok
+lightning/tests/lightning_duplicate_detection_new/data/test.dup_detect.3.sql	ok
+lightning/tests/lightning_duplicate_detection_new/data/test.dup_detect.4.sql	error	Parse error at line 111, column 2: Expected one of OPEN_PAR, SELECT, TABLE, VALUES, WITH
+lightning/tests/lightning_duplicate_resolution_error/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_error/data/dup_resolve.a-schema.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_pk_multiple_files/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_pk_multiple_files/data/dup_resolve.a-schema.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_uk_multiple_files/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_uk_multiple_files/data/dup_resolve.a-schema.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_uk_multiple_files_multicol_index/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_error_uk_multiple_files_multicol_index/data/dup_resolve.a-schema.sql	ok
+lightning/tests/lightning_duplicate_resolution_incremental/data/dup_resolve_detect-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_incremental/data/dup_resolve_detect.ta-schema.sql	error	Parse error at line 2, column 41: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_incremental/data/dup_resolve_detect.ta.0.sql	ok
+lightning/tests/lightning_duplicate_resolution_incremental/data/dup_resolve_detect.ta.1.sql	ok
+lightning/tests/lightning_duplicate_resolution_merge/data1/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_merge/data1/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_merge/data2/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_merge/data2/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_multiple_keys_clustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_multiple_keys_clustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_multiple_keys_nonclustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_multiple_keys_nonclustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_multiple_unique_keys_clustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_multiple_unique_keys_clustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_multiple_unique_keys_nonclustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_multiple_unique_keys_nonclustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_key/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_key/data/dup_resolve.a-schema.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_key_multiple_conflicts_clustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_key_multiple_conflicts_clustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_key_multiple_conflicts_nonclustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_key_multiple_conflicts_nonclustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_clustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_clustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_multiple_conflicts_clustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_multiple_conflicts_clustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_multiple_conflicts_nonclustered_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_multiple_conflicts_nonclustered_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 23: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_nonclustered_varchar_pk/data/dup_resolve-schema-create.sql	ok
+lightning/tests/lightning_duplicate_resolution_replace_one_unique_key_nonclustered_varchar_pk/data/dup_resolve.a-schema.sql	error	Parse error at line 2, column 31: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_error_summary/data/error_summary-schema-create.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.a-schema.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.a.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.b-schema.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.b.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.c-schema.sql	ok
+lightning/tests/lightning_error_summary/data/error_summary.c.sql	ok
+lightning/tests/lightning_exotic_filenames/data/xfn-schema-create.sql	ok
+lightning/tests/lightning_exotic_filenames/data/xfn.etn-schema.sql	ok
+lightning/tests/lightning_exotic_filenames/data/xfn.etn.sql	ok
+lightning/tests/lightning_exotic_filenames/data/zwk-schema-create.sql	ok
+lightning/tests/lightning_exotic_filenames/data/zwk.zwb-schema.sql	ok
+lightning/tests/lightning_exotic_filenames/data/zwk.zwb.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0-schema-create.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0.t0-schema.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0.t0.1.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0.t0.2.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0.t1-schema.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a0.t1.1.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a1-schema-create.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a1.s1-schema.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a1.s1.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a1.t2-schema.sql	ok
+lightning/tests/lightning_extend_routes/data/routes_a1.t2.sql	ok
+lightning/tests/lightning_fail_fast/data/fail_fast-schema-create.sql	ok
+lightning/tests/lightning_fail_fast/data/fail_fast.tb-schema.sql	ok
+lightning/tests/lightning_fail_fast_on_nonretry_err/data/csv-schema-create.sql	ok
+lightning/tests/lightning_fail_fast_on_nonretry_err/data/csv.threads-schema.sql	ok
+lightning/tests/lightning_foreign_key/data/fk.child-schema.sql	ok
+lightning/tests/lightning_foreign_key/data/fk.child.sql	ok
+lightning/tests/lightning_foreign_key/data/fk.parent-schema.sql	ok
+lightning/tests/lightning_foreign_key/data/fk.parent.sql	ok
+lightning/tests/lightning_foreign_key/data/fk.t-schema.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol-schema-create.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.expr_index-schema.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.expr_index.0.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.nested-schema.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.nested.0.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.uuid-schema.sql	error	Parse error at line 3, column 36: Expected one of SingleQuotedText, DoubleQuotedText, NationalText, CharsetIntroducer, UnquotedHexLiteral, QuotedHexLiteral, UnquotedBinaryLiteral, QuotedBinaryLiteral, IntegerLiteral, LongLiteral, UnsignedLongLiteral, DecimalLiteral, FloatLiteral, PLUS, MINUS, OPEN_PAR, NOW, DATE, FALSE, NULL, TIMESTAMP, TIME, TRUE, NOW_CALL_OPEN
+lightning/tests/lightning_generated_columns/data/gencol.uuid.0.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.various_types-schema.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.various_types.0.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.virtual_only-schema.sql	ok
+lightning/tests/lightning_generated_columns/data/gencol.virtual_only.0.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0-schema-create.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0.t0-schema.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0.t0.1.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0.t0.2.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0.t1-schema.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a0.t1.1.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a1-schema-create.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a1.s1-schema.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a1.s1.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a1.t2-schema.sql	ok
+lightning/tests/lightning_ignore_columns/data/routes_a1.t2.sql	ok
+lightning/tests/lightning_import_into/data/myschema-create.sql	ok
+lightning/tests/lightning_import_into/data/mytable-schema.sql	ok
+lightning/tests/lightning_import_into/data_invalid/myschema-create.sql	ok
+lightning/tests/lightning_import_into/data_invalid/mytable-schema.sql	ok
+lightning/tests/lightning_incremental/data/incr-schema-create.sql	ok
+lightning/tests/lightning_incremental/data/incr.auto_random-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data/incr.auto_random.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data/incr.empty_table-schema.sql	ok
+lightning/tests/lightning_incremental/data/incr.pk_auto_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data/incr.pk_auto_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data/incr.rowid_uk_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data/incr.rowid_uk_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data/incr.uk_auto_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data/incr.uk_auto_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data1/incr-schema-create.sql	ok
+lightning/tests/lightning_incremental/data1/incr.auto_random-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data1/incr.auto_random.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data1/incr.empty_table-schema.sql	ok
+lightning/tests/lightning_incremental/data1/incr.empty_table2-schema.sql	ok
+lightning/tests/lightning_incremental/data1/incr.pk_auto_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data1/incr.pk_auto_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data1/incr.rowid_uk_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data1/incr.rowid_uk_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_incremental/data1/incr.uk_auto_inc-schema.sql	ok
+lightning/tests/lightning_incremental/data1/incr.uk_auto_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_issue_282/data/issue282-schema-create.sql	error	Parse error at line 1, column 28: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+lightning/tests/lightning_issue_282/data/issue282.t_access3-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_issue_282/data/issue282.t_access3.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_issue_40657/data1/test.t-schema.sql	ok
+lightning/tests/lightning_issue_40657/data2/test.t-schema.sql	ok
+lightning/tests/lightning_issue_410/data/issue410-schema-create.sql	ok
+lightning/tests/lightning_issue_410/data/issue410.row_flow_d-schema.sql	ok
+lightning/tests/lightning_issue_519/data/issue519-schema-create.sql	ok
+lightning/tests/lightning_issue_519/data/issue519.t-schema.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng-schema-create.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.a-schema.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.a.1.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.a.2.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.a.3.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.b-schema.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.b.1.sql	ok
+lightning/tests/lightning_local_backend/data/cpeng.b.2.sql	ok
+lightning/tests/lightning_max_incr/data/db-schema-create.sql	ok
+lightning/tests/lightning_max_incr/data/db.test-schema.sql	ok
+lightning/tests/lightning_max_incr/data/db.test1-schema.sql	ok
+lightning/tests/lightning_max_random/data/db-schema-create.sql	ok
+lightning/tests/lightning_max_random/data/db.test-schema.sql	error	Parse error at line 2, column 14: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AS, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, GENERATED, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_max_random/data/db.test1-schema.sql	error	Parse error at line 2, column 14: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AS, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, GENERATED, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_max_random/data/db.test2-schema.sql	error	Parse error at line 2, column 14: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AS, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, GENERATED, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_multi_valued_index/data/mv-schema.sql	ok
+lightning/tests/lightning_multi_valued_index/data/mv.l-schema.sql	ok
+lightning/tests/lightning_multi_valued_index/data/mv.t-schema.sql	ok
+lightning/tests/lightning_multi_valued_index/data/mv.t.0.sql	ok
+lightning/tests/lightning_new_collation/data-gbk/nc.gbk_source-schema.sql	ioerror	stream did not contain valid UTF-8
+lightning/tests/lightning_new_collation/data/nc-schema-create.sql	ok
+lightning/tests/lightning_new_collation/data/nc.ci-schema.sql	ok
+lightning/tests/lightning_new_collation/data/nc.gbk_test-schema.sql	ok
+lightning/tests/lightning_new_collation/data/nc.t-schema.sql	ok
+lightning/tests/lightning_new_collation/data/nc.t.0.sql	ok
+lightning/tests/lightning_new_collation/data/nc.t.1.sql	ok
+lightning/tests/lightning_no_schema/data/noschema.invalid-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_no_schema/data/noschema.invalid.sql	ok
+lightning/tests/lightning_no_schema/data/noschema.t.sql	ok
+lightning/tests/lightning_parquet/db.sql	error	Parse error at line 7, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_partition_incremental/data/incr.auto_rowid-schema.sql	ok
+lightning/tests/lightning_partition_incremental/data/incr.non_pk_auto_inc-schema.sql	ok
+lightning/tests/lightning_partition_incremental/data1/incr.auto_rowid-schema.sql	ok
+lightning/tests/lightning_partition_incremental/data1/incr.non_pk_auto_inc-schema.sql	ok
+lightning/tests/lightning_partition_incremental/data2/incr.auto_rowid-schema.sql	ok
+lightning/tests/lightning_partition_incremental/data2/incr.non_pk_auto_inc-schema.sql	ok
+lightning/tests/lightning_partitioned-table/data/partitioned-schema-create.sql	ok
+lightning/tests/lightning_partitioned-table/data/partitioned.a-schema.sql	error	Parse error at line 1, column 87: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_partitioned-table/data/partitioned.a.sql	ok
+lightning/tests/lightning_partitioned-table/data/partitioned.defaultlist-schema.sql	error	Parse error at line 1, column 99: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_partitioned-table/data/partitioned.defaultlist.sql	ok
+lightning/tests/lightning_partitioned-table/data/partitioned.list-schema.sql	error	Parse error at line 1, column 92: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_partitioned-table/data/partitioned.list.sql	ok
+lightning/tests/lightning_partitioned-table/data/partitioned.range-schema.sql	error	Parse error at line 1, column 93: Expected one of COMMA, SEMICOLON, CLOSE_PAR, ALGORITHM, COMMENT, KEY_BLOCK_SIZE, LOCK, PARTITION, REMOVE, TYPE, USING, INVISIBLE, VISIBLE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_partitioned-table/data/partitioned.range.sql	error	Parse error at line 1, column 13: Expected one of DotWordIdentifier, KeywordQualifiedPair, BacktickIdentifier, DotDigitIdentifier, DOT, IdentifierWordToken
+lightning/tests/lightning_pd_leader_switch/data/cpeng-schema-create.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.a-schema.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.a.1.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.a.2.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.a.3.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.b-schema.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.b.1.sql	ok
+lightning/tests/lightning_pd_leader_switch/data/cpeng.b.2.sql	ok
+lightning/tests/lightning_record_network/data/db-schema-create.sql	ok
+lightning/tests/lightning_record_network/data/db.test-schema.sql	ok
+lightning/tests/lightning_record_network/data/db.test.1.sql	ok
+lightning/tests/lightning_reload_cert/data/test-schema-create.sql	ok
+lightning/tests/lightning_reload_cert/data/test.t-schema.sql	ok
+lightning/tests/lightning_reload_cert/data/test.t.sql	ok
+lightning/tests/lightning_routes/data/routes_a0-schema-create.sql	ok
+lightning/tests/lightning_routes/data/routes_a0.t0-schema.sql	ok
+lightning/tests/lightning_routes/data/routes_a0.t0.1.sql	ok
+lightning/tests/lightning_routes/data/routes_a0.t0.2.sql	ok
+lightning/tests/lightning_routes/data/routes_a0.t1-schema.sql	ok
+lightning/tests/lightning_routes/data/routes_a0.t1.1.sql	ok
+lightning/tests/lightning_routes/data/routes_a1-schema-create.sql	ok
+lightning/tests/lightning_routes/data/routes_a1.s1-schema.sql	ok
+lightning/tests/lightning_routes/data/routes_a1.s1.sql	ok
+lightning/tests/lightning_routes/data/routes_a1.t2-schema.sql	ok
+lightning/tests/lightning_routes/data/routes_a1.t2.sql	ok
+lightning/tests/lightning_routes_panic/data/test1.dump_test.001.sql	ok
+lightning/tests/lightning_routes_panic/data/test1.dump_test.002.sql	ok
+lightning/tests/lightning_routes_panic/data/test1.dump_test.003.sql	ok
+lightning/tests/lightning_row-format-v2/data/rowformatv2-schema-create.sql	ok
+lightning/tests/lightning_row-format-v2/data/rowformatv2.t1-schema.sql	ok
+lightning/tests/lightning_row-format-v2/data/rowformatv2.t1.1.sql	ok
+lightning/tests/lightning_shard_rowid/data/shard_rowid-schema-create.sql	error	Parse error at line 1, column 31: Expected one of SEMICOLON, CHARSET, CHAR, COLLATE, DEFAULT, ENCRYPTION, EOF
+lightning/tests/lightning_shard_rowid/data/shard_rowid.shr-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_shard_rowid/data/shard_rowid.shr.0.sql	ok
+lightning/tests/lightning_sqlmode/data/sqlmodedb-schema-create.sql	ok
+lightning/tests/lightning_sqlmode/data/sqlmodedb.t-schema.sql	ok
+lightning/tests/lightning_sqlmode/data/sqlmodedb.t.1.sql	ok
+lightning/tests/lightning_tidb_duplicate_data/data/dup-schema-create.sql	ok
+lightning/tests/lightning_tidb_duplicate_data/data/dup.dup-schema.sql	ok
+lightning/tests/lightning_tidb_duplicate_data/data/dup.dup.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid-schema-create.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.explicit_tidb_rowid-schema.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.explicit_tidb_rowid.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.non_pk-schema.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.non_pk.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.non_pk_auto_inc-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_tidb_rowid/data/rowid.non_pk_auto_inc.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_tidb_rowid/data/rowid.pre_rebase-schema.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.pre_rebase.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.specific_auto_inc-schema.sql	ok
+lightning/tests/lightning_tidb_rowid/data/rowid.specific_auto_inc.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng-schema-create.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.a-schema.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.a.1.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.a.2.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.a.3.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.b-schema.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.b.1.sql	ok
+lightning/tests/lightning_tikv_multi_rocksdb/data/cpeng.b.2.sql	ok
+lightning/tests/lightning_too_many_columns/data/too_many_columns-schema-create.sql	ok
+lightning/tests/lightning_too_many_columns/data/too_many_columns.t-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135-schema-create.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar1-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar1.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar2-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar2.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar3-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar3.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar4-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar4.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar5-schema.sql	ok
+lightning/tests/lightning_tool_135/data/tool_135.bar5.sql	ok
+lightning/tests/lightning_tool_1420/data/EE1420-schema-create.sql	ok
+lightning/tests/lightning_tool_1420/data/EE1420.pt_role-schema.sql	ok
+lightning/tests/lightning_tool_1420/data/EE1420.pt_role.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472-schema-create.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472.notpk-schema.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472.notpk.1.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472.notpk.2.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472.pk-schema.sql	error	Parse error at line 2, column 27: Expected one of COMMA, SEMICOLON, CLOSE_PAR, AFTER, AUTO_INCREMENT, CHECK, COLLATE, COLUMN_FORMAT, COMMENT, CONSTRAINT, DEFAULT, FIRST, KEY, NOT, NULL, ON, PARTITION, PRIMARY, REFERENCES, REMOVE, SERIAL, STORAGE, UNIQUE, INVISIBLE, VISIBLE, SRID, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_tool_1472/data/EE1472.pk.1.sql	ok
+lightning/tests/lightning_tool_1472/data/EE1472.pk.2.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc-schema-create.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_alarm_group-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_alarm_group.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_alarm_message_log-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_alarm_message_log.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_alarm_receiver-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_config-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_fish_event-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_fish_event.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_report_circular_data-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_report_desc-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_report_summary-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_system_update-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_system_update.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_user_log-schema.sql	ok
+lightning/tests/lightning_tool_241/data/qyjc.q_user_log.sql	ok
+lightning/tests/lightning_ttl/data/ttldb-schema-create.sql	ok
+lightning/tests/lightning_ttl/data/ttldb.t1-schema.sql	error	Parse error at line 4, column 3: Expected one of SEMICOLON, OPEN_PAR, AS, AUTOEXTEND_SIZE, AUTO_INCREMENT, AVG_ROW_LENGTH, CHARSET, CHAR, CHECKSUM, COLLATE, COMMENT, COMPRESSION, CONNECTION, DATA, DEFAULT, DELAY_KEY_WRITE, ENCRYPTION, ENGINE, IGNORE, KW_INDEX, INSERT_METHOD, KEY_BLOCK_SIZE, MAX_ROWS, MIN_ROWS, PACK_KEYS, PARTITION, PASSWORD, REPLACE, ROW_FORMAT, SELECT, START, STATS_AUTO_RECALC, STATS_PERSISTENT, STATS_SAMPLE_PAGES, STORAGE, TABLESPACE, TABLE, TABLE_CHECKSUM, UNION, VALUES, WITH, SECONDARY_ENGINE, ENGINE_ATTRIBUTE, SECONDARY_ENGINE_ATTRIBUTE, EOF
+lightning/tests/lightning_ttl/data/ttldb.t1.0.sql	ok
+lightning/tests/lightning_unused_config_keys/data/unused_config_keys-schema-create.sql	ok
+lightning/tests/lightning_various_types/data/vt-schema-create.sql	ok
+lightning/tests/lightning_various_types/data/vt.bigint-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.bigint.0.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_various_types/data/vt.binary-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.binary.sql	ok
+lightning/tests/lightning_various_types/data/vt.bit-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.bit.sql	ok
+lightning/tests/lightning_various_types/data/vt.char-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.char.sql	ok
+lightning/tests/lightning_various_types/data/vt.datetime-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.datetime.sql	ok
+lightning/tests/lightning_various_types/data/vt.decimal-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.decimal.sql	ok
+lightning/tests/lightning_various_types/data/vt.double-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.double.sql	ok
+lightning/tests/lightning_various_types/data/vt.empty_strings-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.empty_strings.sql	ok
+lightning/tests/lightning_various_types/data/vt.enum-set-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.enum-set.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_various_types/data/vt.json-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.json.sql	ok
+lightning/tests/lightning_various_types/data/vt.precise_types-schema.sql	ok
+lightning/tests/lightning_various_types/data/vt.precise_types.sql	ok
+lightning/tests/lightning_view/data/db0-schema-create.sql	ok
+lightning/tests/lightning_view/data/db0.v2-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view/data/db0.v2-schema.sql	ok
+lightning/tests/lightning_view/data/db1-schema-create.sql	ok
+lightning/tests/lightning_view/data/db1.tbl-schema.sql	ok
+lightning/tests/lightning_view/data/db1.tbl.0.sql	ok
+lightning/tests/lightning_view/data/db1.v1-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view/data/db1.v1-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db1-schema-create.sql	ok
+lightning/tests/lightning_view_dependency/data/db1.t1-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db1.t1.0.sql	ok
+lightning/tests/lightning_view_dependency/data/db1.v1-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db1.v1-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db2-schema-create.sql	ok
+lightning/tests/lightning_view_dependency/data/db2.v2-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db2.v2-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db2.v3-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db2.v3-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db3-schema-create.sql	ok
+lightning/tests/lightning_view_dependency/data/db3.v4-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db3.v4-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db3.v5-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db3.v5-schema.sql	ok
+lightning/tests/lightning_view_dependency/data/db3.v6-schema-view.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+lightning/tests/lightning_view_dependency/data/db3.v6-schema.sql	ok
+pkg/lightning/mydump/examples/mocker_test-schema-create.sql	ok
+pkg/lightning/mydump/examples/mocker_test.i-schema.sql	error	Parse error at line 1, column 48: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+pkg/lightning/mydump/examples/mocker_test.i.sql	ok
+pkg/lightning/mydump/examples/mocker_test.report_case_high_risk-schema.sql	ok
+pkg/lightning/mydump/examples/mocker_test.report_case_high_risk.sql	ok
+pkg/lightning/mydump/examples/mocker_test.tbl_autoid-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+pkg/lightning/mydump/examples/mocker_test.tbl_autoid.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+pkg/lightning/mydump/examples/mocker_test.tbl_multi_index-schema.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
+pkg/lightning/mydump/examples/mocker_test.tbl_multi_index.sql	error	Parse error at line 1, column 1: Expected one of OPEN_PAR, ALTER, ANALYZE, BEGIN, BINLOG, CACHE, CALL, CHANGE, CHECKSUM, CHECK, COMMIT, CREATE, DEALLOCATE, DELETE, DESC, DESCRIBE, DO, DROP, EXECUTE, EXPLAIN, FLUSH, GET, GRANT, HANDLER, HELP, IMPORT, INSERT, INSTALL, KILL, LOAD, LOCK, OPTIMIZE, PREPARE, PURGE, RELEASE, RENAME, REPAIR, REPLACE, RESET, RESIGNAL, REVOKE, ROLLBACK, SAVEPOINT, SELECT, SET, SHOW, SHUTDOWN, SIGNAL, START, STOP, TABLE, TRUNCATE, UNINSTALL, UNLOCK, UPDATE, USE, VALUES, WITH, XA, CLONE, RESTART, EOF
