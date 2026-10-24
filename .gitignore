@@ -1,5 +1,5 @@
-# Generated parser and local build output.
-/build/
+# The generated wasm playground and local build output.
+/webview/
 /target/
 
 # macOS metadata.

@@ -52,25 +52,19 @@ handling. Server semantic validation is outside the grammar's scope.
 
 ## Build and tests
 
-The parser is generated from [`mysql.iggy`](mysql.iggy). With an Iguana source
-checkout and a CLI built from that same revision, set `IGUANA_SRC` to the source
-directory. The checkout must be clean and match the CLI revision. Replace the
-placeholder below with its absolute path:
+The Rust sources under `src/` are generated from [`mysql.iggy`](mysql.iggy)
+with Iguana `0.1.0-alpha.4`, the version `Cargo.toml` pins, and should not be
+edited directly. After changing the grammar, regenerate the parser with the
+same Iguana version and rebuild it:
 
 ```sh
-IGUANA_SRC=/absolute/path/to/iguana-rs
-"$IGUANA_SRC/target/release/iguana" generate --grammar mysql.iggy --output build/iguana \
-  --runtime-path "$IGUANA_SRC/iguana-runtime" \
-  --bin-name iguana-mysql
-cargo build --manifest-path build/iguana/Cargo.toml
+iguana generate
+cargo build
 ```
 
-The tested Iguana version is `v0.1.0-alpha.4`
-(`538f94524fbd4fea3f27837eabced5cc8b53c181`).
 Generation uses default settings, including match memoization. Add
 `--first-parse true` to generate the first-parse version with the other
 settings unchanged.
-Generated Rust sources and build output are kept under `build/`.
 
 Run the optional keyword consistency check before regenerating golden files:
 
@@ -88,12 +82,12 @@ The repository has golden-file tests for individual language features,
 including expected parse trees and rejected inputs:
 
 ```sh
-build/iguana/target/debug/iguana-mysql --dir tests/queries --ext sql --start Queries --check-sexpr
-build/iguana/target/debug/iguana-mysql --dir tests/expressions --ext sql --start Expression --check-sexpr
-build/iguana/target/debug/iguana-mysql --dir tests/query-expression-parens --ext sql --start QueryExpressionParens --check-sexpr
+target/debug/iguana-mysql --dir tests/queries --ext sql --start Queries --check-sexpr
+target/debug/iguana-mysql --dir tests/expressions --ext sql --start Expression --check-sexpr
+target/debug/iguana-mysql --dir tests/query-expression-parens --ext sql --start QueryExpressionParens --check-sexpr
 (
   for start in Identifier LabelIdentifier RoleIdentifier LValueIdentifier UnquotedIdentifier UnqualifiedFunctionName; do
-    build/iguana/target/debug/iguana-mysql --dir "tests/keyword-contexts/$start" --ext sql --start "$start" --check-sexpr || exit 1
+    target/debug/iguana-mysql --dir "tests/keyword-contexts/$start" --ext sql --start "$start" --check-sexpr || exit 1
   done
 )
 ```
@@ -110,8 +104,8 @@ See [`corpus/README.md`](corpus/README.md) for the current cached-file scope.
 Run one benchmark pass with a release build:
 
 ```sh
-cargo build --release --manifest-path build/iguana/Cargo.toml --bin iguana-mysql
-build/iguana/target/release/iguana-mysql --benchmark --iters 1 --warmup 0 --save build/corpus-benchmark.json
+cargo build --release --bin iguana-mysql
+target/release/iguana-mysql --benchmark --iters 1 --warmup 0 --save target/corpus-benchmark.json
 ```
 
 See [Developing grammars](https://iguana-parser.org/grammars/) for Iguana's

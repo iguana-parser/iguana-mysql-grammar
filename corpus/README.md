@@ -35,7 +35,7 @@ database systems.
 Use the release parser from the repository root:
 
 ```sh
-build/iguana/target/release/iguana-mysql --benchmark --iters 1 --warmup 0 --save build/corpus-benchmark.json
+target/release/iguana-mysql --benchmark --iters 1 --warmup 0 --save target/corpus-benchmark.json
 ```
 
 Only clean, unambiguous parses contribute to the timing and throughput totals.
